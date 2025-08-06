@@ -1,0 +1,1 @@
+This is a static website version of the drupal site https://softoption.us. It was produced using Tome. It is not fully functional. For example, it does not handle mail or user accounts. In effect, it is something of a textual archive of the site as the site was about August 2025.
