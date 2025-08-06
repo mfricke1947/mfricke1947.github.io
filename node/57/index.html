@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="Tree Tutorial 1 Propositional Logic Truth Trees: Introduction 12/12/2020 Prerequisities You need to know some propositional logic to be able to understand this. In particular, you need to know about the symbols used in propositional logic, truth tables, satisfiability, consistency, and semantic invalidity (by counter example). You do not need to know propositional rules of inference and derivations. [The tutorials on propositional logic elsewhere on this site give the required background. Alternatively" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/57" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/57" />
+<link rel="shortlink" href="https://softoption.us:8888/node/57" />
+<link rel="prev" href="/node/315" />
+<link rel="up" href="/howson" />
+<link rel="next" href="/node/59" />
+
+    <title>Tree Tutorial 1: Propositional Trees: Introduction | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/howson">Tree Tutorials [Propositional, Predicate, Identity, and Modal Logic Trees—Howson Syntax]</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 1: Propositional Trees: Introduction</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="57" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/20" hreflang="en">howson</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Tree Tutorial 1 Propositional Logic Truth Trees: Introduction</h2>
+<h6 style="text-align:right;">12/12/2020</h6>
+<h3>Prerequisities</h3>
+<p>You need to know some propositional logic to be able to understand this. In particular, you need to know about the symbols used in propositional logic, truth tables, satisfiability, consistency, and semantic invalidity (by counter example). You do not need to know propositional rules of inference and derivations. [The tutorials on propositional logic elsewhere on this site give the required background. Alternatively</p>
+<blockquote><p>Colin Howson, [1997] <em>Logic with trees</em> Chapter 1</p></blockquote>
+<p>would put you about where you need to be.]</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To become familiar with the notions of tree, branch, open branch, closed branch.</p>
+<h3>Reading</h3>
+<p>Colin Howson, [1997] <em>Logic with trees</em> Chapter 2</p>
+<p>[The use of trees (or 'tableaux') in logic was pioneered by Beth, Hintikka, and Smullyan, and their use was brought into a teaching context by such books as the standard Jeffrey text. See</p>
+<blockquote><p>E.W. Beth, [1959] <em>The Foundations of Mathematics</em><br>
+G.Gentzen, [1934-5] 'Untersuchungen uber das logische Schliessen', <em>Mathematische Zeitschrift</em>, vol 39, 1934-5, pp.176-210, 405-31<br>
+J. Hintikka [1955] ' Two papers on Symbolic Logic', <em>Acta Philosophica Fennica</em>, vol 8 1955<br>
+R.C.Jeffrey, [1967] <em>Formal Logic: Its Scope and Limits</em><br>
+R.M. Smullyan, [1968] <em>First Order Logic</em></p>
+</blockquote>
+<p>]</p>
+<h4>Graph theory and trees</h4>
+<p>'Trees' are a type of structure within the mathematical theory of graphs.</p>
+<p>Graphs consist of two things: nodes (other words for these, 'vertices', 'points') and links (other words for these, 'edges', 'lines', 'ties'). In applications, nodes typically model individual people, countries, businesses, web pages, genes, amino acids, etc. Links typically model friendships, web hyperlinks, telephone lines, communications, etc. For us, nodes are going to represent formulas and the links will show the decomposition, or transformation, of a formula into other formulas.</p>
+<p>You can think of a node and being a dot or a point, and a link as being a line or an edge which runs from a node to a node. So here is a graph</p>
+<p><img alt="A graph" src="/files/2/graph.svg" style="width: 295px; height: 131px; "></p>
+<p>The&nbsp;<i>size</i>&nbsp;of a graph is the number of nodes in it. This one is of size 7.</p>
+<p>The&nbsp;<i>degree</i><b>&nbsp;</b>of a node is the number of links that connect to it. So, for example, the node d has degree 2&nbsp;and g degree 3.</p>
+<p>How the links are drawn is irrelevant (you can draw them as curves or straight lines or locate them differently, and the links can cross each other without that meaning anything)-- all that matters is which nodes they connect. These two graphs are actually the same graph.</p>
+<p><img alt="Same graph" src="/files/2/sameGraph.svg" style="width: 280px; height: 130px; "></p>
+<p>A&nbsp;<i>walk</i>&nbsp;is an alternating sequence of nodes and links, which starts and ends with a node. So, in the first example graph, a-&gt;d-&gt;e is a walk. A&nbsp;<i>path</i>&nbsp;is a walk with no repeated nodes. The&nbsp;<i>length</i>&nbsp;of a walk is the number of links included in it. Two nodes are&nbsp;<i>adjacent</i>&nbsp;if there is a link between them.</p>
+<p>A graph has a&nbsp;<i>cycle</i>, or is&nbsp;<i>cyclic</i>, if there is a walk of non-zero length that starts and ends on the same node (otherwise the graph is said to be&nbsp;<i>acyclic</i>).</p>
+<p>A graph is&nbsp;<i>connected</i>&nbsp;if there is a path between every two nodes in it. The first example graph is not connected (because the node b cannot be reached), and the second example graph is connected.</p>
+<p>There are a couple of different ways of explaining or defining&nbsp;<em>trees</em>&nbsp;(and which is preferable depends a little on what is going to be done with the resulting trees).</p>
+<p>A&nbsp;<i>tree</i>&nbsp;is a connected graph in which between every two nodes there is only one path (ie there are no 'cycles'). For example,</p>
+<p><img alt="Tree" src="/files/2/tree.svg" style="width: 173px; height: 230px; "></p>
+<p>is a tree (you can walk from node to node (so it is connected) but you cannot walk around in a circle (so there are no cycles)).</p>
+<p>With a tree, there are nodes which do not have other nodes below them. These are&nbsp;<i>leaves</i>. So, in the above tree, d is the root, and c, f and b are leaves. With any leaf, there is exactly one path from the root to it, such a path is a&nbsp;<i>branch</i>.</p>
+<p><img alt="Branch" src="/files/2/branch.svg" style="width: 173px; height: 230px; "></p>
+<p>d-a-g-f is a branch in the above tree.</p>
+<p>&nbsp;</p>
+<h4>Truth Tree Rules</h4>
+<p>Trees are going to be used to 'picture' the truth conditions or requirements for a formula (then, as the technique is developed, for several formulas at once).</p>
+<p>Any easy way to remember the rules is to regard them as having been built from the truth tables.</p>
+<p>For example, the truth table for 'and' is</p>
+<p>Conjunction</p>
+<blockquote><table style="width: 625px; " width="100">
+<tbody>
+<tr style="background-color: rgba(0, 0, 0, 0.0625); background-position: initial initial; background-repeat: initial initial; ">
+<td>F</td>
+<td>G</td>
+<td>(F∧G)</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0625); background-position: initial initial; background-repeat: initial initial; ">
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0625); background-position: initial initial; background-repeat: initial initial; ">
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0625); background-position: initial initial; background-repeat: initial initial; ">
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0625); background-position: initial initial; background-repeat: initial initial; ">
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>For a conjunction to be true, each of its immediate subformulas have to be true. A tree is started with the conjunction as the root, and it is extended by adding a branch containing each of the immediate subformulas. Thus</p>
+<p>before</p>
+<blockquote><p><img alt height="54" src="/files/images/before.jpg" width="223" loading="lazy"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>after</p>
+<blockquote><p><img alt height="54" src="/files/images/after.jpg" width="223" loading="lazy"></p>
+</blockquote>
+<p>[These images come from the running widget that we will look at shortly, the tick is just to show which formula has been extended.]</p>
+<p>The tree extension rules are also used to grow a tree even when the formula that is being used to make the extension is not the root.</p>
+<p>Try building some 'and' trees (click on the formula to select, choose 'Extend' from the menu).</p>
+<p>You'll notice that when a Tree starts, the formulas it starts from are justified by 'SM'. This stands for 'Set Member' just to show that the formulas are members of the starting set of formulas.</p>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/howson/Tutorial1Howson.html" width="650">If you can see this, your browser doesn&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#39;t understand IFRAME.</iframe></p>
+<p>A tree 'pictures' truth conditions. It shows what has to happen for a formula to be true. The idea is: if all the atomic formulas in a branch are true, or are assigned true, and all the negations of atomic formulas in a branch are true, ie their atomic components are assigned false, then all the formulas in the branch will be true. So, for example, (F∧G) is true if F is true and G is true, and (H∧¬I) is true if H is true and I is false.&nbsp;<em>However, this is subject to a condition.&nbsp;</em>Consider the formula (F∧¬F), it is not satisfiable, no assignment of truth values to its atomic components can make it true. If you do a tree for a formula like this (Tree 3 above), you will end up with a branch that has both F and ¬F in it; this means that you will be trying to assign F both true and false (which is impossible).</p>
+<p>Any branch that contains a formula and the negation of that formula is said to be&nbsp;<em>closed</em>. (And any branch that is not closed is&nbsp;<em>open</em>.)</p>
+<p>The running software allows you to close (suitable) branches. To do this you have to select two formulas, one of the formulas has to be the negation of the other, then you click the 'Close' button. To select (or unselect) a formula, click on it if you have a mouse, or touch it with your finger, if you are using a touchscreen device</p>
+<hr>
+<h2>Exercises to accompany Tutorial 1</h2>
+<h3>Exercise 1 (of 1) (very brief):</h3>
+<p>For Tree 3 above, extend the tree, then select both F and ¬F (click on the first, click on the second) then select 'Close' from the menu. This is just to introduce you to the notation for closed branches.</p>
+<hr>
+<p>If you decide to use the web application you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20howson" target="_blank">Deriver [Howson]</a>&nbsp;— username 'logic' password 'logic'. It will take about 20 seconds to launch. Then either copy and paste</p>
+<p>F,F∧G</p>
+<p>F∧G,G∧H∧I</p>
+<p>F∧¬F</p>
+<p>into the Journal or use the Deriver File Menu to Open Web Page with this address</p>
+<p>https://softoption.us/test/treesStandAlone/howson/CombinedTutorialsHowson.html</p>
+<p>Then select the desired formula(s) and Start Tree off the Actions Menu.</p>
+<p>[If you find you need to set the Preferences (because you, or someone else, has been doing something totally different with Deriver on the computer in use), set the parser to default. The title bar of the Deriver window will show you what system you are running e.g. 'DeriverDefault', 'DeriverGentzen', etc.]</p>
+<!--
+<p><p><applet archive="/test/applets/deriver11Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br />
+<param name="parser" value="howson" />
+<param name="tree0" value="F,F∧G" />
+<param name="tree1" value="F∧G,G∧H∧I" />
+<param name="tree2" value="F∧¬F" />
+<param name="advancedMenu" value="false" />Your browser is not displaying the Deriver applet. To simulate this, try downloading the Deriver application itself from the instructional software page.</applet></p>
+<p> -->
+<p>&nbsp;</p>
+</div>
+      
+  <nav id="book-navigation-56" class="book-navigation" role="navigation" aria-labelledby="book-label-56">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/59" hreflang="en">Help with Trees [Generic]</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-56">Book traversal links for Tree Tutorial 1: Propositional Trees: Introduction</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/315" rel="prev" title="Go to previous page"><b>‹</b> Notation</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/howson" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/59" rel="next" title="Go to next page">Help with Trees [Generic] <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/219" hreflang="en">Preliminary [Pre-test]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/315" hreflang="en">Notation</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/57" hreflang="en">Tree Tutorial 1: Propositional Trees: Introduction</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/59" hreflang="en">Help with Trees [Generic]</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/58" hreflang="en">Tree Tutorial 2: More Propositional Tree Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/92" hreflang="en">Review of Tree Propositional Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/60" hreflang="en">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/61" hreflang="en">Trees: Propositional Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/64" hreflang="en">Tree Tutorial 4: Predicate Logic Trees</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/293" hreflang="en">Review of Tree Predicate Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/305" hreflang="en">Tree Predicate Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/67" hreflang="en">Tree Tutorial 5: Identity Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/306" hreflang="en">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/313" hreflang="en">Tree Tutorial 7: Type Labels, Sorts, Order Sorted Logic [&#039;Mixed Domains&#039;]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/649" hreflang="en">Tree Tutorial 8 Modal Trees</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/57","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"57"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

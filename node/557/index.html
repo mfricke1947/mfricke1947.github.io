@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="1/25/2020 Example Alpha conversion (Rewrite of bound variables):- Any abstraction λ. can be converted to λ./. -&gt; provided the substitution /. -&gt; is sound." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/557" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/557" />
+<link rel="shortlink" href="https://softoption.us:8888/node/557" />
+<link rel="prev" href="/node/687" />
+<link rel="up" href="/node/685" />
+<link rel="next" href="/node/688" />
+
+    <title>The Lambda Reduction Widget | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/software">Instructional Software for Logic and Source Code</a>
+              </li>
+          <li>
+                  <a href="/node/551">Javascript Widgets</a>
+              </li>
+          <li>
+                  <a href="/node/685">Coded from Java</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">The Lambda Reduction Widget</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="557" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right;">1/25/2020</h6>
+<p>Example</p>
+<hr>
+<h4>Alpha conversion (Rewrite of bound variables):-</h4>
+<p>Any abstraction λ&lt;variable1&gt;.&lt;expr&gt; can be converted to λ&lt;variable2&gt;.&lt;expr&gt;/.&lt;variable1&gt; -&gt;&lt;variable2&gt; provided the substitution &lt;expr&gt; /. &lt;variable1&gt; -&gt; &lt;variable2&gt; is sound.</p>
+<p>In the simplest cases alpha conversion allows you to change, for example, λy.y into λx.x or λz.z. The rule can also be applied to subexpressions-- λy.<u>λz.(z y)</u> can be converted to λy.<u>λw.(w y)</u> with the underlined pieces being re-written (question can it be converted to λy.λy.(y y ) ? if not, why not?)</p>
+<p>Normally we regard expressions with rewritten bound variables as same. Sometimes this is called alpha congruence.</p>
+<p>Alpha conversion is not going to be a lot of interest to us-- we need it only for ensuring that beta-conversions can take place, and more of that shortly.</p>
+<p>We will use the symbol '⇒' to mean that one formula can be re-written to another, so, for example, λa.a ⇒ λb.b means that λa.a can be rewritten (reduced) to λb.b (in this case by a one step alpha reduction).</p>
+<p>Try to prove the following:-</p>
+<blockquote><p>a) λa.a ⇒ λb.b<br>
+b) λw.(λx.(λy.w a) w) ⇒ λu.(λx.(λy.u a) u)<br>
+c) λw.(λx.(λy.w a) w) ⇒ λy.(λx.(λy.y a) y)</p>
+</blockquote>
+<p>[Click on a formula to select it, choose a rule from the menu.]</p>
+<p>One of them cannot be done.</p>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/lambdaWar/Lambda6a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Lambda.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="λa.a⇒λb.b" />
+<param name="proof1" value="λw.(λx.(λy.w a) w) ⇒ λu.(λx.(λy.u a) u)" />
+<param name="proof2" value="λw.(λx.(λy.w a) w) ⇒ λy.(λx.(λy.y a) y)" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>In our implementation of alpha reduction, we haven't made available the rewriting of a subformula by alpha reduction. The reason for this is that the only time we need alpha reduction at all is to push through a beta reduction when there is capture of variable, but our implementation of beta reduction does the alpha rewrite automatically (leaving you to concentrate on more important matters)!</p>
+<h4>Beta reduction (the effect of function application):-</h4>
+<p>Any function application (λ&lt;variable&gt;.&lt;expr1&gt; &lt;expr2&gt;) can be converted to &lt;expr1&gt; /. &lt;variable&gt; -&gt; &lt;expr2&gt; provided the substitution &lt;expr1&gt; /. &lt;variable&gt; -&gt; &lt;expr2&gt; is sound.</p>
+<p>egs.<br>
+(λx.x y) beta reduces to y<br>
+(λx.(x x) λy.y) beta reduces to (λy.y λy.y) and that beta reduces to λy.y</p>
+<p>This rule can be used on sub-expressions of an expression.</p>
+<p>HINT: Beta-reduction is always used on a application, that is, on an expression of the form (&lt;leftExpr&gt; &lt;rightExpr&gt;) and, in turn, the left expression has to be a lambda abstraction ie it has to start with λ. So, within the grammar we are using, an expression can be beta-reduced iff it starts with the two characters '(λ'. So try to spot that sequence for it flags possible beta reductions.</p>
+<p>Roughly, an expression M=&gt;N (M beta reduces to N) iff</p>
+<blockquote><p>i) it alpha converts to N,<br>
+ii) N is the result of a single beta reduction on M,<br>
+iii) M and N are identical applications except one of M's subexpressions has been beta reduced to get<br>
+N,<br>
+iv) M and N are identical abstractions except one of M's subexpressions has been beta reduced to get N</p>
+</blockquote>
+<p>Then two expressions M and N are 'equal', written M=N, iff i) they are alpha-convertible, ii) one can be beta-reduced from the other, or iii) there's another expression E which they are both equal to.</p>
+<h4>Video illustrating the software in use</h4>
+<div align="center">
+<video controls src="/test/lambda/quicktime/alphaBetaIntro.m4v">
+<p>Your browser does not support html5 video.</p>
+<p></p></video>
+</div>
+<p>&nbsp;</p>
+<p>Try to prove the following:-</p>
+<blockquote><p>a) (λw.w a) ⇒ a<br>
+b) (λx.(x x) λy.y) ⇒ λy.y<br>
+c) ((λx.λy.y a) b) ⇒ b</p>
+</blockquote>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/lambdaWar/Lambda6b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Lambda.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(λw.w a) ⇒ a" />
+<param name="proof1" value="(λx.(x x) λy.y) ⇒ λy.y" />
+<param name="proof2" value="((λx.λy.y a) b) ⇒ b" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>Now, you may not always be able to make the beta reduction you want to because of capturing. However, any lambda expression contains only a finite number of variables and we have infinitely many variables available to us. So we can use alpha conversion to change the variable of the suspect piece to some totally new variable and then do the beta reduction without capture. For example, the expression</p>
+<p>(λx.λy.x y) reduces to λy.y ? or does it?</p>
+<p>Apparently it should reduce, since it is an application with an abstraction in the function position. However what seems likely as a simple beta reduction is λy.y which is forbidden because of the capture. But if</p>
+<p>(λx.λy.x y) is alpha converted to (λx.λz.x y) the new expression reduces to λz.y.</p>
+<p>There is a third reduction rule, which we will not need at all. It is just mentioned here for completeness.</p>
+<h4>Eta reduction (extensional equality of functions)</h4>
+<p>Any abstraction with the form λ&lt;variable&gt;.(&lt;expr&gt; &lt;variable&gt; ) can be reduced to &lt;expr&gt; provided &lt;variable&gt; is not free in &lt;expr&gt;.</p>
+<p>For example λx.(y x) can be eta reduced to y.</p>
+<p>The motivation behind eta reduction is that the effect of an application of either of the eta expressions is the same. Apply our example expressions to, say, z</p>
+<p>(λx.(y x) z) beta reduces to (y z) which is exactly the application of y to z, namely (y z).</p>
+</div>
+      
+  <nav id="book-navigation-656" class="book-navigation" role="navigation" aria-labelledby="book-label-656">
+    
+          <h2 class="visually-hidden" id="book-label-656">Book traversal links for The Lambda Reduction Widget</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/687" rel="prev" title="Go to previous page"><b>‹</b> The Lambda Verbose Parse Widget</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/685" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/688" rel="next" title="Go to next page">The Combinatory Logic Verbose Parse Widget <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/551" hreflang="en">Javascript Widgets</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/685" hreflang="en">Coded from Java</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/549" hreflang="en">The Proof Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/553" hreflang="en">The Tree Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/559" hreflang="en">The Semantics Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/552" hreflang="en">The Symbolization Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/660" hreflang="en">The Modal Tree Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/659" hreflang="en">The Modal Truth Table Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/560" hreflang="en">The Reading a Counter Example from a Tree Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/687" hreflang="en">The Lambda Verbose Parse Widget</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/557" hreflang="en">The Lambda Reduction Widget</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/688" hreflang="en">The Combinatory Logic Verbose Parse Widget</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/686" hreflang="en">Coded from Haskell</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/684" hreflang="en">Java Applications</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/683" hreflang="en">Source Code</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/661" hreflang="en">History and Background</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/550" hreflang="en">Java Applets</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/655" hreflang="en">Programming the Symbolization Applet</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/557","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"557"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

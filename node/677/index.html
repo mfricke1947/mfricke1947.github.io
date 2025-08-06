@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="7/27/21 i) Rules for generating constraints [We are following Bastiaan Heeren, Jurriaan Hage, Doaitse Swierstra 2002, Generalizing Hindley-Milner Type Inference Algorithms. Henceforward Heeren [2002]. Also consulted was Benjamin C. Pierce, 2002, Types and Programming Languages. ]" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/677" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/677" />
+<link rel="shortlink" href="https://softoption.us:8888/node/677" />
+<link rel="prev" href="/node/676" />
+<link rel="up" href="/node/676" />
+<link rel="next" href="/node/678" />
+
+    <title>Hindley-Milner II — Generating the Constraints | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/718">Lambda Calculus with Elementary Type Theory</a>
+              </li>
+          <li>
+                  <a href="/node/676">Junior Hindley-Milner I</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Hindley-Milner II — Generating the Constraints</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="677" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">7/27/21</h6>
+<h4><b><b>i) Rules for generating constraints</b></b></h4>
+<p>[We are following Bastiaan Heeren, Jurriaan Hage, Doaitse Swierstra 2002, <i>Generalizing Hindley-Milner Type Inference Algorithms</i>. Henceforward Heeren [2002]. Also consulted was Benjamin C. Pierce, 2002,&nbsp;<i>Types and Programming Languages</i>. ]</p>
+<p>Each of the inference rules has roughly the following form. 'Given assumptions A and constraints C, expression e has type t' then 'Under these other assumptions A<sub>1</sub> and other constraints C<sub>1</sub>,&nbsp; this other expression e<sub>1</sub> has this other type t<sub>1</sub>'</p>
+<p><b>Variable:</b></p>
+<p style="margin-left: 80px;">⇩</p>
+<p style="margin-left: 40px;">{<span>x</span><span>:</span><span>t<sub>0</sub></span><span style>}</span><span>, </span><span style>∅ ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>x</span><span>:</span><span>t<sub>0</sub>&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p style="margin-left: 40px;"><span>In English:- </span></p>
+<p style="margin-left: 40px;"><span><b>If</b> it is assumed that the variable x has the type </span><span><span>t<sub>0</sub></span> , <b>and</b> there are no constraints, <b>then</b> variable x has type </span><span><span>t<sub>0</sub> . [This inference rule does not require any premises.]</span></span></p>
+<p><b>Application:</b></p>
+<p style="margin-left: 40px;"><span style>If A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span>, </span><span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1 </span><span style>⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt">&nbsp; </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span>:</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1&nbsp; </span><span style>and A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span>, </span><span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2 </span><span style>⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt">&nbsp; </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span>:</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2 </span></p>
+<p style="margin-left: 120px;">⇩</p>
+<p style="margin-left: 40px;"><span style>A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span style>∪A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span>,</span><span style> C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span style>∪C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span style>∪{</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span style>=</span><span> τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span style>→</span><span>t<sub>0</sub></span><span style>} ⊢</span><span>(e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1 </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span> ):</span><span>t<sub>0</sub> </span></p>
+<p style="margin-left: 40px;"><span>In English:- </span></p>
+<p style="margin-left: 40px;"><span><b>If</b> expression&nbsp;</span><span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span> has type </span><span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span> under the assumptions </span><span><span style>A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span> and constraints </span><span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1 </span><b>and</b> <span> expression&nbsp;</span><span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span> has type </span><span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt"><span style="font-family: serif;">2</span></span> under the assumptions </span><span><span style>A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt"><span style="font-family: serif;">2</span></span> and constraints </span><span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><br>
+<b>then</b> under the assumptions of <span><span style>A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span> and </span><span><span style>A</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt"><span style="font-family: serif;">2</span></span> combined together and the constraints </span><span><span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1 </span>and <span style>C</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span> combined together plus the additional constraint </span><span><span style>{</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1</span><span style>= </span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span style>→</span><span>t<sub>0</sub></span><span style>} </span>, the application </span><span>(e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">1 </span><span>e</span><span style="font-size: 8.000000pt; font-family: 'CMR8'; vertical-align: -2.000000pt">2</span><span> )<span style="font-family: serif;"> has the type </span></span><span>t<sub>0</sub> </span></p>
+<p><span style><b>Lambda Abstraction</b></span></p>
+<p style="margin-left: 40px;"><span style>A</span><span>, </span><span style>C ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt">&nbsp; </span><span>e</span><span>:</span><span>τ </span></p>
+<p style="margin-left: 80px;">⇩</p>
+<p style="margin-left: 40px;"><span style>A\</span><span>x, </span><span style>C∪{</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span><span style>=</span><span>t<sub>0</sub></span><span style>|</span><span>x</span><span>:</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span><span style>∈A} ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>λx:</span><span><span><span>t<sub>0</sub></span></span> .</span><span style> </span><span>e</span><span>&nbsp; :(</span><span>t<sub>0</sub></span><span style>→</span><span>τ</span><span>) </span></p>
+<p style="margin-left: 40px;">
+<span>In English:- </span></p>
+<p style="margin-left: 40px;"><span><b>If</b> expression&nbsp;</span><span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>e</span> has type </span><span><span>τ</span> under the assumptions </span><span><span style>A</span> and constraints </span><span style>C</span><br>
+<b>then</b> under the assumptions of <span><span style>A, with all key-value pairs removed for the binding variable x (i.e. remove those with key x), and constraints C, augmented by additional constraints&nbsp;</span></span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span><span style>=</span><span>t<sub>0</sub> for all the </span><span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span> whose x:</span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span>pairs were formerly in A, the lambda abstraction <span>λx:</span><span><span><span>t<sub>0</sub></span></span> .</span><span style> </span><span>e</span><span> has type </span><span>(</span><span>t<sub>0</sub></span><span style>→</span><span>τ</span><span>) </span></p>
+<h4><strong>ii) Example of the Lambda Abstraction Rule</strong></h4>
+<p>These rules are not the easiest to get one's head around. Let us try a simple example</p>
+<p style="margin-left: 40px;"><span>λx:</span><span><span><span>Int</span></span>.</span><span style>x</span></p>
+<p>This is a lambda abstraction, and to analyze it we need a type for its scope. Now the scope is the plain variable x.</p>
+<p style="margin-left: 40px;">x</p>
+<p>We use the Rule for Variables, which requires us to guess a fresh type <span>τ </span> and put that in the assumptions. There are no constraints. Thus</p>
+<p style="margin-left: 40px;"><span style>{</span><span>x</span><span>:</span><span>τ</span><span style>}</span><span>, </span><span style>∅ ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>x</span><span>:</span><span>τ</span></p>
+<p>Then we use the Rule for Abstraction on <span>λx:</span><span><span><span>Int</span></span>.</span><span style>x. It is easiest to work on the constraints first. We need to add </span><span>τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt">′ </span><span style>=</span><span>Int for all the </span><span>x</span><span>:</span><span>τ' in the Assumptions. There is only one of those</span></p>
+<p style="margin-left: 40px;"><span style>{</span><span>x</span><span>:</span><span>τ</span><span style>}</span><span><span>, [τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt"> </span><span style>=</span><span>Int</span>]&nbsp;</span><span style> ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt">&nbsp; </span><span>result to come</span></p>
+<p>We remove all the assumptions with key 'x'.</p>
+<p style="margin-left: 40px;"><span style>∅</span><span><span>, [τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt"> </span><span style>=</span><span>Int</span>]&nbsp;</span><span style> ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt">&nbsp; </span><span>result to come</span></p>
+<p><span>The Rule of Abstraction tells us, in this case, that the resulting type is </span><span>(</span><span>Int</span><span style>→</span><span>τ</span><span>) </span></p>
+<p><span>i.e. </span></p>
+<p style="margin-left: 40px;"><span style>∅</span><span><span>, [τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt"> </span><span style>=</span><span>Int</span>]&nbsp;</span><span style> ⊢</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>(</span><span>Int</span><span style>→</span><span>τ</span><span>)</span></p>
+<p>We need to solve</p>
+<p style="margin-left: 40px;"><span><span>[τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt"> </span><span style>=</span><span>Int</span>,&nbsp;</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>(</span><span>Int</span><span style>→</span><span>τ</span><span>) ] for the expression </span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span>(</span><span>Int</span><span style>→</span><span>τ</span><span>)</span></p>
+<p><span>Or to be more explicit about what we are solving for, We need to solve</span></p>
+<p style="margin-left: 40px;"><span><span>[τ</span><span style="font-size: 8.000000pt; font-family: 'CMSY8'; vertical-align: 5.000000pt"> </span><span style>=</span><span>Int</span>,&nbsp;</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span><span><span>t<sub>0</sub>= </span></span>(</span><span>Int</span><span style>→</span><span>τ</span><span>)</span><span>&nbsp; ] for </span><span>t<sub>0</sub></span></p>
+<p>'Solving' here means 'find a substitution under which the constraints come out to be true'. Clearly the substitution is</p>
+<p style="margin-left: 40px;"><span><span>[τ:</span><span>Int</span>,&nbsp;</span><span style="font-size: 8.000000pt; font-family: 'CMCSC10'; vertical-align: -2.000000pt"> </span><span><span><span>t<sub>0</sub>: </span></span>(</span><span>Int</span><span style>→</span><span>Int</span><span>)</span><span>&nbsp; ]</span></p>
+<p><span>So, </span></p>
+<p style="margin-left: 40px;"><span>λx:</span><span><span><span>Int</span></span>.</span><span style>x has type Int→Int</span></p>
+<h2>A reminder</h2>
+<p><strong>STLC (Simply Typed Lambda Calculus)</strong></p>
+<div style="margin-left: 40px;">
+<p>i) insists on annotation of the lambda variable in an abstraction. So, for example,&nbsp;λa:(I-&gt;I).(a 3) is well-formed, whereas&nbsp;λa.(a 3) is not well-formed<br>
+ii) has no type variables in the expression language. So, for example, STLC has&nbsp;no well-formed abstraction similar to&nbsp;λx:TypeVar1.x<br>
+iii) in our example STLC there are just two basic type constants I (for integer) and B (for boolean). Infinitely many atomic expressions in the expression language have type I (namely, 0,1,2,3... etc.)&nbsp;Two atomic expressions in the expression language have type B (namely, True, False).&nbsp;Infinitely many other expressions in the expression language have type I, and similarly for B, for example, an identity abstraction can be applied to an integer, say, 3, then the same identity abstraction can be applied to itself applied to 3, and so on (all these infinite applications will have type I)<br>
+iv) further type constants can be constructed from the two basic ones using the constructor '-&gt;', for example B-&gt;I, (I-&gt;I)-&gt;B, etc</p>
+</div>
+<p><iframe height="750" id="#editor" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/constraints01.jsexe/index.html" width="100%">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p>&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<h3><span style>To be continued</span></h3>
+</div>
+      
+  <nav id="book-navigation-718" class="book-navigation" role="navigation" aria-labelledby="book-label-718">
+    
+          <h2 class="visually-hidden" id="book-label-718">Book traversal links for Hindley-Milner II — Generating the Constraints</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/676" rel="prev" title="Go to previous page"><b>‹</b> Junior Hindley-Milner I</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/676" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/678" rel="next" title="Go to next page">Hindley-Milner III — Solving the Constraints <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/671" hreflang="en">Simply Typed Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/676" hreflang="en">Junior Hindley-Milner I</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--active-trail">
+        <a href="/node/677" hreflang="en">Hindley-Milner II — Generating the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/678" hreflang="en">Hindley-Milner III — Solving the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/715" hreflang="en">Hindley-Milner III Solving the Constraints II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/679" hreflang="en">Brief Bibliography on Algorithms and Code</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/680" hreflang="en">Polymorphism, Annotation, and Decidable Type Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/712" hreflang="en">Let Polymorphism and a Mini-ML Type System</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/723" hreflang="en">Polymorphic Lambda Calculus: System F</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/672" hreflang="en">Intuitionistic Propositional Logic</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/677","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"677"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

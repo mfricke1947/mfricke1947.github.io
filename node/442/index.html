@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="6/3/2012 Skills to be acquired in this tutorial: To become familiar with the new rules for predicate logic trees. Tutorial: Introduction There are further rules for predicate logic trees (which we will come to shortly)." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/442" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/442" />
+<link rel="shortlink" href="https://softoption.us:8888/node/442" />
+<link rel="prev" href="/node/435" />
+<link rel="up" href="/node/434" />
+<link rel="next" href="/node/450" />
+
+    <title>Tree Tutorial 4: Predicate Logic Trees | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/434">Tree Tutorials [Propositional, Predicate, Identity, and Modal Logic Trees—Default Syntax]</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 4: Predicate Logic Trees</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="442" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/30" hreflang="en">default</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 class="rteright">6/3/2012</h6>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To become familiar with the new rules for predicate logic trees.</p>
+<h3>Tutorial:</h3>
+<h4>Introduction</h4>
+<p>There are further rules for predicate logic trees (which we will come to shortly).</p>
+<p>There is one crucial feature or property that predicate logic trees have. One of the rules, Universal Decomposition, can be used over and over again (with our conventions, it is not ticked and not made 'dead'). This means that it is possible for a branch (and a tree) to grow indefinitely. And, in turn, this has repercussions on testing for validity, satisfiability etc. If a tree is closed, the root formulas are not satisfiable (so, if the root formulas are the premises of an argument, and the negation of its conclusion, that argument is valid). But, if the tree has an open branch, matters become much more subtle. If that branch is complete, and does not contain a Universally quantified formula, the root formulas are satisfiable. But if that branch is close to complete, and does contain a Universally quantified formula, it may be possible to judge that the branch will never close or, alternatively, it may happen that the branch can be grown and grown without it becoming clear whether it will close or not.</p>
+<p>With propositional logic trees, the tree method was 'decidable'. It was a mechanical method, that would yield, in a finite number of steps, answers to questions of satisfiability and validity.</p>
+<p>With predicate logic trees, the tree method is undecidable. If some formulas are unsatisfiable, a tree for them will close (though, and this is important, it may be arbitrarily large). If some formulas are satisfiable, a tree for them may produce an open branch which cannot be extended, or it may produce an open branch which can be extended indefinitely. Turning this around, if you are growing a tree and it is getting bigger and bigger, you don't know whether to keep growing it in the hope that it will close shortly or to give up and conclude that the root formulas are unsatisfiable. You can be in a position where you don't know whether or not the root formulas are satisfiable</p>
+<p>There is no mechanical method.</p>
+<h4>The Predicate Logic Rules</h4>
+<p>With the propositional rules, the rules themselves were motivated by truth-tables and considered what was needed to 'picture' the truth of the formula being extended. It is possible to use a similar approach for predicate logic (although, of course, there are no truth tables in predicate logic).</p>
+<p>For an existentially quantified formula, say ∃xF(x), to be true, something needs to be F, perhaps 'a' is F ie F(a) is true. But we need to be careful here. And what we need to be careful of is whether the individual, or constant that represents it, is already in the tree or in the context. If it is already known that, for example G(a), or ~F(a) we cannot go from {G(a),~F(a), ∃xF(x)} (which is perfectly good and satisfiable) to {G(a),~F(a), F(a)} which is not satisfiable (and also tells us that there is some one thing which is both G and F, which is a piece of information not in the original formulas). To avoid this problem, we need to use a completely new constant. Thus</p>
+<blockquote><p><img alt height="47" src="/files/images/existential.jpg" width="168" loading="lazy"></p>
+</blockquote>
+<p>where 'a' is a constant <em>new to the branch</em>. With the software, you do not have to choose the new constant, the computer will do it for you. For example, if 'a' occurred, the software would choose something else. Thus</p>
+<blockquote><p><img alt src="/files/images/defaultExNew.jpg" style="width: 168px; height: 47px; "></p>
+</blockquote>
+<p>Here the software has chosen 'b', to avoid the 'a' which already occurs. The software will do this for you but, of course, if you are drawing trees yourself, on a piece of paper, you need to choose a new constant when using this rule.</p>
+<p>For a universally quantified formula, say ∀xF(x), to be true, everything needs to be F (ie F(a), F(b), F(c), ... etc., continued indefinitely, all need to be true). We cannot put infinitely many formulas into the tree at once. Instead, we put just one of them in, but allow the rule to the used again, if needed, to put another one in, and so on. Here is the rule being used 3 times in a row.</p>
+<blockquote><p>One</p>
+<p><img alt height="62" src="/files/images/uniOne.jpg" width="166" loading="lazy"></p>
+<p>Two</p>
+<p><img alt height="62" src="/files/images/uniTwo.jpg" width="166" loading="lazy"></p>
+<p>Three</p>
+<p><img alt height="62" src="/files/images/uniThree.jpg" width="166" loading="lazy"></p>
+</blockquote>
+<p>Notice that the universal quantified formula is not dead, and not ticked, and this allows it to be used again and again.</p>
+<p>The User gets to choose which instantiating constant is used. And here the advice is: (first) use constants that are already in the branch. Remember: the goal is to close the branches, so you are hoping that the universal formula will give you a formula that will contradict what you have. For example,</p>
+<blockquote><p><img alt src="/files/images/defaultUniBefore.jpg" style="width: 168px; height: 47px; "></p>
+</blockquote>
+<p>If you choose 'b' or 'c' or 'd' as the instantiating constant, you are just wasting time and that strategy will not close the branch. You need to choose 'a'. Thus</p>
+<blockquote><p><img alt src="/files/images/defaultUniAfter.jpg" style="width: 164px; height: 63px; "></p>
+</blockquote>
+<p>At this point in the account of predicate trees, more can be said about whether open branches will close and the earlier remark 'it may be possible to judge that the branch will never close' . It can be proved about open branches that a) if all the formulas in it, except universally quantified formulas, that can be extended have been extended, b) that all the universally quantified formulas in it have been extended (ie instantiated) at least once (eg to a constant, say b, or to a closed term, say f(a)), and c) that all the universally quantified formulas in it have been extended (ie instantiated) for every constant or closed term that appear in that branch, that open branch will never close.</p>
+<p>This motivates an extension to the acccount of a 'complete open' branch. If (a), (b) and (c) above are met, the branch is both complete and open.</p>
+<p>Let us illustrate what this metatheorem and extended definition establish.</p>
+<p>The branch</p>
+<blockquote><p><img alt src="/files/images/defaultCompleteOpen1.jpg" style="width: 163px; height: 52px; "></p>
+</blockquote>
+<p>satisfies (a), (b), and (c) ((b) and (c) trivially because there are no universally quantified formulas in it). It is complete and open.</p>
+<p>The branch</p>
+<blockquote><p><img alt src="/files/images/defaultCompleteOpen2.jpg" style="width: 159px; height: 65px; "></p>
+</blockquote>
+<p>satisfies (a), but not (b), because there is a universally quantified formulas in it that has not been instantiated. It is NOT complete and open.</p>
+<p>The branch</p>
+<blockquote><p><img alt src="/files/images/defaultCompleteOpen3.jpg" style="width: 157px; height: 83px; "></p>
+</blockquote>
+<p>satisfies (a), (b), and (c). It is complete and open.</p>
+<p>The branch</p>
+<blockquote><p><img alt src="/files/images/defaultCompleteOpen4.jpg" style="width: 157px; height: 83px; "></p>
+</blockquote>
+<p>satisfies (a), (b), but not (c). The Universal Quantifier has been instantiated but not to every constant and closed term in the branch. It is NOT complete and open.</p>
+<p>The branch</p>
+<blockquote><p><img alt src="/files/images/defaultCompleteOpen5.jpg" style="width: 154px; height: 115px; "></p>
+</blockquote>
+<p>satisfies (a), (b),and (c). It is complete and open. [The instantiations to H(a) and H(c) are a waste, but the branch still satisfies the definition.]</p>
+<p>This extended definition of 'complete open branch' feeds in to the earlier results about trees</p>
+<ul>
+<li>if the tree is closed, the root formulas are not (simultaneously) satisfiable</li>
+<li>if a tree has a complete open branch the root formulas are (simultaneously) satisfiable</li>
+<li>if a tree is neither closed nor has a complete open branch, it is unknown, on the basis of that tree, whether or not the root formulas are (simultaneously) satisfiable.</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<p>There are further rules for the negations of quantified formulas, but these make a simple transformation into cases that are covered by the above two rules.</p>
+<p>The negation of an existential formula is extended</p>
+<blockquote><p><img alt src="/files/images/defaultNotExi.jpg" style="width: 153px; height: 46px; "></p>
+</blockquote>
+<p>ie 'not exists' becomes 'all not'.</p>
+<p>The negation of a universal formula is extended</p>
+<blockquote><p><img alt src="/files/images/defaultNotUni.jpg" style="width: 153px; height: 46px; "></p>
+</blockquote>
+<p>ie 'not all' becomes 'exists not'.</p>
+<h4>Strategy</h4>
+<p>The aim is to close branches (and thus trees). It is better for this to instantiate existential quantified formulas first, giving you constants, then instantiate universally quantified formulas using the constants already in the branch</p>
+<h4>Reading off the (refuting) Interpretation</h4>
+<p>In the propositional logic, we used an open branch, in a complete open tree, to generate an assignment of truth values that would satisfy the initial formulas of the tree. We ran up the open branch assigning atomic formulas True and negations of atomic formulas True also (ie assigning the atomic subformula of a negation False). So, for example, if the open branch contained {¬A,B,¬C} then the assignment we were looking for was {A=False, B=True, C=False}.</p>
+<p>This technique extends in a natural way to predicate logic. This time, we run up the open branch and i) any constant that appears there becomes an 'object' in the Universe, and ii) we make the extensions of the predicates in the branch exactly those require to make any atomic formulas True and negations of atomic formulas True also (ie making the atomic subformula of a negation False).</p>
+<p>An example will clarify this. Take the argument</p>
+<blockquote><p>∀x(A(x)→B(x)), ∀x(~A(x)→C(x))∴ ∀x(~B(x)→~C(x))</p>
+</blockquote>
+<p>It has the tree</p>
+<p>&nbsp;</p>
+<blockquote><p><img alt src="/files/images//defaultInterpret1.jpg" style="width: 379px; height: 241px; "></p>
+</blockquote>
+<p>and this has an open branch, which we can identify</p>
+<blockquote><p><img alt src="/files/images/defaultBranchInterpret1.jpg" style="width: 379px; height: 241px; "></p>
+</blockquote>
+<p>In this open branch, there appears one constant, namely the constant 'a'. So the interpretation we are looking for starts</p>
+<blockquote><p>Universe = {a}</p>
+</blockquote>
+<p>Then we need to look for the atomic formulas and negations of atomic formulas</p>
+<blockquote><p><img alt src="/files/images/defaultAtomicInterpret1.jpg" style="width: 379px; height: 241px; "></p>
+</blockquote>
+<p>And we need to get these so that A(a) is False, B(a) is False, and C(a) is True. So what we want is</p>
+<blockquote><p>Universe = {a}<br>
+A = {}<br>
+B = {}<br>
+C = {a}</p>
+</blockquote>
+<p>Under this Interpretation, all the initial formulas will be true (indeed, all the formulas in the branch will be true). Let us check for the initial formulas.</p>
+<blockquote><p>∀x(A(x)→B(x)) is true because nothing is A so the antecedent of the conditional ie A(x) is always false</p>
+<p>∀x(~A(x)→C(x)) is true (~A(a)→C(a)) is true and the object 'a' is the only thing in the Universe so 'all of them are'</p>
+<p>~∀x(~B(x)→~C(x)) is true because this is the same as ∃x(~B(x)&amp;C(x)) and (~B(a)&amp;C(a)) is true</p>
+</blockquote>
+<p>Now, this tree was a tree for the argument (∀x)(A(x)→B(x)), (∀x)(~A(x)→C(x))∴ (∀x)(~B(x)→~C(x)) (we wrote the premises and the negation of the conclusion to start the tree). So this argument is invalid and the Interpretation</p>
+<blockquote><p>Universe = {a}<br>
+A = {}<br>
+B = {}<br>
+C = {a}</p>
+</blockquote>
+<p>is a 'refuting' Interpretation. Under it, the premises come out to be true and the conclusion false.</p>
+<h4>A small difference in syntax to the Howson book.</h4>
+<p>Howson [1997] uses the letters 'a..w' as constants and 'x,y,z' as variables. (Then he puts subscripts on them to get infinitely many, which is what you want for proving various metatheorems.) Just to fit in with other running programs on this site, we have the smallest of changes to this. We'll use 'a..v' as constants, and 'w..z' as variables (and you can have subscripts, if you wish) y<sub>3</sub> is a variable and c<sub>1</sub> a constant. This difference can make a difference in limit cases; for example, our software will read w(x) as being ill-formed, because it is trying to apply a variable to a variable, whereas as Howson-style could see it as making sense and being the application of the function w to the argument x.</p>
+<p>From a software point of view, subscripts bring in their own problems. Usually subscripts (and superscripts) are 'visual fakes'-- they are ordinary characters made a little smaller then moved down or up. (That is what was done in the previous paragraph.] &nbsp;But the logic software is unaware of this (just as it is unaware of your using italic, or bold, or large fonts). The logic software needs real subscripts. Here they are ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ . Whenever the context suggests that subscripts might help, we'll supply them in a palette.</p>
+<hr>
+<h2>Exercises to accompany Tree Tutorial 4</h2>
+<h3>Exercise 1 (of 3):</h3>
+<p>Determine whether these arguments are valid (ie try to produce closed trees for them)</p>
+<blockquote><p>a) ∀x(F(x)→G(x)), ∃x~G(x) ∴ ∃x~F(x)<br>
+b) ∀x(F(x)→∀yG(y)), F(a) ∴ ∀xG(x)<br>
+c) ∀x(A(x)→B(x)), ∀x(~A(x)→C(x))∴ ∀x(~B(x)→~C(x))<br>
+d) ∃xF(x),∀x(~G(x)→~F(x)),∀xM(x) ∴ ∃xG(x)&amp;∃xM(x)</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/Tutorial4a.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!-- <p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><param name="parser" value="howson" /><param name="tree0" value="∀x(F(x)→G(x)), ∃x¬G(x) ∴ ∃x¬F(x)" /><param name="tree1" value="∀x(F(x)→∀yG(y)), F(a) ∴ ∀xG(x)" /><param name="tree2" value="∀x(A(x)→B(x)), ∀x(¬A(x)→C(x))∴ ∀x(¬B(x)→¬C(x))" /><param name="tree3" value="∃xF(x),∀x(¬G(x)→¬F(x)),∀xM(x) ∴ ∃xG(x)∧∃xM(x)" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p> --><p>Answers: Yes, Yes</p>
+<h3>Exercise 2 (of 3):</h3>
+<p>Determine whether these arguments are valid (ie try to produce closed trees for them)</p>
+<blockquote><p>e) ∃x(F(x)&amp;∀y(G(y)→L(x,y))), ∀x(F(x)→∀y(M(y)→~L(x,y))) ∴ ∀x(G(x)→~M(x))<br>
+f) ∀x(A(x)→F(x)), ∃xF(x)→~∃yG(y) ∴ ∀x(∃yA(y)→~G(x))<br>
+g) ∃x(A(x)&amp;~B(x)), ∃x(A(x)&amp;~C(x)),∃x(~B(x)&amp;D(x))∴ ∃x(A(x)&amp;(~B(x)&amp;D(x)))</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/Tutorial4b.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><param name="parser" value="howson" /><param name="tree0" value="∃x(F(x)∧∀y(G(y)→L(x,y))), ∀x(F(x)→∀y(M(y)→¬L(x,y))) ∴ ∀x(G(x)→¬M(x))" /><param name="tree1" value="∀x(A(x)→F(x)),∃xF(x)→¬∃yG(y) ∴ ∀x(∃yA(y)→¬G(x))" /><param name="tree2" value="∃x(A(x)∧¬B(x)), ∃x(A(x)∧¬C(x)),∃x(¬B(x)∧D(x))∴ ∃x(A(x)∧(¬B(x)∧D(x)))" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>--><p>Answers: Yes, Yes, Yes</p>
+<h3>Exercise 3 (of 3):</h3>
+<p>Determine whether these arguments are valid (ie try to produce closed trees for them)</p>
+<blockquote><p>h) ∀x~~F(x,x), ~∀xG(x)→∃yF(y,a)∴ ∃z(G(z)&amp;F(z,z))<br>
+i) ∃x(A(x)∨~B(x)), ∀x(A(x)&amp;~B(x)→ C(x)) ∴ ∃xC(x)<br>
+j) ∀x∃y(F(x)&amp;G(x,y))∴ ∃y∀x(F(x)&amp;G(x,y))</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/Tutorial4c.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><param name="parser" value="howson" /><param name="tree0" value="∀x¬¬F(x,x), ¬∀xG(x)→∃yF(y,a)∴ ∃z(G(z)∧F(z,z))" /><param name="tree1" value="∃x(A(x)∨¬B(x)), ∀x(A(x)∧¬B(x)→ C(x)) ∴  ∃xC(x)" /><param name="tree2" value="∀x∃y(F(x)∧G(x,y))∴ ∃y∀x(F(x)∧G(x,y))" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>--><p>Answers: Yes, Yes, No</p>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20" target="_blank">Deriver [default]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/treesStandAlone/CombinedTutorialsDefault.html . Then select the desired formula(s) and Start Tree off the Actions Menu. [If you find you need to set the Preferences (because you, or someone else, has been doing something totally different with Deriver on the computer you are using), set the parser to default.]</p>
+</div>
+      
+  <nav id="book-navigation-434" class="book-navigation" role="navigation" aria-labelledby="book-label-434">
+    
+          <h2 class="visually-hidden" id="book-label-434">Book traversal links for Tree Tutorial 4: Predicate Logic Trees</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/435" rel="prev" title="Go to previous page"><b>‹</b> Notation for Predicates</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/434" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/450" rel="next" title="Go to next page">Review of Tree Predicate Rules <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/458" hreflang="en">Preliminary [Pre-test]</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/436" hreflang="en">Tree Tutorial 1: Propositional Trees: Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/437" hreflang="en">Tree Tutorial 2: More Propositional Tree Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/452" hreflang="en">Review of Tree Propositional Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/440" hreflang="en">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/435" hreflang="en">Notation for Predicates</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/442" hreflang="en">Tree Tutorial 4: Predicate Logic Trees</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/450" hreflang="en">Review of Tree Predicate Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/443" hreflang="en">Tree Tutorial 5: Identity Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/444" hreflang="en">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/449" hreflang="en">Tree Tutorial 7: Type Labels, Sorts, and Signatures [&#039;Mixed Domains&#039;]</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/647" hreflang="en">Tree Tutorial 8 Modal Trees</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/442","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"442"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

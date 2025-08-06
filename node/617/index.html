@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="2013 Skill to be acquired: To understand the concepts of scope, free, bound. To meet substitution and the rule for removing a Universal Quantifier. Reading Bergmann[2004] The Logic Book Section 10.1." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/617" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/617" />
+<link rel="shortlink" href="https://softoption.us:8888/node/617" />
+<link rel="prev" href="/node/612" />
+<link rel="up" href="/node/602" />
+<link rel="next" href="/node/618" />
+
+    <title>Tutorial 18: Universal Elimination | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/561">Easy Deriver [Sentential and Predicate Logic—Bergmann Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/602">Predicate Logic: 15 Tutorials</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 18: Universal Elimination</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="617" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/21" hreflang="en">bergmann</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>2013</p>
+<h3>Skill to be acquired:</h3>
+<p>To understand the concepts of scope, free, bound. To meet substitution and the rule for removing a Universal Quantifier.</p>
+<h3>Reading</h3>
+<p>Bergmann[2004] The Logic Book Section 10.1.</p>
+<h3>The Tutorial</h3>
+<p>There is a new rule of derivation-- Universal Elimination (often called 'Universal Instantiation')-- which, roughly speaking, allows you to do the following... if a formula has a Universal Quantifier as its main connective you may remove the Universal Quantifier and have as a new line the body of the formula with a constant term substituted in for all free occurrences of the variable of quantification within the scope. For example,</p>
+<p><img alt="UE" src="/files/images/UE.jpg" style="width: 425px; height: 228px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					(&forall;x)Fx</td>
+<td>
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					Fa</td>
+<td>
+					5 UE</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					(&forall;x)Fx</td>
+<td>
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					Fb</td>
+<td>
+					5 UE</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					(&forall;x)Fx</td>
+<td>
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					Fc</td>
+<td>
+					5 UE</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p> -->
+<p>&nbsp;</p>
+<p>are all proof fragments illustrating Universal Elimination.</p>
+<p>Notice the form of a formula with a quantifier as its main connective. Examples of such formulas are (∀x)(Fx), (∃x)(Fx&amp;Gx), (∀x)(Fx⊃Gx). In each case there is the quantifier with its variable, enclosed within brackets, and this is followed by a formula known as the<em> scope</em> of the quantifier. In our examples, (Fx) is the scope of the first one, (Fx&amp;Gx) the scope of the second, and (Fx⊃Gx) the scope of the third.</p>
+<p>More formally...</p>
+<blockquote><p>If &lt;scope&gt; is any well-formed formula then (∀&lt;variable&gt;)&lt;scope&gt; is the universal quantification of &lt;scope&gt; using &lt;variable&gt; and (∃&lt;variable&gt;)&lt;scope&gt; is the existential quantification of &lt;scope&gt; using &lt;variable&gt; . In each case the &lt;scope&gt; is the scope of the quantification.</p>
+</blockquote>
+<p>The notion of the scope of a quantifier is important; and it is good practice to enclose the scope in brackets so as to display exactly what it is. For example, the scope of the formula (∀x)Fx⊃Gx is Fx not (Fx⊃Gx); the formula as a whole will be read as ((∀x)(Fx))⊃Gx; such a formula is better written as (∀x)(Fx)⊃Gx.</p>
+<p>A quantifier <em>binds</em> all occurrences of its &lt;variable&gt; in its scope. An occurrence of a variable which is not <em>bound</em> is called <em>free</em>. So, in (∀x)(Fx)⊃Gx the occurrence of x immediately after F is bound whereas the occurrence of x immediately after G is free; but in the formula (∀x)(Fx⊃Gx) both occurrences are bound.</p>
+<p>Substitutions are on occasions made of one term for free occurrences of another-- in Universal Elimination, for example.The notation &lt;wff&gt;[&lt;newterm&gt;/&lt;oldterm&gt;] means the formula &lt;wff&gt; with &lt;newterm&gt; substituted for the free occurrences of &lt;oldterm&gt; throughout. So, for example, (Fx⊃Gx)[a/x] is (Fa⊃Ga).</p>
+<h4>The Rule of Universal Elimination UE</h4>
+<p>If a derivation contains a line of the form</p>
+<blockquote><p>n (∀&lt;variable&gt;)&lt;scope&gt; &lt;any justification&gt;</p>
+</blockquote>
+<p>then a line of the form</p>
+<blockquote><p>&lt;&lt;scope&gt;[&lt;constant&gt;/&lt;variable&gt;]&gt; 'n UE'</p>
+</blockquote>
+<p>may be added to the derivation. Remember, in this system, the constants are the lower case letters {a,b,c...,m}.</p>
+<h4>A note of relevance to more advanced work: terms, atomic and compound terms, constant or closed terms</h4>
+<p>In logic, the word 'term' roughly means name. And thus far we have met two kinds of term: the constants {a,b,c...,m} and the variables {n,o,p...,z}. The constants have been used to symbolize proper names like 'Arthur', 'Beryl' and so on. The variables have been used to construct the quantified formulas such as (∀x)Fx.</p>
+<p>The rule Universal Elimination permits the dropping of a Universal Quantifier and moving to the scope with a constant substituted throughout.</p>
+<p>However, more advanced logical systems permit more advanced kinds of terms. Consider the English phrase 'the father of Arthur'. This is a perfectly good name, and more advanced systems would allow it to be symbolized perhaps by 'f(a)'. In such systems, the ordinary constants {a,b,c...,m} and variables {n,o,p...,z} are considered to be <em>atomic</em> terms. And terms like 'f(a)', 'f(b)', 'f(f(a))' , etc. are <em>compound </em>or<em> functional </em> terms. Some compound terms have variables in them, eg 'f(x)' (which means 'the father of x') and others do not, eg 'f(a)'.</p>
+<p>The terms, atomic or compound, which do not have variables in them are called <em>closed</em> terms.</p>
+<p>The rule of Universal Elimination, in more advanced systems, actually permits the substitution of any closed term as an instantiation. For example, it permits</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">(∀x)Fx</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">Ff(a)</td>
+<td>5 UE</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>(which might represent a formal proof of the English inference 'Everything is friendly; therefore, The father of Arthur is friendly'.)</p>
+<p>We will meet this in later, more advanced, Notes on functional terms and identity; these Notes are supplementary to this course.</p>
+<hr>
+<h2>Exercise to accompany Predicate Tutorial 8</h2>
+<h3>Exercise 1 (of 3)</h3>
+<p>Identify the scopes of the following formulas</p>
+<p>&nbsp;</p>
+<blockquote><p>a) (∀x)(Fx)</p></blockquote>
+<blockquote><p>b) (∀x)(Fx⊃Gx)</p></blockquote>
+<blockquote><p>c) (∀x)(Fx)⊃Gx</p></blockquote>
+<blockquote><p>d) (∃x)(Fx)&amp;Gx</p></blockquote>
+<blockquote><p>e) (∃x)(Fx&amp;Gx)</p></blockquote>
+<blockquote><p>f) (∀y)(Hy⊃(∃x)(Fx&amp;Gx))</p></blockquote>
+<blockquote><p>g) (∀y)((∀x)((∀z)(Hy&amp;(Fz&amp;Gx))))</p></blockquote>
+<p>&nbsp;</p>
+<p>ANSWERS</p>
+<p>a) (Fx)</p>
+<p>b) (Fx⊃Gx)</p>
+<p>c) This is a bit of a trick question, sorry. (∀x)(Fx)⊃Gx has as its main connective the ⊃ so the formula as a whole is not a quantified formula and does not have a scope. However, if our interest is with the quantified formula (∀x)(Fx) which is a subformula of (∀x)(Fx)⊃Gx then it has scope (Fx).</p>
+<p>d) This also is a trick. (∃x)(Fx)&amp;Gx has as its main connective the &amp; so the formula as a whole is not a quantified formula and does not have a scope. However, if our interest is with the quantified formula (∃x)(Fx) which is a subformula of (∃x)(Fx)&amp;Gx then it has scope (Fx).</p>
+<p>e) (Fx&amp;Gx)</p>
+<p>f) (Hy⊃(∃x)(Fx&amp;Gx))</p>
+<p>g) ((∀x)((∀z)(Hy&amp;(Fz&amp;Gx))))</p>
+<p>&nbsp;</p>
+<h3>Exercise 2 (of 3)</h3>
+<p>Identify the free and bound occurrences of the variable x in following formulas</p>
+<p>&nbsp;</p>
+<blockquote><p>a) (∀x)(Fx)</p></blockquote>
+<blockquote><p>b) (Fx⊃Gx)</p></blockquote>
+<blockquote><p>c) Fx⊃ (∀x)(Gx)</p></blockquote>
+<blockquote><p>d) (∀x)(Fx)⊃Gx</p></blockquote>
+<blockquote><p>e) (∃x)(Fx)&amp;Gx</p></blockquote>
+<blockquote><p>f) (∃x)(Fx&amp;Gx)</p></blockquote>
+<p>&nbsp;</p>
+<p>ANSWERS</p>
+<p>a) (∀x)(Fxbound)</p>
+<p>b) (Fxfree⊃Gxfree)</p>
+<p>c) Fxfree⊃ (∀x)(Gxbound)</p>
+<p>d) (∀x)(Fxbound)⊃Gxfree</p>
+<p>e) (∃x)(Fxbound)&amp;Gxfree</p>
+<p>f) (∃x)(Fxbound&amp;Gxbound)</p>
+<p>&nbsp;</p>
+<h3>Exercise 3 (of 3)</h3>
+<p><iframe height="540" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann18c.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(∀x) (Fx) ∴ Fa" />
+<param name="proof1" value="(∀x) (Fx) ∴ Fa∧Fb" />
+<param name="proof2" value="Fc,(∀x) (Fx⊃Gx) ∴ Gc" />
+<param name="proof3" value="Fa,(∀x) (Fx⊃Gx), (∀x) (Gx⊃Hx) ∴Ha" />
+<param name="proof4" value="(∀x) (Fx⊃Gx), (∀x) (Gx⊃Hx) ∴(Fa⊃Ha)" />
+<param name="rewrites" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>Derive the following valid arguments</p>
+<blockquote><p>(a) (∀x) (Fx) ∴ Fa<br>
+(b) (∀x) (Fx) ∴ Fa&amp;Fb<br>
+(c) Fc,(∀x) (Fx⊃Gx) ∴ Gc<br>
+(d) Fa,(∀x) (Fx⊃Gx), (∀x) (Gx⊃Hx) ∴Ha<br>
+(e) (∀x) (Fx⊃Gx), (∀x) (Gx⊃Hx) ∴(Fa⊃Ha)</p>
+</blockquote>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://18.189.145.40:8080/deriver20bergmann/" target="_blank">Deriver[Bergmann]</a>&nbsp;&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/easyDeriver/CombinedExercisesEasyDBergmann.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You may need to set some Preferences for this.</p>
+<ul>
+<li>you can check that the parser is set to bergmann.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-561" class="book-navigation" role="navigation" aria-labelledby="book-label-561">
+    
+          <h2 class="visually-hidden" id="book-label-561">Book traversal links for Tutorial 18: Universal Elimination</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/612" rel="prev" title="Go to previous page"><b>‹</b> Help with the semantics of free variables</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/602" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/618" rel="next" title="Go to next page">Tutorial 19: Universal Introduction <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/562" hreflang="en">Sentential Logic: 10 Tutorials</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/602" hreflang="en">Predicate Logic: 15 Tutorials</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/603" hreflang="en">Tutorial 11: Sketch of the second part of the course, and symbolizing sentences using predicate logic.</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/604" hreflang="en">Tutorial 12: Symbolizing sentences using predicate logic (continued)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/605" hreflang="en">Review of New Material</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/606" hreflang="en">Tutorial 13: An Introduction to Truth in Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/608" hreflang="en">Tutorial 14: Some Terminology for the Semantics of Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/609" hreflang="en">Tutorial 15: Elementary derivations in predicate logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/610" hreflang="en">Tutorial 16: Symbolization using the quantifiers</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/611" hreflang="en">Tutorial 17: The semantics of quantifiers</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/617" hreflang="en">Tutorial 18: Universal Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/618" hreflang="en">Tutorial 19: Universal Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/619" hreflang="en">Tutorial 20: Existential Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/620" hreflang="en">Tutorial 21: Existential Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/622" hreflang="en">Tutorial 22: Symbolizing Relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/623" hreflang="en">Symbolization Review</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/624" hreflang="en">Tutorial 23: The semantics of relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/625" hreflang="en">Tutorial 24: The restrictions on the quantificational rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/626" hreflang="en">Tutorial 25 ...</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/632" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/709" hreflang="en">Exercises for Easy Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/617","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"617"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

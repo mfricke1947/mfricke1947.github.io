@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="12/30/20 Skills to be acquired in this tutorial: To learn about functional terms and two new Rules of Inference II (Identity Introduction) and IE (Identity Elimination). Why this is useful: Reasoning with identity is vital for mathematics, philosophy, and many other areas." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/172" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/172" />
+<link rel="shortlink" href="https://softoption.us:8888/node/172" />
+<link rel="prev" href="/node/187" />
+<link rel="up" href="/node/170" />
+<link rel="next" href="/node/188" />
+
+    <title>Tutorial 2 Identity: Functional Terms and Rules of Inference | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/170">Deriver [Functional Terms, Identity, First Order Theories, Set Theory—Gentzen Syntax]</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 2 Identity: Functional Terms and Rules of Inference</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="172" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/19" hreflang="en">gentzen</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">12/30/20</h6>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To learn about functional terms and two new Rules of Inference II (Identity Introduction) and IE (Identity Elimination).</p>
+<h3>Why this is useful:</h3>
+<p>Reasoning with identity is vital for mathematics, philosophy, and many other areas.</p>
+<h3>The Tutorial:</h3>
+<h4>An aside on functions and some universal abilities of human beings</h4>
+<p>Consider the statement that Allison’s only brother’s wife’s only sister is her very best friend. There is barely a person on Earth who does not understand what this means. Most everyone also knows full well what it is for the assertion to be true.</p>
+<p>The example is interesting because it illustrates instantiation of the use and understanding of high level concepts which seem to be universal. These include partial functions, function application or compositions, constructions, types, and the distinction between a construction and that which the construction constructs.&nbsp;</p>
+<p>Being an only brother, wife, only sister, etc. are all partial functions. Functions carry one thing to another, and partial functions are functions which might not defined everywhere. Being a only brother, wife, only sister, etc. are partial functions with types-- they are defined on humans (or, perhaps, animals) and definitely not on cars or tables or trees.&nbsp;</p>
+<p>'Construction' is a term coined by Pavel Tichy ([1986]). It means 'way of arriving at, usually by means of functions and function abstractions, compositions and applications', so the expression 'Allison only brother’s wife’s only sister' refers to a construction. Further, suppose that all the various partial functions are properly defined, with suitable uniqueness for the arguments,&nbsp; so that the construction via the (only) brother function etc. picks someone, say Flora, and, supposing the assertion to be true, the other construction, via the very best friend partial function, also constructs Flora; we are all very well aware that the two constructions and that which they construct, Flora, are three different things. [Many of us would also realize, with reflection, that there is universal widespread systematic ambiguity between constructions and that which they construct. But that is another story, not entered into here.] So,</p>
+<blockquote><p>Allison brother’s wife’s sister is a construction, and Flora is what it constructs.</p>
+<p>[Allison's] very best friend is a construction, and Flora is what it constructs.</p>
+</blockquote>
+<p>And what Allison’s brother’s wife’s sister is her very best friend is telling us is that the two different constructions construct the same thing (and notice, in particular, that it is not telling us that Flora is Flora).</p>
+<h4><strong>Back to the main theme</strong></h4>
+<p>The word 'terms' in logic means 'names' and thus far we have met two kinds of terms: constants (or proper names), and variables.</p>
+<p>These are not the only names there are. In English consider 'the father of Betty' -- now, this is not a statement, it does not say something true or false, rather it is a construction which names an individual. It takes Betty and what we might call the 'father of' function and uses the two of those to name an individual. Similarly in mathematics, the expression 7 + 2 does not assert something true or false, rather it is a construction which names a number (which also happens to have the name 9).</p>
+<p>The logic we are studying, so called 'First order logic', can accommodate these fancy terms, and it does so by means of 'functional terms'.</p>
+<p>Here is a characterization of our syntax for functional terms</p>
+<ul>
+<li>any constant is a functional term.</li>
+<li>any lower case letter followed by ( followed by any number of functional terms followed by ) is a functional term.</li>
+<li>and these are all the functional terms there are.</li>
+</ul>
+<p>For example, a, b, c, f(a), g(b), g(ac), h(g(c)b) ... are all functional terms.</p>
+<p>To symbolize, say,</p>
+<blockquote><p>'The father of Betty is kind'</p>
+</blockquote>
+<p>we choose, say, f(x) to represent the 'father of x' function, b to represent Betty, and Kx to represent the predicate 'x is kind' and the whole lot becomes:</p>
+<blockquote><p>Kf(b)</p>
+</blockquote>
+<p>This same process is extended to arguments. So the argument</p>
+<blockquote><p>Everything is kind.<br>
+Therefore,<br>
+Betty's father is kind.</p>
+</blockquote>
+<p>could be</p>
+<blockquote><p>(∀x)Kx ∴ Kf(b)</p>
+</blockquote>
+<p>And, of course, this is valid and the derivation is simple just using Universal Instantiation.</p>
+<p>Functional terms often appear in identities. For example</p>
+<blockquote><p>Allison’s brother’s wife’s sister is her very best friend.</p>
+</blockquote>
+<p>might be symbolized</p>
+<blockquote><p>s(w(b(a)))=f(a)</p>
+<p>where a=Allison, b(x)= is the brother of x, s(x)= is the sister of x, w(x)= is the wife of x, f(x)= is the very best friend of x,</p>
+</blockquote>
+<p>Functional terms have an 'arity', which, roughly, is the number of arguments they apply to. Remember with predicates you can have one place predicates like Fx, and two place predicates, or relations, like Txy (and three place...). So too with functional terms. The 'father of' function is of arity one-- it expects one term as an argument. In mathematics there are plenty of functions of higher arity. For example, the plus function usually expects two arguments, so 'plus x y' might be represented p(xy).</p>
+<p>Actually, there is another small issue that comes up here. The way we write functional terms is to write the function first, followed by the arguments. In math, a fair few functions are 'infix', that is to say they are written between their arguments instead of before them-- mathematicians generally write (1 + 2) not +(1 2).</p>
+<p>[For your information, Deriver can be configured to do formal arithmetic (which is too advanced for us just at the moment) and if so configured it is familiar with the following conventions:-</p>
+<blockquote><p>It knows about + ('plus') and . (times) and ' (successor of), and 0,1, 2. + and . are infix and successor is postfix (it comes after its argument) and 0,1, 2 are just the constants 0, 1, 2. 'successor of' just means the number plus one (so the successor of 3 is 4 etc.) Deriver can read an expression like the following K(0+0') and what this says is that '0 plus the successor of 0 has the property K'.</p>
+</blockquote>
+<p>None of these extended capabilities are of immediate interest to us.]</p>
+<p>Our Predicate Logic is also extended by having two new rules, one for introducing and the other eliminating identity. In Deriver, you will find these rules under the Advanced Menu.</p>
+<h4><strong>The Identity Introduction rule, labeled '=I',</strong></h4>
+<p>allows you to bring in</p>
+<blockquote><p>&lt;term&gt;=&lt;same term&gt;</p>
+</blockquote>
+<p>for any term that you like.</p>
+<p>So, to give several examples, you can have</p>
+<blockquote><p>a=a<br>
+f(hj)=f(hj)<br>
+g(b(c))=g(b(c))</p>
+</blockquote>
+<p>all justified by the rule =I.</p>
+<h4><strong>The Identity Elimination rule, labeled '=E',</strong></h4>
+<p>is the one that allows you to substitute identical things, one for another. And you use the elimination rule with one identity, say s=t, and one other formula, say F-- you are allowed to substitute chosen occurrences of s in F with t (and chosen occurrences of t in F with s). Often the formula F is itself a statement of identity-- perhaps one formula is a=b and the other b=c; in these cases there are lots of opportunities for substituting. Here are several examples (lines 4,5,6, and 8).</p>
+<p><img alt="Identity" src="/files/images/IdentityNew.jpg" style="border-width: 2px; border-style: solid; margin: 5px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0" style="table-layout:fixed;">
+<tbody>
+<tr>
+<td style="width: 15px;" width="15px">
+					1</td>
+<td style="background-color: rgb(255,255,255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px">
+					Fab</td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					2</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					a=b</td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					3</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					<u>a=c</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					4</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					Faa</td>
+<td>
+					1,2 IE</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					5</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					Fbb</td>
+<td>
+					1,2 IE</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					6</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					c=b</td>
+<td>
+					2,3 IE</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					7</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					c=c</td>
+<td>
+					II</td>
+</tr>
+<tr>
+<td style="width: 15px">
+					8</td>
+<td style="background-color: rgb(255,255,255); width: 1px">
+					&nbsp;</td>
+<td style="background-color: rgb(0,0,0); width: 2px">
+					&nbsp;</td>
+<td style="width: 349px">
+					b=c</td>
+<td>
+					6,7 IE</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>In one strict form of the rule, substitutions are permitted only within atomic formulas (or their negations). But this can lead to long derivations, with taking a compound formula apart, making a substitution, then putting it back together again.</p>
+<p>To simplify issues here we permit substitutions into compound formulas, so, for example a=b can be used to substitute into (∀x)(Kx⊃Fa) .But now we have to go careful with free, bound, free for and capturing (which you are familiar with from Tutorial 24 in Easy Deriver&nbsp;<a href="https://softoption.us/node/541" target="_blank">https://softoption.us/node/541</a>). So, there is one restriction. No variable that occurs in the terms of the identity, s or t, say, can be bound in the &lt;formula&gt; you are substituting into. So, with f(x)=g(y,z) and (∀m)(Ff(x)m)∧(∃z)(g(y,z)=a) you are not allowed to substitute because the variable z occurs in the identity and is bound in the formula.</p>
+<hr style="height: 2px; width: 100%">
+<p>&nbsp;</p>
+<h2>Exercise to accompany Identity Tutorial 2 .</h2>
+<h3>Exercise 1(of 3)</h3>
+<p>Formalize and then derive the following valid argument.</p>
+<blockquote><p>a=Ann<br>
+f(x)= father of X<br>
+Px= X is a friendly person</p>
+<p>Every friendly person's father is friendly.<br>
+Ann is a friendly person.<br>
+Therefore,<br>
+Ann's father is friendly.</p>
+</blockquote>
+<p>[Answer is (d) below]</p>
+<h3>Exercise 2(of 3)</h3>
+<p>Proofs</p>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD2a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="identity" value="true" />
+<param name="proof0" value="Gab, a=b ∴ Gaa∧Gbb" />
+<param name="proof1" value="a=b,b=c ∴ a=c∧c=a" />
+<param name="proof2" value="(∀x)Kx ∴ Kf(b)" />
+<param name="proof3" value="(∀x)(Fx⊃ Ff(x)),Fa ∴ Ff(a)" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Derive the following</p>
+<blockquote><p>a) Gab, a=b ∴ Gaa∧Gbb<br>
+b) a=b,b=c ∴ a=c∧c=a<br>
+c) (∀x)Kx ∴ Kf(b)<br>
+d) (∀x)(Fx⊃ Ff(x)),Fa ∴ Ff(a)</p></blockquote>
+<h3>Exercise 3(of 3)</h3>
+<p>Proofs</p>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD2b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><param name="identity" value="true" /><param name="proof0" value="∴ (∀x)(x=x)" /><param name="proof1" value="∴ (∀x)(∀y)((x=y)⊃(y=x))" /><param name="proof2" value="∴ (∀x)(∀y)(∀z)(((x=y)∧(y=z))⊃(x=z))" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>--><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Identity has some general properties, namely, i) everything is identical to itself, ii) if a = b, then b = a, and iii) if a=b and b=c,&nbsp;then a=c. These are known as reflexivity, symmetry, and transitivity, and they can be enshrined into three theorems (which you can prove).</p>
+<blockquote><p>Theorem 1<br>
+∴ (∀x)(x=x)<br>
+Theorem 2<br>
+∴ (∀x)(∀y)((x=y)⊃(y=x))<br>
+Theorem 3<br>
+∴ (∀x)(∀y)(∀z)(((x=y)∧(y=z))⊃(x=z))</p></blockquote>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20gentzen" target="_blank">Deriver [Gentzen]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/Deriver/CombinedTutorialsGentzen.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this.</p>
+<ul>
+<li>set <em>identity</em> to true (and that will give you the identity rules)</li>
+<li>set <em>firstOrder</em> to true (to get first order theories)</li>
+<li>and&nbsp; you can check that the parser is set to gentzen.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-170" class="book-navigation" role="navigation" aria-labelledby="book-label-170">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/188" hreflang="en">Help with the Identity Rules</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-170">Book traversal links for Tutorial 2 Identity: Functional Terms and Rules of Inference</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/187" rel="prev" title="Go to previous page"><b>‹</b> Help with Drawings for Identity</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/170" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/188" rel="next" title="Go to next page">Help with the Identity Rules <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/171" hreflang="en">Tutorial 1: Identity, Semantics and Symbolization</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/172" hreflang="en">Tutorial 2 Identity: Functional Terms and Rules of Inference</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/188" hreflang="en">Help with the Identity Rules</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/174" hreflang="en">Tutorial 3 Identity: Uniqueness, Definite Descriptions, Iota</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/175" hreflang="en">First Order Theories</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/192" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/710" hreflang="en">Doing Exercises in Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/172","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"172"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

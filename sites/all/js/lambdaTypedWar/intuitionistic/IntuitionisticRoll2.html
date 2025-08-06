@@ -1,0 +1,130 @@
+<!doctype html>
+
+
+
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+                                                              
+    <link type="text/css" rel="stylesheet" href="../LambdaTyped.css">
+                                           
+    <title>Intuitionistic Propositional Logic</title>
+                                            
+    <script type="text/javascript" language="javascript" src="../lambdatyped/lambdatyped.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  
+  <!-- 9/27/19 -->
+  <body>
+
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <script type="text/javascript" language="javascript">
+  
+   
+   var Parameters = {
+		   
+		   fParser: "default",
+		   fPropLevel: "true",
+		   fAdvancedMenu: "false",
+		   fIntuitionistic: "true",
+		   fOrdinaryDerivations: "false",
+		   fUseAbsurd: "false",
+		   
+		   fInputText: "<p>It is important that you try this one</p>"+
+		     "<p>∴ &nbsp;P &or; ~P </p>"+
+		           
+		     "<p>It is not provable. Try mimicking the proof from Standard Propositional " +
+		     "Logic. Your will be able to get to ~~(P &or; ~P) but then be unable to " +
+		     "remove the double negation. <em>Not all of the formulas below are provable in "+
+		     "Intuitionist Propositional Logic</em>. The provable ones without assumptions (i.e. " +
+		     "no formulas to the left of the  ∴ ) are logical truths. " +
+		     "The Wizard is not available (it has not been written yet). </p>" +
+		   
+
+
+		     " P∨Q,&nbsp;P→R,&nbsp;Q→R∴R<br>"+
+		   " (P&P)∨(Q&Q),&nbsp;P→R,&nbsp;Q→R∴R<br>"+
+		    " P∨Q ∴Q∨P<br>"+
+		    " (P→Q)&(R→D),&nbsp; P∨R ∴ Q∨D<br>"+
+
+		     " P∨(Q&∼Q)∴ P<br>"+
+		   "   P∨Q,&nbsp; Q→R ∴ ∼P→R<br>"+
+		    " ∼P&∼Q∴ ∼(P∨Q)<br>"+
+		    "  (P→Q)&(Q→P) ∴ P≡Q<br><br>"+
+
+		    " ∴ (∼P&∼Q)→∼(P∨Q)<br>"+
+		   " ∴ (P&(Q∨R))→((P&Q)∨(P&R))<br>"+
+		    " ∴ ((P∨Q)&(P∨R))→(P∨(Q&R))<br>"+
+		    " ∴ (P&(Q∨R))→((P&Q)∨(P&R))<br>"+
+		    " ∴ ((P∨Q)&(P∨R))→(P∨(Q&R))<br>"+
+		    " ∴ (∼P∨Q)→(P→Q)<br>"+
+
+		  
+		   " ∴ (P&P)≡P<br>"+
+		    " ∴ (P∨P)≡P<br>"+
+
+		    " ∴ P∨(Q∨R)≡(P∨Q)∨R<br>"+
+		   " ∴ P&(Q&R)≡(P&Q)&R<br>"+
+		    " ∴ P∨Q≡Q∨P<br>"+
+		    " ∴ P&Q≡Q&P<br>"+
+
+		   " ∴ ∼(P&Q)≡∼P∨∼Q<br>"+
+		   " ∴ ∼(P∨Q)≡∼P&∼Q<br>"+
+		    " ∴ P&(Q∨R)≡(P&Q)∨(P&R)<br>"+
+		    " ∴ P∨(Q&R)≡(P∨Q)&(P∨R)<br>"+
+		    " ∴ P≡∼∼P<br>"+
+
+		    " ∴ (P≡Q)≡(P→Q)&(Q→P)<br>"+
+		   " ∴ (P≡Q)≡(P&Q)∨(∼P&∼Q)<br>"+
+		    " ∴ (P→(Q→R))≡((P&Q)→R)<br>"+
+		    " ∴ P→Q≡∼P∨Q<br>"+
+		    " ∴ P→Q≡∼Q→∼P<br>",     
+
+
+
+		  
+		  
+		 };
+
+
+  </script>
+
+<div id="container">
+
+<h3>&nbsp;Intuitionistic Proofs</h3>
+
+<div id="menu"> </div>
+
+
+<div id="input"> </div>
+
+<div id="proof"> </div>
+
+<div id="journal" ></div>
+
+<div id="startButton" style="float:right; margin-right: 20px;"></div>  
+
+<div id="buttons"></div>  
+  
+ </div>
+  
+ </div>
+ 
+ 
+  </body>
+</html>

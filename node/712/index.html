@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="8/29/21 Introduction" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/712" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/712" />
+<link rel="shortlink" href="https://softoption.us:8888/node/712" />
+<link rel="prev" href="/node/680" />
+<link rel="up" href="/node/718" />
+<link rel="next" href="/node/714" />
+
+    <title>Let Polymorphism and a Mini-ML Type System | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/718">Lambda Calculus with Elementary Type Theory</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Let Polymorphism and a Mini-ML Type System</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="712" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">8/29/21</h6>
+<h2>Introduction</h2>
+<p>We wish to extend what we have beyond STLC to what is sometimes called a Mini-ML type system. Clarity will be needed here. Imagine for one moment the lambda calculus without types. The well formed expressions or formulas all have values. The word for this is that they are '<strong>terms</strong>'. They may or may not have a normal form, a terminating reduction etc., but they are terms. If types are added, they are to provide a '<strong>type</strong>' for the individual terms. They do not affect the values the terms have. They are a separate system. In a lambda calculus with types, there are expressions, or sub-expressions, for the types within the language. This means, for example, that there might be <strong>term-variables</strong> (variables whose values are terms) and <strong>type-variables</strong> (variables whose values are types).</p>
+<p>Here are some of&nbsp; the features of our Mini-ML:</p>
+<ul>
+<li>it allows <strong>Type Variables</strong> within the expression language. Syntactically, these will be strings starting with a lower-case letter e.g. "a", "b", "aTypeVariable". So, types now consist of four kinds of things:<br>
+<div style="margin-left: 40px;">type-variables,<br>
+	Integers (I),<br>
+	Booleans (B),<br>
+	and types constructed from other types using '-&gt;'.</div>
+</li>
+<li>there will be <strong>Type Schemes</strong>. Syntactically, a type scheme consists of a universal quantifier ∀ followed by a list of type variables followed by a type, in parentheses. As examples,<br>
+<div style="margin-left: 40px;">∀a (a-&gt;a)<br>
+	∀a,b (a-&gt;b)&nbsp;&nbsp;<br>
+	∀x (I)<br>
+	∀k (x-&gt;I)</div>
+<p>	are all type schemes. In the zero-case, where the list of type variables is empty, we just omit the quantifier and scoping parentheses, and count the type or scope-type itself as being a type scheme e.g.</p>
+<div style="margin-left: 40px;">∀a (a-&gt;a)<br>
+	(a-&gt;a)<br>
+	(I-&gt;b)<br>
+	&nbsp;B</div>
+<p>	are all type schemes. So <em>all Type expressions are Type Schemes, but not all&nbsp; Quantified Type Schemes, with a non-zero variable list, are Types (i.e plain type expressions)</em>. One consequence of this is that, there is only ever a single occurrence of a universal quantifier in a quantified type scheme and it can only occur on the 'outer level' of the expression. For example,</p>
+<div style="margin-left: 40px;">(a-&gt;∀a (a))</div>
+<p>	is not a type scheme because it does not start with a universal quantifier&nbsp;∀; it is also not a plain type because when '-&gt;' is used to construct a type both the left and right components have to be types but&nbsp;∀a (a) is not a type (it is a type scheme).</p></li>
+<li>Type-variables can have values which are type schemes (remember: all types are type schemes).</li>
+<li>annotation will be optional.&nbsp;The parser now will read lambda abstractions either with annotations or without annotations. Then the type inferencer will also be able to carry out its inferencing, to a definite result, with or without annotation. Annotation of lambda abstractions should be by plain types (not type schemes with a universal quantifier)</li>
+<li>there is going to be a new form of expression involving '<strong>let</strong> ... <strong>in</strong>'. That will be introduced later, and it will have its own form of annotation. It will permit annotation by a type scheme with a universal quantifier.</li>
+<li>annotation now will be annotation by type scheme (some with, some without, the universal quantifier). So, for example, all annotations from STLC still count as annotations (for all types are type schemes). But there are additional annotations namely those involving either type-variables, which can be used on lambdas, or the universal quantifier&nbsp;∀, which can be used only in the context of<strong> let ... in</strong>.</li>
+</ul>
+<div style="margin-left: 40px;">&nbsp;</div>
+<p><iframe height="600" id="#editorJHM" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/parseMiniML.jsexe/index.html" width="100%">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h2>Bound occurrences, Free occurrences, and Scope in Type Schemes</h2>
+<p>A quantified type scheme has a quantifier, a list of type-variables, and a type (which would usually contain type-variables) i.e. it has the following form</p>
+<p style="margin-left: 40px;">∀&lt;variable list&gt;&nbsp;(&lt;type&gt;)</p>
+<p>In this context, the type is often referred to as being the <strong>scope</strong> of the quantifier. Occurrences of variables within the scope are either <strong>bound</strong> or <strong>free</strong>.&nbsp;&nbsp;A <strong>bound</strong> occurrence&nbsp;of a variable&nbsp;is an&nbsp;occurrence where the variable is both the same as one of the variables of quantification in the variable list, and it occurs within the scope of the quantified type scheme. A <strong>free</strong> occurrence is any occurrence of a variable in the scope which is not bound. For example,</p>
+<p style="margin-left: 40px;">∀a,b ((<strong>a</strong>-&gt;c)-&gt;(d-&gt;<strong>a</strong>)) has two bound occurrences of a (in bold), no bound or free occurrences of b,<br>
+a single free occurrence of c, and a single free occurrence of d</p>
+<p>The type is analogous to the scope above, and variable occurrences in the type/scope would be free or bound, also as above. Any expression that has only bound variables in it (i.e. no free variables) is a <strong>closed</strong> expression.</p>
+<p>Here are some examples of expressions involving annotated lambda variables:-</p>
+<div style="margin-left: 40px;">
+<p>λx:∀a (B-&gt;a).y&nbsp; &nbsp; in this, x and y are term-variables, and a is a type-variable</p>
+<p>λx:∀x&nbsp;(B-&gt;x).x&nbsp; &nbsp; in this, the first and fourth occurrences of x are term-variables,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;and the second and third occurrences are&nbsp;type-variables. A typical<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;parser can parse and read this to a correct internal representation.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;It is not so easy for humans, though. Lambda abstractions, and<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;term-schemes are indifferent to the re-writing of bound variables.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;It is a lot smarter to present this formula in an equivalent form, say</p>
+<p>λx:∀a&nbsp;(B-&gt;a).x</p>
+</div>
+<h2>Instantiation and Generalization of Type Schemes</h2>
+<p>An <strong>instantiation</strong>, or <strong>specialization</strong>, of a scheme, is the removal of the quantifier and the type-variable list, and the simultaneous substitution of plain types (<em>not</em>&nbsp;quantified type schemes) for the bound variables. So, as examples,</p>
+<p style="margin-left: 40px;">∀a,b (a-&gt;b) has instantiations (B-&gt;I), (c-&gt;B), ((B-&gt;B)-&gt;B), etc. A new type-variable would be used, if the instantiation has type-variables in it (so 'c' is new).</p>
+<p style="margin-left: 40px;">∀x,y ((I-&gt;x)-&gt;x-&gt;b) has instantiations ((I-&gt;B)-&gt;B-&gt;b), ((I-&gt;I)-&gt;I-&gt;b), ((I-&gt;e)-&gt;e-&gt;b), etc.</p>
+<p style="margin-left: 40px;">There is a notation to show that a type is an instantiation, or specialization,&nbsp;of a type scheme (unfortunately it is not standard). We will use &lt;= . So, for example,</p>
+<p style="margin-left: 40px;">(B-&gt;I)&lt;= ∀a,b (a-&gt;b)</p>
+<p>The counterpart of specialization is <strong>generalization</strong>, and basically this is the relation the other way around. So,&nbsp;(B-&gt;I) has a generalization&nbsp;∀a,b (a-&gt;b), and this can be written</p>
+<p style="margin-left: 40px;">∀a,b (a-&gt;b) =&gt;&nbsp;(B-&gt;I)</p>
+<h3>A type that has a generalization will usually have many generalizations. For example,&nbsp;∀a&nbsp;(a-&gt;I) is a generalization of&nbsp;(B-&gt;I) i.e.</h3>
+<p style="margin-left: 40px;">(B-&gt;I)&lt;= ∀a&nbsp;(a-&gt;I)</p>
+<p>Generalizations are going to be used, in our MiniMl, as the type schemes identifying the type of 'variable' term sub-expressions within let expressions. If a closed expression, e, has a type which is a generalization (i.e. a type scheme), there will be a <strong>principal type scheme</strong> that it has as a type (roughly, a most general generalization). The principal type does not have to be unique.</p>
+<h2>Environment Γ (or, the Assumptions)</h2>
+<p>We are aiming to find the types of terms or expressions in the expression language e.g. what is the type of&nbsp;(λx.x True)? When reasoning about this, there may be term-variables in the expression under consideration. We need to know what type the individual term-variables have. For example, consider an identity function applied to the term-variable y&nbsp;i.e. (λx.x y). This entire&nbsp;expression has the same type as the type of y. But, as it stands, we do not know the type of y. It is convenient to introduce the notion of an Environment, which is dictionary, list, set, or collection, of pairs connecting term-variables and type-schemes (i.e. their type values). So with the environment {y:I} the expression&nbsp;(λx.x y ) has type I.&nbsp;</p>
+<p>An alternative word for the environment is the 'Assumptions'.&nbsp; Sometimes there is the need to either add a value pair to the environment, remove a value pair from the environment, or combine environments. We can use a notation close to&nbsp;set theory as for these operations. For example,</p>
+<p style="margin-left: 40px;">Γ ∪ {x:t<sub>0&nbsp;</sub>}&nbsp; &nbsp; &nbsp;adds<br>
+Γ \ x&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;takes out the value for x<br>
+Γ<sub>1&nbsp;</sub> ∪ Γ<sub>2&nbsp;</sub>&nbsp; &nbsp; &nbsp; &nbsp; combines two environments</p>
+<h2>Capturing, and 'free-for': a red flag</h2>
+<p>There is an issue that arises with removing a universal quantifier and substituting for (formerly) bound variables in the scope (i.e. specialization or instantiation). It is perhaps easiest to illustrate it in predicate logic rather than in type theory.&nbsp;Using a fairly casual syntax, here is a predicate logic formula using the universal quantifier</p>
+<p style="margin-left: 40px;">∀x(Tall(x))</p>
+<p>and from this is follows that Tall(bert), Tall (ann) etc. and these are just substitution instances into the scope. Any instance can be substituted in here and the resulting inference is valid. But if we move up a level of complexity and nest quantifiers, perhaps</p>
+<p style="margin-left: 40px;">∀x (∃y(MotherOf(x,y))) i.e. 'Everyone has someone who is their mother'<br>
+∃y (MotherOf(b,y))&nbsp;i.e. 'There is someone who is the mother of Bert'<br>
+∃y (MotherOf(a,y))&nbsp;i.e. 'There is someone who is the mother of Ann'</p>
+<p style="margin-left: 40px;">∃y (MotherOf(y,y))&nbsp;i.e. 'There is a y such that y is the mother of herself' ??? wrong ???</p>
+<p>What has happened here is that the bolded x in&nbsp;∃y(MotherOf(<strong>x</strong>,y))&nbsp;is a free occurrence in the scope of&nbsp;∀x (∃y(MotherOf(x,y))) but if y is substituted in there the occurrence is 'captured' and is bound by the existential quantifier&nbsp;∃y(MotherOf(<strong>y</strong>,y)). The free occurrence of y is not <strong>free for</strong> the substitution of x.</p>
+<p>To avoid anything similar occurring in mini-ML systems. we can insist that instantiation of a type-scheme to type variables must use new variables (new to the environment/assumptions, and new to any expressions).</p>
+<h2>Rules for Typing Judgements</h2>
+<p>We are trying to determine the type of certain expressions in certain environments. If we succeed with this, we have a typing judgement which is written</p>
+<p style="margin-left: 40px;">Γ ⊢ e:t</p>
+<p>This is read "in environment&nbsp;Γ expression e has type t".</p>
+<p>This determination can be made using 'typing rules'. Each typing rule has some premises and a conclusion. The premises are written above a horizontal line and the conclusion below that line.&nbsp; Each rule permits one step of the derivation or inference.</p>
+<p><strong>Variable</strong> (i.e. the expression, e, whose type is to be determined is a term-variable)</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 200px;margin-left: 40px">
+<tbody>
+<tr>
+<td>(e:τ) ∈&nbsp;Γ &nbsp;and&nbsp;τ&nbsp; ⊇&nbsp; σ<br>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike><br>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Γ ⊢ e:σ</td>
+</tr>
+</tbody>
+</table>
+<p>The first place to look here is at the conclusion. Then what the rule says is that if you are trying to type a variable, e,&nbsp; then if a pair valuing that variable to a type&nbsp;τ is in the environment, and a type&nbsp;σ is an instance of&nbsp;τ, you may conclude the e has type&nbsp;σ. If&nbsp;τ is a simple type, not a type-scheme, then&nbsp;τ&nbsp; ⊇&nbsp; τ, trivially, and you would conclude&nbsp;Γ ⊢ e:τ.</p>
+<p>Examples of the use&nbsp;of this rule include</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 400px;margin-left: 40px">
+<tbody>
+<tr>
+<td>(e:I) ∈&nbsp;Γ<br>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>&nbsp;<br>
+			&nbsp;Γ ⊢ e:I</td>
+<td>(e:I-&gt;B) ∈&nbsp;Γ<br>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>&nbsp;<br>
+			&nbsp;Γ ⊢ e:I-&gt;B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constant</strong>&nbsp;(i.e. the expression, e, whose type is to be determined is either a Boolean (B) or an Integer (I))</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 400px;margin-left: 40px">
+<tbody>
+<tr>
+<td>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>&nbsp;<br>
+			&nbsp;Γ ⊢ &lt;a Boolean&gt;:B</td>
+<td>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>&nbsp;<br>
+			&nbsp;Γ ⊢ &lt;an Integer&gt;:I</td>
+</tr>
+</tbody>
+</table>
+<p>This rule does not require any premises. If an expression is True or False, its type is a B. If an expression is one of 0,1,2,3... etc., its type is I.</p>
+<p><strong>Lambda</strong> (i.e. the expression, λx.e, whose type is to be determined is a function, without annotation)</p>
+<p>This rule requires that the lambda variable (x in the case of&nbsp;λx.e) not be in the original or unaugmented environment. If it is, the lambda expression is alpha-rewritten to use another variable, say y, to give an equivalent expression&nbsp;λy.e which satisfies the precondition</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 200px;margin-left: 40px">
+<tbody>
+<tr>
+<td>Γ ∪ {x:τ<sub>&nbsp;</sub>} ⊢&nbsp;e:σ<br>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike><br>
+			&nbsp;Γ ⊢ λx.e : τ-&gt;σ</td>
+</tr>
+</tbody>
+</table>
+<p>Again, the place to look here is at the conclusion. Then what the rule says is that if you are trying to type a lambda expression, λx.e. You assume that x has the type&nbsp;τ and add that assumption to the environment and see what type the body of the lambda i.e. e has under that assumption, say it is&nbsp;σ. Then the conclusion lambda expression&nbsp; λx.e has type&nbsp; τ-&gt;σ.</p>
+<p><strong>Application</strong> (i.e. the expression, (e<sub>1</sub> e<sub>2</sub>) whose type is to be determined is an application)</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 220px;margin-left: 40px">
+<tbody>
+<tr>
+<td>Γ ⊢ e<sub>1</sub>:τ-&gt;σ and&nbsp;Γ ⊢ e<sub>2</sub>:&nbsp;τ<br>
+			<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strike><br>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Γ ⊢ (e<sub>1</sub> e<sub>2</sub>) : σ</td>
+</tr>
+</tbody>
+</table>
+<p>If you are trying to type an application (e<sub>1</sub> e<sub>2</sub>) ...&nbsp;If e<sub>1&nbsp;</sub>has the type&nbsp;τ-&gt;σ and&nbsp;e<sub>2</sub> has the type , then&nbsp;(e<sub>1</sub> e<sub>2</sub>) has the type&nbsp;σ .</p>
+<p><em>There are some more rules to come, but at this point it is convenient to introduce type-derivation trees (using a reduced rule set).</em></p>
+<h2>Type-derivation trees</h2>
+<p>Consider two closely related problems. We have a lambda expression, say (λx.x True) and we would like to find its type and prove that it did indeed have the type that we had found. A related problem starts from the assumption that we had guessed or conjectured or believed that the type of&nbsp; (λx.x True) was B (i.e.&nbsp;Boolean) and that we wanted to proved that our conjecture was correct. Let us try the second problem i.e.</p>
+<p style="margin-left: 40px;">Prove:- (λx.x True):B</p>
+<p>Results like this can be proved from our typing rules. We are helped by a feature that the rule set has. The rules permit <strong><em>syntax directed proof</em></strong>, In this case that means that whatever we are trying to prove, only one rule applies for each step; moreover the rule that applies can be identified from the syntax of the expression under consideration. In effect, we going to problem-reduce or to work backwards from conclusion to premises, creating a tree proof.</p>
+<p>What we are trying to prove is</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢&nbsp; (λx.x True):B</p>
+<p>Only one typing rule applies to this: Application. With this e<sub>1&nbsp;</sub>is going to be&nbsp;λx.x,&nbsp; e<sub>2&nbsp;</sub>is going to be True&nbsp; and σ is B.&nbsp; There is no environment&nbsp;Γ . So the prior step is</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ &nbsp;λx.x&nbsp;:τ-&gt;B&nbsp; &nbsp; &nbsp; &nbsp;and&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ True:&nbsp;τ</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; App&nbsp; &nbsp; &nbsp; <s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ (λx.x True):B</p>
+<p>Notice here that the two premises of the rule&nbsp;are in the same context as each other. There is an algebraic variable&nbsp;τ for a yet-to-be-determined type.&nbsp;τ appears twice, once in each of the premises. When&nbsp;τ is determined, its value can be inserted into both premises.</p>
+<p>The right-hand branch is available from the rule Constant (and no premises are required for that). This also tells us that the type unknown τ has the value B. So a prior step might be</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Con&nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;⊢ &nbsp;λx.x&nbsp;:B-&gt;B&nbsp; &nbsp; &nbsp; &nbsp;and&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ True:&nbsp;B</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;App&nbsp; &nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ (λx.x True):B</p>
+<p>The value, B, for τ has been inserted in the first premise</p>
+<p>The left-hand branch may be grown using the Lambda rule.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {x:B-&gt;B} ⊢&nbsp;x:B-&gt;B</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lam&nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Con&nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;⊢ &nbsp;λx.x&nbsp;:B-&gt;B&nbsp; &nbsp; &nbsp; &nbsp;and&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ True:&nbsp;B</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;App&nbsp; &nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ (λx.x True):B</p>
+<p>and the left-branch leaf is available from the Variable rule</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Var&nbsp; &nbsp; &nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {x:B-&gt;B} ⊢&nbsp;x:B-&gt;B</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Lam&nbsp; &nbsp; &nbsp; &nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Con&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;⊢ &nbsp;λx.x&nbsp;:B-&gt;B&nbsp; &nbsp; &nbsp; &nbsp;and&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ True:&nbsp;B</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;App&nbsp; &nbsp;<s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</s><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⊢ (λx.x True):B</p>
+<p>This is a type-derivation tree proof that&nbsp;(λx.x True) has type B. (The root of the tree is at the bottom, and the branches grow upwards.)</p>
+<p>This tree proof can be linearized</p>
+<p style="margin-left: 40px;">1.&nbsp;{x:B-&gt;B} ⊢&nbsp;x:B-&gt;B&nbsp; &nbsp; &nbsp; Var<br>
+2.&nbsp; &nbsp;⊢ &nbsp;λx.x&nbsp;:B-&gt;B&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Lambda<br>
+3.&nbsp; ⊢ True:&nbsp;B&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Const<br>
+4.&nbsp; ⊢ (λx.x True):B&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2,3 App</p>
+<p>Our second similar problem was that of determining the type of&nbsp;(λx.x True) in the case where we did not have any prior idea as to what it might be. An&nbsp;approach here is to use algebraic unknowns e.g.&nbsp;τ<sub>0</sub>,&nbsp;τ<sub><span style="font-size: 11.6667px;">1</span></sub>,&nbsp;τ<sub><span style="font-size: 11.6667px;">2</span></sub>&nbsp; ... etc. for the unknown types, produce equations ('constraints') between the types, then solve the equations. 'Solving' here means 'find a substitution under which the constraints come out to be true'. See also&nbsp;<a href="/node/678">Hindley-Milner III — Solving the Constraints</a></p>
+<p>In this case,</p>
+<p style="margin-left: 40px;">let&nbsp;τ<sub>0 </sub>be the type of&nbsp;(λx.x True),&nbsp;τ<sub>1&nbsp;</sub>be the type of&nbsp;λx.x,&nbsp;τ<sub>2 </sub>be the type of True, and τ<sub>3 </sub>be the type of&nbsp;x<br>
+App tells us that&nbsp;λx.x can be considered to have the type&nbsp;τ<sub>0</sub>-&gt;<sub>&nbsp;</sub>τ<sub>2&nbsp;</sub>i.e.&nbsp;τ<sub><span style="font-size: 11.6667px;">1</span></sub>&nbsp;= τ<sub>0</sub>-&gt;<sub>&nbsp;</sub>τ<sub>2</sub><br>
+Const requires that&nbsp;τ<sub>2</sub> = B<br>
+Lambda gives&nbsp;τ<sub><span style="font-size: 11.6667px;">1</span></sub>&nbsp;= τ<sub><span style="font-size: 11.6667px;">3</span></sub>-&gt;<sub>&nbsp;</sub>τ<sub><span style="font-size: 11.6667px;">3</span></sub></p>
+<p style="margin-left: 40px;">So&nbsp;the constraints are [τ<sub><span style="font-size: 11.6667px;">1</span></sub>&nbsp;= τ<sub>0</sub>-&gt;<sub>&nbsp;</sub>τ<sub>2</sub>,<sub>&nbsp;</sub>τ<sub>2</sub> = B,&nbsp;τ<sub><span style="font-size: 11.6667px;">1</span></sub>&nbsp;= τ<sub><span style="font-size: 11.6667px;">3</span></sub>-&gt;<sub>&nbsp;</sub>τ<sub><span style="font-size: 11.6667px;">3</span></sub>&nbsp;] i.e.&nbsp;τ<sub>0</sub>=B</p>
+<p>Thus far, we've only really added type variables, although we have not really used them to any purpose. Nor have we used the type schemes.</p>
+<p>To be continued...</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+      
+  <nav id="book-navigation-718" class="book-navigation" role="navigation" aria-labelledby="book-label-718">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/714" hreflang="en">Let Polymorphism in Mini ML</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/721" hreflang="en">MiniML: Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/717" hreflang="en">MiniML: Solving the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/719" hreflang="en">MiniML NOR Reduction with Expression Type</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/722" hreflang="en">MiniML: Drawing It to a Conclusion</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-718">Book traversal links for Let Polymorphism and a Mini-ML Type System</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/680" rel="prev" title="Go to previous page"><b>‹</b> Polymorphism, Annotation, and Decidable Type Inference</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/718" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/714" rel="next" title="Go to next page">Let Polymorphism in Mini ML <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/671" hreflang="en">Simply Typed Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/676" hreflang="en">Junior Hindley-Milner I</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/680" hreflang="en">Polymorphism, Annotation, and Decidable Type Inference</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/712" hreflang="en">Let Polymorphism and a Mini-ML Type System</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/714" hreflang="en">Let Polymorphism in Mini ML</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/721" hreflang="en">MiniML: Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/717" hreflang="en">MiniML: Solving the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/719" hreflang="en">MiniML NOR Reduction with Expression Type</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/722" hreflang="en">MiniML: Drawing It to a Conclusion</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/723" hreflang="en">Polymorphic Lambda Calculus: System F</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/672" hreflang="en">Intuitionistic Propositional Logic</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/712","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"712"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

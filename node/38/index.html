@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="9/17/19 We will take the doing of lambda calculus in the system to the level of writing one recursive function. A lambda expression without any free variables is a closed lambda expression or a combinator. Combinators can have free variables in its sub-expressions. We like combinators, simply because they do not require any external context for their evaluation (there are no free variables to worry about). Some important combinators.   λx.x (* IDENTITY *) λx.(x x) (* SELF APPLICATION *)" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/38" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/38" />
+<link rel="shortlink" href="https://softoption.us:8888/node/38" />
+<link rel="prev" href="/node/42" />
+<link rel="up" href="/node/654" />
+<link rel="next" href="/node/39" />
+
+    <title>Lambda Combinators I: True, False, Conditional | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/654">Lambda Calculus and Combinatory Logic</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Lambda Combinators I: True, False, Conditional</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="38" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align: right;">9/17/19</h6>
+<p>We will take the doing of lambda calculus in the system to the level of writing one recursive function.</p>
+<p>A lambda expression without any free variables is a closed lambda expression or a combinator.<br>
+Combinators can have free variables in its sub-expressions. We like combinators, simply because they do not require any external context for their evaluation (there are no free variables to worry about).</p>
+<p>Some important combinators.</p>
+<blockquote><p>&nbsp;</p>
+<p>λx.x (* IDENTITY *)</p>
+<p>λx.(x x) (* SELF APPLICATION *)</p>
+</blockquote>
+<p>There is a remark to be made on self-application. We are going to need this in a vital way. But notice that it is available only in type-free systems. In a typed system a function has to be, for example, integer-&gt;boolean(ie truth value), but then if you try to apply it to itself you cannot do it because this function can only have integers as arguments not a (integer-&gt;boolean). So... you cannot do self-application in most functional programming languages nor in typed lambda-calculus.</p>
+<blockquote><p>&nbsp;</p>
+<p>λx.λy.λz.(x (y z)) (* COMPOSITION *)<br>
+λfirst.λsecond.λargument.(first (second argument))) (* composition, again *)</p>
+</blockquote>
+<p>Although lambda abstractions are always abstractions of only one variable, when it comes to combinators there is the notion of the number of arguments that the combinator expects and this is the number required for it to reduce or unravel fully. For example, composition expects three arguments.</p>
+<blockquote><p>&nbsp;</p>
+<p>λx.λy.x (* TRUE *)<br>
+λfirst.λsecond.first (* true, again *)</p>
+</blockquote>
+<p>You may be a bit puzzled by true and false, but they are designed to work with 'If-then-else' and<br>
+they may make more sense when you see it.</p>
+<blockquote><p>&nbsp;</p>
+<p>λx.λy.y (* FALSE *)<br>
+λfirst.λsecond.second (* false, again *)</p>
+<p>λx.λy.λz.((x y) z) (* IFTHENELSE *)<br>
+λcondition.λthen.λelse.((condition then) else) (* if then else, again *)</p>
+</blockquote>
+<p>We can now see how these fit together. True consumes two arguments and returns the first, false consumes two arguments and returns the second. For example, if you pop true into the condition of if-then-else, you will get back the first argument which is the then. Thus...</p>
+<blockquote><p>&nbsp;</p>
+<p>(((λcondition.λthen.λelse.((condition then) else ) λfirst.λsecond.first) thenArg) elseArg)</p>
+<p>((λthen.λelse.((λfirst.λsecond.first then) else ) thenArg) elseArg)</p>
+<p>(λelse.((λfirst.λsecond.first thenArg) else ) elseArg)</p>
+<p>((λfirst.λsecond.first thenArg) elseArg)</p>
+<p>(λsecond(thenArg) elseArg)</p>
+<p>thenArg</p>
+</blockquote>
+<p>You should perhaps try these:-</p>
+<p>[<em>When you are combining complex expressions, it is probably prudent to use different variables for the lambda expressions (otherwise you could be faced with a number of alpha rewrites to make those variable different and to avoid the capture of free variables).</em>]</p>
+<blockquote><p>&nbsp;</p>
+<p>a) (((λx.λy.λz.((x y) z) λu.λv.u) hello) goodbye)&nbsp; &nbsp; &nbsp; ⇒ hello (*if-then-else applied to true returning first argument *)</p>
+<p>b) (((λx.λy.λz.((x y) z) λu.λv.v) hello) goodbye)&nbsp; &nbsp; &nbsp; ⇒ goodbye (*if-then-else applied to false returning second argument *)</p>
+</blockquote>
+<p><iframe height="700" id="#editor" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/sideBySide02.jsexe/index.html" width="750">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>2017</p>
+<p>We will take the doing of lambda calculus in the system to the level of writing one recursive function.</p>
+<p>A lambda expression without any free variables is a closed lambda expression or a combinator.<br />
+Combinators can have free variables in its sub-expressions. We like combinators, simply because they do not require any external context for their evaluation (there are no free variables to worry about).</p>
+<p>Some important combinators.</p>
+<blockquote><p>λx.x (* IDENTITY *)</p>
+<p>λx.(x x) (* SELF APPLICATION *)</p>
+</blockquote>
+<p>There is a remark to be made on self-application. We are going to need this in a vital way. But notice that it is available only in type-free systems. In a typed system a function has to be, for example, integer-&gt;boolean(ie truth value), but then if you try to apply it to itself you cannot do it because this function can only have integers as arguments not a (integer-&gt;boolean). So... you cannot do self-application in most functional programming languages nor in typed lambda-calculus.</p>
+<blockquote><p>λx.λy.λz.(x (y z)) (* COMPOSITION *)</p>
+<p>λfirst.λsecond.λargument.(first (second argument))) (* composition, again *)</p>
+</blockquote>
+<p>Although lambda abstractions are always abstractions of only one variable, when it comes to combinators there is the notion of the number of arguments that the combinator expects and this is the number required for it to reduce or unravel fully. For example, composition expects three arguments.</p>
+<blockquote><p>λx.λy.x (* TRUE *)<br />
+λfirst.λsecond.first (* true, again *)</p>
+</blockquote>
+<p>You may be a bit puzzled by true and false, but they are designed to work with 'If-then-else' and<br />
+they may make more sense when you see it.</p>
+<blockquote><p>λx.λy.y (* FALSE *)<br />
+λfirst.λsecond.second (* false, again *)</p>
+<p>λx.λy.λz.((x y) z) (* IFTHENELSE *)<br />
+λcondition.λthen.λelse.((condition then) else) (* if then else, again *)</p>
+</blockquote>
+<p>We can now see how these fit together. True consumes two arguments and returns the first, false consumes two arguments and returns the second. For example, if you pop true into the condition of if-then-else, you will get back the first argument which is the then. Thus...</p>
+<blockquote><p>(((λcondition.λthen.λelse.((condition then) else ) λfirst.λsecond.first) thenarg) elsearg)</p>
+<p>((λthen.λelse.((λfirst.λsecond.first then) else ) thenarg) elsearg)</p>
+<p>(λelse.((λfirst.λsecond.first thenarg) else ) elsearg)</p>
+<p>((λfirst.λsecond.first thenarg) elsearg)</p>
+<p>(λsecond(thenarg) elsearg)</p>
+<p>thenarg</p>
+</blockquote>
+<p>You should perhaps try these:-</p>
+<blockquote><p>a) (((λx.λy.λz.((x y) z) λx.λy.x) hello) goodbye) ⇒ hello (*if-then-else applied to true returning first argument *)<br />
+b) (((λx.λy.λz.((x y) z) λx.λy.y) hello) goodbye) ⇒ goodbye (*if-then-else applied to false returning second argument *)</p>
+</blockquote>
+<p>-->
+<p>&nbsp;</p>
+<p>Here is some alternative software to illustrate the same proofs. (Click on the proofline to select it. Click on Rules and choose Rewrite Rules. Select the Rule you would like, Select the subexpression it is to apply to, Click Go).</p>
+<p>&nbsp;</p>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/lambdaWar/Lambda8a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p>&nbsp;</p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Lambda.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(((λx.λy.λz.((x y) z) λx.λy.x) hello) goodbye) ⇒ hello" />
+<param name="proof1" value="(((λx.λy.λz.((x y) z) λx.λy.y) hello) goodbye) ⇒ goodbye" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<hr>
+<h4>&nbsp;</h4>
+<h4>Video illustrating reduction</h4>
+<p align="left"><em>[This is a Video, click the Play button to view it..] </em></p>
+<div align="center">
+<video controls src="/test/lambda/quicktime/ifThen.m4v">
+<p>Your browser does not support html5 video.</p>
+<p></p></video>
+</div>
+<p><!--
+<div align="center"><p>	<embed autoplay="false" bgcolor="#000000" height="312" src="/assets/quicktime/ifThen.mov" width="572"></embed></div>
+<p>--></p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p>As you can see, the writing of lambda expressions can be tricky and it lends itself to error. We can make this slightly easier by allowing in some definitions. Syntactically we are going to permit some characters like 'T', 'F', '⊃'. These will be constants (so they are well formed on their own, can be part of applications, or the scope of lambda abstractions, but cannot be the variable in a lambda abstraction). Then they will be used as plain abbreviations for longer expressions so, for example, we have</p>
+<blockquote><p>&nbsp;</p>
+<p>T=df. λx.λy.x (*TRUE*)</p>
+<p>F=df. λx.λy.y (*FALSE*)</p>
+<p>C=df. λx.λy.λz.((x y) z) (*IF-THEN-ELSE*)</p>
+<p>⊃=df. λx.λy.λz.((x y) z) (*IF-THEN-ELSE*)</p>
+</blockquote>
+<p>Then these abbreviations will be treated in the software just as Rewrite Rules. So, for example, if an expression has T in it, that T can be rewritten to λx.λy.x . (And, equally, any (sub)expression with the form λx.λy.x can be rewritten to T.)</p>
+<p>'IF-THEN-ELSE has two abbreviations, either the letter 'C' (conditional), or the logical symbol '⊃'. Most readers will be familiar with ordinary propositional or predicate logic in which the symbol '⊃' is used for 'IF-THEN' as in (A⊃B). This logical IF-THEN is infix binary; that is, it takes two arguments and comes between those arguments. When it is used here in lambda calculus, it is going to be prefix and, conceptually at least, ternary; that is, it takes three arguments and comes before those arguments. For example, (((⊃ T) hello) goodbye). If the reader prefers to use 'C' as the abbreviation, that is fine too.</p>
+<p>You should perhaps try these:-</p>
+<blockquote><p>a) (((⊃ T) hello) goodbye)⇒ hello (*if-then-else applied to true returning first argument *)<br>
+b) (((C F) hello) goodbye)⇒ goodbye (*if-then-else applied to false returning second argument *)</p>
+<p>( Select line, select rewrite rule, expand definitions, reduce. Avoid expanding definitions until you need to.)</p>
+</blockquote>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/lambdaWar/Lambda8b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Lambda.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(((⊃ T) hello) goodbye)⇒ hello" />
+<param name="proof1" value="(((C F) hello) goodbye)⇒ goodbye ⇒ goodbye" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<hr>
+<h4>Video illustrating expansion of definitions</h4>
+<div align="center">
+<video controls src="/test/lambda/quicktime/defs.m4v">
+<p>Your browser does not support html5 video.</p>
+<p></p></video>
+</div>
+<!--<div align="center"><p>	<embed autoplay="false" bgcolor="#000000" height="339" src="/assets/quicktime/defs.mov" width="564"></embed></div>
+<hr />
+-->
+</div>
+      
+  <nav id="book-navigation-654" class="book-navigation" role="navigation" aria-labelledby="book-label-654">
+    
+          <h2 class="visually-hidden" id="book-label-654">Book traversal links for Lambda Combinators I: True, False, Conditional</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/42" rel="prev" title="Go to previous page"><b>‹</b> Normal Order and Applicative Order Reduction</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/654" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/39" rel="next" title="Go to next page">Lambda Combinators II: Lists and Numbers <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/639" hreflang="en">Bibliography</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/32" hreflang="en">Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/33" hreflang="en">The Basic Grammar of Lambda Expressions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/34" hreflang="en">Notation (skip this if you wish)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/35" hreflang="en">Substitutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/36" hreflang="en">The Rules of the Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/37" hreflang="en">Normal Forms and Termination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/42" hreflang="en">Normal Order and Applicative Order Reduction</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/38" hreflang="en">Lambda Combinators I: True, False, Conditional</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/39" hreflang="en">Lambda Combinators II: Lists and Numbers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/40" hreflang="en">Lambda Combinators III: Recursion and the Fixpoint Combinator</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/41" hreflang="en">Review of Lambda Combinators</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/43" hreflang="en">Operational and Denotational Semantics</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/44" hreflang="en">Translating Functional Programming Constructs into Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/45" hreflang="en">Combinatory Logic I</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/666" hreflang="en">Combinatory Logic II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/46" hreflang="en">Reduction Strategies</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/638" hreflang="en">Roll your own [Combinatory Logic]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/516" hreflang="en">Roll your own [Lambda Calculus]</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/38","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"38"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

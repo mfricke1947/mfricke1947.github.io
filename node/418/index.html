@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="1/27/08 Under construction Skills to be acquired in this tutorial: To become familiar with the notions of closed and complete trees. To be able to use trees to test for satisfiability and invalidity. Reading A. Hausman, H.Kahane, P.Tidman, [2007] Logic and Philosophy Chapter 6" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/418" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/418" />
+<link rel="shortlink" href="https://softoption.us:8888/node/418" />
+
+    <title>Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_8Ax7Y-egvljOoD_s03szA9MISa3YzfOnzQQTURL8wOQ.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node"></a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="418" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/22" hreflang="en">hausman</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>1/27/08 <em>Under construction </em></p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To become familiar with the notions of closed and complete trees. To be able to use trees to test for satisfiability and invalidity.</p>
+<h3>Reading</h3>
+<p>A. Hausman, H.Kahane, P.Tidman, [2007] <em>Logic and Philosophy</em> Chapter 6</p>
+<h3>Tutorial:</h3>
+<h4>Closure and completeness</h4>
+<p>In Tutorial 1, we met the notions of closed and open branches (a <em>closed</em> branch was one containing a formula and also the negation of that formula, an <em>open</em> branch was a branch that was not closed).</p>
+<p>These concepts can be extended to trees. A <em>closed</em> tree is a tree in which every branch is closed. An <em>open</em> tree is a tree which has at least one open branch.</p>
+<p>When a tree growing rule is applied to a formula in the tree, that formula is considered <em>dead</em>. [It is ticked and never used again.] The formulas that result from a single application of a tree growing rule are themselves shorter than the original formula. This means that with sentential tree growing, for a single formula or collection of formulas, growth must eventually stop. All sentential trees are of finite size. They may grow for a while, but eventually that growth must stop. When all the growth is finished, a tree is <em>complete</em>.</p>
+<p>There are some facts about closed trees and complete trees, which we will use (but not prove here).</p>
+<ul>
+<li>If a tree is closed, the original formulas of the root are not simultaneously satisfiable ie there no assignment of truth values to the atomic components under which the formulas of the root all come out to be true.</li>
+<li>If a complete tree has an open branch, the original formulas of the root are simultaneously satisfiable ie there is an assignment of truth values to the atomic components under which the formulas of the root all come out to be true.</li>
+</ul>
+<p>These facts can be put to use immediately. First they can be used to tell whether a collection of formulas is satisfiable. For example, is</p>
+<blockquote><p>F . G, G⊃H,~H∨~G</p>
+</blockquote>
+<p>satisfiable? Answer: No</p>
+<blockquote><p><img height="199" src="/test/trees/assets/satisfiable.jpg" width="351" loading="lazy"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>Another example, is</p>
+<blockquote><p>F . G, G⊃H,~H∨G</p>
+</blockquote>
+<p>satisfiable? Answer: Yes</p>
+<blockquote><p><img height="199" src="/test/trees/assets/satisfiable2.jpg" width="351" loading="lazy"></p>
+</blockquote>
+<p>Second, this technique and process can be used to test the validity of arguments. An argument is invalid if, and only if, it is possible for all its premises to be true and its conclusion false, at one and the same time. That is, an argument is invalid if, and only if, it all its premises and <em>the negation of</em> its conclusion are (simultaneously) satisfiable. So, if a tree is grown from the premises of an argument, together with the negation of its conclusion:- if that tree is closed, the argument is valid; if that tree is complete and open, the argument is invalid.</p>
+<p>Two examples, is the argument F∨G, F⊃H,G⊃H∴H valid? Answer: Yes</p>
+<blockquote><p><img height="230" src="/test/trees/assets/valid.jpg" width="479" loading="lazy"></p>
+</blockquote>
+<p>Is the argument ~F∨~G, F⊃H,G⊃H∴~H valid? Answer: No</p>
+<p><img height="230" scale="0.7" src="/test/trees/assets/invalid.jpg" width="600" loading="lazy"></p>
+<p>The tree technique has another very useful feature. If the root formulas are satisfiable, it allows you to construct a valuation that will satisfy them.</p>
+<p>All you do is to choose any open branch. Say</p>
+<p><img height="230" scale="0.7" src="/test/trees/assets/invBranch.jpg" width="600" loading="lazy"></p>
+<p>Then make assignments to the atomic formulas and negations of atomic formulas, as follows:-</p>
+<blockquote><p>if &lt;atomic formula&gt; appears in the branch, assign &lt;atomic formula&gt; true<br>
+if ~&lt;atomic formula&gt; appears in the branch, assign &lt;atomic formula&gt; false</p>
+</blockquote>
+<p>Using this on the example, F is assigned false, G is assigned false, and H is assigned true. This gives us, for the root formulas</p>
+<blockquote><p>~false∨~false,<br>
+false⊃true,<br>
+false⊃true<br>
+~~true</p>
+</blockquote>
+<p>which is</p>
+<blockquote><p>true∨true,<br>
+true,<br>
+true<br>
+~false</p>
+</blockquote>
+<p>which is</p>
+<blockquote><p>true,<br>
+true,<br>
+true<br>
+true</p>
+</blockquote>
+<p>ie all the root formulas are true.</p>
+<p>&nbsp;</p>
+<blockquote><p>&nbsp;</p></blockquote>
+<p>&nbsp;</p>
+<hr>
+<h2>Exercises to accompany Tree Tutorial 3</h2>
+<h3>Exercise 1 (of 5):</h3>
+<p>Show each of the following arguments to be valid (ie produce closed trees for them)</p>
+<blockquote><p>a) F∨G ∴G∨F<br>
+b) (Z.W)⊃(L∨K),(W.Z)∴K∨L<br>
+c) ∼Y⊃∼Z,∼Z⊃∼X,∼X⊃∼Y∴Y≡Z</p>
+</blockquote>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="F∨G ∴G∨F">
+<param name="tree1" value="(Z.W)⊃(L∨K),(W.Z)∴K∨L">
+<param name="tree2" value="∼Y⊃∼Z,∼Z⊃∼X,∼X⊃∼Y∴Y≡Z">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<h3>Exercise 2 (of 5):</h3>
+<p>Determine whether each of the following statements is a <em>tautology</em>. [A tautology is a logical truth; that is, it is always true no matter what the assignment; that is, it is not possible for it to be false; that is, it is not possible for its negation to be true; that is, a complete tree for its negation will be closed. So the test is: a complete tree for its negation will not have an open branch.]</p>
+<blockquote><p>a) (F≡G)≡(G≡F)<br>
+b) (F⊃G)≡(G≡F)<br>
+c) P ∨~P</p>
+</blockquote>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="~((F≡G)≡(G≡F))">
+<param name="tree1" value="~((F⊃G)≡(G≡F))">
+<param name="tree2" value="∼(P ∨~P)">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>Answers: Yes, No, Yes</p>
+<h3>Exercise 3 (of 5):</h3>
+<p>Determine whether each of the following statements is a <em>contradiction</em>. [It is not possible for contradiction to be true; that is, a complete tree for it will be closed. So the test is: a complete tree for it will not have an open branch.]</p>
+<blockquote><p>a) P .~P<br>
+b) (((Z.W)⊃(L∨K)).(W.Z)).~(K∨L)<br>
+c) F⊃~F</p>
+</blockquote>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="P .~P">
+<param name="tree1" value="(((Z.W)⊃(L∨K)).(W.Z)).~(K∨L)">
+<param name="tree2" value="F⊃~F">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>Answers: Yes, Yes, No</p>
+<h3>Exercise 4 (of 5):</h3>
+<p>Determine whether each of the following statements is a <em>consistent</em>. [It must be possible for consistent statement to be true; that is, a complete tree for it will be open. So the test is: a complete tree for it will have an open branch.]</p>
+<blockquote><p>a) P .~P<br>
+b) (((Z.W)⊃(L∨K)).(W.Z)).~(K∨L)<br>
+c) F⊃~F</p>
+</blockquote>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="P .~P">
+<param name="tree1" value="(((Z.W)⊃(L∨K)).(W.Z)).~(K∨L)">
+<param name="tree2" value="F⊃~F">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>&nbsp;</p>
+<p>Answers: No, No, Yes</p>
+<h3>Exercise 5 (of 5):</h3>
+<p>Determine whether the following statement is <em>contingent</em>. [For a contingent statement, it must be possible for it to be true, and it must be possible for its negation to be true; that is, a complete tree for it will be open, and a complete tree for its negation will be open. So the test is: a complete tree for it will have an open branch, and a complete tree for its negation will have an open branch.]</p>
+<blockquote><p>a) (∼Y⊃∼Z).(∼Z⊃∼X).∼X⊃∼Y</p>
+</blockquote>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="(∼Y⊃∼Z).(∼Z⊃∼X).∼X⊃∼Y">
+<param name="tree1" value="~((∼Y⊃∼Z).(∼Z⊃∼X).∼X⊃∼Y)">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>Answer: Yes</p>
+</div>
+      
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/418","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"418"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

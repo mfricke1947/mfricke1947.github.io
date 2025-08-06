@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="2013 Reading Bergmann[2004] The Logic Book Section 10.1. The Tutorial Existential Elimination (often called &#039;Existential Instantiation&#039;) permits you to remove an existential quantifier from a formula which has an existential quantifier as its main connective. It is one of those rules which involves the adoption and dropping of an extra assumption (like ∼I,⊃I,∨E, and ≡I). The circumstance that Existential Instantiation gets invoked looks like this." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/620" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/620" />
+<link rel="shortlink" href="https://softoption.us:8888/node/620" />
+<link rel="prev" href="/node/619" />
+<link rel="up" href="/node/602" />
+<link rel="next" href="/node/622" />
+
+    <title>Tutorial 21: Existential Elimination | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/561">Easy Deriver [Sentential and Predicate Logic—Bergmann Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/602">Predicate Logic: 15 Tutorials</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 21: Existential Elimination</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="620" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/21" hreflang="en">bergmann</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>2013</p>
+<h3>Reading</h3>
+<p>Bergmann[2004] The Logic Book Section 10.1.</p>
+<h3>The Tutorial</h3>
+<p>
+Existential Elimination (often called 'Existential Instantiation') permits you to remove an existential quantifier from a formula which has an existential quantifier as its main connective. It is one of those rules which involves the adoption and dropping of an extra assumption (like ∼I,⊃I,∨E, and ≡I).</p>
+<p>
+The circumstance that Existential Instantiation gets invoked looks like this.</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">(∃x)&lt;scope&gt;</td>
+<td>?</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">?</td>
+<td>? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">&lt;target&gt;</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>That is, a formula you have has an existential quantifier as its main connective-- and you are trying to obtain some formula which we will call &lt;target&gt;.</p>
+<p>
+For example,</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">(∃x)(Fx)</td>
+<td>?</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">?</td>
+<td>? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td colspan="3" style="width: 355px;">(∃y)(Fy)</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>invites the use of EE. In this case (∃x)(Fx) is the existential formula, (Fx) is its scope, and (∃y)(Fy) is the target.</p>
+<p>To use EE you follow a three stage process. First you assume the &lt;scope&gt;[&lt;constant&gt;/&lt;variable&gt;]. The illustrated fragment will then become</p>
+<p><img alt="EE" src="/files/images/EE1.jpg" style="width: 429px; height: 100px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					(&exist;x)&lt;scope&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>&lt;scope&gt;[&lt;constant&gt;/&lt;variable&gt;]</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					?</td>
+<td>
+					? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					&lt;target&gt;</td>
+<td>
+					?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>Second you continue deriving in this new context until you manage to derive &lt;target&gt; thus</p>
+<p><img alt="EE" src="/files/images/EE2.jpg" style="width: 427px; height: 122px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					(&exist;x)&lt;scope&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>&lt;scope&gt;[&lt;constant&gt;/&lt;variable&gt;]</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here &gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;target&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					?</td>
+<td>
+					? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					&lt;target&gt;</td>
+<td>
+					?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>Finally you select &lt;target&gt; at the end of the sub-proof, select the existential formula, and click ∃E to complete the existential instantiation.</p>
+<p><img alt="EE" src="/files/images/EE3.jpg" style="width: 429px; height: 114px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					n</td>
+<td colspan="3" style="width: 355px;">
+					(&exist;x)&lt;scope&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>&lt;scope&gt;</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here &gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					k</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;target&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					&lt;target&gt;</td>
+<td>
+					n,k &exist;E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>In the example, the derivation would look like</p>
+<p><img alt="EE" src="/files/images/EE4.jpg" style="width: 392px; height: 117px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					1</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 352px;">
+					<u>(&exist;x)Fx</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					2</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(251, 0, 0);">
+					&nbsp;</td>
+<td style="width: 268px;">
+					<u>Fa</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					3</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(251, 0, 0);">
+					&nbsp;</td>
+<td style="width: 268px;">
+					(&exist;y)Fy</td>
+<td>
+					2 &exist;I</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					4</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 274px;">
+					(&exist;y)Fy</td>
+<td>
+					1,3 &exist;E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>There are restrictions on EE. The &lt;constant&gt; must not occur either</p>
+<ul>
+<li>a) in the assumptions of the final &lt;target&gt; line,</li>
+<li>or b) in the existential formula that ∃E is used on,</li>
+<li>or c) in the &lt;target&gt;.</li>
+</ul>
+<p>Notice that the constant 'a' does not occur in the assumptions of line 4 (which are (∃x)Fx), it does not occur in the existential formula, line 1, and it does not occur in the target, line 4.</p>
+<p>More about these restrictions later. The rule is</p>
+<h4>The Rule of Elimination of the Existential Quantifier, Existential Elimination ∃E</h4>
+<p>If a derivation contains a line of the form</p>
+<blockquote><p>n. &lt;assumptions&gt; (∃&lt;variable&gt;)(&lt;scope&gt;) &lt;any justification&gt;</p>
+</blockquote>
+<p>and a line of the form</p>
+<blockquote><p>k. &lt;assumptions+ &lt;scope[&lt;constant&gt;/&lt;variable&gt;]&gt;&gt; &lt;formula&gt; &lt;any justification&gt;</p>
+</blockquote>
+<p>and</p>
+<blockquote><p><em>the constant &lt;constant&gt; does not occur in ∃&lt;variable&gt;)(&lt;scope&gt;) , in any of the &lt;assumptions&gt; of line k except the additional assumption &lt;scope[&lt;constant&gt;/&lt;variable&gt;]&gt;, or in the formula</em> <em>&lt;formula&gt; </em></p>
+</blockquote>
+<p>then a line of the form</p>
+<blockquote><p>&lt;next line number&gt; &lt;assumptions&gt; &lt;formula&gt; 'k EI'</p>
+</blockquote>
+<p>may be added to the derivation.</p>
+<blockquote><h4>Implementation of EE</h4>
+<p>You have to have in mind here some existential formula (∃&lt;variable&gt;)&lt;scope&gt; that you are going to instantiate. First use Ass to adopt &lt;scope[&lt;constant&gt;/&lt;variable&gt;]&gt; as a new assumption, You need to pick a 'good' constant here, for it must not occur in all sorts of other places. A good strategy is to pick a brand new constant that does not appear in the derivation at all. Then you derive the &lt;formula&gt; you want as the existential instantiation as the last line of an open sub-proof or sub-derivation. Then select the existential formula (∃&lt;variable&gt;)&lt;scope&gt; and the last line &lt;formula&gt; and press EE. The Rule will check whether &lt;constant&gt; occurs in the existential formula, it will check whether &lt;constant&gt; occurs in the standing assumptions of the intended instantiation &lt;formula&gt;, and it will check whether the &lt;constant&gt; occurs in target &lt;formula&gt;. &nbsp;&nbsp;The conditions satisfied, the Rule will drop the extra assumption of the sub-derivation and add &lt;formula&gt; as the new line.</p>
+</blockquote>
+<p>&nbsp;</p>
+<hr style="height: 2px; width: 100%;">
+<h2>Exercise to accompany Predicate Tutorial 11.</h2>
+<h3>Exercise 1 (of 3)</h3>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann21a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(∃x)(Fa) ∴ Fa" />
+<param name="proof1" value="(∃x) (Fx∧Gx) ∴ (∃x)(Fx )" />
+<param name="proof2" value="(∃x) (Fx∧Gx) ∴ (∃y)(Gy)" />
+<param name="proof3" value="(∃x)(Fx)∴ (∃y)(Fy)" />
+<param name="proof4" value="(∃x)(Fx∧Gx) ∴ (∃y)(Fy)∧(∃z)(Gz)" />
+<param name="rewrites" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<p>&nbsp;</p>
+<p>It is probably easier to learn EI using <em>Tactics</em>. After you start each derivation, switch <em>Tactics</em> on, select the existentially quantified formula, and click EI.</p>
+<p>Derive the following</p>
+<blockquote><p>a) (∃x)(Fa) ∴ Fa<br>
+b) (∃x) (Fx&amp;Gx) ∴ (∃x)(Fx )<br>
+c) (∃x) (Fx&amp;Gx) ∴ (∃y)(Gy)<br>
+d) (∃x)(Fx)∴ (∃y)(Fy)<br>
+e) (∃x)(Fx&amp;Gx) ∴ (∃y)(Fy)&amp;(∃z)(Gz)</p></blockquote>
+<h3>Exercise 2 (of 3)</h3>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann21b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(∃x)(Fa) ∴ Fa" />
+<param name="proof1" value="(∃x) (Fx∧Gx) ∴ (∃x)(Fx )" />
+<param name="proof2" value="(∃x) (Fx∧Gx) ∴ (∃y)(Gy)" />
+<param name="proof3" value="(∃x)(Fx)∴ (∃y)(Fy)" />
+<param name="proof4" value="(∃x)(Fx∧Gx) ∴ (∃y)(Fy)∧(∃z)(Gz)" />
+<param name="rewrites" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<p>&nbsp;</p>
+<p>Repeat the derivations of Exercise 1 without using Tactics.</p>
+<blockquote><p>a) (∃x)(Fa) ∴ Fa<br>
+b) (∃x) (Fx&amp;Gx) ∴ (∃x)(Fx )<br>
+c) (∃x) (Fx&amp;Gx) ∴ (∃y)(Gy)<br>
+d) (∃x)(Fx)∴ (∃y)(Fy)<br>
+e) (∃x)(Fx&amp;Gx) ∴ (∃y)(Fy)&amp;(∃z)(Gz)</p></blockquote>
+<h3>Exercise 3 (of 3)</h3>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann21c.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="∴ (∃x)Fx≡(∃y)Fy" />
+<param name="proof1" value="(∀x)Fx,(∃x)~Fx∴G" />
+<param name="proof2" value="∴ (∃x) (Fx∨Gx) ≡ (∃y)Fy∨(∃z)Gz" />
+<param name="proof3" value="(∃x)(Fx∨Gx),(∀x)(Fx⊃Hx),(∀x)(Gx⊃Hx)∴(∃x)Hx" />
+<param name="proof4" value="~(∃x)(Fx∧~Gx),~(∃x)(Gx∧~Hx)∴(∀x)(Fx⊃Hx)" />
+<param name="proof5" value="~(∃x)Gx,(∀x)(Fx⊃Gx)∴(∀x)(Fx⊃Hx)" />
+<param name="proof6" value="(∃x)Fx∨(∃x)Gx,(∀x)((Fx∨Gx)⊃Hx)∴(∃x)Hx " />
+<param name="rewrites" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>&nbsp;</p>
+<p>Each of following derivations will use Existential Instantiation at some stage.</p>
+<p>Derive</p>
+<blockquote><p>a) ∴ (∃x)Fx≡(∃y)Fy<br>
+b) (∀x)Fx,(∃x)~Fx∴G<br>
+c) ∴ (∃x) (Fx∨Gx) ≡ (∃y)Fy∨(∃z)Gz<br>
+d) (∃x)(Fx∨Gx),(∀x)(Fx⊃Hx),(∀x)(Gx⊃Hx)∴(∃x)Hx<br>
+e) ~(∃x)(Fx&amp;~Gx),~(∃x)(Gx&amp;~Hx)∴(∀x)(Fx⊃Hx)<br>
+f) ~(∃x)Gx,(∀x)(Fx⊃Gx)∴(∀x)(Fx⊃Hx)<br>
+g) (∃x)Fx∨(∃x)Gx,(∀x)((Fx∨Gx)⊃Hx)∴(∃x)Hx</p></blockquote>
+<p>&nbsp;</p>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://18.189.145.40:8080/deriver20bergmann/" target="_blank">Deriver[Bergmann]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/easyDeriver/CombinedExercisesEasyDBergmann.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You may need to set some Preferences for this.</p>
+<ul>
+<li>you can check that the parser is set to bergmann.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-561" class="book-navigation" role="navigation" aria-labelledby="book-label-561">
+    
+          <h2 class="visually-hidden" id="book-label-561">Book traversal links for Tutorial 21: Existential Elimination</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/619" rel="prev" title="Go to previous page"><b>‹</b> Tutorial 20: Existential Introduction</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/602" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/622" rel="next" title="Go to next page">Tutorial 22: Symbolizing Relations <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/562" hreflang="en">Sentential Logic: 10 Tutorials</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/602" hreflang="en">Predicate Logic: 15 Tutorials</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/603" hreflang="en">Tutorial 11: Sketch of the second part of the course, and symbolizing sentences using predicate logic.</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/604" hreflang="en">Tutorial 12: Symbolizing sentences using predicate logic (continued)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/605" hreflang="en">Review of New Material</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/606" hreflang="en">Tutorial 13: An Introduction to Truth in Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/608" hreflang="en">Tutorial 14: Some Terminology for the Semantics of Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/609" hreflang="en">Tutorial 15: Elementary derivations in predicate logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/610" hreflang="en">Tutorial 16: Symbolization using the quantifiers</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/611" hreflang="en">Tutorial 17: The semantics of quantifiers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/617" hreflang="en">Tutorial 18: Universal Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/618" hreflang="en">Tutorial 19: Universal Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/619" hreflang="en">Tutorial 20: Existential Introduction</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/620" hreflang="en">Tutorial 21: Existential Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/622" hreflang="en">Tutorial 22: Symbolizing Relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/623" hreflang="en">Symbolization Review</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/624" hreflang="en">Tutorial 23: The semantics of relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/625" hreflang="en">Tutorial 24: The restrictions on the quantificational rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/626" hreflang="en">Tutorial 25 ...</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/632" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/709" hreflang="en">Exercises for Easy Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/620","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"620"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

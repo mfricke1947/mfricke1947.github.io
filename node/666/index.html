@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="9/18/19 As in the lambda calculus, there are the notions of redex, reduction path, normal form... Combinatory logic is going to do away with the abstractions of lambda calculus. Doing this is known as bracket abstraction and the bracket abstraction algorithm removes all abstractions from lambda expressions and replaces them with a standard combinator expression." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/666" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/666" />
+<link rel="shortlink" href="https://softoption.us:8888/node/666" />
+<link rel="prev" href="/node/45" />
+<link rel="up" href="/node/654" />
+<link rel="next" href="/node/46" />
+
+    <title>Combinatory Logic II | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/654">Lambda Calculus and Combinatory Logic</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Combinatory Logic II</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="666" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">9/18/19</h6>
+<p>As in the lambda calculus, there are the notions of redex, reduction path, normal form...</p>
+<p>Combinatory logic is going to do away with the abstractions of lambda calculus. Doing this is known as bracket abstraction and the bracket abstraction algorithm removes all abstractions from lambda expressions and replaces them with a standard combinator expression.</p>
+<h4><strong>Sketch of a bracket abstraction algorithm.</strong></h4>
+<p>What we are going to do here is to translate lamdba calculus expressions into <strong>SKI</strong> combinator expressions. We'll allow <strong>S</strong>, <strong>K</strong>, and <strong>I</strong> into the lambda calculus and translate variables, constants, and applications as themselves unchanged. All we have to consider are abstractions.</p>
+<p>Input: a variable x and an abstraction λx.(M) of a standard combinator expression M i.e. M itself has already been translated into and <strong>SKI</strong> combinator expression.<br>
+Output: A standard combinator expression &lt;prefix&gt;M such that &lt;prefix&gt;M is equal to λx.(M)</p>
+<p>Case:</p>
+<blockquote><p>&nbsp;</p>
+<p>i) M is a constant c then let &lt;prefix&gt;M be <strong>K</strong> M (let us just check that these reduce in the same way. λx.(M) is λx.(&lt;constant&gt;) and beta reduce the application of this to any argument λx.(&lt;constant&gt;) arg and &lt;constant&gt; is returned; similarly, apply <strong>K</strong> &lt;constant&gt; to any argument <strong>K</strong> &lt;constant&gt; arg and &lt;constant&gt; is returned.)</p>
+<p>ii) M is a standard combinator C then let &lt;prefix&gt;M be <strong>K</strong> M (let us just check that these reduce in the same way. λx.(M) is λx.(C) and beta reduce the application of this to any argument λx.(C) arg and C is returned; similarly, apply <strong>K</strong> C to any argument <strong>K</strong> C arg and C is returned.)</p>
+<p>iii) M is a variable</p>
+<blockquote><p>a) it is x, then let &lt;prefix&gt;M be <strong>I</strong> (*note, no M here *) (let us just check that these reduce in the same way. λx.(M) is λx.(x) and beta reduce the application of this to any argument λx.(x) arg and arg is returned; similarly, apply <strong>I</strong> to any argument <strong>I</strong> arg and arg is returned.)</p>
+<p>b) it is a variable y other than x, then let &lt;prefix&gt;M be <strong>K</strong> M (let us just check that these reduce in the same way. λx.(M) is λx.(y) and beta reduce the application of this to any argument λx.(y) arg and y is returned; similarly, apply <strong>K</strong> y to any argument <strong>K</strong> y arg and y is returned.)</p>
+</blockquote>
+<p>iv) M is an application P Q. Let &lt;prefix1&gt;P and&lt;prefix2&gt;Q be the standard combinator expression bracket abstractions of λx.P and λx.Q. Then what we need is <strong>S</strong> &lt;prefix1&gt;P &lt;prefix2&gt;Q (let us just check that these reduce in the same way. λx.(M) is λx.(P Q) and beta reduce the application of this to any argument λx.(P Q) arg and (λx.(P) arg) (λx.(Q) arg) is returned (you may have to do some rewrites of variables); similarly, apply <strong>S</strong> &lt;prefix1&gt;P &lt;prefix2&gt;Q to any argument <strong>S</strong> &lt;prefix1&gt;P &lt;prefix2&gt;Q arg and &lt;prefix1&gt;P arg (&lt;prefix2&gt;Q arg) is returned.)</p>
+</blockquote>
+<p>We did use the identity combinator, but we have shown how to translate this into an <strong>SKI</strong> expression.</p>
+<p>To sum up, we produce an abstraction function abs[x,E] such that abs[x,E][x] = E. It is defined</p>
+<blockquote><p>&nbsp;</p>
+<p>abs[x,x] = <strong>I</strong><br>
+abs[x,y] = <strong>K</strong> y<br>
+abs[x,k] = <strong>K</strong> k<br>
+abs[x,E1[E2]] = <strong>S</strong> abs[x,E1] abs[x,E2]</p>
+</blockquote>
+<p>What we have done here is to show that bracket abstraction is possible. In a running system, though, it might be important to do the translation efficiently—you may have lambda calculus as your functional programming language and combinatory logic as the framework of your graph reducer-- and the algorithm sketched here is not efficient.</p>
+<p>As an example of bracket abstraction. Consider</p>
+<p>λx.(x x) λy.(y) arg first everything other than the abstractions remains the same ⇒ λx.(x x) λy.(y) arg then λx.(x x) translates to <strong>S I I </strong>and λy.(y) translates to I so the whole lot becomes <strong>S I I I </strong>arg and we can check the reductions</p>
+<p><strong>S I I I</strong> arg ⇒ <strong>I I (I I )</strong> arg ⇒ <strong>I (I I )</strong> arg ⇒<strong>I I</strong> arg ⇒ <strong>I</strong> arg ⇒ arg<br>
+λx.(x x) λy.(y) arg ⇒ (λy.(y) λy.(y)) arg ⇒ λy.(y) arg ⇒ arg</p>
+<h4><strong>Normal form</strong></h4>
+<p>A CL formula is in <strong>normal form</strong>&nbsp;if no further reductions of it or any of its subformulas are possible.</p>
+<p>If a CL formula has a normal form, that normal form is unique (the Church-Rosser theorem).</p>
+<p>Not every CL formula has a normal form (because some contain reductions that can go on forever) e.g.</p>
+<blockquote><p><strong>W W W</strong>&nbsp;⇒&nbsp;<strong>W W W</strong>&nbsp;and so on forever</p></blockquote>
+<h4><strong>Notion of reduction path</strong></h4>
+<p>Sometimes it is necessary to indicate which expression is being reduced</p>
+<blockquote><p><strong>I</strong> (<strong>I</strong> x) ⇒ <strong>I</strong> x (*there are two ways of doing this with a single <strong>I</strong> reduction *)</p>
+</blockquote>
+<p>And, again like the lamdba calculus, some terms can produce a normal form under one reduction path, and non-termination under another</p>
+<blockquote><p>&nbsp;</p>
+<p><strong>K</strong> x (<strong>W W W </strong>) ⇒ x (* using normal order reduction,&nbsp;*)</p>
+<p><strong>K</strong> x (<strong>W W W</strong> ) ⇒ <strong>K</strong> x (<strong>W W W</strong> ) (* using applicative order reduction *)</p>
+<p>What normal order and applicative order are is explained shortly.</p>
+</blockquote>
+<p>Try to prove the following:-</p>
+<blockquote><p>&nbsp;</p>
+<p>a) <strong>I&nbsp;</strong>(<strong>I </strong>x)&nbsp;⇒ x<br>
+b) <strong>W W W&nbsp;</strong>&nbsp;⇒ dummy<br>
+c) <strong>K&nbsp;</strong>x <strong>W W W W</strong>&nbsp;⇒ x<br>
+d) <strong>K&nbsp;</strong>x (<strong>W W W</strong>)&nbsp;⇒ keep repeating&nbsp; <strong>K&nbsp;</strong>x (<strong>W W W</strong>)</p>
+</blockquote>
+<p>[Click on a formula to select it, choose a rule from the menu.]</p>
+<p>&nbsp;</p>
+<p><iframe height="660" scrolling="no" src="/sites/all/js/cLWar/CL3.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h4><strong>Normal order reduction</strong></h4>
+<p>Normal order reduction will produce the normal form if there is one, and so that is an argument for using normal order reduction.</p>
+<p>In CL, normal order reduction is particularly simple</p>
+<blockquote><p>always do the leftmost redex first</p></blockquote>
+<p>head reduction or contraction , head reduction path (always work from left to right). Normal order reduction can be inefficient due to evaluating the same expressions more than once. For example, consider a lambda or CL expression which in effect adds x to x; informally let us write this as (x + x) and then apply this to the argument (3 x 2) i.e. informally</p>
+<blockquote><p>(x+x)[(3x2)]</p></blockquote>
+<p>Normal order reduction would first reduce the function by substituting the (3 x 2) for the x i.e.</p>
+<blockquote><p>(x+x)[(3x2)] &nbsp;⇒ (3x2)+(3x2)</p></blockquote>
+<p>but then the (3x2) will get evaluated twice.</p>
+<h4><strong>Applicative order reduction</strong></h4>
+<p>Applicative order reduction, roughly speaking, is to reduce the arguments first (and, of course, this can be done left-to-right, right-to-left, and other ways). So, for example,&nbsp;</p>
+<blockquote><p><strong>K</strong> (<strong>I</strong> a) (<strong>I</strong> b)</p></blockquote>
+<p>would be reduced to</p>
+<blockquote><p><strong>K</strong>&nbsp;a&nbsp;(<strong>I</strong> b)</p></blockquote>
+<p>then</p>
+<blockquote><p><strong>K </strong>a b</p></blockquote>
+<p>then</p>
+<blockquote><p>a</p></blockquote>
+<p>In this example, applicative order reduction is inefficient, in that the reduction of&nbsp;(<strong>I</strong> b) is not needed at all (and if the&nbsp;(<strong>I</strong> b) had been (<strong>W W W</strong>) i.e. a non-terminating reduction it would not have terminated in the normal form).</p>
+<p>Usually, or often, applicative order is more efficient.&nbsp;&nbsp;Consider the earlier example i.e. a lambda or CL expression which in effect adds x to x; informally let us write this as (x + x) and then apply this to the argument (3 x 2) i.e. informally</p>
+<blockquote><p>(x+x)[(3x2)]</p></blockquote>
+<p>Applicative order reduction would first reduce the arguement&nbsp;by substituting 6 for the (3 x 2)&nbsp;&nbsp;i.e.</p>
+<blockquote><p>(x+x)[6] &nbsp;⇒ 6+6</p></blockquote>
+<p>then the (3x2) will get evaluated once.</p>
+<p>Many functional programming languages will use lazy evaluation which roughly is normal order reduction together with sharing of expressions. So, an expression like&nbsp;(x+x)[(3x2)], or (3x2)+(3x2),&nbsp; will be set up internally in such a way that the&nbsp;(3x2) is shared rather than there being two copies of it.</p>
+<p><strong>Weak head normal form</strong></p>
+<p>As mentioned, some combinators 'expect' several arguments before they can be reduced. For example, the compositor <strong>B</strong> x y z</p>
+<blockquote><p><strong>B</strong> x y z</p></blockquote>
+<div>expects 3. This means that if an expression starts with <strong>B</strong> but has only two arguments it cannot be reduced by a compositor reduction; e.g.</div>
+<div>
+<blockquote><p><strong>B</strong> x y</p></blockquote>
+<div>Now, this formula <strong>B</strong> x y is in normal form. But consider</div>
+<div>
+<blockquote><p><strong>B</strong> x (<strong>I</strong> y)</p></blockquote>
+<div>It is not in normal form, because the (<strong>I</strong> y) can be reduced by the identificator to y. This formula is in <strong>weak head normal form (WHNF)</strong>. The focus here in on the first well-formed CL expression in a formula i.e. the <strong>head </strong>(whether or not that expression is a combinator with a reduction rule). &nbsp;If the head (with its 'arguments') cannot be reduced, then the whole expression is in weak head normal form. Any expression in normal form is in weak head normal form. But there are expressions which are in weak head normal form which are not in normal form, e.g.&nbsp;<strong>B</strong>&nbsp;x (<strong>I</strong> y).&nbsp;</div>
+<div>&nbsp;</div>
+<div>A formula in WHNF either has a head which is not a combinator or it has a head which is a combinator but which does not have enough arguments for the combinator to reduce.</div>
+</div>
+</div>
+<div>&nbsp;</div>
+<p><strong>Some other notes</strong></p>
+<p>There are&nbsp;Church-Rosser theorems which tell us that if there is a normal form, that normal form is unique and&nbsp;normal order reduction will find that&nbsp;normal form if there is one.</p>
+<p>We can also do arithmetic, write recursive functions, build lists ... in pure combinatory logic (just as we could and did in pure lambda calculus).</p>
+<p>However, like in lambda calculus, this is not a very sensible thing to do. Instead we extend combinatory logic to include what we want eg</p>
+<blockquote><p>&nbsp;</p>
+<p>ADD x y ⇒ x' + y' (*where x' and y' and the evaluated versions of x and y *)<br>
+HEAD x ⇒ i, if x is CONS i j</p>
+</blockquote>
+<p>etc. etc.</p>
+<p>Eventually,then our functional program will just become an expression in combinatory logic, and we will have several reduction rules. And the problem will be to reduce the expression to normal form.</p>
+<p>For lazy evaluation we want to do head contraction only except i) if the head is strict (this means that it needs the values of its arguments, for example, predefineds like + need the numbers they are going to add (not expressions that evaluate to numbers), or ii) a subexpression is shared.</p>
+<p>Usual to extend combinatory logic for functional programming by adding all the 'delta reductions'. Then it becomes the same as the extended lambda calculus.</p>
+<p>Enjoy!</p>
+<hr>
+<h4>An aside on Raymond Smullyan, Birds, and Combinatory Logic</h4>
+<p>Wikipedia: <a href="http://en.wikipedia.org/wiki/Raymond_Smullyan" target="_blank">Raymond Smullyan</a> (*love the photo*)</p>
+<p>Fifty years ago, yes it is that long, when we studied tableaux we used Smullyan's <em>First-Order Logic</em> as our text. It was excellent and I was somewhat astonished to learn that apparently Smullyan had been a professional magician until he was forty and then he became a logician. Sometime later I became aware of Smullyan's books of logical puzzles and conundrums. I was keen to use some of the individual puzzles as splash screens in my logic software. So I wrote to him, sending him my software, and asking him if I could do that. He handwrote me a most gracious reply, roughly to the effect that computers and software were a complete mystery to him but that I was welcome to use whatever I wished. Sometime after that I become interested in combinatory logic, and I became aware of Smullyan's [1985] <em>To Mock a Mockingbird</em>. Wikipedia: <a href="http://en.wikipedia.org/wiki/To_Mock_a_Mockingbird" target="_blank">To Mock a Mockingbird</a>. In this he explains combinatory logic via birds and the calls they make one to another. And there are sources for this on the web. You can try Chris Rathman <a href="http://www.angelfire.com/tx4/cus/combinator/birds.html" target="_blank">Combinator Birds</a> or <a href="http://www.cs.virginia.edu/%7Egms2w/theory/Mockingbird.html" target="_blank">Mockingbird Fun</a> [this takes ages to load, over a minute on my broadband]. [I must say I never really understood the Mockingbirds, maybe I need to revisit them.]</p>
+</div>
+      
+  <nav id="book-navigation-654" class="book-navigation" role="navigation" aria-labelledby="book-label-654">
+    
+          <h2 class="visually-hidden" id="book-label-654">Book traversal links for Combinatory Logic II</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/45" rel="prev" title="Go to previous page"><b>‹</b> Combinatory Logic I</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/654" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/46" rel="next" title="Go to next page">Reduction Strategies <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/639" hreflang="en">Bibliography</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/32" hreflang="en">Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/33" hreflang="en">The Basic Grammar of Lambda Expressions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/34" hreflang="en">Notation (skip this if you wish)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/35" hreflang="en">Substitutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/36" hreflang="en">The Rules of the Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/37" hreflang="en">Normal Forms and Termination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/42" hreflang="en">Normal Order and Applicative Order Reduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/38" hreflang="en">Lambda Combinators I: True, False, Conditional</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/39" hreflang="en">Lambda Combinators II: Lists and Numbers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/40" hreflang="en">Lambda Combinators III: Recursion and the Fixpoint Combinator</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/41" hreflang="en">Review of Lambda Combinators</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/43" hreflang="en">Operational and Denotational Semantics</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/44" hreflang="en">Translating Functional Programming Constructs into Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/45" hreflang="en">Combinatory Logic I</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/666" hreflang="en">Combinatory Logic II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/46" hreflang="en">Reduction Strategies</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/638" hreflang="en">Roll your own [Combinatory Logic]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/516" hreflang="en">Roll your own [Lambda Calculus]</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/666","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"666"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

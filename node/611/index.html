@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="2013 The Tutorial We will certainly wish to discuss the truth and falsity of formulas with quantifiers in them. Let us start with an Interpretation Interpretation 1 Universe= {a,b} F={a}" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/611" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/611" />
+<link rel="shortlink" href="https://softoption.us:8888/node/611" />
+<link rel="prev" href="/node/610" />
+<link rel="up" href="/node/602" />
+<link rel="next" href="/node/612" />
+
+    <title>Tutorial 17: The semantics of quantifiers | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/561">Easy Deriver [Sentential and Predicate Logic—Bergmann Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/602">Predicate Logic: 15 Tutorials</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 17: The semantics of quantifiers</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="611" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/21" hreflang="en">bergmann</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>2013</p>
+<h3>The Tutorial</h3>
+<p>We will certainly wish to discuss the truth and falsity of formulas with quantifiers in them.</p>
+<p>Let us start with an Interpretation</p>
+<p>Interpretation 1</p>
+<blockquote><p>Universe= {a,b}<br>
+F={a}</p>
+</blockquote>
+<p>and an atomic formula with a variable in it, Fx, say. Is this formula true in Interpretation 1? Well, the formula says 'x is F' and we know that x is supposed to be the name of something but the trouble is that we do not know what it is the name of. This makes quite a bit of difference-- if x is the name of the object a in the Universe then the formula is true, but if x is the name of the object b in the Universe then the formula is false. What has to insisted on here is some direction as to what x is supposed to name. x has to be <em>valued</em>. We have a notation for this, an example of it is</p>
+<blockquote><p>Fx[a/x]</p>
+</blockquote>
+<p>and this is read 'Fx with x naming a' or 'Fx with x valued to be a'. Now, Fx[a/x] is true in Interpretation 1 whereas Fx[b/x] is false in Interpretation 1.</p>
+<p>
+Our earlier work on Interpretations and Truth has to be extended to take in <em>Valuations</em>. What a Valuation should do is to assign to every variable in the language an entity in the Universe for that variable to denote. We have as variables m,n...z so a Valuation should give a value for all 14 of these. But, it is rare for a formula to contain more than a few variables; and whether a formula is true in a valuation depends only on the variables that the formula contains; so we can scrape by with valuing only the free variables that the formula contains. For example, take Gx... from a purist's point of view we should value every variable in the language, we should be looking at Gx[a/m,b/n,a/o,b/p,a/q,b/r,a/s,b/t,a/u,b/v,a/w,b/x,a/y,b/z] but Gx does not contain any of the variables m,n,o,p,q,r,s,t,u,v,w,y,z so we can squeek by with Gx[b/x].</p>
+<p>A formula that has a Universal Quantifier as its main connective has its truth value assigned in an obvious way. Consider again</p>
+<blockquote><p>Interpretation 1 Universe= {a,b}<br>
+F={a}</p>
+</blockquote>
+<p>and the formula</p>
+<blockquote><p>(∀x)(Fx).</p>
+</blockquote>
+<p>The formula says 'whatever x you chose, x is F' and this is false in Interpretation 1 because if you chose b, b is not F, that is Fx[b/x] is false. (What you have to do mentally is to take the scope of the quantified formula and look also at the Universe of the Interpretation and run through Fx[a/x], Fx[b/x], ... for all the objects in the Universe and see if they are <em>all</em> suitable.)</p>
+<p>
+A formula that has a Existential Quantifier as its main connective also has its truth value assigned in an obvious way. Consider again</p>
+<blockquote><p>Interpretation 1 Universe= {a,b}<br>
+F={a}</p>
+</blockquote>
+<p>and the formula</p>
+<blockquote><p>(∃x)(Fx).</p>
+</blockquote>
+<p>The formula says 'There is an x such that x is F' and this is true in Interpretation 1 because if you chose a, a is F, that is Fx[a/x] is true. (What you have to do mentally is to take the scope of the quantified formula and look also at the Universe of the Interpretation and run through Fx[a/x], Fx[b/x], ... for all the objects in the Universe and see if <em>at least one</em> will do the job.)</p>
+<p>Some further concepts... If an occurrence of a variable occurs within the scope of a quantifier that uses that variable, that occurrence is said to be <em>bound</em>. Otherwise the occurrence is <em>free</em>. The need to value arises with formulas with free variables.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr style="height: 2px; width: 100%;">
+<h2>Exercise to accompany Predicate Tutorial 7</h2>
+<h4>[1/12/20 Apple Safari is the most reliable web browser for these exercises, but they do work fine in Chrome, Brave, Opera, etc.) You may need to enable javascript.]</h4>
+<p>The Interpretation in Predex7 shows an Interpretation similar to this</p>
+<p>&nbsp;</p>
+<p align="center"><img alt height="258" src="/files/images/pred7Image.gif" width="464" loading="lazy"></p>
+<p>the widget should display this, but if it does not just draw a similar one.</p>
+<h3>Exercise 1 (of 3)</h3>
+<p>Some of the following formulas contain 'free variables'. Such formulas do not have truth values as they stand (for their truth depends on which individuals the free variables represent).</p>
+<p>Formulas with free variables gain a truth value once their free variables are valued. And there is a notation for this. As an example, the formula Fx has the free variable x and in this form it lacks a truth value, but say we decide to let x stand for the individual a, using the notation Fx[a/x], then the formula thus interpreted has a truth value (it actually is true in this diagram).</p>
+<p>Another example, the formula Fx[c/x] is false in the diagram. The notation [a/x] is read "a for x" so the formula Fx[c/x] is read "F of x with c for x".</p>
+<p><iframe height="880" scrolling="no" src="/sites/all/js/interpretationsSvgWar/bergmann/SemanticsBergmann17a.html" width="660">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Interpretations Applet</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Interpretations.class" height="700" hspace="10" name="Interpretations" width="600"><br />
+<param name="makeDrawing" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
+&lt;java version=&quot;1.5.0_19&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;<br />
+&lt;oca&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;i&gt;94&lt;/i&gt;<br />
+&lt;i&gt;82&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpc&gt;<br />
+&lt;occ&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;H&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;i&gt;105&lt;/i&gt;<br />
+&lt;i&gt;116&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;F&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;224&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;186&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;c&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;156&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;161&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;b&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;71&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;133&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;a&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocb&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;5&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;150&lt;/i&gt;<br />
+&lt;i&gt;50&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpss&gt;<br />
+&lt;ocs&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/java&gt;" /><br />
+<param name="inputText" value="&lt;html&gt;&lt;p&gt;<br />
+Some of the following formulas contain 'free variables'. Such formulas do not have truth values as they stand (for their truth depends on which individuals the free variables represent).<br />
+&lt;/p&gt;<br />
+&lt;p&gt;<br />
+Formulas with free variables gain a truth value once their free variables are valued. And there is a notation for this. As an example, the formula Fx has the free variable x and in this form it lacks a truth value, but say we decide to let x stand for the individual a, using the notation Fx[a/x], then the formula thus interpreted has a truth value (it actually is true in this diagram).<br />
+&lt;/p&gt;<br />
+&lt;p&gt;<br />
+Another example, the formula Fx[c/x] is false in the diagram. The notation [a/x] is read &quot;a for x&quot; so the formula Fx[c/x] is read &quot;F of x with c for x&quot;.<br />
+&lt;/p&gt;<br />
+&lt;p&gt;<br />
+Form a view about the truth of each of the following formulas then ask<br />
+whether they are true (under the &lt;em&gt;Semantics&lt;/em&gt; Menu).&lt;br&gt;<br />
+&lt;/p&gt;<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;a) (Ga∨Fb)∧Ha      &lt;/p&gt;<br />
+&lt;p&gt;b) (Ga∨Fb)∨Ha      &lt;/p&gt;<br />
+&lt;p&gt;c) Fx[a/x]      &lt;/p&gt;<br />
+&lt;p&gt;d) Fx[b/x]      &lt;/p&gt;<br />
+&lt;p&gt;e) Fx[c/x]      &lt;/p&gt;<br />
+&lt;p&gt;f) (Gy⊃Fb)[a/y]    &lt;/p&gt;<br />
+&lt;p&gt;g) ((Fz∧∼Gz)∧∼Hz)[a/z]&lt;/p&gt;<br />
+&lt;/blockquote&gt;&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<h3>Exercise 2 (of 3)</h3>
+<p><iframe height="880" scrolling="no" src="/sites/all/js/interpretationsSvgWar/bergmann/SemanticsBergmann17b.html" width="660">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Interpretations Applet</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Interpretations.class" height="700" hspace="10" name="Interpretations" width="600"><br />
+<param name="makeDrawing" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
+&lt;java version=&quot;1.5.0_19&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;<br />
+&lt;oca&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;i&gt;94&lt;/i&gt;<br />
+&lt;i&gt;82&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpc&gt;<br />
+&lt;occ&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;H&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;i&gt;105&lt;/i&gt;<br />
+&lt;i&gt;116&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;F&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;224&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;186&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;c&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;156&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;161&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;b&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;71&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;133&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;a&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocb&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;5&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;150&lt;/i&gt;<br />
+&lt;i&gt;50&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpss&gt;<br />
+&lt;ocs&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/java&gt;" /><br />
+<param name="inputText" value="&lt;html&gt;    &lt;p&gt;Form a view about the truth of each of the following formulas then ask whether they are true.<br />
+&lt;/p&gt;<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;a) (∃x)Fx      &lt;/p&gt;<br />
+&lt;p&gt;b) (∃x)∼Fx      &lt;/p&gt;<br />
+&lt;p&gt;c) (∃x)Fx∧(∃x)∼Fx      &lt;/p&gt;<br />
+&lt;p&gt;d) (∃x)(Fx∧∼Fx)      &lt;/p&gt;<br />
+&lt;p&gt;e) (∀x)Fx      &lt;/p&gt;<br />
+&lt;p&gt;f) (∀x)(Hx⊃Fx) This formula symbolizes 'All H's are F.'; a common<br />
+mistake is to symbolize 'All H's are F.' by means of the formula<br />
+(∀x)(Hx∧Fx). Hence, see whether you think &lt;/p&gt;<br />
+&lt;p&gt;g) (∀x)(Hx∧Fx) is true.&lt;/p&gt; &lt;p&gt; Having mastered the use of '⊃' together with the Universal quantifier ∀<br />
+beginners often then proceed to make the second common mistake of using<br />
+'⊃' with the Existential quantifier ∃.<br />
+h) (∃x)(Fx∧Gx) &lt;/p&gt;<br />
+&lt;p&gt;This formula symbolizes 'Some F's are G' or, alternatively 'There is an F which is a G'. Consider whether it is true. Then go on to try its<br />
+mistaken counterpart...      &lt;/p&gt;<br />
+&lt;p&gt;i) (∃x)(Fx⊃Gx) &lt;/p&gt;<br />
+&lt;p&gt;j) A formula with the form (∀x)(Hx∧Fx) makes a very strong assertion, for it says 'Whatever x you choose, x is both H and F'.      &lt;/p&gt; &lt;p&gt;Such assertions are hardly ever true. See if you can construct a formula like (∀x)(Hx∧Fx), or (∀x)(Gx∧Fx), or (∀x)(Hx∧Gx) ... which is true in the diagram.      &lt;/p&gt; &lt;p&gt;k) On the other hand a formula with the form (∃x)(Fx⊃Gx) makes a very weak assertion, for it says 'There is an x such that if x is F then x is G' and this is the same as 'There is an x such that either x is not F or x is G'. Such assertions are hardly ever false.&lt;/p&gt; &lt;p&gt;See if you can construct a formula like (∃x)(Fx⊃Gx), or (∃x)(Fx⊃Hx), or (∃x)(Hx⊃Gx), ... which is false in the diagram. &lt;/p&gt;<br />
+&lt;/blockquote&gt;<br />
+Formulas may contain several quantifiers, for example<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;l) (∀x)(∀y)((Fx∧Gy)⊃∼Hx)    &lt;/p&gt;<br />
+&lt;p&gt;m) (∃x)(∃y)(Fx∧Hy)&lt;/p&gt;<br />
+&lt;/blockquote&gt;&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<h3>Exercise 3 (of 3).</h3>
+<p><iframe height="880" scrolling="no" src="/sites/all/js/interpretationsSvgWar/bergmann/SemanticsBergmann17c.html" width="660">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Interpretations Applet</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Interpretations.class" height="700" hspace="10" name="Interpretations" width="600"><br />
+<param name="makeDrawing" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
+&lt;java version=&quot;1.5.0_19&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;<br />
+&lt;oca&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;53&lt;/i&gt;<br />
+&lt;i&gt;76&lt;/i&gt;<br />
+&lt;i&gt;94&lt;/i&gt;<br />
+&lt;i&gt;82&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpc&gt;<br />
+&lt;occ&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;255&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;H&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocp&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;17&lt;/i&gt;<br />
+&lt;i&gt;99&lt;/i&gt;<br />
+&lt;i&gt;105&lt;/i&gt;<br />
+&lt;i&gt;116&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;F&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;224&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;186&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;c&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;156&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;161&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;b&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;oci&gt;<br />
+&lt;vpx&gt;<br />
+&lt;i&gt;71&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpy&gt;<br />
+&lt;i&gt;133&lt;/i&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpn&gt;<br />
+&lt;c&gt;a&lt;/c&gt;<br />
+&lt;/v&gt;<br />
+&lt;vps&gt;<br />
+&lt;b&gt;false&lt;/b&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vma&gt;<br />
+&lt;ocb&gt;<br />
+&lt;vpbr&gt;<br />
+&lt;ocr&gt;<br />
+&lt;i&gt;5&lt;/i&gt;<br />
+&lt;i&gt;0&lt;/i&gt;<br />
+&lt;i&gt;150&lt;/i&gt;<br />
+&lt;i&gt;50&lt;/i&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;vpss&gt;<br />
+&lt;ocs&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/v&gt;<br />
+&lt;/o&gt;<br />
+&lt;/java&gt;" /><br />
+<param name="inputText" value="&lt;html&gt;    &lt;p&gt;What we have done so far can be generalized to lists of formulas. Lists of formulas are treated as though each of the components are joined together by conjunction ('∧')-- hence, a list true iff all components true, a list false iff at least one component false. Form a view about the truth of each of the following lists of formulas then ask whether they are true. &lt;/p&gt;<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;a) (∃x)Fx, (∃x)Gx,(∃x)Hx      &lt;/p&gt;<br />
+&lt;p&gt;b) (∃x)∼Fx,(∃x)∼Fx,(∃x)∼Hx      &lt;/p&gt;<br />
+&lt;p&gt;c) (∃x)(Fx∧Hx),(∃x)Gx      &lt;/p&gt;<br />
+&lt;p&gt;d) (∀x)(Hx⊃Fx),(∃x)Hx      &lt;/p&gt;<br />
+&lt;p&gt;e) (∀x)(Fx∨∼Fx),(∃y)(Fy∧Gy)      &lt;/p&gt;<br />
+&lt;p&gt;f) (∃x)(Fx∧Gx∧Hx),(∀x)(∼(Fx∧Gx∧Hx))      &lt;/p&gt;<br />
+&lt;p&gt;g) (∃x)(Fx⊃(Gx∨Hx)),(∀x)((Fx⊃∼(Gx∧Hx)))      &lt;/p&gt;<br />
+&lt;p&gt;h) (∀x)(∀y)((Fx∧Gy)⊃(Hx∧∼Hy)),(∃x)(∃y)(Fx∧Hy) &lt;/p&gt;<br />
+&lt;/blockquote&gt;&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20bergmann" target="_blank">Deriver [Bergmann]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/easyDeriver/CombinedExercisesEasyDBergmann.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You may need to set some Preferences for this.</p>
+<ul>
+<li>you can check that the parser is set to bergmann.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-561" class="book-navigation" role="navigation" aria-labelledby="book-label-561">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/612" hreflang="en">Help with the semantics of free variables</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-561">Book traversal links for Tutorial 17: The semantics of quantifiers</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/610" rel="prev" title="Go to previous page"><b>‹</b> Tutorial 16: Symbolization using the quantifiers</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/602" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/612" rel="next" title="Go to next page">Help with the semantics of free variables <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/562" hreflang="en">Sentential Logic: 10 Tutorials</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/602" hreflang="en">Predicate Logic: 15 Tutorials</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/603" hreflang="en">Tutorial 11: Sketch of the second part of the course, and symbolizing sentences using predicate logic.</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/604" hreflang="en">Tutorial 12: Symbolizing sentences using predicate logic (continued)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/605" hreflang="en">Review of New Material</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/606" hreflang="en">Tutorial 13: An Introduction to Truth in Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/608" hreflang="en">Tutorial 14: Some Terminology for the Semantics of Predicate Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/609" hreflang="en">Tutorial 15: Elementary derivations in predicate logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/610" hreflang="en">Tutorial 16: Symbolization using the quantifiers</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/611" hreflang="en">Tutorial 17: The semantics of quantifiers</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/612" hreflang="en">Help with the semantics of free variables</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/617" hreflang="en">Tutorial 18: Universal Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/618" hreflang="en">Tutorial 19: Universal Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/619" hreflang="en">Tutorial 20: Existential Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/620" hreflang="en">Tutorial 21: Existential Elimination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/622" hreflang="en">Tutorial 22: Symbolizing Relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/623" hreflang="en">Symbolization Review</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/624" hreflang="en">Tutorial 23: The semantics of relations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/625" hreflang="en">Tutorial 24: The restrictions on the quantificational rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/626" hreflang="en">Tutorial 25 ...</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/632" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/709" hreflang="en">Exercises for Easy Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/611","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"611"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

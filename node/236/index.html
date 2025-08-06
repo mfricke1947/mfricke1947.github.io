@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="5/29/09 10Software Skills to be acquired in this tutorial: a) Understanding the nature of derivation. b) Learning elementary Tactics. Why this is useful: Tactics will help you to do derivations. Reading Bergmann[2008] The Logic Book Section 5.1 and 5.4. The Tutorial: a) A derivation or proof consists of a finite list of lines." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/236" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/236" />
+<link rel="shortlink" href="https://softoption.us:8888/node/236" />
+
+    <title>Tutorial 6: What is a derivation and what does it prove? How experts do derivations. | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_8Ax7Y-egvljOoD_s03szA9MISa3YzfOnzQQTURL8wOQ.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node"></a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 6: What is a derivation and what does it prove? How experts do derivations.</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="236" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/21" hreflang="en">bergmann</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>5/29/09 10Software</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>a) Understanding the nature of derivation. b) Learning elementary Tactics.</p>
+<h3>Why this is useful:</h3>
+<p>Tactics will help you to do derivations.</p>
+<h3>Reading</h3>
+<p>Bergmann[2008] The Logic Book Section 5.1 and 5.4.</p>
+<h3>The Tutorial:</h3>
+<p>a)</p>
+<p>A derivation or proof consists of a finite list of lines.</p>
+<p>Each line in the list, if understood appropriately, represents something valid. In particular, the last line in the list depicts the argument or theorem under consideration and it is valid. So the derivation amounts to a proof of the validity of the argument or of a theorem.</p>
+<p>For example, the argument</p>
+<blockquote><p>If Arthur is wearing a green tie, he will stand out in a crowd.<br>
+Arthur is wearing a green tie.</p>
+<p>Therefore,</p>
+<p>Arthur stands out in a crowd.</p>
+</blockquote>
+<p>symbolized to</p>
+<blockquote><p>G⊃S,<br>
+G</p>
+<p>∴</p>
+<p>S</p>
+</blockquote>
+<p>has the following proof or derivation</p>
+<p>&nbsp;</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">1</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">G</td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">2</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;"><u>G⊃S</u></td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">3</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">S</td>
+<td>1,2 ⊃E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Each line carries with it three items of information. There is the formula that is justified or supported by the line, in this case the formula S. There is the justification of the line, in this case 1,2 ⊃E (which tells us that this line was obtained from lines 1 and 2 by an application of the rule ⊃E). The third item is a little more subtle. Let us digress for one moment. What does the above proof prove? Does it prove that S (that 'Arthur stands out in a crowd')? Surely not, the above argument is valid, the proof is correct, yet for all this it might be that S is false(that, in fact, 'Arthur does not stand out in a crowd'). What we have proved is that S, assuming that G⊃S and G. Each line tells of its own assumptions. The vertical line between the line number 3 and the S is the notation that does this.</p>
+<p>Easy Deriver uses a vertical line notation to show which assumptions are current. There are the premises or standing assumptions which run through the entire derivation. These are depicted by being written in a list against a vertical line with a horizontal line under the last one. The vertical line then continues as long as the assumptions apply, thus:</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">1</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">G</td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">2</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;"><u>G⊃S</u></td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">3</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 349px;">S</td>
+<td>1,2 ⊃E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>In the derivation below, this signifies that A,B,C are assumptions of all lines marked by their vertical line-- 1 to 9 inclusive in this case. The notation is also extended beyond the standing assumptions to other assumptions which may be present for a while:</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">1</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="7" style="width: 349px;">A</td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">2</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="7" style="width: 349px;">B</td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">3</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="7" style="width: 349px;"><u>C</u></td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">4</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="7" style="width: 349px;">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="5" style="width: 343px;"><u>F</u></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 255); width: 2px;">&nbsp;</td>
+<td colspan="3" style="width: 337px;"><u>G</u></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">7</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 255); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 331px;"><u>∼F</u></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">8</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 255); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 331px;">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">9</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="5" style="width: 343px;">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>This time A,B,C are assumptions of lines 1 to 9 inclusive. F of 5,6,7,8,9. G of 6,7, 8. ∼F of 7 and 8.</p>
+<p>(As a quick exercise, list the assumptions of lines 1,3,7 in the following derivation</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">1</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="3" style="width: 349px;"><u>∼(F∨∼F)</u></td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">2</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 343px;"><u>F</u></td>
+<td>Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">3</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 343px;">F∨∼F</td>
+<td>2 ∨I</td>
+</tr>
+<tr>
+<td style="width: 15px;">4</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(251, 0, 0); width: 2px;">&nbsp;</td>
+<td style="width: 343px;">~(F∨∼F)</td>
+<td>1 R</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">4</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="3" style="width: 349px;">∼F</td>
+<td>2-4∼I</td>
+</tr>
+<tr>
+<td style="width: 15px;">5</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="3" style="width: 349px;">F∨∼F</td>
+<td>4 ∨I</td>
+</tr>
+<tr>
+<td style="width: 15px;">6</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">&nbsp;</td>
+<td colspan="3" style="width: 349px;">~(F∨∼F)</td>
+<td>1 R</td>
+</tr>
+<tr>
+<td style="width: 15px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">7</td>
+<td colspan="5" style="width: 355px;">∼∼(F∨∼F)</td>
+<td>6 ∼I</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>&nbsp;</p>
+<p>Answer: line 1 has assumption ∼(F∨∼F), line 3 has assumptions ∼(F∨∼F) and F, and line 7 has no assumptions (the empty set of assumptions) ).</p>
+<p>Some arguments have no premises, and some theorems have no assumptions, so within Deriver there can be zero, one, or many standing assumptions and these are added all at once at the beginning of the derivation. Extra assumptions can be added during the course of a derivation; if so, they are added one at a time.</p>
+<p>It is perfectly possible for a line to have no assumptions; in these cases we still associate a set of assumptions with the line, but, of course, that set is empty.</p>
+<p>So, looking at the matter abstractly, each line in a derivation has the form</p>
+<blockquote><p>&lt;line number&gt; &lt;assumptions&gt; &lt;formula&gt; &lt;justification&gt;</p>
+</blockquote>
+<p>and a derivation is a list of such lines, for example</p>
+<blockquote><p>1. &lt;assumptions1&gt; &lt;formula1&gt; &lt;justification1&gt;<br>
+2. &lt;assumptions2&gt; &lt;formula2&gt; &lt;justification2&gt;<br>
+3. &lt;assumptions3&gt; &lt;formula3&gt; &lt;justification3&gt;<br>
+4. &lt;assumptions4&gt; &lt;formula4&gt; &lt;justification4&gt; .</p>
+</blockquote>
+<p>The &lt;assumptions&gt; aspect of a line is to some degree concealed and has to be accessed by unravelling the vertical line notation.</p>
+<h4>To review.</h4>
+<p>A derivation or proof consists of a finite sequence or list of lines. Each line consists of three components: its set of assumptions, its formula that is justified (given those assumptions), and its justification. Each line in a derivation is proved in its own right, but the focus of interest is usually on the last line in the list and this is considered to be the theorem proved.</p>
+<p>There is no exercise to accompany the first part of this tutorial.</p>
+<p>b)</p>
+<p>What is often mysterious is how skilled logicians manage to do difficult derivations. Fortunately something useful can be said about this. Heuristics-- the study of how to solve problems-- has a history that is thousands of years old. Heuristics, in its modern guise, in this context, is what we will call Tactics.</p>
+<p>Tactics are a simple yet extremely powerful problem solving heuristic. Further, Deriver is able to display and run Tactics in an effortless and unobstrusive way.</p>
+<p>The idea behind Tactics is as follows. Say we are trying to prove A&amp;B,C ∴ B&amp;C. We think of the premise or premises, assumptions, and lines that we have proved so far, as the facts that we have, and the conclusion as the problem that we are trying to solve. There may be facts which are compound propositions containing connectives; in which case we can use the tactic of employing logical Rules which remove connectives to extend the facts. In the example, A&amp;B is among the facts and the Rule &amp;E can be applied to this to extend the facts to A&amp;B, C, A, B. Turning now to the problem. It may be a compound formula containing a connective; in which case we can use the tactic of employing logical Rules which introduce connectives to anticipate sub-problems which have to be solved before the final problem. In the example B&amp;C is a compound proposition and we can guess that the Rule &amp;I, applied to B and C separately, was used to obtain it; and thus the problem B&amp;C is removed and B and C become subproblems to be solved. A subproblem is solved by being or becoming one of the facts. And a proof is complete when there are no further problems or subproblems.</p>
+<p>Deriver displays and implements all fact extending tactics with little or no difference from the standard production of proofs. You select the line or lines you wish to apply the Tactic to, and click the appropriate elimination Rule. For example, to extend the facts A&amp;B, C&amp;A, B you select a conjunction (the first one or the second one) and click on &amp;E.</p>
+<p>Deriver displays and implements all problem reducing tactics with one large difference from the standard production of proofs. Since there is only one conclusion or only one problem under consideration at a time, it is unique. So there is no point in selecting it, and there is no need for you to do so. All you do is to click the appropriate connective introducing Rule. For example, with the conclusion B&amp;C click &amp;I. When a tactic is used to reduce a problem to more than one sub-problem, the question arises as to which sub-problem to consider first (since always only one problem is under consideration at one time). The usual approach here is to have a default. One can always look at the last available sub-problem first (and do a proof backwards). Or one can look at the first available sub-problem first (and do a proof forwards). Deriver allows you to change problems (merely by clicking on the appropriate question mark), so you are free to do as you wish. But, if there is no intervention from the User, Deriver will do proofs forwards.</p>
+<hr>
+<h2>Exercises to accompany Tutorial 6</h2>
+<p><em>Just an observation about the program's ability to produce proofs under the Next Line and Derive It menu commands:- Finding a proof requires 'intelligence', and the program uses intelligence to find proofs. But then, as a theoretical fact, if an argument has one proof it will have infinitely many different proofs (some longer some shorter some more elegant some less elegant). Finding a short elegant proof, for any particular argument, adds a second level of 'intelligence'. The program does what it can here, but it cannot be sure to find the shortest most elegant proof for every valid argument (and nor can any human do this). What is of primary importance is the first step, finding a proof at all. The second step, finding a 'good' proof is not so important. We are using proofs as a means of determining whether arguments are valid; and that determination is settled entirely by the first step: finding a proof, any proof. </em></p>
+<h3>Exercise 1 (of 3)</h3>
+<p>Each of the derivations in the following Exercise can be done using the Rule of Elimination of the Conditional ⊃E, and the rules learned previously.</p>
+<p>If a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula1&gt;</p>
+<p>and a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula1&gt; ⊃ &lt;formula2&gt;</p>
+<p>the Rule of Elimination of the Conditional ⊃E allows you to add</p>
+<p style="margin-left: 40px;">&lt;formula2&gt;</p>
+<p>The elimination of ⊃ {⊃E} is the classical inference rule known as Modus Ponens. In English, if you have A and If A then B you are entitled to B.</p>
+<p>Show each of the following arguments to be valid.</p>
+<p>&nbsp;</p>
+<blockquote><p>(a) F, F⊃G ∴ G</p>
+<p>(b) F⊃G, F ∴ G&amp;F</p>
+<p>(c) F⊃G, G⊃H,F ∴H</p>
+<p>(d) F⊃(G⊃H), F⊃G,F ∴H&amp;F</p>
+<p>(e) F⊃((~G)⊃H), F⊃~G,F ∴H&amp;F</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F,F⊃G∴G">
+<param name="proof1" value="F⊃G,F∴G&amp;F">
+<param name="proof2" value="F⊃G,G⊃H,F ∴H">
+<param name="proof3" value="F⊃(G⊃H),F⊃G,F∴H&amp;F">
+<param name="proof4" value="F⊃((~G)⊃H),F⊃~G,F∴H&amp;F">
+<param name="advancedMenu" value="false">
+<param name="parser" value="bergmann">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Exercise 2 (of 3)</h3>
+<p>Each of the derivations in the following Exercise can be done using only the Rule of Elimination of the Biconditional ≡E, and the rules learned previously.</p>
+<p>If a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula1&gt;</p>
+<p>and a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula1&gt;≡ &lt;formula2&gt;</p>
+<p>the Rule of Elimination of the Conditional ≡E allows you to add</p>
+<p style="margin-left: 40px;">&lt;formula2&gt;</p>
+<p>Also, and alternatively, if a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula2&gt;</p>
+<p>and a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px;">&lt;formula1&gt;≡ &lt;formula2&gt;</p>
+<p>the Rule of Elimination of the Conditional ≡E allows you to add</p>
+<p style="margin-left: 40px;">&lt;formula1&gt;</p>
+<p>Show each of the following arguments to be valid.</p>
+<p>&nbsp;</p>
+<blockquote><p>(a) F≡G, G ∴ F<br>
+(b) F≡G, F ∴ G<br>
+(c) F≡G, G ∴ H∨F<br>
+(d) F≡G, G≡H, F ∴ H</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F≡G,G∴F">
+<param name="proof1" value="F≡G,F∴G">
+<param name="proof2" value="F≡G,G∴H∨F">
+<param name="proof3" value="F≡G,G≡H,F∴H">
+<param name="advancedMenu" value="false">
+<param name="parser" value="bergmann">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Exercise 3 (of 3).</h3>
+<p>After you have started the proof switch on 'Tactics' under the Proof <em> Wizard</em> menu, and do the derivations in the following way. If any of the lines <i>you wish to obtain</i> has a connective in it, click the appropriate Introduction rule (in these examples this will split the problem in two). If any of the lines <i>you have obtained</i> has a connective in it, use an Elimination rule to take it out.</p>
+<p>&nbsp;</p>
+<blockquote><p>(a) F≡G, H&amp;G ∴G&amp;F</p>
+<p>(b) (F&amp;H)&amp;(R&amp;G) ∴F&amp;G</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value=" F≡G,H&amp;G∴G&amp;F">
+<param name="proof1" value="(F&amp;H)&amp;(R&amp;G)∴F&amp;G ">
+<param name="advancedMenu" value="false">
+<param name="parser" value="bergmann">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+</div>
+      
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/236","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"236"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

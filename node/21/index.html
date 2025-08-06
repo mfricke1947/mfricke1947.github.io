@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="The Henkin-Hintikka Game: Endorse-Deny [6/6/2008 10 Software Under development. The Endorse-Deny Widget has not been written yet.] This contains a Java applet, so it will be slow loading and likely it will ask you about security." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/21" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/21" />
+<link rel="shortlink" href="https://softoption.us:8888/node/21" />
+<link rel="prev" href="/node/317" />
+<link rel="up" href="/node/664" />
+
+    <title>Game-theoretical Semantics: The Henkin-Hintikka Game | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-page">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/664">Miscellaneous New</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Game-theoretical Semantics: The Henkin-Hintikka Game</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="21" class="node node--type-page node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h3>The Henkin-Hintikka Game: Endorse-Deny</h3>
+<p>[6/6/2008 10 Software Under development. The Endorse-Deny Widget has not been written yet.]</p>
+<p><span style="font-size: 15px; line-height: 22px; background-color: rgb(255, 255, 255); ">This contains a Java applet, so it will be slow loading and likely it will ask you about security.</span></p>
+<p>With a reasonable complex formula, it is not enough to know (or guess) that it is true (or false) in an Interpretation. One should also know the reasons why it is true (or false) or, alternatively, just what the assertion of the truth (or falsity) of the formula commits you to. The idea is that a view as to the truth-status of a compound formula has repercussions for views about the truth-status of the formula's constituents (and vice-versa). As a (simple) example, if you think that Fa∧Fb is true you should think that Fa is true and that Fb is true (for then, and only then, is Fa∧Fb&nbsp; true).</p>
+<p>This insight lies behind the top-down approach of Model Theory Semantics (see, for example, John Sowa on <a href="http://www.jfsowa.com/logic/math.htm#Model" target="_blank">Model Theory Semantics</a>).</p>
+<p>The applet will debate with you about these matters. The applet has two buttons--<em> Endorse</em> <em>Deny</em>. They work as follows.&nbsp; You use them when you have formed a view as to whether a selected formula (or list of formulas) is true (or is false), and you wish to argue the point with the applet.&nbsp; In the ordinary way you probably would not wish to do this, but if you disagree with the program about the truth value of a formula (or list of formulas) then tracing through the game will pinpoint the error (your error).</p>
+<p><em>One point that you might see: you can be right for the wrong reasons. You may believe a formula to be true, and perhaps it is true. But yet when you reason with the program, the computer beats you. This means that that the grounds for your belief are unsound. In another context, the philosopher John Stuart Mill argues in his essay On Liberty that freedom of speech is valuable because it encourages people to defend the views that they have, and this means that folks's views have some rational basis (as opposed to being guesses or parrotted from the media or some 'authorities'). This game requires you to place your semantical views on a sound basis. </em></p>
+<p>The software will reason with you in accordance with the following rules.&nbsp; The way these rules are displayed on this page is as follows.&nbsp; What you do (or what it actually does) is at the top, then underneath is what you (or it) should do next; sometimes underneath there is a choice in which case at least one of the two should be done. 'You' is you; and 'I' is the program. You play the game with the program by endorsing (or denying) a selection to start with; then you have to select and endorse (or deny) in accordance with what you should do.</p>
+<div>
+<p><img align="top" alt height="711" src="/files/images/endorseDeny.jpg" width="437" loading="lazy"></p>
+</div>
+<p>&nbsp;</p>
+<p>When the applet is playing a game it puts in an arrow head '&gt;' to indicate where it will write its reply to (and that the game is still in progress)-- when the game is over it removes this.&nbsp; (It is wise not to type in extra '&gt;'s of your own. )</p>
+<p>The program writes earlier instantiations made within a game even though these are perhaps not relevant to the current formula. For example, say we have a drawing containing an a which has both the properties F and G and consider a game for (∃x)(Fx∧(∃y)Gy) which you endorse</p>
+<blockquote><p>You endorsed (∃x)(Fx∧(∃y)Gy)</p>
+<p>You should endorse (Fx∧(∃y)Gy)[?/x]</p>
+<p>for a ? that you choose.</p>
+</blockquote>
+<p>and as the second move you endorse (Fx∧(∃y)Gy)[a/x] which leads to</p>
+<blockquote><p>You endorsed (Fx∧(∃y)Gy)[a/x]</p>
+<p>I denied (∃y)Gy[a/x]</p>
+<p>You should endorse Gy[?/y,a/x]</p>
+<p>for a ? that you choose. &gt;</p>
+</blockquote>
+<p>notice that the formula (∃y)Gy does not even contain x; why then does the program tell you I denied (∃y)Gy[a/x] ? the reason is just to remind us that at the earlier stage, with the more complex formula, the instantiation a/x was chosen.&nbsp; These lists of instantiations are read with the oldest on the right and the newest on the left; a similar game can be played for (∃x)(Fx∧(∃x)Gx) and it would proceed</p>
+<blockquote><p>(∃x)(Fx∧(∃x)Gx)</p>
+<p>You endorsed (∃x)(Fx∧(∃x)Gx)</p>
+<p>You should endorse (Fx∧(∃x)Gx)[?/x]</p>
+<p>for a ? that you choose.</p>
+<p>choosing a/x</p>
+<p>You endorsed (Fx∧(∃x)Gx)[a/x]</p>
+<p>I denied (∃x)Gx[a/x]</p>
+<p>You should endorse Gx[?/x,a/x]</p>
+<p>for a ? that you choose. &gt;</p>
+</blockquote>
+<p>this tells us that the program wishes to know your present choice as an instantiation for x (reminding us that the last time an x was instantiated a was used to do it).</p>
+<h4>Cheating</h4>
+<p>If the program tells you to endorse (or deny) a formula, you have to do exactly that. If the program tells you to endorse a formula and you deny that formula, you are violating the rules!</p>
+<h4>A Shortcut</h4>
+<p>When entering instantiations during the game, merely replace the question mark within the square brackets with your choice, then select and endorse the formula with its instantiations.&nbsp; For example, if the program writes</p>
+<blockquote><p>You should endorse Gx[?/x,a/x]</p>
+<p>for a ? that you choose. &gt;</p>
+</blockquote>
+<p>do not bother to rewrite the whole formula, or copy and paste it-- just replace the first question mark with your choice, b say, and select and endorse.</p>
+<h4>Endorse Applet</h4>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.HintikkaGame.class" height="700" hspace="10" name="HintikkaGame" width="600"><br>
+<param name="makeDrawing" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;br /&gt;
+&lt;java version=&quot;1.6.0_17&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;&lt;br /&gt;
+&lt;oca&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocp&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;256&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;89&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;256&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;89&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;114&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;112&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpc&gt;&lt;br /&gt;
+&lt;occ&gt;&lt;br /&gt;
+&lt;i&gt;255&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;0&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;0&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;255&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;G&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocp&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;119&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;84&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;119&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;84&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;79&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;98&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;F&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;oci&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;284&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;94&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;c&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;oci&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;150&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;90&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;a&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocb&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;5&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;0&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;150&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;70&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpss&gt;&lt;br /&gt;
+&lt;ocs&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocre&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;161&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;99&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;161&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;99&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;126&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;4&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpf&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;287&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;103&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;R&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpt&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;161&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;99&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocre&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;285&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;97&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;285&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;97&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;7&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;1&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpf&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;292&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;98&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;R&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpt&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;285&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;97&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vma&gt;&lt;br /&gt;
+&lt;ocri&gt;&lt;br /&gt;
+&lt;vpx&gt;&lt;br /&gt;
+&lt;i&gt;47&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpy&gt;&lt;br /&gt;
+&lt;i&gt;81&lt;/i&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpbr&gt;&lt;br /&gt;
+&lt;ocr&gt;&lt;br /&gt;
+&lt;i&gt;47&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;81&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;108&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;18&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpf&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;47&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;81&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpn&gt;&lt;br /&gt;
+&lt;c&gt;b&lt;/c&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vps&gt;&lt;br /&gt;
+&lt;b&gt;false&lt;/b&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;vpt&gt;&lt;br /&gt;
+&lt;ocpo&gt;&lt;br /&gt;
+&lt;i&gt;155&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;99&lt;/i&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/v&gt;&lt;br /&gt;
+&lt;/o&gt;&lt;br /&gt;
+&lt;/java&gt;"><br>
+<param name="inputText" value="&lt;html&gt;&lt;p&gt;Let us start with something simple. Select only the formula of (a), form a view about its truth, and click &lt;em&gt;Endorse&lt;/em&gt; or &lt;em&gt;Deny&lt;/em&gt; and follow through until the game is over.&lt;/p&gt;&lt;br /&gt;
+&lt;p&gt;&lt;/p&gt;&lt;br /&gt;
+&lt;blockquote&gt;&lt;br /&gt;
+a) Fa≡Gb&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;
+b) (∀x)(Fx ⊃ Gx)&lt;br /&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+c) (∀x)(Gx ⊃ (∃y)Rxy)&lt;br /&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+d) (∀x)(((x=b)∨(∃y)Rxy) ⊃ Fx)&lt;br /&gt;
+&lt;/p&gt;&lt;br /&gt;
+&lt;/blockquote&gt;&lt;br /&gt;
+&lt;/html&gt;"><br>
+<param name="identity" value="true">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>&nbsp;</p>
+<p>There are a few formulas in the applet for you to try. But you can go further either by typing your own ones in or by editing the drawing (and thus changing the interpretation-- have a look at<a href="/node/26" target="_blank"> documentation on the drawing panel</a>).</p>
+</div>
+      
+  <nav id="book-navigation-664" class="book-navigation" role="navigation" aria-labelledby="book-label-664">
+    
+          <h2 class="visually-hidden" id="book-label-664">Book traversal links for Game-theoretical Semantics: The Henkin-Hintikka Game</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/317" rel="prev" title="Go to previous page"><b>‹</b> Notation</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/664" title="Go to parent page">Up</a>
+        </li>
+                </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/317" hreflang="en">Notation</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/21" hreflang="en">Game-theoretical Semantics: The Henkin-Hintikka Game</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/21","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"21"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

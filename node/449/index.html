@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="6/6/12 Reading [These might help, you need only scan them.] K.H.Blasius et al. eds.[1990] Sorts and Types in Artificial Intelligence Maria Manzano [1996] Extensions of First-Order Logic John Sowa [2000] Knowledge Representation" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/449" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/449" />
+<link rel="shortlink" href="https://softoption.us:8888/node/449" />
+<link rel="prev" href="/node/447" />
+<link rel="up" href="/node/434" />
+<link rel="next" href="/node/647" />
+
+    <title>Tree Tutorial 7: Type Labels, Sorts, and Signatures [&#039;Mixed Domains&#039;] | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/434">Tree Tutorials [Propositional, Predicate, Identity, and Modal Logic Trees—Default Syntax]</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 7: Type Labels, Sorts, and Signatures [&#039;Mixed Domains&#039;]</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="449" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/30" hreflang="en">default</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 class="rteright">6/6/12</h6>
+<h3>Reading</h3>
+<p>[These might help, you need only scan them.]</p>
+<p class="rteindent1">K.H.Blasius et al. eds.[1990] <em>Sorts and Types in Artificial Intelligence</em><br>
+Maria Manzano [1996] <em>Extensions of First-Order Logic</em><br>
+John Sowa [2000] <em>Knowledge Representation</em></p>
+<h3>Introduction:</h3>
+<p>We know from Completeness, Compactness, the Lowenheim Skolem Theorem, and the Lindstrom Theorems [P. Lindstrom, On extensions of elementary logic, <em>Theoria</em>&nbsp; 35 (1969)&nbsp; 1-11. ] that First Order Predicate Calculus (FOPC) is pretty well where we want to be. [The first three theorems establish good properties for FOPC, and then Lindstrom shows that no stronger theory than, or extension to, FOPC has these good properties-- so FOPC is the strongest good logic.]</p>
+<p>That FOPC is good does not mean that there are not advantages to dressing it up in certain ways to make it more amenable to humans, perhaps by adding what the computer scientists call 'syntactic sugar'.</p>
+<p>One obvious opportunity concerns domains, ie what the variables range over. In FOPC we have the notion of an 'individual constant' and an 'individual variable' and the variables range over 'everything'. But this is a little at stress with how we think about many subject areas and how we reason much of the time. Beginning students are regularly baffled by universal statements like&nbsp; 'All men are mortal' , in particular what the 'all' ranges over and how the statement is to be symbolized. We, and the beginners, think that the universal statement is about men; then we learn that actually it is about everything, and, in particular, it should be rendered 'whatever x you choose, if x is a man, etc.'. Then, once we start deriving with our symbolized statements we make heavy weather of such inferences as ascending a hierarchy (such as 'All men are mortal', 'All mortal men are eventually die' therefore 'All men eventually die') or flat inferences on a common domain (such as 'All men are mortal', 'All men are kind' therefore 'All men are mortal and kind'). What slows us is dealing with the 'if-clause' all the time ('if x is a man').</p>
+<p>Then, independently of this, many subject matters seem to have separate domains (or 'mixed domains'). For example, our trees are part of graph theory, and in the graphs of graph theory there are nodes, one domain, and there are links, a second domain. FOPC can deal with graph theory, using statements like 'if x is a node, etc. ' or 'if x is a link, etc.' but this is not the most natural. And this phenomenon is common place:-</p>
+<ul>
+<li>in geometry, there are points and lines;</li>
+<li>in an employment workplace there are people and there are their salaries ie different kinds of things.</li>
+<li>in database design, there regularly is analysis in terms of entitites and their relationships, and this leads to different domains; for example, a simple database for a library will have the domain of patrons (borrowers/users ie people) and the second domain of books.</li>
+<li>everywhere in computer science; for example, in any modern typed programming language there might be 'booleans'. 'integers', 'strings' etc., all of these are different domains.</li>
+</ul>
+<p>There are two common approaches here: type labels or sorted logic. [The word 'types' gets used in different areas in logic-- here it is being used to identify what is known in computer science as 'data types'.]</p>
+<p>Type labels are one way to approach what seem to be different domains in use in the same reasoning. What we are going to do here is to tag the variables with a type to indicate that they are subject to a particular monadic (one-place) predicate applying to what they pick out. An example will help, say 'All men die' is symbolized</p>
+<p class="rteindent1">∀x(M(x)&nbsp;→D(x))</p>
+<p>and our domain of reasoning (our interest, our ontology) has a lot to do with men (eg All man this, Some men that, etc.); we will let the monadic predicate M(x) (x is a man) become a type tag on a quantified variable, thus</p>
+<p class="rteindent1">∀x:m(D(x))</p>
+<p>The notation ∀x:m is read 'Whatever x you choose of type m' . <strong>For our software system, we need here some convenient correspondence between the monadic predicates and the type labels. We have as monadic predicates A(a), B(x), C(x).... Z(x) ie we use the upper case letters A through Z. For types, we will just use the lower case letters a through z, and let the upper case predicate correspond to the lower case version of the <em>same letter</em>.</strong>&nbsp;So, as examples of this notation, here are some equivalences between the short form and the long form</p>
+<p class="rteindent1">∀x:m(D(x))≡∀x(M(x)→D(x))&nbsp;</p>
+<p class="rteindent1">∀x:a(D(x))≡∀x(A(x)→D(x))</p>
+<p class="rteindent1">∀x:b(D(x)≡∀x(B(x)→D(x))</p>
+<p>This then allows us to write inferences like 'Socrates is a man, all men are wise, therefore, Socrates is wise' as follows:</p>
+<blockquote><p>M(s), ∀x:m(W(x))∴W(s)</p></blockquote>
+<p>[The attentive reader might wonder why we seem to have an extra pair of parantheses,&nbsp;∀x:m(W(x)) instead of&nbsp;∀x:mW(x). The problem is one of our own making, at least within this system. We are allowing terms to have any length, so 'm' is a term and so too is 'mW'. Now with&nbsp;∀x:mW(x) we do not want 'mW' to be read as a term, we want to 'W' to be a predicate... hence the extra brackets. With other parsers, where terms automatically have length one, we would not do this.]</p>
+<p>Much the same can be done with existentially quantified formulas. For example, say 'Some men die' is symbolized</p>
+<p class="rteindent1">∃x(M(x)&amp;D(x))</p>
+<p>and our domain of reasoning (our interest, our ontology) has a lot to do with men (eg All man this, Some men that, etc.); we will let the monadic predicate Mx (x is a man) become a type tag on a quantified variable, thus</p>
+<p class="rteindent1">∃x:m(D(x))</p>
+<p>The notation ∃x:m is read 'There is an x of type m such that ...' . =</p>
+<p class="rteindent1">∃x:m(D(x))≡∃x(M(x)&amp;D(x))</p>
+<p class="rteindent1">∃x:a(D(x))≡∃x(A(x)&amp;D(x))</p>
+<p class="rteindent1">∃x:b(D(x))≡∃x(B(x)&amp;D(x))</p>
+<p>So, conceptually at least, a database for a library might contain statements like</p>
+<blockquote><p>∀x:p∀y:b(B(x,y)) 'Any patron is permitted to borrow any book.'</p></blockquote>
+<p>Here are the type label expansions in trees.</p>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/Types.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p>Sorted Logic</p>
+<p>(Many) sorted logic, with sorts or sort labels, is very similar in concept and execution to the types and type labels just discussed (in fact, many texts use the two terms interchangeably). There is, though, a conceptual difference. It is that whereas both ordinary logic and logic with type labels use one (homogenous) domain or universe, sorted logic uses a (usually stratified, heterogenous) domain which consists of two or more sub-domains.</p>
+<p>An example will help.</p>
+<p>Say we had a library with people borrowing books. The people are one type or sort of thing. And the books are another. In ordinary first order logic, the universe would consist of 'everything' and we would write such formulas as</p>
+<blockquote><p>B(a,w) to mean 'Arthur borrowed <em>Wuthering Heights</em>'</p></blockquote>
+<p>Of course, Arthur is a person, and <em>Wuthering Heights</em> a book, but we probably would not bother about this, or if we did, we might write</p>
+<blockquote><p>P(a)&amp;B(w)&amp;B(a,w) to mean 'Arthur is a person and <em>Wuthering Heights</em> a book and Arthur borrowed <em>Wuthering Heights'</em></p></blockquote>
+<p>We would probably be more careful if quantifiers were involved, perhaps writing</p>
+<blockquote><p>∃x(P(a)&amp;B(w)&amp;B(a,w)) &nbsp;to mean 'somebody has borrowed the book&nbsp;<em>Wuthering Heights</em>'</p></blockquote>
+<p>We could use type labels if we wished to type this</p>
+<blockquote><p>∃x:p(B(w)&amp;B(a,w))&nbsp;</p></blockquote>
+<p>with the variable 'x' still ranging over the entire universe.</p>
+<p>With sorts, we say that actually the universe consists of two separate universes: a universe of people and a universe of books. And, back in the formal language, each universe has its own set of variables that range over it, so people has its variables and books its own variables. We need to denote these somehow, one way would be to superscript them. In our plain vanilla first order logic, our variables are such terms as</p>
+<blockquote><p>w,x,y,z</p></blockquote>
+<p>we could introduce some new variables</p>
+<blockquote><p>w<sup>p</sup>,x<sup>p</sup>,y<sup>p</sup>,z<sup>p</sup></p></blockquote>
+<p>which would range only over the people universe and</p>
+<blockquote><p>w<sup>b</sup>,x<sup>b</sup>,y<sup>b</sup>,z<sup>b</sup></p></blockquote>
+<p>which are different variables which range over only the book universe. Then the earlier formula would become&nbsp;</p>
+<blockquote><p>∃x<sup>p</sup>(B(w)&amp;B(x<sup>p</sup>,w))</p></blockquote>
+<p>The same treatment could be given to the constants. The constant for Arthur, a, is a constant that can range over people (and only over people) so we could write it a<sup>p</sup>, similarly for w, which ranges over books, so a new version for it might be w<sup>b</sup>. So we could end up with</p>
+<blockquote><p>∃x<sup>p</sup>(B(w<sup>b</sup>)&amp;B(x<sup>p</sup>,w<sup>b</sup>))</p></blockquote>
+<p>Mathematics seems to be full of sorts. For example, a mathematician will tell you that a vector space is a structure consisting of a set of scalars S and an entirely separate set of vectors V, some special elements which are scalars, another special element which is a vector, operations among scalars, operations among vectors, and some operations across both ie</p>
+<blockquote><p>a vector space = {S, V, etc.}</p></blockquote>
+<p>If we were looking for a 'natural' logic for this, there would have to be the temptation to have two domains (scalars, and vectors) and suitable constants and functions.</p>
+<h3>Signatures</h3>
+<p>Thus far, with syntax, we have allowed in special variables&nbsp;w<sup>p</sup>,x<sup>p</sup>,y<sup>p</sup>,z<sup>p</sup> and special constants a<sup>p</sup>,b<sup>p</sup>,c<sup>p</sup>. But actually this needs to be carried through for all the predicates and functions. For example, we have used B(x,y)to mean '(person) x borrowed the (book) y'. So, really, B(x,y), conceptually or notationally, needs to be&nbsp;B<sup>p</sup><sup>b</sup>(x,y )to mean that the predicate B(x,y) has a type or signature that requires that its first argument is a person and its second argument is a book. Then</p>
+<blockquote><p>B<sup>p</sup><sup>b</sup>(a<sup>p</sup>,t<sup>b )</sup></p>
+</blockquote>
+<p>is a perfectly good formula which might mean 'The (person) Arthur borrowed the (book) <em>Tale of Two Cities</em>'</p>
+<p>On the other hand a string of symbols like&nbsp;</p>
+<blockquote><p>B<sup>p</sup><sup>b</sup>(t<sup>b</sup>,a<sup>p</sup>)</p>
+</blockquote>
+<p>is not permitted or ill-typed or not well formed or is nonsense because the predicate 'borrowed' requires a person as its first argument and a book as its second, but this seems to have a book as its first argument and a person as its second. It is trying to say that <em>Tale of Two Cities</em> borrowed Arthur.</p>
+<p>This typing can or perhaps should be carried out through all the syntax. A problem is that the formulas look very messy and proofs become obscure merely because of the notation. A somewhat more relaxed alternative is just to not write out the signatures explicitly all the time, but to understand they are there is the background. [There are results from elsewhere that have some bearing here. There is the Hindley-Milner type inference algorithm, which can determine and check types automatically. There are ways of checking the types even if we do not always write them out.]</p>
+<p>There is a more detailed explanation of types and sorts &nbsp;<a href="/node/51" style="color: rgb(0, 113, 179); text-decoration: none; " target="_blank">elsewhere</a>.</p>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20" target="_blank">Deriver [default]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/treesStandAlone/CombinedTutorialsDefault.html . Then select the desired formula(s) and Start Tree off the Actions Menu.</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this.</p>
+<ul>
+<li>set <em>identity</em> to true (and that will give you the identity rules)</li>
+<li>set <em>firstOrder</em> to true (to get first order theories)</li>
+<li>set typeLabels to be true (for types);</li>
+<li>and&nbsp; you can check that the parser is set to default.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-434" class="book-navigation" role="navigation" aria-labelledby="book-label-434">
+    
+          <h2 class="visually-hidden" id="book-label-434">Book traversal links for Tree Tutorial 7: Type Labels, Sorts, and Signatures [&#039;Mixed Domains&#039;]</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/447" rel="prev" title="Go to previous page"><b>‹</b> Set Theory (and Russell&#039;s Paradox)</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/434" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/647" rel="next" title="Go to next page">Tree Tutorial 8 Modal Trees <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/458" hreflang="en">Preliminary [Pre-test]</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/436" hreflang="en">Tree Tutorial 1: Propositional Trees: Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/437" hreflang="en">Tree Tutorial 2: More Propositional Tree Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/452" hreflang="en">Review of Tree Propositional Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/440" hreflang="en">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/435" hreflang="en">Notation for Predicates</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/442" hreflang="en">Tree Tutorial 4: Predicate Logic Trees</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/450" hreflang="en">Review of Tree Predicate Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/443" hreflang="en">Tree Tutorial 5: Identity Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/444" hreflang="en">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/449" hreflang="en">Tree Tutorial 7: Type Labels, Sorts, and Signatures [&#039;Mixed Domains&#039;]</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/647" hreflang="en">Tree Tutorial 8 Modal Trees</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/449","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"449"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

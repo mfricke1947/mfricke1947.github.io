@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="8/23/21 Types and Values Types are collections or sets of values. For our purposes, to produce an illustrative example, we can get by with just two basic Types, one with a finite number of values, and the other with an infinite number of values.  The Type Boolean, or Bool, or just &#039;B&#039; is a type with the two values: True, and False. The Type Integer, or Int, or just &#039;I&#039;, is a type with the values 0,1,2,3... etc" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/671" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/671" />
+<link rel="shortlink" href="https://softoption.us:8888/node/671" />
+<link rel="prev" href="/node/718" />
+<link rel="up" href="/node/718" />
+<link rel="next" href="/node/676" />
+
+    <title>Simply Typed Lambda Calculus | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/718">Lambda Calculus with Elementary Type Theory</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Simply Typed Lambda Calculus</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="671" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">8/23/21</h6>
+<h2>Types and Values</h2>
+<p>Types are collections or sets of values. For our purposes, to produce an illustrative example, we can get by with just two <i>basic</i> Types, one with a finite number of values, and the other with an infinite number of values.&nbsp;</p>
+<blockquote><p>The Type Boolean, or Bool, or just 'B' is a type with the two values: True, and False.</p>
+<p>The Type Integer, or Int, or just 'I', is a type with the values 0,1,2,3... etc</p>
+</blockquote>
+<h2>Constructing New Types from Existing Types</h2>
+<p>The base types are not the only types there are. It is possible to construct new types from old types using the type constructor '→'&nbsp;</p>
+<blockquote><p>If t<sub>1</sub> is a type and t<sub>2</sub> is a type then t<sub>1</sub>→t<sub>2</sub> is a type.</p>
+</blockquote>
+<p>This means that, for example, B→I is a type, and so too are&nbsp;B→I→I→I and I→I→I. For clarity, we will permit parentheses in type expressions. Also, if there are no parentheses, the type constructor → associates to the right. So, for example,&nbsp;B→I→I→I means&nbsp;B→(I→(I→I)).</p>
+<p>There are now infinitely many types in our STLC.</p>
+<p>The intended interpretation of&nbsp;t<sub>1</sub>→t<sub>2</sub>&nbsp; is that of denoting a function from&nbsp;t<sub>1 </sub>to<sub>&nbsp;</sub>t<sub>2</sub> . So, for example, a function from I to B would have type I→B. To make this a little more concrete, imagine, outside of STLC, a function from the Integers to Booleans such as the '... is even' function; this function returns True if the integer is even and False if it is not; that function has the type&nbsp;I→B.</p>
+<h2>Changes in the Syntax to form a Simply Typed Lambda Calculus</h2>
+<p>There is only one main change. It is required that a type be given for the 'binding' variable on a lambda expression, and this can be done by appending a colon and the type. So, in&nbsp;<em>untyped</em>&nbsp;Lambda Calculus, a lambda expression might look like this</p>
+<blockquote><p>&nbsp;</p>
+<p>λx.x</p>
+<p>or this</p>
+<p>λx.(x x)</p>
+<p>or this</p>
+<p>λx.λy.λz.(x (y z))</p>
+</blockquote>
+<p>In the <i>Simply Typed Lambda Calculus (STLC)</i>, similar lambda expressions would need to look like this</p>
+<blockquote><p>&nbsp;</p>
+<p>λx:B.x</p>
+<p>or this</p>
+<p>λx:I.(x x)</p>
+<p>or this</p>
+<p>λx:I.λy:B.λz:I.(x (y z))</p>
+</blockquote>
+<p>i.e. each variable governed by the lambda in a lambda expression needs to have an annotation saying what its type is (and that can be done using ':&lt;type&gt;').</p>
+<p>There is another smaller change. The <em>values</em> of Ints and Bools are going to be allowed into the expressions as though they were free variables, in fact they are constants but they go in places where a free variable might be found. So</p>
+<blockquote><p>&nbsp;</p>
+<p>λx:B.True</p>
+<p>or this</p>
+<p>λx:I.(x 49)</p>
+<p>or this</p>
+<p>λx:I.λy:B.λz:I.(False (True 0))</p>
+</blockquote>
+<p>are all well-formed formula.</p>
+<p>Now, of course, 0, 1, 2, 3, False, True etc. all have types, but we have no need to say what those are explicitly by annotation in the formulas. We know what their types are: 0, 1, 2, 3 have type I and&nbsp;False, True have type B.</p>
+<p>Ordinary variables in expressions exist unchanged. <em>Bound</em> variables are understood to denote a value of their underlying implicit type; thus, that type is the type they have. <em>Free</em> occurrences of variables do not play a role; if they appear in a top level&nbsp; expression we can often treat them as though they do not have a type.</p>
+<p>If we do need to type occurrences of a free variable, and there will be occasions when we will,&nbsp;we can imagine that there is a collection of assumptions, which is a list of key-value pairs i.e. a dictionary, and those assumptions can provide the information that, say, k is an Integer.</p>
+<p>With this wider range of types (indeed there are infinitely many), you might see expressions like</p>
+<p>&nbsp;&nbsp;&nbsp; λx:B→(I→(I→I)).(x False)</p>
+<h2>Typing an Expression</h2>
+<p>We can type, or try to type, an expression according to some typing rules. These work on what sort of expression the expression is: expressions are either i) atomic ii) applications or iii) lambda abstractions.&nbsp;</p>
+<blockquote><p>i) if an expression is atomic, then it is either a Boolean or an Integer (and we know the types of those two) or a variable (and if we need to type a variable we just look it up in the assumptions).</p>
+</blockquote>
+<p>For applications and lambdas, we invoke an additional technique. These are complex expressions, involving proper sub-expressions which are simpler than they are. We can make the inductive assumption that we have been able to type the simpler expressions and then provide rules for getting from that to typing the more complex expression.&nbsp;</p>
+<blockquote><p>ii) if an expression is an application, it has the form (&lt;function expression&gt; &lt;argument expression&gt;) and, by the inductive assumption we have types for both the function and the argument. For the application itself to be well typed, the function must have type&nbsp;t<sub>1</sub>→t<sub>2 </sub>and the argument type&nbsp;t<sub>1&nbsp;&nbsp;</sub>for some types, t<sub>1&nbsp;</sub>and t<sub>2 </sub>.<sub>&nbsp;</sub>If so, the application is well-typed, and has type t<sub>2</sub>.&nbsp;</p>
+</blockquote>
+<blockquote><p>iii) if an expression is a lambda, it has the form λx:&lt;type&gt;.&lt;scope&gt; . Now, a lambda entire expression&nbsp;is intended to be a function, so we are expecting, or requiring, its type to be&nbsp;t<sub>1</sub>→t<sub>2&nbsp; ,</sub>for some types, t<sub>1&nbsp;</sub>and t<sub>2</sub>.&nbsp;We know what the t<sub>1&nbsp;</sub> is going to be here. It is going to be the annotation on the bound variable. So this is where we are: the expression is λx:t<sub>1&nbsp;</sub>.&lt;scope&gt; and its type is&nbsp;t<sub>1</sub>→? , we just need to find the right value for the question mark. Typically the binding variable will appear in the &lt;scope&gt;, it might not, but typically it would. Obviously what we want for the value of the question mark is the type of the&nbsp;&lt;scope&gt; under the assumption that any occurrences of the binding variable x in it have type t<sub>1&nbsp; </sub>(that is why we earlier had annotated&nbsp;x like this&nbsp;x:t<sub>1</sub>&nbsp;)&nbsp; If the scope is not well typed, then neither is the lambda. If the scope is well typed and has type t<sub>2&nbsp;</sub>then the entire lambda expression well-typed&nbsp;has type&nbsp;t<sub>1</sub>→t<sub>2</sub></p>
+</blockquote>
+<h2>Well-typed expressions</h2>
+<p>You can see immediately that some expressions are well-typed and others are not</p>
+<blockquote><p>(λx:B→B.x False)&nbsp; this expression is an application; its lambda (i.e. its function), actually is the identity function, here has the type&nbsp;B→B i.e. Boolean to Boolean; its argument is a Boolean; so this makes sense, it is well-typed, and the reduction (the result) will have type Boolean</p>
+<p>(λx:I→B.x False)&nbsp; this expression is an application; its lambda (i.e. its function), also the identity function, is said to have the type&nbsp;I→B i.e. Integer to Boolean; its argument is a Boolean; so this makes no sense at all; for a start, the function is supposed to be being applied to an Integer, but in fact it is applied to a Boolean, and then the function is the identity function which going to return a result of the same type as its argument&nbsp;; the expression&nbsp;is a nonsense as far as its type is concerned and it is not well typed</p>
+</blockquote>
+<h2>Well-formed expressions and Well-typed expressions</h2>
+<p>As we have just seen above, not all well-formed expressions are well-typed ((λx:I→B.x False) is well-formed (i.e. it is a proper grammatical expression in STLC)&nbsp; and it does not have a type). All expressions with a type are well-formed (the typing rules build off that).</p>
+<h2>Finding the Type of an Expression</h2>
+<p>Ideally, if an expression has a type, we would like to find that type and prove that the expression had it; and if the expression does not have a type, we would like to prove that it does not. There are different approaches here as to how to do this. In more advanced work, with more advanced type systems, there would be type inference and even type inference by algorithm. The standard approach, more or less, is Hindley-Milner (or Damas-Hindley-Milner)&nbsp;type inference. But, in turn, Hindley-Milner can be carried out by different algorithms. Usually in them there is an interleaving of allocating values to variables and extracting constraints that need to be satisfied. But there is something to be said for an approach that extracts the constraints first, then solves the constraints (apparently Hindley was in favor of this). This is clearer at a pedagogical level and it generalizes better to other areas. So that is what we will try in the next set of Notes.</p>
+<p>In the meantime, you will be able to type expressions, or realize that they do not have a type, just by using some thought, a pencil and paper and the above rules.</p>
+<p>We will temporarily turn to something else.</p>
+<h2>Typed expressions in STLC and 'stopping'</h2>
+<p>Reductions to Normal Form in STLC are exactly the same as those in ordinary lambda calculus. We don't worry about the types while doing reductions. There is a theorem, mentioned earlier, that if an expression has a Normal Form, then Normal Order Reduction (NOR) will find it. So if we want to explore whether there is a relationship between reducing to Normal Form and having a type, we need consider only NOR.</p>
+<p>&nbsp;</p>
+<p><iframe height="700" id="#editorNOR" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/nORByTyped.jsexe/index.html" width="100%">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h2>Statements you might like to explore (and these refer to STLC)</h2>
+<ul>
+<li>If an expression has a type, it is always reducible to normal form (i.e. NOR will find the normal form and stop, within a finite number of steps).</li>
+<li>If an expression does not have a type, it is never reducible to normal form.</li>
+<li>If an expression is in normal form, it has a type.</li>
+<li>If an attempted NOR reduction of an expression 'runs forever', without stopping, that expression does not have a type.</li>
+</ul>
+<p>There is practical example or analog here. The crypto-currency Bitcoin has a scripting language called 'Script' which is central to all its currency transactions. Script is not 'Turing Complete', which means that there are computations which are computable which cannot be programmed in Script. However, all Script programs will halt or stop. A 'stopping' language like Script was chosen on purpose— it was deemed desirable that no financial transaction should take forever to complete. Another crypto-technology ecosystem is Ethereum which hosts and runs it own contract language Solidity. Solidity is Turing Complete, but that comes at a price. Some Solidity programs will not stop— they will run forever (also, it is not possible, in the general case, to say whether a program will stop or whether it will not stop). Roughly speaking, it's not too wide of the mark to say that Solidity can be represented in lambda calculus and Script in simply typed lambda calculus with the expressions restricted to those which are well typed.</p>
+<h2>Strong normalization</h2>
+<p>We have observed above, though not proved, that expressions in STLC that are well-typed reduce to normal form. They are normalizing (or stopping under reduction). We used NOR to show this (motivated by the fact that NOR will find&nbsp; the normal form if there is one). But, actually, STLC has a stronger property—&nbsp;expressions in STLC that are well-typed will reduce to normal form <em>under any reduction sequence or strategy</em>. So, for example, AOR will always also find the normal form of any well-typed expression. This property is known as <em>strong normalization</em>.&nbsp;</p>
+<p>&nbsp;</p>
+<p><iframe height="700" id="#editorAOR" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/aORByTyped.jsexe/index.html" width="100%">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h2>Summary of types, well-formedness, and normalization in STLC</h2>
+<ul>
+<li>not all well-formed expressions are well-typed&nbsp;e.g. (3 4)</li>
+<li>expressions that are well-typed are normalizing and strongly normalizing</li>
+<li>some expressions that are not well-typed can be reduced to normal form e.g. (3 4) and some involving self-application (e.g. (f) above).</li>
+<li>some ill-typed expressions become well-typed when they are reduced to normal form, and some do not.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+      
+  <nav id="book-navigation-718" class="book-navigation" role="navigation" aria-labelledby="book-label-718">
+    
+          <h2 class="visually-hidden" id="book-label-718">Book traversal links for Simply Typed Lambda Calculus</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/718" rel="prev" title="Go to previous page"><b>‹</b> Lambda Calculus with Elementary Type Theory</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/718" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/676" rel="next" title="Go to next page">Junior Hindley-Milner I <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--active-trail">
+        <a href="/node/671" hreflang="en">Simply Typed Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/676" hreflang="en">Junior Hindley-Milner I</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/680" hreflang="en">Polymorphism, Annotation, and Decidable Type Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/712" hreflang="en">Let Polymorphism and a Mini-ML Type System</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/723" hreflang="en">Polymorphic Lambda Calculus: System F</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/672" hreflang="en">Intuitionistic Propositional Logic</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/671","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"671"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

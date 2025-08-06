@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="1/10/2020 Skills to be acquired: Learning reductio proof, both as plain Negation Introduction and via (double) Negation Elimination (to prove some formulas that do not have negation as their main connective). Reading Bergmann[2004] The Logic Book Section 5.1 and 5.4 The Tutorial: Reductio ad Absurdum is the second of the classical forms of inference." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/590" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/590" />
+<link rel="shortlink" href="https://softoption.us:8888/node/590" />
+<link rel="prev" href="/node/658" />
+<link rel="up" href="/node/562" />
+<link rel="next" href="/node/591" />
+
+    <title>Tutorial 8: Reductio ad Absurdum | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/561">Easy Deriver [Sentential and Predicate Logic—Bergmann Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/562">Sentential Logic: 10 Tutorials</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 8: Reductio ad Absurdum</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="590" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/21" hreflang="en">bergmann</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">1/10/2020</h6>
+<h3>Skills to be acquired:</h3>
+<p>Learning reductio proof, both as plain Negation Introduction and via (double) Negation Elimination (to prove some formulas that do not have negation as their main connective).</p>
+<h3>Reading</h3>
+<p>Bergmann[2004] <em>The Logic Book Section</em> 5.1 and 5.4</p>
+<h3>The Tutorial:</h3>
+<p>Reductio ad Absurdum is the second of the classical forms of inference.</p>
+<p>The idea of it is the following. In a valid argument the truth of the premises guarantees the truth of the conclusion or, to put it another way, the falsity of the conclusion guarantees the falsity of at least one of the premises. Some formulas are sure to be false; contradictions, for example, like (A&amp;∼A). So, if you can derive a contradiction from just one premise, that proves the premise to be false. But proving that a statement is false is exactly the same as proving that the negation of that statement is true. To sum up, one way of proving the negation of a statement is to assume the statement and derive a contradiction from that assumption. This process is known as Reductio ad Absurdum, and one early example of its used was in the discovery of irrational numbers back in Greek times (the mathematical theorem 'It is not the case that there are two natural numbers such that one divided by the other equals the square root of two' was proved by assuming 'There are two natural numbers such that one divided by the other equals the square root of two' and deducing a contradiction from this assumption).</p>
+<p>In our rule system Reductio ad Absurdum appears as the rule for the Introduction of Negation ∼I. This, then, is a rule which gets used when you are trying to obtain a formula which is a negation.</p>
+<p>∼I is implemented to two slightly different ways, and you can take your choice among them. The first uses the propositional constant Absurd -- this implementation is easier to understand, makes simple derivations using ∼I one line longer, can make more difficult derivations using ∼I many lines shorter, and fits better with the use of Tactics. It is the recommended implementation for beginners. The other will be described briefly later.</p>
+<p>As a preliminary, let us look at another Rule, the one for the Introduction of Absurdity. Our logical system contains the propositional constant Absurd which may be derived from any pair of formulas one of which is the negation of the other; in other words, the pair of formulas must contradict each other and if they do Absurd may be derived. The Introduction of Absurdity is just like the And Introduction except that the conjuncts must contradict each other. Here are some proof fragments illustrating the introduction of Absurd.</p>
+<p><img alt src="/files/2/Gentzen8a.png"></p>
+<!--<table cellspacing="0" style="width: 100%; table-layout: fixed; "><colgroup>
+<col style="width: 36px; " />
+<col style="width: 100%; " />
+<col style="width: 100px; " />
+	</colgroup>
+<tbody style="">
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					1</div>
+</td>
+<td>
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+					&nbsp;</div>
+<p>				F</td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					2</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;border-bottom:medium solid black;width:6px;height:30px;">
+						&nbsp;~F</div>
+</div>
+</td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					3</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<p>					Absurd</div>
+</td>
+<td>
+<div style="outline:none;">
+					1,2 Abs I</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p> -->
+<p>&nbsp;</p>
+<p><img alt src="/files/2/Gentzen8b.png"></p>
+<!--
+<table cellspacing="0" style="width: 100%; table-layout: fixed; "><colgroup>
+<col style="width: 36px; " />
+<col style="width: 100%; " />
+<col style="width: 100px; " />
+	</colgroup>
+<tbody style="">
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					1</div>
+</td>
+<td>
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+					&nbsp;</div>
+<p>				~<span style="font-size: 13px; font-style: italic; line-height: 19px; ">&sim;(H&sup;J)</span></td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					2</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;border-bottom:medium solid black;width:6px;height:30px;">
+						&nbsp;(</div>
+<p>					<span style="font-size: 13px; font-style: italic; line-height: 19px; ">H&sup;J)</span></div>
+</td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					3</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<p>					Absurd</div>
+</td>
+<td>
+<div style="outline:none;">
+					1,2 Abs I</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>-->
+<p>Notice that the formulas that lead to Absurd contradict each other. Returning to Reductio ad Absurdum and the Rule for the Introduction of Negation...the circumstance that Introduction of Negation gets invoked looks like this.</p>
+<table cellspacing="0" style="width: 100%; table-layout: fixed; ">
+<colgroup>
+<col style="width: 36px; ">
+<col style="width: 100%; ">
+<col style="width: 100px; ">
+	</colgroup>
+<tbody style>
+<tr onclick>
+<td>
+<div style="outline:none;">&nbsp;</div>
+</td>
+<td>&nbsp;</td>
+<td>
+<div style="outline:none;">&nbsp;</div>
+</td>
+</tr>
+<tr onclick>
+<td>
+<div style="outline:none;">&nbsp;</div>
+</td>
+<td>
+<div style="outline:none;">&nbsp;?</div>
+</td>
+<td>
+<div style="outline:none;">? &lt;&lt;</div>
+</td>
+</tr>
+<tr onclick>
+<td>
+<div style="outline:none;">&nbsp;</div>
+</td>
+<td>
+<div style="outline:none;">~G</div>
+</td>
+<td>
+<div style="outline:none;">?</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>That is, the formula you are trying to obtain has a ∼ as its main connective-- the formula you are trying to obtain has the form ∼&lt;formula&gt;. In the illustration, for example, G is the &lt;formula&gt;.</p>
+<p>You follow a three stage process. First you assume the &lt;formula&gt;. The illustrated fragment will then become</p>
+<table cellspacing="0" style="width: 100%; table-layout: fixed; ">
+<colgroup>
+<col style="width: 36px; ">
+<col style="width: 100%; ">
+<col style="width: 100px; ">
+	</colgroup>
+<tbody style>
+<tr onclick>
+<td>
+<div style="outline:none;">1</div>
+</td>
+<td>
+<div style="display:inline;border-left:medium solid black;border-bottom:medium solid black;width:6px;height:30px;">&nbsp; G</div>
+</td>
+<td>
+<div style="outline:none;">Ass</div>
+</td>
+</tr>
+<tr onclick>
+<td>
+<div style="outline:none;">2</div>
+</td>
+<td>?</td>
+<td>
+<div style="outline:none;">? &lt;&lt;</div>
+</td>
+</tr>
+<tr onclick>
+<td>
+<div style="outline:none;">3</div>
+</td>
+<td>
+<div style="outline:none;">~G</div>
+</td>
+<td>
+<div style="outline:none;">?</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Second you continue deriving in this new context until you manage to derive Absurd thus</p>
+<p><img alt src="/files/2/Gentzen8c.png"></p>
+<p>Finally you select Absurd and click ∼I to complete the Reductio proof.</p>
+<p><img alt src="/files/2/Gentzen8d.png"></p>
+<p>(Remarks for experienced logicians. The second implementation of ∼I is similar except that you omit the step for introducing Absurd-- merely by adding an assumption, eventually selecting two formulas, one of which being the negation of the other, and clicking ∼I, will add the negation of the assumption. Use this if you wish to. On the face of it this method might seem better, but it runs into awkwardnesses when combined with other rules that involve subproofs-- experts might care to think over derivations like F∨G,∼F,∼G ∴ ∼H or (∀x)∼Fx∴∼(∃x)Fx. Part of the problem is that this style of Reductio uses two lines, whereas subproofs are exited with one line, so contrivances are needed.)</p>
+<p>(Another remark:&nbsp;<em style="line-height: 1.5;">The Logic Book&nbsp;</em><span style="line-height: 1.5;">insists that the contradictory formulas, say Q and ~Q, actually appear in subproof explicitly. This is by no means necessary from a logic point of view (for example, Q or ~Q could be an assumption of the derivation as a whole— in which case either sentence would be fine as a component of the contradiction). But this requirement may be desirable for clarity when teaching derivations. To help meet it, there is another rule Reiteration or Repeat (R) which allows a line to be repeated or reiterated into contexts which that is permitted. So, if Q was one of the assumptions of the proof as a whole, the Rule R allows it to be repeated into the sub-proof. So, if you wish to follow&nbsp;</span><em style="line-height: 1.5;">The Logic Book&nbsp;</em><span style="line-height: 1.5;">&nbsp;style, you can certainly do that.)</span></p>
+<p>There is a second technique based on Reductio and ∼I, and it can be used to prove formulas which do not have a negation as their main connective. Consider this, admittedly advanced, proof of ∴ F∨∼F,</p>
+<p><img alt src="/files/2/Gentzen8e.png"></p>
+<!--
+<table cellspacing="0" style="width: 100%; table-layout: fixed; "><colgroup>
+<col style="width: 36px; " />
+<col style="width: 100%; " />
+<col style="width: 100px; " />
+	</colgroup>
+<tbody style="">
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					1</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;border-bottom:medium solid black;width:6px;height:30px;">
+						&nbsp; &sim;(F&or;&sim;F)</div>
+</div>
+</td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					2</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<div style="display:inline;border-left:medium solid red;border-bottom:medium solid red;width:6px;height:30px;">
+						&nbsp; F</div>
+</div>
+</td>
+<td>
+<div style="outline:none;">
+					Ass</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					3</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<div style="display:inline;border-left:medium solid red;width:6px;height:30px;">
+						&nbsp; F&or;&sim;F</div>
+</div>
+</td>
+<td>
+<div style="outline:none;">
+					2 &or;I</div>
+</td>
+</tr>
+<tr>
+<td>
+				4</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<div style="display:inline;border-left:medium solid red;width:6px;height:30px;">
+						&nbsp; Absurd</div>
+</div>
+</td>
+<td>
+				3,1 AbsI</td>
+</tr>
+<tr>
+<td>
+				&nbsp;</td>
+<td>
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+					&nbsp;</div>
+</td>
+<td>
+				&nbsp;</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					5</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp;</div>
+<p>					&nbsp;~F</div>
+</td>
+<td>
+<div style="outline:none;">
+					4&nbsp; &sim;I</div>
+</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					6</div>
+</td>
+<td>
+<div style="outline:none;">
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+						&nbsp; F&or;&sim;F</div>
+</div>
+</td>
+<td>
+<div style="outline:none;">
+					5 &or;I</div>
+</td>
+</tr>
+<tr>
+<td>
+				7</td>
+<td>
+<div style="display:inline;border-left:medium solid black;width:6px;height:30px;">
+					&nbsp; Absurd</div>
+</td>
+<td>
+				1,6 AbsI</td>
+</tr>
+<tr>
+<td>
+				&nbsp;</td>
+<td>
+				&nbsp;</td>
+<td>
+				&nbsp;</td>
+</tr>
+<tr>
+<td>
+				8</td>
+<td>
+				&sim;&sim;(F&or;&sim;F)</td>
+<td>
+				7 &sim;I</td>
+</tr>
+<tr onclick="">
+<td>
+<div style="outline:none;">
+					9</div>
+</td>
+<td>
+				F&or;&sim;F</td>
+<td>
+<div style="outline:none;">
+					8 &sim;E</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p> -->
+<p>Notice lines 8 and 9. Line 8 has been obtained by Negation Introduction (or Reductio) ~I. But what is needed is line 9, which is line 8 with the double negation taken out. Many logical systems have a rule to do this. But The Logic Book uses a slightly different approach which shortens the number of steps here.</p>
+<p>They have a Rule for Negation Elimination (~E). For this, you assume a formula which has negation as its main connective, derive two formulas that contradict, and then you are entitled to your assumed formula,<em> but without its negation.</em></p>
+<p>Schematically</p>
+<p>The circumstance that Elimination of Negation gets invoked looks like this.</p>
+<p><img alt="Reductio" src="/files/images/Reductio2.jpg" style="width: 429px; height: 77px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					?</td>
+<td>
+					? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					G</td>
+<td>
+					?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>&nbsp;</p>
+<p>That is, the formula you are trying to obtain might be any formula. In the illustration, for example, G is the &lt;formula&gt;.</p>
+<p>You follow a three stage process. First you assume the ~&lt;formula&gt;. The illustrated fragment will then become</p>
+<p><img alt="Reductio" src="/files/images/Reductio1.jpg" style="width: 429px; height: 77px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>~G</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					?</td>
+<td>
+					? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					G</td>
+<td>
+					?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>Second you continue deriving in this new context until you manage to derive two formulas, any two formulas, which contradict each other thus</p>
+<p><img alt="Reductio" src="/files/images/Reductio3.jpg" style="width: 435px; height: 138px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>~G</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					n</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					Q</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					k</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					~Q</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					?</td>
+<td>
+					? &lt;&lt;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					G</td>
+<td>
+					?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>[Here we are using Q and ~Q to illustrate the sentences which contradict. But the sentences which contradict do not have to be simple atomic sentences, for example (A&amp;B) and ~(A&amp;B) would do fine. Also, they can appear in either order, for example ~(C&amp;B) followed by (C&amp;B) would be perfectly acceptable.]</p>
+<p>Finally you select the two lines that contradict each other and click ~E to complete the Reductio proof.</p>
+<p><img alt src="/files/images/Reductio4.jpg" style="width: 447px; height: 139px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					<u>~G</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					n</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					Q</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					&lt;proof fragment in here&gt;</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					k</td>
+<td style="background-color: rgb(255, 255, 255); width: 1px;">
+					&nbsp;</td>
+<td style="background-color: rgb(0, 0, 0); width: 2px;">
+					&nbsp;</td>
+<td style="width: 349px;">
+					~Q</td>
+<td>
+					?</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td colspan="3" style="width: 355px;">
+					&nbsp;</td>
+<td>
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					k+1</td>
+<td colspan="3" style="width: 355px;">
+					G</td>
+<td>
+					n,k ~E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>So, our example advanced proof of ∴ F∨∼F, would go through as follows</p>
+<p>&nbsp;</p>
+<p><img alt="Reductio" src="/files/images/Reductio5.jpg" style="width: 453px; height: 202px; border-width: 1px; border-style: solid; margin: 1px;"></p>
+<!--
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					1</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 349px;">
+					<u>&sim;(F&or;&sim;F)</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					2</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(251, 0, 0);">
+					&nbsp;</td>
+<td style="width: 343px;">
+					<u>F</u></td>
+<td>
+					Ass</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					3</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(251, 0, 0);">
+					&nbsp;</td>
+<td style="width: 343px;">
+					F&or;&sim;F</td>
+<td>
+					2 &or;I</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					4</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(251, 0, 0);">
+					&nbsp;</td>
+<td style="width: 343px;">
+					<u>&sim;(F&or;&sim;F)</u></td>
+<td>
+					1 R</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					5</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 349px;">
+					&sim;F</td>
+<td>
+					3,4 &sim;I</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					6</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 349px;">
+					F&or;&sim;F</td>
+<td>
+					5 &or;I</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					7</td>
+<td style="width: 1px; background-color: rgb(255, 255, 255);">
+					&nbsp;</td>
+<td style="width: 2px; background-color: rgb(0, 0, 0);">
+					&nbsp;</td>
+<td colspan="3" style="width: 349px;">
+					<u>&sim;(F&or;&sim;F)</u></td>
+<td>
+					1 R</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 15px;">
+					8</td>
+<td colspan="5" style="width: 355px;">
+					(F&or;&sim;F)</td>
+<td>
+					6,7 &sim;E</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>-->
+<p>&nbsp;</p>
+<p>So, briefly put, if you embark on a Reductio, you assume the 'opposite' of what you want to prove. If you want to prove ∼&lt;formula&gt; you assume &lt;formula&gt; and eventually invoke ~I. If you want to prove &lt;formula&gt; you assume ∼&lt;formula&gt; and eventually invoke ~E.</p>
+<p>&nbsp;</p>
+<hr>
+<h2>Exercises to accompany Tutorial 8</h2>
+<h3>Exercise 1 (of 4)</h3>
+<p>There is a Rule for Absurdity Introduction-- in effect it is just And Introduction, but with the requirement that the conjuncts contradict each other. To use it you select a formula, and select the negation of that formula, and choose <em>Absurd I</em>.</p>
+<p>Derive the following, either with or without Tactics. (Tactics will ask to you choose where the contradiction will come from; but it also gives you a hint as to the possibilities by listing all potential positive conjuncts.)</p>
+<blockquote><p>a) F, ∼F ∴ Absurd<br>
+b) F, F⊃∼F ∴ Absurd<br>
+c) F,G,∼(F&amp;G) ∴ Absurd<br>
+d) F, ∼(F⊃F) ∴ Absurd</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann8a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value=" F,∼F ∴Absurd" />
+<param name="proof1" value="F,F⊃∼F∴Absurd" />
+<param name="proof2" value="F,G,∼(F∧G)∴Absurd" />
+<param name="proof3" value="F,∼(F⊃F) ∴Absurd" />
+<param name="advancedMenu" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>  -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Exercise 2 (of 4)</h3>
+<p>Derive the following. First use Tactics. Start the derivation, switch on Tactics under the <em>Wizard</em>, then click ∼I to lay out the derivation properly. Then repeat the derivations without using Tactics.</p>
+<p>&nbsp;</p>
+<blockquote><p>a) F ∴ ∼(∼F)<br>
+b) F ∴ ∼(∼(∼(∼F))) (*Tactics give you a poor hint here*)<br>
+c) ∼F ∴ ∼(F&amp;G)<br>
+d) F&amp;∼G ∴ ∼(F⊃G)<br>
+e) F&amp;∼G ∴ ∼(F≡G)<br>
+f) ∴∼(F&amp;(∼F))<br>
+g) C&amp;(∼F), A&amp;((∼G)&amp;B) ∴ ∼(F&amp;G)</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann8b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="F ∴∼(∼F)" />
+<param name="proof1" value="F ∴∼(∼(∼(∼F)))" />
+<param name="proof2" value="∼F ∴∼(F∧G)" />
+<param name="proof3" value="F∧∼G∴∼(F⊃G)" />
+<param name="proof4" value="F∧∼G∴∼(F≡G)" />
+<param name="proof5" value="∴∼(F∧(∼F))" />
+<param name="proof6" value="C∧(∼F),A∧((∼G)∧B)∴∼(F∧G)" />
+<param name="advancedMenu" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Exercise 3 (of 4)</h3>
+<p>Derive the following. There is a circumstance in which Reductio is used where the initial target formula in not a negation-- the derivation proceeds by assuming a negation using Reductio to get a double negation, then using (double) Negation Elimination to get the desired formula. The first derivation that follows is an illustration of this.</p>
+<p>Use Tactics if you wish. (Start the Proof, Switch on Tactics, Choose ∼E, Choose ∼I. That will lay the proof out correctly.)</p>
+<p>&nbsp;</p>
+<blockquote><p>a) F&amp;(∼F) ∴ G<br>
+b) ∼(F&amp;G),F,G∴H<br>
+c) ∴ F∨∼F (*this is difficult, but important-- learn how to do it*)<br>
+d) ∼(F&amp;G)∴∼F∨∼G</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann8c.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="F∧(∼F)∴G" />
+<param name="proof1" value="∼(F∧G),F,G∴H" />
+<param name="proof2" value="∴F∨∼F" />
+<param name="proof3" value="∼(F∧G)∴∼F∨∼G" />
+<param name="advancedMenu" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p> -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Exercise 4 (of 4)</h3>
+<p>There are a number of important theorems which can be expressed as equivalences-- here we consider slightly weakened versions of them which are conditionals.</p>
+<p>Derive</p>
+<p>Double Negation</p>
+<blockquote><p>a) ∴ F⊃∼∼F</p></blockquote>
+<p>Transposition</p>
+<blockquote><p>b) ∴ (F⊃G)⊃(∼G⊃∼F)<br>
+c) ∴(∼G⊃∼F)⊃(F⊃G) (*The automatic theorem prover gives a very long winded proof of this due to missing the trick about using reductio to prove the double negation of what you want.*)</p>
+</blockquote>
+<p>De Morgan's Laws</p>
+<blockquote><p>d) ∴ ∼(F&amp;G)⊃(∼F∨∼G)<br>
+e) ∴ ∼(F∨G)⊃(∼F&amp;∼G)</p>
+</blockquote>
+<p>Implication</p>
+<blockquote><p>f) ∴ (F⊃G)⊃(∼F∨G)</p></blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/proofsWar/bergmann/ProofBergmann8d.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="∴F⊃∼∼F" />
+<param name="proof1" value="∴(F⊃G)⊃(∼G⊃∼F)" />
+<param name="proof2" value="∴(∼G⊃∼F)⊃(F⊃G)" />
+<param name="proof3" value="∴∼(F∧G)⊃(∼F∨∼G)" />
+<param name="proof4" value="∴∼(F∨G)⊃(∼F∧∼G)" />
+<param name="proof5" value="∴(F⊃G)⊃(∼F∨G)" />
+<param name="advancedMenu" value="false" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>  -->
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://18.189.145.40:8080/deriver20bergmann/" target="_blank">Deriver[Bergmann]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/easyDeriver/CombinedExercisesEasyDBergmann.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You may need to set some Preferences for this.</p>
+<ul>
+<li>you can check that the parser is set to bergmann.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-561" class="book-navigation" role="navigation" aria-labelledby="book-label-561">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/591" hreflang="en">Help with Reductio ad Absurdum</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/633" hreflang="en">Further help with Reductio</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-561">Book traversal links for Tutorial 8: Reductio ad Absurdum</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/658" rel="prev" title="Go to previous page"><b>‹</b> Help with Sub Goals or Lemmas</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/562" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/591" rel="next" title="Go to next page">Help with Reductio ad Absurdum <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/562" hreflang="en">Sentential Logic: 10 Tutorials</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/563" hreflang="en">Tutorial 1 Introduction, sketch of course, and symbolizing atomic sentences.</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/566" hreflang="en">Tutorial 2: Symbolizing compound sentences</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/569" hreflang="en">Review</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/570" hreflang="en">Tutorial 3: Sentences and Truth</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/573" hreflang="en">Tutorial 4: Arguments and searching for a counter example</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/577" hreflang="en">Review 2</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/578" hreflang="en">Tutorial 5: Valid arguments, searching for a proof</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/583" hreflang="en">Tutorial 6: What is a derivation and what does it prove? How experts do derivations.</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/586" hreflang="en">Tutorial 7: Conditional Proof</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/590" hreflang="en">Tutorial 8: Reductio ad Absurdum</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/591" hreflang="en">Help with Reductio ad Absurdum</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/633" hreflang="en">Further help with Reductio</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/593" hreflang="en">Tutorial 9: The Remaining Sentential Rules of Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/597" hreflang="en">Tutorial 10: Common Inference Patterns and Rewrite Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/600" hreflang="en">Review of Sentential Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/601" hreflang="en">Sentential Logic: Try your own derivations</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/602" hreflang="en">Predicate Logic: 15 Tutorials</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/590","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"590"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

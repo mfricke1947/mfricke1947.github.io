@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="12/15/20 With two sets, say x and y, there are various ways they can be put together. There is the union of the two sets, symbolized with ∪, which the set formed when elements are members of one set or the other zε(x∪y) ≡ (zεx∨zεy)      Axiom of Union zε(x∪y) :: (zεx∨zεy)       Union Rewrite There is the intersection of the two sets, symbolized with ∩, which the set formed when elements are members of one set and the other" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/179" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/179" />
+<link rel="shortlink" href="https://softoption.us:8888/node/179" />
+<link rel="prev" href="/node/183" />
+<link rel="up" href="/node/175" />
+<link rel="next" href="/node/186" />
+
+    <title>Tutorial 8: Set Theory III: Union, Intersection, Complement, Unordered Pairs, Power Set | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/170">Deriver [Functional Terms, Identity, First Order Theories, Set Theory—Gentzen Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/175">First Order Theories</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 8: Set Theory III: Union, Intersection, Complement, Unordered Pairs, Power Set</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="179" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/19" hreflang="en">gentzen</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">12/15/20</h6>
+<p>With two sets, say x and y, there are various ways they can be put together.</p>
+<p>There is the union of the two sets, symbolized with ∪, which the set formed when elements are members of one set <strong>or</strong> the other</p>
+<blockquote><p>zε(x∪y) ≡ (zεx∨zεy) &nbsp;&nbsp;&nbsp;&nbsp; Axiom of Union</p>
+<p>zε(x∪y) :: (zεx∨zεy) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Union Rewrite</p>
+</blockquote>
+<p>There is the intersection of the two sets, symbolized with ∩, which the set formed when elements are members of one set <strong>and</strong> the other</p>
+<blockquote><p>zε(x∩y) ≡ (zεx∧zεy) &nbsp;&nbsp;&nbsp;&nbsp; Axiom of Intersection</p>
+<p>zε(x∩y) :: (zεx∧zεy) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Intersection Rewrite</p>
+</blockquote>
+<p>There is the (relative) complement of the two sets, symbolized with -, which the set formed when elements are members of one set <strong>and not </strong> the other</p>
+<blockquote><p>zε(x-y) ≡ (zεx∧z∉y) &nbsp;&nbsp;&nbsp;&nbsp; Axiom of Complement</p>
+<p>zε(x-y) :: (zεx∧z∉y) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Complement Rewrite</p>
+</blockquote>
+<h4><strong>Unordered pairs, singletons, triples, etc.</strong></h4>
+<p>When we introduced the notation {a,b,c}, for example, to illustrate a set by extension, we did not really say what the notation meant. What it means, in the case of {a,b,c}, is the set of those things that either equal a or equal b or equal c.</p>
+<p>We can be more formal about this using another axiom-- the Axiom of Pairs-- and a series of definitions. First the axiom tells us what a pair is:</p>
+<blockquote><p>zε{x,y} ≡ (z=x∨z=y) &nbsp;&nbsp;&nbsp;&nbsp; Axiom of Pair</p>
+<p>zε{x,y}:: (z=x∨z=y) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pair Rewrite</p>
+</blockquote>
+<p>This notation {x,y} tells us that there is a set, usually with two members in it, namely x and y. And for something to be in the set that thing has either to equal x or to equal y.</p>
+<p>An important point here is that there is no order to this. There is no notion of a 'first' member of the set and a 'second member' of the set, for</p>
+<blockquote><p>zε{x,y} is equivalent to (z=x∨z=y) is equivalent to (z=y∨z=x) is equivalent to zε{y,x}</p>
+</blockquote>
+<p>Yet again this axiom might have been introduced by the Axiom Schema of Specification and the notation{x,y}.</p>
+<p>{x,y} usually has two members in it. But there is the possibility that x=y ie that the 'two' are actually one, the x and y are two names or aliases for the same one identical thing. {x,x} has only one member, namely x. So now there is a definition</p>
+<blockquote><p>{x}=df.{x,x}</p>
+</blockquote>
+<p>Then we can get sets with 3 or more members just by union-ing together what we have got.</p>
+<blockquote><p>{x,y,z}=df.{x,y} ∪{z}</p>
+</blockquote>
+<p>And similarly for more</p>
+<blockquote><p>{x,y,z,w}=df.{x,y,z} ∪{w}</p>
+</blockquote>
+<p>Sometimes, when doing proofs, we can be shorten this by using instances the Axiom Schema of Specification directly with definitions</p>
+<blockquote><p>{}= ∅<br>
+{y}={x:(x=y)}<br>
+{y,z}={x:(x=y∨x=z)<br>
+{y,z,w}={x:(x=y∨x=z∨x=w)}<br>
+{y,z,w,v}={x:(x=y∨x=z∨x=w∨x=v)}<br>
+etc.</p>
+</blockquote>
+<p>The software does not have the meaning of this notation built in. It does have the Axiom of Pairs (and the Schema of Specification). So it is good directly for pairs eg {a,b}. But if you want to do proofs with singletons, triples etc using the {} notation you'll need to add suitable definitions as premises (we do so in one of the Exercises below).</p>
+<h4><strong>Power Set</strong></h4>
+<p>The Power Set of a (single) set is the set of all subsets of that set, for the set x, this is symbolized with ℘(x)</p>
+<blockquote><p>zε ℘(x) ≡ (z⊂x) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Axiom of Power Set</p>
+<p>zε ℘(x) :: (z⊂x) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Power Set Rewrite</p>
+</blockquote>
+<p>Power Sets are 'large' sets-- they have (2 to the power n) members if the original set has n members. (So if a set has 2 members, its power set has 4 members; if a set has 10 members its power set has 1024 members.)</p>
+<hr>
+<h3>Exercise 1(of 3)</h3>
+<p><iframe height="800" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD8a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Proof Applet</p>
+<p><applet archive="/test/applets/deriverApplets.jar" code="us.softoption.hostApplets.Proofs.class" height="600" hspace="10" name="Proofs" width="600"><br />
+<param name="parser" value="gentzen" />
+<param name="setTheory" value="true" />
+<param name="inputText" value="&lt;html&gt;&lt;br&gt; Select the formulas, and therefore (not the line numbers or garbage)<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;1. ∴ (x∪x) = x&lt;br&gt;<br />
+2. ∴ (x∩x) = x &lt;br&gt;<br />
+3. ∴ (x∪y) = (y∪x)&lt;br&gt;<br />
+4. ∴ (x∩y) = (y∩x)    &lt;br&gt;<br />
+5. ∴ (x∩y)∩z = x∩(y∩z)&lt;br&gt;<br />
+6. ∴ x∪(y∩z) = (x∪y)∩(x∪z)&lt;br&gt;<br />
+7 ∴ x-(y∩z) = (x-y)∩(x-z)&lt;/p&gt;<br />
+&lt;/blockquote&gt;&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<h3>Exercise 2(of 3)</h3>
+<p><iframe height="800" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD8b.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p>Proof Applet</p>
+<p><applet archive="/test/applets/deriverApplets.jar" code="us.softoption.hostApplets.Proofs.class" height="600" hspace="10" name="Proofs" width="600"><br />
+<param name="setTheory" value="true" />
+<param name="parser" value="gentzen" />
+<param name="inputText" value="&lt;html&gt;&lt;br&gt;   Select the formulas, and therefore (not the line numbers or garbage)<br />
+&lt;blockquote&gt;<br />
+&lt;p&gt;1. ∴ (x∪∅) = x&lt;br&gt;<br />
+2. ∴ (x∩∅) = ∅&lt;br&gt;<br />
+3. ∴ (x-∅) = x &lt;br&gt;<br />
+4. ∴ (∅-x) = ∅&lt;br&gt;<br />
+5. ∴ (x-x) = ∅&lt;br&gt;<br />
+6. x⊂y ∴ (x∩y)=x&lt;br&gt;<br />
+7 ∴ x⊂y ⊃ (x∪y)=y&lt;/p&gt;<br />
+&lt;/blockquote&gt;&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<h3>Exercise 3(of 3)</h3>
+<p><iframe height="800" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD8c.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p><a href="/node/186" target="_blank">Video of Example 1 being done. </a></p>
+<hr>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20gentzen" target="_blank">Deriver [Gentzen]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/Deriver/CombinedTutorialsGentzen.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this.</p>
+<ul>
+<li>set <em>identity</em> to true (and that will give you the identity rules)</li>
+<li>set <em>firstOrder</em> to true (to get first order theories)</li>
+<li>set <em>setTheory</em> to true (to get set theory)</li>
+<li>and&nbsp; you can check that the parser is set to gentzen.</li>
+</ul>
+<!--
+<p><p><applet archive="/test/applets/deriverApplets.jar" code="us.softoption.hostApplets.Proofs.class" height="600" hspace="10" name="Proofs" width="600"><br />
+<param name="parser" value="gentzen" />
+<param name="setTheory" value="true" />
+<param name="inputText" value="&lt;html&gt;<br />
+&lt;p&gt;1. ∴ ℘(∅)= {∅,∅}&lt;br&gt;&lt;br&gt;<br />
+2. {∅}={∅,∅} ∴ ℘(∅)= {∅}&nbsp;&nbsp;&nbsp;&nbsp;/*power set has one member*/ &lt;br&gt;&lt;br&gt;<br />
+3. {a}={x:(x=a)},{∅,{a}}={x:(x=a∨x={a})} ∴ ℘({a})= {∅,{a}}&nbsp;&nbsp;&nbsp;&nbsp;      /*two members*/ &lt;br&gt;&lt;br&gt;<br />
+4. {∅}={x:(x=∅)},{∅,{∅}}={x:(x=∅∨x={∅})} ∴ ℘({∅})= {∅,{∅}}&lt;br&gt;&lt;br&gt;<br />
+5. {a}={x:(x=a)},{∅,{a}}={x:(x=a∨x={a})} ∴ ℘({a})= {∅,{a},{b},{a,b}} &nbsp;&nbsp;&nbsp;&nbsp;   /*four members*/ &lt;br&gt;<br />
+&lt;/p&gt;<br />
+&lt;/html&gt;" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+</div>
+      
+  <nav id="book-navigation-170" class="book-navigation" role="navigation" aria-labelledby="book-label-170">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/186" hreflang="en">Help with Ex 3: Moderately Difficult Example</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-170">Book traversal links for Tutorial 8: Set Theory III: Union, Intersection, Complement, Unordered Pairs, Power Set</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/183" rel="prev" title="Go to previous page"><b>‹</b> Help with Subset Derivation: Short Rewrite Version</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/175" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/186" rel="next" title="Go to next page">Help with Ex 3: Moderately Difficult Example <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/171" hreflang="en">Tutorial 1: Identity, Semantics and Symbolization</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/172" hreflang="en">Tutorial 2 Identity: Functional Terms and Rules of Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/174" hreflang="en">Tutorial 3 Identity: Uniqueness, Definite Descriptions, Iota</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/175" hreflang="en">First Order Theories</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/176" hreflang="en">Tutorial 4: Number Theory 1</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/177" hreflang="en">Tutorial 5: Number Theory II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/178" hreflang="en">Tutorial 6: Set Theory I: Set Building, Abstraction and Extension</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/181" hreflang="en">Tutorial 7: Set Theory II: Subsets, Empty Set, Universe Set</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/179" hreflang="en">Tutorial 8: Set Theory III: Union, Intersection, Complement, Unordered Pairs, Power Set</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/186" hreflang="en">Help with Ex 3: Moderately Difficult Example</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/180" hreflang="en">Tutorial 9: Set Theory IV: Ordered Pairs, Cross Products</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/184" hreflang="en">Tutorial 10: Set Theory V: Russell&#039;s Paradox, Axiomatic Set Theory, and Criticisms</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/191" hreflang="en">Tutorial 11: Abelian Groups, Boolean Algebra, Linearly Ordered Sets</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/192" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/710" hreflang="en">Doing Exercises in Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/179","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"179"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

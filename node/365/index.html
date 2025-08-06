@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="11/27/11 Skills to be acquired in this tutorial: Proving an argument to be valid by displaying a derivation. Carrying out simple sentential derivations using some of the Rules of Inference. Reading Hausman[2007] Logic and Philosophy Chapter 4 The Tutorial: If you suspect that an symbolized argument might be valid, you should attempt to give a derivation of it. A derivation is a proof of validity." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/365" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/365" />
+<link rel="shortlink" href="https://softoption.us:8888/node/365" />
+
+    <title>Tutorial 5: Valid arguments, searching for a proof | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_8Ax7Y-egvljOoD_s03szA9MISa3YzfOnzQQTURL8wOQ.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node"></a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 5: Valid arguments, searching for a proof</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="365" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/22" hreflang="en">hausman</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>11/27/11</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>Proving an argument to be valid by displaying a derivation. Carrying out simple sentential derivations using some of the Rules of Inference.</p>
+<h3>Reading</h3>
+<p>Hausman[2007] <em>Logic and Philosophy</em> Chapter 4</p>
+<h3>The Tutorial:</h3>
+<p>If you suspect that an symbolized argument might be valid, you should attempt to give a derivation of it.</p>
+<p>A derivation is a proof of validity.</p>
+<p>We will do a few derivations first, then, in the next Tutorial, explain in more detail what derivations are and how derivations do the work they should.</p>
+<p>We use a Proof applet for doing derivations. And we are now going to look at proof 1 F,F⊃G ∴ G.</p>
+<p>Proof applet</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F,F⊃G ∴G">
+<param name="proof1" value="F,G.H ∴F.H">
+<param name="parser" value="hausman">
+<param name="advancedMenu" value="false">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<blockquote><p>&nbsp;</p>
+</blockquote>
+<p>The Proof panel contains a number of items. In the middle there is the proof itself. There are the premises, a ? to indicate the missing proof, and the target conclusion. Notice that line 3 has &lt;&lt; next to it; this means that any new lines will be added here. If one of the new lines being added equals the target conclusion the ? is removed (you have finished, there is no missing proof.)</p>
+<p>Lines are selected by clicking on them. To select two lines, you click on the first, then, while pressing the command-key (which is the clover-leaf key, if you are on a Macintosh), click on the second line. The <em>Rules Menu</em> contains the Rules of Inference. You first select the desired lines, then choose the Rule. (Try selecting line1 and line 2 and clicking M.P.)</p>
+<p>Now look at proof 2</p>
+<blockquote><p>F,G.H ∴ F.H</p>
+</blockquote>
+<p>&nbsp;</p>
+<p>We want to have a look at the structure of a completed proof. Fortunately, the program can do proofs for you, click <em>Derive It</em> under the <em>Wizards Menu</em> to get a proof we can look at.</p>
+<p>This is the proof.</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px">1.</td>
+<td style="width: 250px">F</td>
+<td>p</td>
+</tr>
+<tr>
+		</tr>
+<tr>
+<td style="width: 15px">2.</td>
+<td style="width: 250px">G.H</td>
+<td>p</td>
+</tr>
+<tr>
+		</tr>
+<tr>
+<td style="width: 15px">3.</td>
+<td style="width: 250px">H</td>
+<td>2 Simp</td>
+</tr>
+<tr>
+		</tr>
+<tr>
+<td style="width: 15px">4.</td>
+<td style="width: 250px">F.H</td>
+<td>1,3 Conj</td>
+</tr>
+<tr>
+		</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Let us analyse the result.</p>
+<p>We have a sequence of lines. For example, one of the lines is</p>
+<blockquote><table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 15px">3.</td>
+<td style="width: 250px">H</td>
+<td>2 Simp</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Each of the lines in the sequence has a number so that we know which line we are talking about. Each line has a formula on it. And over the right-hand side there is the justification of the line. The justification consists of two components: zero or more numbers, and the name of a Rule of Inference. The zero or more numbers refer to zero or more lines that were used to get the current line using the named Rule of Inference. In the example, line 4 was obtained from line 3 using the Rule of Inference 'Simp'. Simplification is a Rule which allows you to break a formula with . as its main connective into one of its components.</p>
+<p>When you start a proof, the program writes down the premises of the argument as the opening lines of a derivation. Then there are Rules of Inference which allow you the option of adding various further lines.</p>
+<p>This will become clearer with a few examples.</p>
+<hr>
+<h2>Exercises to accompany Tutorial 5</h2>
+<h3>Exercise 1 (of 3)</h3>
+<p>Each of the derivations in the following Exercise can be done using only one rule, Simplification.</p>
+<p>If the formula in a line in a derivation has the form</p>
+<blockquote><p>&lt;left-formula&gt;.&lt;right-formula&gt;</p>
+</blockquote>
+<p>the Rule of Simplification (Simp.) allows you to remove the conjunction (the 'and') and add either</p>
+<blockquote><p>&lt;left-formula&gt;</p>
+</blockquote>
+<p>or</p>
+<blockquote><p>&lt;right-formula&gt;</p>
+</blockquote>
+<p>as an extra line.</p>
+<p>Show each of the following arguments to be valid. If you are stuck, ask the program to do one line for you (choose <i>Next Line</i> under the <i> Wizard</i> Menu); then, having seen what the next line is, go to the Edit Menu click Undo Next Line and try to do it yourself.</p>
+<blockquote><p>a) F.G ∴ G</p>
+<p>b) (G.F).(F.H) ∴G</p>
+<p>c) F,(H.G).(F.H),I ∴G</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F.G∴G">
+<param name="proof1" value="(G.F).(F.H)∴G">
+<param name="proof2" value="F,(H.G).(F.H),I∴G">
+<param name="advancedMenu" value="false">
+<param name="parser" value="hausman">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<h3>Exercise 2 (of 3)</h3>
+<p>Each of the derivations in the following Exercise can be done using only two rules, the Rule of Conjunction (Conj), and Simp (learned previously).</p>
+<p>If the formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px">&lt;formula1&gt;</p>
+<p>and a formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px">&lt;formula2&gt;</p>
+<p>the Rule of Introduction of Conjunction Conj allows you to add</p>
+<p style="margin-left: 40px">&lt;formula1&gt;.&lt;formula2&gt;</p>
+<p>To use this Rule, select two formulas &lt;firstformula&gt; and &lt;secondformula&gt; (*note that the way you select a second formula is to press the command key (clover leaf on a Macintosh, cntrl key on Windows) and then click on the line*) and click Conj (off the <em>Rules Menu</em>). You choose whether the first formula is to go on the left or on the right. (It is possible, though rare, for &lt;formula1&gt; and &lt;formula2&gt; to be the same formula on the same line, in which case this rule to be used on a single line and only one line need be selected.)</p>
+<p>Show each of the following arguments to be valid.</p>
+<p>If you are stuck, ask the program to do one line for you (choose <i>Next Line</i> under the <i>Wizard</i> Menu); then, having seen what the next line is, go to the Edit Menu click Undo Next Line and try to do it yourself.</p>
+<blockquote><p>a) F,G ∴ G.F</p>
+<p>b) F.G,I,H ∴ (F.I).(G.H)</p>
+<p>c) F,G,H ∴ (F.G).(F.H)</p>
+<p>d) F ∴ F.F</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F,G∴G.F">
+<param name="proof1" value="F.G,I,H ∴(F.I).(G.H)">
+<param name="proof2" value="F,G,H ∴(F.G).(F.H)">
+<param name="proof3" value="F∴F.F">
+<param name="advancedMenu" value="false">
+<param name="parser" value="hausman">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>&nbsp;</p>
+<h3>Exercise 3 (of 3)</h3>
+<p>Each of the derivations in the following Exercise can be done using only three rules, the Rule of Addition (Add) and Simp and Conj (learned previously).</p>
+<p>&nbsp;</p>
+<p>If the formula in a line of a derivation has the form</p>
+<p style="margin-left: 40px">&lt;formula&gt;</p>
+<p>the Rule of Addition (Add) allows you to add</p>
+<p style="margin-left: 40px">&lt;formula&gt;∨&lt;newformula&gt;</p>
+<p>To use this Rule, select a formula &lt;formula&gt; and click Add. The program will ask you what you want as the &lt;newformula&gt;.</p>
+<p>Show each of the following arguments to be valid.</p>
+<p>If you are stuck, ask the program to do one line for you (choose <i>Next Line</i> under the <i>Wizard</i> Menu); then, having seen what the next line is, go to the Edit Menu click Undo Next Line and try to do it yourself.</p>
+<blockquote><p>a) F ∴ F∨G</p>
+<p>b) G.G ∴ G∨F</p>
+<p>c) F.G ∴ F ∨H</p>
+<p>d) F,G ∴(F.G)∨H</p>
+</blockquote>
+<p>Proofs</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Proofs.class" height="450" hspace="10" name="Proofs" width="600"><br>
+<param name="proof0" value="F ∴ F∨G">
+<param name="proof1" value="G.G ∴ G∨F">
+<param name="proof2" value="F.G ∴ F ∨H">
+<param name="proof3" value="F,G ∴(F.G)∨H">
+<param name="advancedMenu" value="false">
+<param name="parser" value="hausman">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+</div>
+      
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/365","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"365"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

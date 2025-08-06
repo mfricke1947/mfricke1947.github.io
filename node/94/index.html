@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="9/16/12 Skills to be acquired in this tutorial: To learn how to symbolize arguments, and how to judge whether they might be invalid using truth-table methods. Why this is useful: We wish to appraise arguments, to do this we have to symbolize them first. Judging the invalidity of arguments by truth-table methods is not particularly important, but it does help to develop skills involving truth and lists of formulas." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/94" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/94" />
+<link rel="shortlink" href="https://softoption.us:8888/node/94" />
+<link rel="prev" href="/node/88" />
+<link rel="up" href="/node/74" />
+<link rel="next" href="/node/95" />
+
+    <title>Tutorial 4: Arguments and searching for a counter example | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/460">Easy Deriver [Propositional and Predicate Logic—Gentzen Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/74">Propositional Logic: 10 Tutorials</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 4: Arguments and searching for a counter example</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="94" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/19" hreflang="en">gentzen</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>9/16/12</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To learn how to symbolize arguments, and how to judge whether they might be invalid using truth-table methods.</p>
+<h3>Why this is useful:</h3>
+<p>We wish to appraise arguments, to do this we have to symbolize them first. Judging the invalidity of arguments by truth-table methods is not particularly important, but it does help to develop skills involving truth and lists of formulas.</p>
+<h3>The Tutorial:</h3>
+<p>Arguments consist of zero or more premises and exactly one conclusion. The premises and the conclusion are sentences.</p>
+<p>To symbolize an entire argument, we symbolize each of the sentences composing it, putting commas between the premises and a '∴' between the premises and the conclusion. Conventions adopted between symbols and atomic sentences are used uniformly throughout an entire argument. For instance, if J is used for 'Jazz is great' in one of the premises and 'Jazz is great' appears also in the conclusion, then J is used for it there too.</p>
+<p>As example of the symbolization of an argument,</p>
+<blockquote><p>If it rains, I get wet.<br>
+I get wet.</p>
+<p>Therefore,</p>
+<p>It rains.</p>
+</blockquote>
+<p>might be symbolized</p>
+<blockquote><p>R⊃W, W ∴ R {Conventions R = it rains W = I get wet }</p>
+</blockquote>
+<p>We can now start to consider whether an argument might be valid. It is usually best first to consider briefly whether the argument is invalid. Remember, an argument is invalid if and only if it is possible for all the premises to be true and the conclusion false at one and the same time.</p>
+<p>With the example, the question becomes: is it possible for (R⊃W) to be true, W to be true, and R to be false (all at once).</p>
+<p>There is only one way for W to be true and that is if the atomic sentence W is true, and similarly there is only one way for R to be false and that is if the atomic sentence R is false. So, in the assignment of truth values to atomic sentences we know that R has to be assigned false, and W true.</p>
+<p>What about the first premise (R⊃W) ? Under, the assignment R false, W true, it happens true! So this assignment leads to all premises being true, and the conclusion false at one and the same time. The assignment constitutes a counter-example to the argument. The counter-example proves the argument to be invalid.</p>
+<p>It is not always so easy to assess an argument.</p>
+<p>As a second example,</p>
+<blockquote><p>If it rains, I get wet.<br>
+It rains.</p>
+<p>Therefore,</p>
+<p>I get wet.</p>
+</blockquote>
+<p>might be symbolized</p>
+<blockquote><p>R⊃W, R ∴ W {Conventions R = it rains W = I get wet}</p>
+</blockquote>
+<p>Is it possible for (R⊃W) to be true, R to be true, and W to be false (all at once)?</p>
+<p>There is only one way for R to be true and that is if the atomic sentence R is true, and similarly there is only one way for W to be false and that is if the atomic sentence W is false. So, in the assignment of truth values to atomic sentences we know that R has to be assigned true, and W false.</p>
+<p>What about the first premise (R⊃W) ? Under, the assignment R true, W false, it is false! So this assignment does not leads to all premises being true, and the conclusion false at one and the same time.</p>
+<p>The assignment certainly does not prove the second example argument to be invalid-- it proves nothing.</p>
+<p>Where do we go from here? There's a choice: either continuing to look for invalidity, or by trying to do a derivation to prove validity (a technique to be taught later).</p>
+<p>In a real case, now might be the time to try a derivation. (Remember about the invalid and valid haystacks-- the best approach is to look first in the invalid haystack but if you do not find anything, do not look there for too long...)</p>
+<p>If we wish, we can look further for a counter-example. We can systematically search through the possibilities of truth and falsehood by drawing up a truth-table.</p>
+<p>To do this you list all the atomic sentences that occur in the premises and the conclusion, consider all the permutations of truth and falsity of these atomic sentences, extend out the assignment to cover any compound sentences that are there, and see whether there are any cases which have all the premises true and the conclusion false.</p>
+<p>Thus</p>
+<blockquote><table width="100">
+<tbody>
+<tr>
+<td>R</td>
+<td>W</td>
+<td>R⊃W</td>
+<td>R</td>
+<td>W</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>and if you look through, the four lines of the truth-table cover all the possibilities, none of the four lines of this truth table have all the premises true and the conclusion false at one and the same time, so there seems to be no counter example. The argument seems to be not invalid. It might be valid. (In fact it is.)</p>
+<p>The technique that we have just used is known as the longer truth-table method. And the adjective 'longer' is there for a good reason. Such a method is fine if there are not many different atomic sentences in the argument; for if there are two, the truth-table needs four lines in it; if there are three, the truth-table needs eight lines; if there are ten, the truth-table needs one thousand and twenty four lines.... (and that would keep you busy for a while).</p>
+<p>What really is needed is a more direct technique, and one is available. Unfortunately it is a little difficult to teach in its full glory here (a more advanced version of Deriver looks at this). But we can make some progress.</p>
+<p>Thus far we have learned to transfer truth-values out from the simpler components to the more complex compounds. For example, if you are told that A is true and B false, you know that (A&amp;B) is false (and (A ∨ B) true, and (A⊃B) false, ....</p>
+<p>What needs to be developed is the ability to work the other way-- from the truth or falsity of compounds to the truth or falsity of their components.</p>
+<p>For example, if the compound formula (A&amp;B) is true, what does that tell you about its components A and B (Answer: they are both true). Another example, if the compound formula (A∨B) is false, what does that tell you about its components A and B (Answer: they are both false).</p>
+<p>Unfortunately, the truth-value of a compound does not always uniquely determine the truth-value of its components (unlike the other way round). For example, if the compound formula (A&amp;B) is false, what does that tell you about its components A and B (Answer: there are three possibilities, either A is false, or B is false or both are false).</p>
+<p>In a counter-example to an argument all the premises have to be true, and the conclusion false. So we can search by assuming that all the premises are true and the conclusion false and seeing if that assumption can be consistently maintained in its implications right through to the atomic sentences. Often choices will have to be made-- it is best to postpone these as long as possible.A few examples,</p>
+<p>example 1</p>
+<blockquote><p>A ∴ (A&amp;B)</p>
+<p>Stage 1:</p>
+<p>tentatively assume that A is true and (A&amp;B) false.</p>
+<p>Stage 2:</p>
+<p>no further work remains to be done on A. As to the assumption that (A&amp;B) is false, that can only occur if either A is false, or B is false or both are false.But, we have already assumed that A is true, so the first and third possibilities are ruled out. What about the case where A is true and B false. Indeed this is a counter-example and the argument is invalid.</p>
+</blockquote>
+<p>example 2</p>
+<blockquote><p>(A&amp;B) ∴ A</p>
+<p>Stage 1:</p>
+<p>tentatively assume that (A&amp;B) is true and A false.</p>
+<p>Stage 2:</p>
+<p>no further work remains to be done on A, we have assumed it to be false. As to the assumption that (A&amp;B) is true, that can only occur if A is true, and B is true. Now our search has failed-- we have assumed A to be false, but we need A to be true (and we cannot have both of these).</p>
+</blockquote>
+<p>There is a more uniform way of setting out the problem of searching for a counter-example. Thus far we have presented it as being the problem of finding an assignment of truth-values to the atomic sentences which will result in all the premises of an argument being true and the conclusion false. Now, a sentence is false if and only if the negation of it is true. So if we form a list or a set which has in it all the premises of an argument and the negation of the conclusion, the problem of finding a counter-example becomes the problem of finding whether all the members of the list (which includes the negation of the conclusion) can be true. To illustrate:</p>
+<blockquote><p>start with the argument B, A⊃B ∴ A</p>
+<p>finding whether B, A⊃B can be true while A is false</p>
+<p>is the same as</p>
+<p>finding whether B, A⊃B, ∼A can be all be true at once</p>
+</blockquote>
+<p>There is a word for describing whether a formula can be true, it is 'satisfiable'; and the same word is also used for lists of formulas. For example, the list or set A,B,C is satisfiable; whereas the list A,B,∼A is not satisfiable.</p>
+<p>&nbsp;</p>
+<hr>
+<h2>Exercise to accompany Tutorial 4.</h2>
+<h3>Exercise 1 (of 5)</h3>
+<p>Symbolize the following <em>arguments</em>, using the program's standard conventions. (Answers below.)</p>
+<p>a)</p>
+<p style="margin-left: 40px;">If philosophy is hard then philosophy is interesting.<br>
+Philosophy is hard.<br>
+Therefore<br>
+Philosophy is interesting.</p>
+<p>b)</p>
+<p style="margin-left: 40px;">Logic is hard and philosophy is interesting.<br>
+Therefore<br>
+Philosophy is interesting or philosophy is hard.</p>
+<p>c)</p>
+<p style="margin-left: 40px;">If philosophy is hard, then logic is hard .<br>
+If logic is hard, philosophy is interesting .<br>
+Therefore<br>
+If philosophy is hard then philosophy is interesting.</p>
+<p>Exercise 1 (of 5) (answers)</p>
+<p>a)</p>
+<p style="margin-left: 40px;">H⊃I,<br>
+H<br>
+∴<br>
+I</p>
+<p>b)</p>
+<p style="margin-left: 40px;">M∧I<br>
+∴<br>
+I∨H</p>
+<p>c)</p>
+<p style="margin-left: 40px;">H⊃L,<br>
+L⊃I<br>
+∴<br>
+H⊃I</p>
+<h3>Exercise 2 (of 5)</h3>
+<p><iframe height="740" scrolling="no" src="/sites/all/js/symbolize13War/SymbolizeGentzenAmbiguous.html" width="660"></iframe></p>
+<p>When confronted with ambiguities, you just have to make the best you can with them. Often there is an obvious preferred meaning; otherwise courtesy suggests that you try to give an argument meaning that will make it valid. If ambiguities remain unresolved, just list them all.</p>
+<p>English uses devices like commas and brackets to suggest intended meaning.</p>
+<h3>Exercise 3 (of 5)</h3>
+<p>Try the Satisfiable exercise.</p>
+<p>Here the idea is to try to produce a valuation for the atomic propositions that will make the whole formula true (or 'satisfy' it). This cannot always be done (for example A∧~A is not satisfiable). And, if it can be done, sometimes there are different ways of doing it (for example, A∨B is satisfiable with A true and B false or with B true and A false or with A true and B true). Here you 'toggle' the atomic propositions (not the connectives) to set them true or false.</p>
+<p>Make sure that you can get 10 out of 10 right in, say, 2 minutes.</p>
+<p>[There is a mechanical, or semi-mechanical, way of finding assignments of truth values to satisfy a formula, if that is possible, using what is known as 'Trees'. But, whether or not you learn about trees, there is value in exploring the task by hand to get some sense of what 'satisfiable ' means and what has to be done to establish it.]</p>
+<p><iframe height="300" scrolling="no" src="/sites/all/js/gamesWar/SatisfiableGentzen.html" width="420">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h3>Exercise 4 (of 5)</h3>
+<p>If it is possible for all of a collection or list of formulas to be true at one and the same time (ie they are simultaneously satisfiable), those formulas are <em>Consistent</em>. Try the Consistent exercise. Make sure that you can get 10 out of 10 right in, say, 7 minutes.</p>
+<p>[As above, there is a mechanical, or semi-mechanical, way of finding assignments of truth values to simultaneously satisfy several formulas, if that is possible, using what is known as 'Trees'. But, whether or not you learn about trees, there is value in exploring the task by hand to get some sense of what 'simultaneously satisfiable ' means and what has to be done to establish it.]</p>
+<p><iframe height="300" scrolling="no" src="/sites/all/js/gamesWar/ConsistentGentzen.html" width="420">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<h3>Exercise 5 (of 5)</h3>
+<p>If it is possible for all of the premises of an argument to be true, and the conclusion false, at one and the same time, that argument is <em>Invalid</em> (and the assignment that does this amounts to a <em>Semantic Counter Example) </em>. Try the Invalid exercise. Make sure that you can get 10 out of 10 right in, say, 7 minutes.</p>
+<p>[Yet again, as above, there is a mechanical, or semi-mechanical, way of finding semantic counter examples to sentential arguments, if that is possible, using what is known as 'Trees'. But, whether or not you learn about trees, there is value in exploring the task by hand to get some sense of what 'semantic counter example' means and what has to be done to establish it.]</p>
+<p><iframe height="360" scrolling="no" src="/sites/all/js/gamesWar/InvalidGentzen.html" width="420">If you can see this, your browser does not understand IFRAME.</iframe></p>
+</div>
+      
+  <nav id="book-navigation-460" class="book-navigation" role="navigation" aria-labelledby="book-label-460">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/95" hreflang="en">Help with First Three Propositional Games</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/99" hreflang="en">Help for Remaining Propositional Games</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/101" hreflang="en">Quiz 2</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-460">Book traversal links for Tutorial 4: Arguments and searching for a counter example</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/88" rel="prev" title="Go to previous page"><b>‹</b> Supplementary: The Paradoxes of Material Implication</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/74" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/95" rel="next" title="Go to next page">Help with First Three Propositional Games <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/74" hreflang="en">Propositional Logic: 10 Tutorials</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/71" hreflang="en">Tutorial 1 Introduction, sketch of course, and symbolizing atomic propositions.</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/80" hreflang="en">Tutorial 2: Symbolizing compound propositions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/84" hreflang="en">Review</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/86" hreflang="en">Tutorial 3: Propositions and Truth</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/94" hreflang="en">Tutorial 4: Arguments and searching for a counter example</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/95" hreflang="en">Help with First Three Propositional Games</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/99" hreflang="en">Help for Remaining Propositional Games</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/101" hreflang="en">Quiz 2</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/102" hreflang="en">Review 2</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/103" hreflang="en">Tutorial 5: Valid arguments, searching for a proof</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/109" hreflang="en">Tutorial 6: What is a derivation and what does it prove? How experts do derivations.</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/112" hreflang="en">Tutorial 7: Conditional Proof</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/116" hreflang="en">Tutorial 8: Reductio ad Absurdum</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/120" hreflang="en">Tutorial 9: The Remaining Propositional Rules of Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/124" hreflang="en">Tutorial 10: Common Inference Patterns and Rewrite Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/127" hreflang="en">Review of Propositional Logic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/128" hreflang="en">Propositional Logic: Try your own derivations</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/130" hreflang="en">Predicate Logic: 15 Tutorials</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/94","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"94"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

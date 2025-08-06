@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="9/18/19 Much of what is presented here applies both to the lambda calculus and to combinatory logic. There is often a choice of reduction order, for example (λx.(+ x x) (+ 1 2)) do we want to go λx.(+ x x) (+ 1 2) -&gt; (+ (+ 1 2) (+ 1 2)) -&gt; (+ 3 3) -&gt; 6 or should we prefer λx.(+ x x) (+ 1 2) -&gt; λx.(+ x x) 3 -&gt; (+ 3 3) -&gt; 6 ? Some definitions...  " />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/46" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/46" />
+<link rel="shortlink" href="https://softoption.us:8888/node/46" />
+<link rel="prev" href="/node/666" />
+<link rel="up" href="/node/654" />
+<link rel="next" href="/node/638" />
+
+    <title>Reduction Strategies | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/654">Lambda Calculus and Combinatory Logic</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Reduction Strategies</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="46" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">9/18/19</h6>
+<p>Much of what is presented here applies both to the lambda calculus and to combinatory logic.</p>
+<p>There is often a choice of reduction order, for example</p>
+<blockquote><p>(λx.(+ x x) (+ 1 2))</p>
+</blockquote>
+<p>do we want to go λx.(+ x x) (+ 1 2) -&gt; (+ (+ 1 2) (+ 1 2)) -&gt; (+ 3 3) -&gt; 6 or should we prefer λx.(+ x x) (+ 1 2) -&gt; λx.(+ x x) 3 -&gt; (+ 3 3) -&gt; 6 ?</p>
+<p>Some definitions...</p>
+<blockquote><p>&nbsp;</p>
+<p><strong>redex</strong> = a reducible function application.<br>
+An expression is in <strong>normal form</strong> when it contains no further redexes.</p>
+<p><strong>leftmost redex</strong>: that redex whose abstraction or predefined function is textually to the left of all other redexes. There is at most one of these.<br>
+<strong>rightmost redex</strong>: that redex whose abstraction or predefined function is textually to the right of all other redexes<br>
+<strong>outermost redex</strong>: a redex which is not contained in any other redexes.<br>
+<strong>innermost redex</strong>: a redex which contains no other redexes. There can be several of these, hence we talk of leftmost innermost etc.</p>
+<p><strong>Applicative-order reduction (AOR)</strong> : reduce the leftmost innermost redex first<br>
+<strong>Normal-order reduction (NOR)</strong> : reduce the leftmost outermost redex first</p>
+</blockquote>
+<p>And there are two theorems to help us.</p>
+<p>We will write P -&gt; Q to mean that we can reduce P to Q by one use of a reduction rule (alpha-delta), and P -&gt;* Q to mean that we can reduce P to Q by a sequence of zero or more uses of reduction rules (alpha-delta).</p>
+<p>There is a property that any rewrite relation =&gt; might have. =&gt; is confluent iff for all E1, E2, E3, E4 if E1=&gt;*E2 and E1=&gt;*E3 then there is a E4 such that E2=&gt;*E4 and E3=&gt;*E4. This is often called the diamond property and is depicted</p>
+<p style="text-align: center;"><img align="bottom" alt="Diamond" height="111" src="/files/2/diamond.jpg" style="vertical-align: bottom;" title="Diamond" width="136" loading="lazy"></p>
+<p>This property is important in as much as it means a) that all normal forms are unique and b) that even if a rewrite 'goes off in the wrong direction' further rewriting can bring it back to the normal form (so no backtracking is needed).</p>
+<p>Our reduction relation for the lambda calculus (or combinatory logic) has the property of being confluent. (Proved by Church and Rosser as their Theorem 1).</p>
+<p>The two theorems are:- Standardization theorem or Church-Rosser II. If an expression E has a normal form then reducing the leftmost outermost redex (NOR) at each stage in the reduction of E guarantees to reach that normal form (up to alphabetic equivalence). And Church-Rosser I which has as a consequence : If an expression E can be reduced in two different ways to two normal forms then these normal forms are the same (up to alphabetic equivalence).</p>
+<p>This seems to mean that we should prefer Normal Order Reduction. However there is a problem with NOR. The lambda calculus itself has no notion of sharing, all beta-reduction is reduction by textual replacement, and this might mean gross inefficiencies, so for example</p>
+<blockquote><p>λx.(+ x x) (+ 1 2) -&gt; (+ <strong>(+ 1 2) (+ 1 2)</strong>) -&gt; (+ 3 3) -&gt; 6</p>
+</blockquote>
+<p>the <strong>(+ 1 2)s</strong> will get evaluated twice</p>
+<p>What we are trying to balance in the whole approach is actually terminating (favouring by NOR) with being efficient (favouring AOR). And the modern style is to attempt, by various tricks and subterfuges, to produce an efficient NOR. And the main way of doing this is by keeping track of shared expressions and evaluating them only once. NOR plus sharing is part of <strong>lazy evaluation</strong>.</p>
+<p>Also if reasoning is to be done about programs-- in particular, concerning the substitution of equal expressions, we usually will want to know that normal forms are reached and that comes using NOR or lazy evaluation.</p>
+<p>Another problem that we have with reduction in the lambda calculus is that of capturing. Let us remind ourselves of capturing</p>
+<blockquote><p>(λy.λx.(+ y x) x) might mistakenly be reduced to λx.(+ x x)</p>
+</blockquote>
+<p>and this is wrong (although it can be avoided by rewriting the variables). In this case there is a free x as the argument for the original application. This can never arise in a functional programming case of reduction where all top level arguments are going to be constants or functions or whatever... (No free variables at the top level.) However, exactly the same effect can be produced without initial free variables by reducing within the body of a lambda abstraction.</p>
+<p>For example,</p>
+<blockquote><p>λx.(λy.λx.(+ y x) x )</p>
+</blockquote>
+<p>is not in normal form. But if we attempt to reduce within the body of it we might get λx.(λx.(+ x x)) which is wrong. The modern response to this comes from considering how the free variables and capturing arise. We are starting here with an expression with no free variables in it (which presumably will always be the case with a complete program), yet should we try to reduce inside the body of an abstraction we run the risk of capturing. And you would wonder why we might want to do such a reduction. After all an abstraction is a function of one formal argument; there is no point in reducing it until we know what its actual argument is; in which case, when the actual argument appears we can reduce using it, then we will not be reducing within the body of an abstraction and hence there will be no problem with capturing. To review, do nothing with, for example</p>
+<blockquote><p>λx.(λy.λx.(+ y x) x )</p>
+</blockquote>
+<p>until an argument for it appears, say,</p>
+<blockquote><p>(λx.(λy.λx.(+ y x) x ) 7)</p>
+</blockquote>
+<p>then reduce for that argument -&gt; (λy.λx.(+ y x) 7) -&gt; λx.(+ 7 x) and there is no problem with capturing.</p>
+<p>Hence An expression E is in <strong>weak head normal form (WHNF)</strong> iff</p>
+<blockquote><p>&nbsp;</p>
+<p>either i) E is a constant,<br>
+or ii) E is a variable,<br>
+or iii) E is λx.E' for any E'<br>
+or iv) E is of the form (F E1 E2 .. En) for a constant ('predefined') function F of arity k&gt;n (i.e. there are not enough arguments to reduce).</p>
+</blockquote>
+<p>Roughly, an expression is in WHNF if it is either in normal form or it is an irreducible unapplied function or abstraction perhaps with reducible arguments. And when we are doing reductions, we reduce to weak head normal form, and not to normal form. Should an argument appear for an expression in WHNF then we reduce the expression using normal order reduction. The advantage of reducing to WHNF (as opposed to full normal form) is that it avoids the need to perform beta reductions in the presence of free variables. Thus avoiding the name clash problem and having to look for alpha rewrites.</p>
+<p>There is another place where reduction arises and that is with constructors. Take, for example,the CONS constructor function used in list construction. Most programming systems in use up until the 80's used applicative order strict constructors, so that the constructor evaluated its arguments straight away. But various interesting data structures can be built if the constructors do not use this type of evaluation. For example, say one wanted a list of all the positive integers, now if this came in its infinite entirety it would not be much good (because it would swamp the computers); however, if your list consisted of a single number, and the promise of the next infinity of numbers, where when an attempt was made to cash the promise all you got was the next number and another promise... all would be fine. An infinite list and its accessors would look something like</p>
+<blockquote><p>&nbsp;</p>
+<p>n-andlarger n =df. cons n promise of n-andlarger (n+1)<br>
+head list ... standard<br>
+tail list=df. cash promise of tail of list.</p>
+</blockquote>
+<p>What you need to do this sort of thing is some way of promising and cashing promises. It can be done in LISP (by delaying and forcing). But really all that is needed is for the constructor not to evaluate its arguments until they are needed, for the constructor to be lazy.</p>
+<blockquote><p>&nbsp;</p>
+<p>n-andlarger n =df. lazyCons n n-andlarger (n+1)<br>
+head list ... standard<br>
+tail list ... standard</p>
+</blockquote>
+<p>Another example where this might be useful is with successive approximation (eg with Newton-Raphson approximation)-- the algorithm will supply 'infinitely many' approximations, but thanks to lazy constructors these will appear just one at a time.</p>
+<p>(*You should check here Abelson and Sussman(s) on stream processing. Many consider Hal Abelson's, Jerry Sussman's and Julie Sussman's <em>Structure and Interpretation of Computer Programs</em> (MIT Press, 1984; ISBN 0-262-01077-1) one and the finest books, if not the finest book, on computer science ever written (and I, as a modest and insignificant outsider, agree entirely). They have a section on 'stream processing' that uses the wrapping-and-not-evaluating technique. The book has its own website and is available online. <em><a href="http://mitpress.mit.edu/sicp/" target="_blank">Structure and Interpretation of Computer Programs</a></em>*)</p>
+<p>Constructors can also be included in the definition of weak head normal form. A constructor is normally taken to be a predefined function but one without a reduction rule. So, whenever you meet say C &lt;arg1&gt; &lt;arg2&gt; .. &lt;argn&gt; , where C is a constructor, the whole expression is not a redex even though some of the arguments might be-- C &lt;arg1&gt; &lt;arg2&gt; .. &lt;argn&gt; is in weak head normal form.</p>
+<p>Lazy evaluation is also needed to treat interactive programs in a functional way. The problem here is that the User types, say, some input and the program produces some output. Were we to say that the output is just simply a function of the particular localized input we would be in trouble, because the User can type 'F' , say, and produce an output, then 5 minutes later type another 'F' and produce an entirely different output, so output['F'] does not equal output['F'] (which it should do to yield the referential transparency characteristic of functional programs). The solution to this is to say that the output sequence (or list or stream) is a function of the input sequence (or list or stream), and then, for example, output['F'::'G'::'H'::'G':: ...] will equal output['F'::'G'::'H'::'G':: ...]. Now a slightly different problem arises, the input stream started some time in the past, has continued to now, and presumably will continue into the future; the output function which needs this stream as its argument cannot have all of it now; however, the output function can have any or all of the input stream that has put in an appearance until the present. So, if the input stream is conceived of as being built by lazy constructors and accessed by lazy accessors, all is well.</p>
+<blockquote><p>&nbsp;</p>
+<p><strong>eager evaluation</strong> : do anything you can, arguments first, straight away (always strict).</p>
+<p><strong>lazy evaluation</strong> : don't do anything unless you have to. NOR to WHNF + sharing + lazy constructors, not strict</p>
+</blockquote>
+</div>
+      
+  <nav id="book-navigation-654" class="book-navigation" role="navigation" aria-labelledby="book-label-654">
+    
+          <h2 class="visually-hidden" id="book-label-654">Book traversal links for Reduction Strategies</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/666" rel="prev" title="Go to previous page"><b>‹</b> Combinatory Logic II</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/654" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/638" rel="next" title="Go to next page">Roll your own [Combinatory Logic] <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/639" hreflang="en">Bibliography</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/32" hreflang="en">Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/33" hreflang="en">The Basic Grammar of Lambda Expressions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/34" hreflang="en">Notation (skip this if you wish)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/35" hreflang="en">Substitutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/36" hreflang="en">The Rules of the Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/37" hreflang="en">Normal Forms and Termination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/42" hreflang="en">Normal Order and Applicative Order Reduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/38" hreflang="en">Lambda Combinators I: True, False, Conditional</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/39" hreflang="en">Lambda Combinators II: Lists and Numbers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/40" hreflang="en">Lambda Combinators III: Recursion and the Fixpoint Combinator</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/41" hreflang="en">Review of Lambda Combinators</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/43" hreflang="en">Operational and Denotational Semantics</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/44" hreflang="en">Translating Functional Programming Constructs into Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/45" hreflang="en">Combinatory Logic I</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/666" hreflang="en">Combinatory Logic II</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/46" hreflang="en">Reduction Strategies</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/638" hreflang="en">Roll your own [Combinatory Logic]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/516" hreflang="en">Roll your own [Lambda Calculus]</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/46","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"46"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

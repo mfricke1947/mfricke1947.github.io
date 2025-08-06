@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="2013 Skills to be acquired in this tutorial: To become familiar with the new rules for predicate logic trees with identity. Reading Colin Howson, [1997] Logic with trees Chapter 9 Tutorial: It is possible to use trees with formulas containing identity. Really there are two different ways to implement it: either there are two new rules, or there is one new rule and a new way of closing a branch from a single formula. Both will be described." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/67" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/67" />
+<link rel="shortlink" href="https://softoption.us:8888/node/67" />
+<link rel="prev" href="/node/305" />
+<link rel="up" href="/howson" />
+<link rel="next" href="/node/306" />
+
+    <title>Tree Tutorial 5: Identity Rules | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/howson">Tree Tutorials [Propositional, Predicate, Identity, and Modal Logic Trees—Howson Syntax]</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 5: Identity Rules</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="67" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/20" hreflang="en">howson</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>2013</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To become familiar with the new rules for predicate logic trees with identity.</p>
+<h3>Reading</h3>
+<p>Colin Howson, [1997] <em>Logic with trees</em> Chapter 9</p>
+<h3>Tutorial:</h3>
+<p>It is possible to use trees with formulas containing identity. Really there are two different ways to implement it: either there are two new rules, or there is one new rule and a new way of closing a branch from a single formula. Both will be described.</p>
+<p>With identity, at a rough and hand-waving level, two different things might go on. First, everything is identical to itself ie a=a, b=b, c=c, etc., in sum ∀x(x=x). Then, identities are used to substitute for one term in another, so, for example, Fa and a=b allow the inference to Fb. Building these into tree rules is awkward in both cases.</p>
+<h4>The two new rules approach</h4>
+<p>To cover everything being identical with itself, there is an Identity Introduction rule which grows a tree by adding ∀x(x=x) (in turn, this is almost always followed by Universal Decomposition, the tree counterpart of Universal Instantiation, to get a=a or m=m or a formula saying that a term is identical to itself, for some desired term).</p>
+<p><em>This Identity Introduction is slightly different to the rule Howson[1997] uses. Howson[1997] omits adding the ∀x(x=x) step and allows you to go to a=a, etc. . This difference is of no great consequence. The Howson[1997] may be quicker and better when using pencil on paper, but the software in use here has to find out from the User certain information (on the desired term to use in the identity) and the 'extra' step is just one transparent, and logically sound, way of doing this. </em></p>
+<p>Identity Introduction is at stress with the general tree approach which is decompositional ie it takes things apart. To use Identity Introduction, a formula is selected and then 'Identity Introduction' from the menu. From a logical point of view, there is no need to select a formula. However, when extending a tree, the User may have several open branches, and wish to have the identity in one branch and not the others-- selecting a formula picks that branch. Here are 3 examples of Identity Introduction in use. The (valid) example argument is</p>
+<blockquote><p>a=b∴ (a=a∧b=a)</p>
+</blockquote>
+<p>and the tree for it starts</p>
+<blockquote><p><img alt height="150" src="/files/images/identity1.jpg" width="320" loading="lazy"></p>
+</blockquote>
+<p>now, Identity Introduction could be used immediately to give</p>
+<blockquote><p><img alt height="150" src="/files/images/identity2.jpg" width="320" loading="lazy"></p>
+</blockquote>
+<p>or the ¬.D tree rule could have been used first, and then Identity Introduction used on the left branch</p>
+<blockquote><p><img alt height="150" src="/files/images/identity3.jpg" width="320" loading="lazy"></p>
+</blockquote>
+<p>or on the right branch</p>
+<blockquote><p><img alt height="150" src="/files/images/identity4.jpg" width="320" loading="lazy"></p>
+</blockquote>
+<p>[We will see which of these are useful, shortly.]</p>
+<p>The second identity rule is the one that allows substitutions. It also is unusual in that it requires <em>two</em> formulas before it can be used (all the other tree rules decompose one formula, apart from Identity Introduction, which extends from nothing). One of these two formulas needs to be an identity statement, and the other can be any statement containing one of the terms. Here is a suitable tree, with the two formulas selected. [To select two formulas, you mouse click, or touch, on one, then mouse click, or touch, on the second.]</p>
+<blockquote><p><img alt height="130" src="/files/images/identity5.jpg" width="319" loading="lazy"></p>
+</blockquote>
+<p>and what the rule allows you to do is to extend the tree by substituting for one or more of the terms in the 'any' statement. So, here is one growth</p>
+<blockquote><p><img alt height="130" src="/files/images/identity6.jpg" width="319" loading="lazy"></p>
+</blockquote>
+<p>and another</p>
+<blockquote><p><img alt height="130" src="/files/images/identity7.jpg" width="319" loading="lazy"></p>
+</blockquote>
+<p>and another</p>
+<blockquote><p><img alt height="130" src="/files/images/identity8.jpg" width="319" loading="lazy"></p>
+</blockquote>
+<p>(which you do depends on the purposes at hand).</p>
+<p>Now we can show how to close that first tree (for the valid argument a=b∴ (a=a∧b=a))</p>
+<blockquote><p><img alt height="150" src="/files/images/identityE.jpg" width="320" loading="lazy"></p>
+</blockquote>
+<p>There is a restriction to the substitution rule. Were the identity to contain variables, there could be problems with 'capturing' when a substitution is made. So, the terms in the identity must be variable free. So, an identity like a=b is fine, because both the terms are constants, so too is f(a)=h(c) because these complex terms do not contain any variables. On the other hand, a=x or f(x)= h cannot be used, because some of the terms contain variables. There is a label to describe terms of the desired kind. A <em>closed term</em> is either a constant or a complex (compound) term whose subterms are themselves closed terms. Then for the tree Identity Decomposition rule, the terms in the identity have to be closed terms.</p>
+<h4>The one new rule approach (and a shortcut on closing branches)</h4>
+<p>Usually when we close a branch we require the selection of two formulas, one of which being the negation of the other. When identities are in use occasionally you will come across a formula like ¬(a=a) . Now, this obviously cannot be true or satisfied, no matter what. And we could close a branch containing it, under the two rule approach to identity, by creating the additional formula (a=a) by Identity Introduction and selecting both those lines and closing the branch. But we allow a shortcut. If there is a formula which says that something is not identical to itself, eg ¬(a=a),¬(b=b), ¬(f(t)=f(t)), etc. just select that one formula alone and you can close the branch using 'Close'.</p>
+<p>It turns out that if you have this shortcut, ie the ability to close a branch from a single formula of the form ¬(a=a), <em>you do not need the Identity Introduction rule at all.</em>&nbsp; All the closings that need to be done using identity can be done with just the substitution rule.</p>
+<h4>The software implementation</h4>
+<p>The software implements both rules and closure of a branch from a single suitable line. What you use is up to you. You need never use the Identity Introduction rule, provided you are willing to close from a single formula denial of self identity. You need never close from a single formula denial of identity, providing you are willing to use both Identity rules (as and when required).</p>
+<p>There are two other implementation issues with Identity and trees. Some implementations require that the formula being substituted into be a 'literal' , that is either an atomic formula or the negation of an atomic formula. With this kind of implementation, with the formulas</p>
+<p class="rteindent1">a=b<br>
+Fa<br>
+¬Fa<br>
+Fa ∧ ¬Fa</p>
+<p>the identity can be used to substitute into the second and third formulas ie Fa, ¬Fa (they are literals) but not the fourth formula Fa ∧ ¬Fa (because it is not a literal). [You'd have to split the fourth one up, to get literals, and then you can substitute.] The software here allows substitution into any suitable formula, that formula does not have to be a literal.</p>
+<p>Then, 'free variables' raise questions. If the identity is something like</p>
+<p class="rteindent1">a=x</p>
+<p>where x is a free variable, should substitutions be permitted in other formulas? Probably the answer is that it is alright (but there may be other qualifications that come in). However a formula like</p>
+<p class="rteindent1">a=x</p>
+<p>is an oddity. What is really says or means is</p>
+<p class="rteindent1">∀x(a=x)</p>
+<p>and from this a=a, a=b, a=c, etc all follow (all of which can be used in substitutions). Not only is a formula like a=x an oddity, it is rare (it is not easy to get it naturally in a branch of a tree). We will just pass on free variables.</p>
+<p>The software just rules free variables out. The terms in the identity have to be 'closed terms'.</p>
+<p>&nbsp;</p>
+<hr>
+<h2>Exercises to accompany Tree Tutorial 5</h2>
+<h3>Exercise 1 (of 2):</h3>
+<p>Determine whether these arguments are valid (ie try to produce closed trees for them). [These three statements are known as the axioms for identity (reflexivity, symmetry, and transitivity).]</p>
+<blockquote><p>a) ∴∀x(x=x)<br>
+b) ∴∀x∀y(x=y →y=x)<br>
+c) ∴∀x∀y∀z((x=y∧y=z) →y=z)</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/howson/Tutorial5aHowson.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br />
+<param name="parser" value="howson" />
+<param name="identity" value="true" />
+<param name="tree0" value="∴∀x(x=x) " />
+<param name="tree1" value="∴∀x∀y(x=y →y=x)" />
+<param name="tree2" value="∴∀x∀y∀z((x=y∧y=z) →y=z)" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+<h3>Exercise 2 (of 2):</h3>
+<p>Determine whether these arguments are valid (ie try to produce closed trees for them)</p>
+<blockquote><p>d) ∀xF(x,x),∃x∃y¬F(x,y) ∴ ∃x¬(x=a)<br>
+e) ∀x(F(x,c)→x=a), ¬c=a ∴ ∀x(¬x=c)<br>
+f) ∀x(x=a→G(x,b)), ¬∃xG(x,x)∴ ¬a=b</p>
+</blockquote>
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/howson/Tutorial5bHowson.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p>If you decide to use the web application you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20howson" target="_blank">Deriver [Howson]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/treesStandAlone/howson/CombinedTutorialsHowson.html . Then select the desired formula(s) and Start Tree off the Actions Menu.</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this. Set&nbsp;<em>identity</em>&nbsp;to true (and that will give you the identity rules); and&nbsp; you can check that the parser is set to Howson.</p>
+<!--
+<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br />
+<param name="parser" value="howson" />
+<param name="identity" value="true" />
+<param name="tree0" value="∀xF(x,x),∃x∃y¬F(x,y) ∴ ∃x¬(x=a)" />
+<param name="tree1" value="∀x(F(x,c)→x=a),  ¬c=a ∴ ∀x(¬x=c)" />
+<param name="tree2" value="∀x(x=a→G(x,b)), ¬∃xG(x,x)∴ ¬a=b" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>-->
+</div>
+      
+  <nav id="book-navigation-56" class="book-navigation" role="navigation" aria-labelledby="book-label-56">
+    
+          <h2 class="visually-hidden" id="book-label-56">Book traversal links for Tree Tutorial 5: Identity Rules</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/305" rel="prev" title="Go to previous page"><b>‹</b> Tree Predicate Exercises: Roll your own</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/howson" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/306" rel="next" title="Go to next page">Tree Tutorial 6: Functional Terms and First Order Theories <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/219" hreflang="en">Preliminary [Pre-test]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/315" hreflang="en">Notation</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/57" hreflang="en">Tree Tutorial 1: Propositional Trees: Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/58" hreflang="en">Tree Tutorial 2: More Propositional Tree Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/92" hreflang="en">Review of Tree Propositional Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/60" hreflang="en">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/61" hreflang="en">Trees: Propositional Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/64" hreflang="en">Tree Tutorial 4: Predicate Logic Trees</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/293" hreflang="en">Review of Tree Predicate Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/305" hreflang="en">Tree Predicate Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/67" hreflang="en">Tree Tutorial 5: Identity Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/306" hreflang="en">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/313" hreflang="en">Tree Tutorial 7: Type Labels, Sorts, Order Sorted Logic [&#039;Mixed Domains&#039;]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/649" hreflang="en">Tree Tutorial 8 Modal Trees</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/67","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"67"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.5" class="java.beans.XMLDecoder">
+ <int>3</int>
+ <string>&lt;html&gt;
+  &lt;head&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      5/5/15
+    &lt;/p&gt;
+    &lt;h2&gt;
+      
+    &lt;/h2&gt;
+    &lt;h2&gt;
+      Exercises to accompany Predicate Tutorial 4
+    &lt;/h2&gt;
+    &lt;p&gt;
+      In the Drawing (or Interpretation) panel...
+    &lt;/p&gt;
+    &lt;p&gt;
+      Individuals are circles, properties are rectangles which may or may not 
+      surround a particular individual, and, later, we will come to relations 
+      which are lines which connect individuals.
+    &lt;/p&gt;
+    &lt;p&gt;
+      If an individual is within a property rectangle; it is considered to 
+      have that property. If it is not, it does not. So if you have an 
+      individual &apos;a&apos;, and no property &apos;P&apos; , then a is taken to lack P and so 
+      the formula Pa is false.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Formulas written here in the &lt;em&gt;Journal Panel&lt;/em&gt; are taken to be 
+      about the &lt;em&gt;Interpretation Panel.&lt;/em&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      Try doing some drawing. Click on the circle in the palette, click on the 
+      point you want it in the window, move it slightly (to show your clicks 
+      are really intended), then release. This will leave you a little circle, 
+      probably with four blobs on it. The blobs mean that the individual is 
+      still selected. Selected items are not considered to be genuine parts of 
+      the drawing. Click down somewhere else in the drawing. This will stop 
+      the circle being selected, and thus add it. Up in the top left corner is 
+      a description of the drawing. You should see that the new entity is now 
+      part of the Universe.
+    &lt;/p&gt;
+    &lt;p&gt;
+      If you wish to choose a name for the an entity that you add just type 
+      the constant term you want. Try this. Click on the circle in the 
+      palette, type lower case &apos;d&apos;, draw your circle. This will add &apos;d&apos; to the 
+      Universe. If you do not wish to choose, the program will automatically 
+      choose names for the entities.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Try drawing some properties. Again if you want to give one a name just 
+      type the Predicate you want. Try this. Click on the square in the 
+      palette, type upper case &apos;K&apos;, draw a square around an existing circle. 
+      The drawing is constrained to be well presented.
+    &lt;/p&gt;
+    &lt;p&gt;
+      An individual may or may not have a property. So you can draw (or move) 
+      individuals almost anywhere. But properties must apply to at least one 
+      individual-- you can draw a property around an individual, but not in 
+      empty space.
+    &lt;/p&gt;
+    &lt;p&gt;
+      You can colour or shade your properties as you wish.
+    &lt;/p&gt;
+    &lt;h3&gt;
+      Exercise 1 (of 3)
+    &lt;/h3&gt;
+    &lt;p&gt;
+      Produce drawings in which each of the following formulas are true. (To 
+      rid yourself of an earlier drawing merely &lt;em&gt;Select All&lt;/em&gt; and &lt;em&gt;Cut&lt;/em&gt; 
+      under the &lt;em&gt;Drawing Edit Menu&lt;/em&gt;). If you are having trouble, select 
+      the formula and click &lt;em&gt;Satisfiable?&lt;/em&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;blockquote&gt;
+      a) Fa
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      b) Gb
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      c) ~Fb
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      d) ~Fa&amp;#8835;~Gb
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      e) (~Fa&amp;#8744;~Gb)&amp;#8744;Hc
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      f) Fa&amp;#8801;Gb
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      g) ~Fc&amp;#8744;(Fa&amp;amp;Gb)
+    &lt;/blockquote&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;h3&gt;
+      Exercise 2 (of 3)
+    &lt;/h3&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;p&gt;
+      Produce a drawing in which each formula in the following list of 
+      formulas are true. If you are having trouble, select the list and click 
+      Satisfiable?
+    &lt;/p&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;blockquote&gt;
+      Fa,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      Gb,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      ~Fb,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      ~Fa&amp;#8835;~Gb,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      (~Fa&amp;#8744;~Gb)&amp;#8744;Hc,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      Fa&amp;#8801;Gb,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      ~Fc&amp;#8744;(Fa&amp;amp; Gb)
+    &lt;/blockquote&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;h3&gt;
+      Exercise 3 (of 3)
+    &lt;/h3&gt;
+    &lt;p&gt;
+      Produce a drawing which proves the following argument to be invalid 
+      (i.e. in which all the premises are true and the conclusion false). If 
+      you are having trouble, select the Test list and click Satisfiable?
+    &lt;/p&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;blockquote&gt;
+      Fa,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      Gb,
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      &amp;#8756;
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      (Fa&amp;#8801;Gb)&amp;#8835;Ha
+    &lt;/blockquote&gt;
+    &lt;p&gt;
+      
+    &lt;/p&gt;
+    &lt;blockquote&gt;
+      {Test list
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      Fa,Gb,~((Fa&amp;#8801;Gb)&amp;#8835;Ha)
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      }
+    &lt;/blockquote&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</string>
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="us.softoption.interpretation.TProperty" id="TProperty0">
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fSelected</string>
+     <void method="set">
+      <object idref="TProperty0"/>
+      <boolean>false</boolean>
+     </void>
+    </void>
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fName</string>
+     <void method="set">
+      <object idref="TProperty0"/>
+      <char>F</char>
+     </void>
+    </void>
+    <void property="XCoord">
+     <int>171</int>
+    </void>
+    <void property="YCoord">
+     <int>53</int>
+    </void>
+    <void id="Rectangle0" property="boundsRect">
+     <void class="java.awt.Rectangle" method="getField">
+      <string>width</string>
+      <void method="set">
+       <object idref="Rectangle0"/>
+       <int>98</int>
+      </void>
+     </void>
+     <void class="java.awt.Rectangle" method="getField">
+      <string>height</string>
+      <void method="set">
+       <object idref="Rectangle0"/>
+       <int>96</int>
+      </void>
+     </void>
+    </void>
+    <void property="boundsRect">
+     <object idref="Rectangle0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="us.softoption.interpretation.TIndividual" id="TIndividual0">
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fSelected</string>
+     <void method="set">
+      <object idref="TIndividual0"/>
+      <boolean>false</boolean>
+     </void>
+    </void>
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fName</string>
+     <void method="set">
+      <object idref="TIndividual0"/>
+      <char>b</char>
+     </void>
+    </void>
+    <void property="XCoord">
+     <int>210</int>
+    </void>
+    <void property="YCoord">
+     <int>78</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="us.softoption.interpretation.TIndividual" id="TIndividual1">
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fSelected</string>
+     <void method="set">
+      <object idref="TIndividual1"/>
+      <boolean>false</boolean>
+     </void>
+    </void>
+    <void class="us.softoption.interpretation.TShape" method="getField">
+     <string>fName</string>
+     <void method="set">
+      <object idref="TIndividual1"/>
+      <char>a</char>
+     </void>
+    </void>
+    <void property="XCoord">
+     <int>82</int>
+    </void>
+    <void property="YCoord">
+     <int>109</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="us.softoption.interpretation.TInterpretationBoard" id="TInterpretationBoard0">
+    <void id="Rectangle1" property="boundsRect">
+     <void class="java.awt.Rectangle" method="getField">
+      <string>width</string>
+      <void method="set">
+       <object idref="Rectangle1"/>
+       <int>150</int>
+      </void>
+     </void>
+     <void class="java.awt.Rectangle" method="getField">
+      <string>height</string>
+      <void method="set">
+       <object idref="Rectangle1"/>
+       <int>40</int>
+      </void>
+     </void>
+    </void>
+    <void property="boundsRect">
+     <object idref="Rectangle1"/>
+    </void>
+    <void property="semantics">
+     <object class="us.softoption.interpretation.TSemantics" id="TSemantics0">
+      <void class="us.softoption.interpretation.TSemantics" method="getField">
+       <string>fCurrentPropositions</string>
+       <void method="set">
+        <object idref="TSemantics0"/>
+        <array class="boolean" length="26"/>
+       </void>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+ <object class="us.softoption.proofs.TProofTableModel" id="TProofTableModel0">
+  <void property="head">
+   <void method="add">
+    <object class="us.softoption.proofs.TProofline">
+     <void property="blankline">
+      <boolean>true</boolean>
+     </void>
+     <void property="headlevel">
+      <int>-1</int>
+     </void>
+     <void property="subprooflevel">
+      <int>-1</int>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+ <object class="us.softoption.tree.TTreeTableModel" id="TTreeTableModel0">
+  <void id="DefaultMutableTreeNode0" property="hostRoot">
+   <void id="TTreeDataNode0" property="userObject">
+    <void class="us.softoption.interpretation.TTestNode" method="getField">
+     <string>fParser</string>
+     <void method="set">
+      <object idref="TTreeDataNode0"/>
+      <object class="us.softoption.parser.TParser"/>
+     </void>
+    </void>
+    <void class="us.softoption.interpretation.TTestNode" method="getField">
+     <string>fTreeNode</string>
+     <void method="set">
+      <object idref="TTreeDataNode0"/>
+      <object idref="DefaultMutableTreeNode0"/>
+     </void>
+    </void>
+   </void>
+  </void>
+  <void property="root">
+   <object idref="TTreeDataNode0"/>
+  </void>
+ </object>
+ <object class="us.softoption.editor.TDocState" id="TDocState0">
+  <void property="HDivider">
+   <int>38</int>
+  </void>
+  <void property="VDivider">
+   <int>252</int>
+  </void>
+  <void id="Dimension0" property="browserSize">
+   <void class="java.awt.Dimension" method="getField">
+    <string>width</string>
+    <void method="set">
+     <object idref="Dimension0"/>
+     <int>987</int>
+    </void>
+   </void>
+   <void class="java.awt.Dimension" method="getField">
+    <string>height</string>
+    <void method="set">
+     <object idref="Dimension0"/>
+     <int>532</int>
+    </void>
+   </void>
+  </void>
+  <void property="tabIndex">
+   <int>1</int>
+  </void>
+ </object>
+</java>

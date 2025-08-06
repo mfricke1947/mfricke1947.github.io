@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="1/27/08 10Software Prerequisities You need to know some sentential logic to be able to understand this. In particular, you need to know about the symbols used in sentential logic, truth tables, satisfiability, consistency, and semantic invalidity (by counter example). You do not need to know sentential rules of inference and derivations. [The tutorials on sentential logic give the required background.] Skills to be acquired in this tutorial: To become familiar with the notions of tree, branch, open branch, closed branch." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/413" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/413" />
+<link rel="shortlink" href="https://softoption.us:8888/node/413" />
+
+    <title>Tree Tutorial 1: Sentential Logic Truth Trees: Introduction | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_8Ax7Y-egvljOoD_s03szA9MISa3YzfOnzQQTURL8wOQ.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdzEEKgDAMBdELRXOmpIYSTBvo76aeXtwIun0MozKmn1xCgLWrwEg_1AyQavhxz-Mta6RKbJgrvFcqOYx7jibhlxEWpjV-1jcFbSod" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node"></a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tree Tutorial 1: Sentential Logic Truth Trees: Introduction</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="413" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/22" hreflang="en">hausman</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>1/27/08 10Software</p>
+<h3>Prerequisities</h3>
+<p>You need to know some sentential logic to be able to understand this. In particular, you need to know about the symbols used in sentential logic, truth tables, satisfiability, consistency, and semantic invalidity (by counter example). You do not need to know sentential rules of inference and derivations. [The tutorials on sentential logic give the required background.]</p>
+<h3>Skills to be acquired in this tutorial:</h3>
+<p>To become familiar with the notions of tree, branch, open branch, closed branch.</p>
+<h3>Reading</h3>
+<p>A. Hausman, H.Kahane, P.Tidman, [2007] <em>Logic and Philosophy</em> Chapter 6</p>
+<p>[The use of trees (or 'tableaux') in logic was pioneered by Beth, Hintikka, and Smullyan, and their use was brought into a teaching context by such books as the standard Jeffrey text. See</p>
+<blockquote><p>E.W. Beth, [1959] <em>The Foundations of Mathematics</em><br>
+G.Gentzen, [1934-5] 'Untersuchungen uber das logische Schliessen', <em>Mathematische Zeitschrift</em>, vol 39, 1934-5, pp.176-210, 405-31<br>
+J. Hintikka [1955] ' Two papers on Symbolic Logic', <em>Acta Philosophica Fennica</em>, vol 8 1955<br>
+R.C.Jeffrey, [1967] <em>Formal Logic: Its Scope and Limits</em><br>
+R.M. Smullyan, [1968] <em>First Order Logic</em></p>
+</blockquote>
+<p>]</p>
+<h2>Tutorial:</h2>
+<h4>Graph theory and trees</h4>
+<p>'Trees' are a type of structure within the mathematical theory of graphs.</p>
+<p>Graphs consist of two things: nodes (other words for these, 'vertices', 'points') and links (other words for these, 'edges', 'lines', 'ties'). In applications, nodes typically model individual people, countries, businesses, web pages, genes, amino acids, etc. Links typically model friendships, web hyperlinks, telephone lines, communications, etc. For us, nodes are going to represent formulas and the links will show the decomposition, or transformation, of a formula into other formulas.</p>
+<p>You can think of a node and being a dot or a point, and a link as being a line or an edge which runs from a node to a node. So here are a few graphs</p>
+<blockquote><p align="left"><img alt height="700" src="/files/images/graphs1.jpg" width="300" loading="lazy"></p>
+</blockquote>
+<p>The <i>size</i> of a graph is the number of nodes in it. Graph 1 is a graph consisting of a single node only. Graphs 2 and 5 are graphs with five nodes. Graph 3 has five nodes and four links; graph 5 also has five nodes and four links, but it is a different graph to 3 because different nodes are linked.</p>
+<p>The <i>degree</i><b> </b>of a node is the number of links that connect to it. So, for example, in Graph 6 above, three of the nodes have degree 1 but node d has degree 2 and e degree 4.</p>
+<p>How the links are drawn is irrelevant (you can draw them as curves or straight lines or locate them differently, and the links can cross each other without that meaning anything)-- all that matters is which nodes they connect. These two graphs are actually the same graph.</p>
+<blockquote><p><img align="top" alt height="107" hspace="9" src="/files/images/topoGraphs.png" width="303" loading="lazy"></p></blockquote>
+<p>A <i>walk</i> is an alternating sequence of nodes and links, which starts and ends with a node. So, in graph 2, a-&gt;e-&gt;b is a walk. A <i>path</i> is a walk with no repeated nodes. The <i>length</i> of a walk is the number of links included in it. Two nodes are <i>adjacent</i> if there is a link between them.</p>
+<p>A graph has a <i>cycle</i>, or is <i>cyclic</i>, if there is a walk of non-zero length that starts and ends on the same node (otherwise the graph is said to be <i>acyclic</i>).</p>
+<p>A graph is <i>connected</i> if there is a path between every two nodes in it. Graphs 2, 3, 5, and 6 are connected. Graphs 1 and 4 are not.</p>
+<p>There are a couple of different ways of explaining or defining <em>trees</em> (and which is preferable depends a little on what is going to be done with the resulting trees).</p>
+<p>A <i>tree</i> is a connected graph in which between every two nodes there is only one path (ie there are no 'cycles'). For example,</p>
+<blockquote><p><img align="top" alt height="133" hspace="9" src="/files/images/tree2.png" width="378" loading="lazy"></p></blockquote>
+<p>is a tree (you can walk from node to node (so it is connected) but you cannot walk around in a circle (so there are no cycles)).</p>
+<p>The following is <i>not</i> a tree</p>
+<blockquote><p><img align="top" alt height="133" hspace="9" src="/files/images/tree3.png" width="378" loading="lazy"></p></blockquote>
+<p>because there is a cycle.</p>
+<p>And the following is <i>not</i> a tree</p>
+<blockquote><p><img align="top" alt height="133" hspace="9" src="/files/images/tree4.png" width="378" loading="lazy"></p></blockquote>
+<p>because it is not connected.</p>
+<p>With the kind of trees of interest to us, it is usual to pick one of a tree's nodes as being the 'root'. Then it is common to draw them with the root at the top, and the other nodes appearing below. So if the node 'a' were to be chosen as the root of the real tree in the first diagram, the tree might be re-drawn.</p>
+<blockquote><p><img align="top" alt height="198" hspace="9" src="/files/images/tree5.png" width="228" loading="lazy"></p></blockquote>
+<p>You can imagine this re-drawing process as being that of picking up the root and shaking the whole tree so that the other nodes fall below. [The reason trees are often drawn 'upside down', with the root at the top, and the 'branches' and 'leaves' coming downward is that they are often constructed from the root and enough room has to be left on the sheet of paper to draw them.]</p>
+<p>In computer science, there often is not a whole lot of interest as to which node is the root (and so, for example, there are algorithms to 'balance' trees and these amount to manipulating trees and their roots to produce an even result).</p>
+<p>In our work, we almost always are going to be interested in which node is the root. So there will be a designated <i>root</i>. And, with a tree, there are nodes which do not have other nodes below them. These are <i>leaves</i>. So, in the above tree, 'a' is the root, and d, f and g are leaves. With any leaf, there is exactly one path from the root to it, such a path is a <i>branch</i>.</p>
+<blockquote><p><img align="top" alt height="198" hspace="9" src="/files/images/tree6.png" width="228" loading="lazy"></p></blockquote>
+<blockquote><p><img align="top" alt height="198" hspace="9" src="/files/images/tree7.png" width="228" loading="lazy"></p></blockquote>
+<blockquote><p><img align="top" alt height="198" hspace="9" src="/files/images/tree8.png" width="228" loading="lazy"></p></blockquote>
+<p>The red lines indicate the three branches in the above tree.</p>
+<h4>Truth Tree Rules</h4>
+<p>Trees are going to be used to 'picture' the truth conditions or requirements for a formula (then, as the technique is developed, for several formulas at once).</p>
+<p>Any easy way to remember the rules is to regard them as having been built from the truth tables.</p>
+<p>For example, the truth table for 'and' is</p>
+<p>Conjunction</p>
+<blockquote><table width="100">
+<tbody>
+<tr>
+<td>F</td>
+<td>G</td>
+<td>(F.G)</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>For a conjunction to be true, each of its immediate subformulas have to be true. A tree is started with the conjunction as the root, and it is extended by adding a branch containing each of the immediate subformulas. Thus</p>
+<p>before</p>
+<blockquote><p><img height="62" src="/test/trees/assets/before.jpg" width="287" loading="lazy"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>after</p>
+<blockquote><p><img height="62" src="/test/trees/assets/after.jpg" width="287" loading="lazy"></p>
+</blockquote>
+<p>[These images come from the running applet that we will look at shortly, the tick is just to show which formula has been extended.]</p>
+<p>The tree extension rules are also used to grow a tree even when the formula that is being used to make the extension is not the root. For example, here is a perfectly good tree built using the conjunction rule three times in a row (first on the root, then on one of the products of the first extension, and so on).</p>
+<blockquote><p><img height="117" src="/test/trees/assets/andTree.jpg" width="289" loading="lazy"></p>
+</blockquote>
+<p>Try building some 'and' trees (click on the formula to select, choose 'extend' from the menu).</p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br>
+<param name="parser" value="hausman">
+<param name="tree0" value="F,F.G">
+<param name="tree1" value="F.G,G.H.I">
+<param name="tree2" value="F.~F">
+<param name="advancedMenu" value="false">Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<p>A tree 'pictures' truth conditions. It shows what has to happen for a formula to be true. The idea is: if all the atomic formulas in a branch are true, or are assigned true, and all the negations of atomic formulas in a branch are true, ie their atomic components are assigned false, then all the formulas in the branch will be true. So, for example, (F.G) is true if F is true and G is true, and (H.~I) is true if H is true and I is false. <em>However, this is subject to a condition. </em>Consider the formula (F.~F), it is not satisfiable, no assignment of truth values to its atomic components can make it true. If you do a tree for a formula like this (Tree 3 above), you will end up with a branch that has both F and ~F in it; this means that you will be trying to assign F both true and false (which is impossible).</p>
+<p>Any branch that contains a formula and the negation of that formula is said to be <em>closed</em>. (And any branch that is not closed is <em>open</em>.)</p>
+<p>The running applet allows you to close (suitable) branches. To do this you have to select two formulas (on WIndows and Mac computers this is done by clicking on the first then command-clicking on the second), one of the formulas has to be the negation of the other, then you select 'Close' from the menu.</p>
+<h3>A Note on Notation</h3>
+<p>The actual Hausman book uses a slightly different notation for justifying the lines in a tree. For example, it uses 'p' (for premise) for the opening &nbsp;lines, whereas the system here uses 'SM' (for set member).</p>
+<hr>
+<h2>Exercises to accompany Tutorial 1</h2>
+<h3>Exercise 1 (of 1) (very brief):</h3>
+<p>For Tree 3 above, extend the tree, then select both F and ~F (click on the first, command click on the second) then select 'Close' from the menu. This is just to introduce you to the notation for closed branches.</p>
+</div>
+      
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/413","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"413"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

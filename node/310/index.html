@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="2013 Reading Colin Howson, [1997] Logic with trees Chapter 9 &amp; 11 Tutorial Notation It is common in this setting (which is arithmetic) to use  functional terms like s(x), s(1), s(0) to mean the successor of x, 1, and 0, respectively. Equally common is the notation x&#039;, 1&#039;, and 0&#039; to mean the same thing. The latter is quicker and shorter (though not semi-nmemonic)-- we will use it here." />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/310" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/310" />
+<link rel="shortlink" href="https://softoption.us:8888/node/310" />
+<link rel="prev" href="/node/308" />
+<link rel="up" href="/node/306" />
+<link rel="next" href="/node/311" />
+
+    <title>Number Theory and Peano Arithmetic | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/howson">Tree Tutorials [Propositional, Predicate, Identity, and Modal Logic Trees—Howson Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/306">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Number Theory and Peano Arithmetic</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="310" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/20" hreflang="en">howson</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>2013</p>
+<h3>Reading</h3>
+<blockquote><p>Colin Howson, [1997]&nbsp;<em>Logic with trees</em>&nbsp;Chapter 9 &amp; 11</p></blockquote>
+<h3>Tutorial</h3>
+<h4>Notation</h4>
+<p>It is common in this setting (which is arithmetic) to use &nbsp;functional terms like s(x), s(1), s(0) to mean the <em>successor</em> of x, 1, and 0, respectively. Equally common is the notation x', 1', and 0' to mean the same thing. The latter is quicker and shorter (though not semi-nmemonic)-- we will use it here.</p>
+<h4>Formal Arithmetic</h4>
+<p>Formal Number Theory is the formalization of ordinary elementary arithmetic. It deals with addition (+), multiplication (here, .), it has a constant (0), and the successor function ('). And it uses Identity. The successor function takes 0 to 0' (ie 1), then 0'' is 2. And so on. In many formal systems, 1 is defined as 0' and 2 as 1' (or 0'') and so on. Our system allows in the numerals 0,1,2,3 as constants (but not 4,5,6 etc.-- we need only enough numerals for illustration), then any definitions have to be explicitly introduced. Then the formal theory proves a number of theorems like</p>
+<blockquote><p>x'=x+1.</p></blockquote>
+<p>The end result is that number theory can be done as a first order theory within predicate logic.</p>
+<p>Of particular interest, intellectually, is the use of an axiom schema (that of induction).</p>
+<p>Axioms or First Principles need to be decidable. That is, there should be a mechanical way of answering yes/no to the question of whether a particular formula is an axiom. Often axiom systems have only a finite number of axioms (say 5 or 6 of them) and these are decidable by virtue of the fact that we only have to look through them to see whether a presented formula is among them (and thus is or is not an axiom). But it is possible for an axiom system to have an infinite number of axioms. Obviously we cannot complete looking through these individually. But if the infinite among them all fit a certain pattern, we can see whether or not a presented formula fits the pattern (and thus is or is not an axiom). So, purely as an illustration, some theory might have an axiom schema (or pattern) to the effect that</p>
+<blockquote><p>any formula with form φ[x] is an axiom, where φ[x] here means any well formed formula with at least one occurrence of the free variable x.</p></blockquote>
+<p>with this example, the formulas F(x),G(x),H(x), etc are all axioms (infinitely many of them). We can decide which formulas are axioms (even, here, with infinitely many axioms).</p>
+<p>The induction axiom schema, permitting infinitely many axioms, will be similar to this.</p>
+<h4>In sum</h4>
+<p>Formal Number Theory has five proper symbols {=,',+, .,0} and six proper axioms</p>
+<blockquote><p>∀x∀y(x'=y'→x=y),<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∀x(x.0=0),<br>
+∀x∀y(x.y'=x.y+x)</p>
+</blockquote>
+<p>And the axiom (metalanguage) schema of induction. If φ[n] is any formula in the object language with free variable n then</p>
+<blockquote><p>(φ[0]∧∀n(φ[n]→φ[n'])) → ∀nφ[n]</p></blockquote>
+<p>is an axiom.</p>
+<p>What the schema says in English, roughly, is</p>
+<blockquote><p>If (φ[0]∧∀n(φ[n]→φ[n'])) then ∀nφ[n]<br>
+which is<br>
+If φ[0]and∀n(φ[n]→φ[n'])) then ∀nφ[n]<br>
+which is<br>
+If you have a formula φ[x], with free variable x, proved for the case of 0 substituted for that x and∀n(φ[n]→φ[n'])) then ∀nφ[n]<br>
+which is<br>
+If you have a formula φ[x], with free variable x, proved for the case of 0 substituted for that x and you have for all n (φ[n]→φ[n'])) then ∀nφ[n]<br>
+which is<br>
+If you have a formula φ[x], with free variable x, proved for the case of 0 substituted for that x and you have for all n (if φ[n]then φ[n'])) then ∀nφ[n]<br>
+which is<br>
+If you have a formula φ[x], with free variable x, proved for the case of 0 substituted for that x and you have for all n (if φ[with n for x]then φ[with n'for x])) then ∀nφ[n]<br>
+which is<br>
+If you have a formula φ[x], with free variable x, proved for the case of 0 substituted for that x and you have for all n (if φ[with n for x]then φ[with n'for x])) then you can have All n φ[n for x]</p></blockquote>
+<p>[<strong>Notation.</strong> There is just the mildest of stresses here between explaining induction and running the software. For explanation of Induction it is useful to use 'n' as a variable and to write, for example,&nbsp;∀n . The reason for this is that we are talking number theory here and 'n' reminds us of that. But, in our running software, 'n' is not a variable so&nbsp;∀n is not well-formed. We use 'w','x','y', and 'z' as variables (with or without subscripts).&nbsp;So, in the Exercises, for example, you will see the use Induction using one of our real variables.]</p>
+<h4>Peano Arithmetic</h4>
+<p>Of great historical and philosophical interest in is so-called Peano Arithmetic. It is just formal number theory as explained above.</p>
+<p>Doing Formal Number Theory/ Peano Arithmetic in Trees.</p>
+<p>We can do arithmetic with trees. We just write the axioms as starting formulas or 'premises' together with the negation of the desired theorem. The Axiom of Induction Schema will need special treatment. You will need to take the desired instantiation of it as and axiom (we have made that choice for you in the exercises below)</p>
+<hr>
+<h3>Exercise 1</h3>
+<p>Hints for reasoning with identities:- Often with these kinds of proofs you can have four or five identity statements and it is easy to start going round in circles. A couple of good ideas are a) don't be rewriting both sides of an equation at once, if you get either the left or the right to equal what you want confine yourself to rewriting the other side, and b) the idea is to 'terminate' with what you want, if you can get any notion of 'weight' or 'complexity' (perhaps in terms of numbers of connectives) of the formulas you are producing, be careful with increasing weight, you may end up increasing weight forever.</p>
+<p>1.</p>
+<p>∀x∀y(x'=y'→x=y),<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∀x(x.0=0),<br>
+∀x∀y(x.y'=x.y+x),<br>
+∴<br>
+∀x(x+0'=x')&nbsp;</p>
+<p>You can see this (the conclusion) has nothing to do with multiplication, so it might be a little less cluttered to prove</p>
+<p>∀x∀y(x'=y'→x=y),&nbsp;<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∴<br>
+∀x(x+0'=x')&nbsp;</p>
+<p>2.</p>
+<p>∀x∀y(x'=y'→x=y),<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∀x(x.0=0),<br>
+∀x∀y(x.y'=x.y+x),<br>
+((0=(0+0))∧∀x((x=(0+x))→(x'=(0+x'))))→∀x(x=(0+x)) (*Induction*)</p>
+<p>∴<br>
+∀x(x=0+x)</p>
+<p>Less cluttered</p>
+<p>∀x∀y(x'=y'→x=y),&nbsp;<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+((0=(0+0))∧∀x((x=(0+x))→(x'=(0+x'))))→∀x(x=(0+x))&nbsp;(*Induction*)<br>
+∴<br>
+∀x((x=0+x)</p>
+<p>3.</p>
+<p>∀x∀y(x'=y'→x=y),<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∀x(x.0=0),<br>
+∀x∀y(x.y'=x.y+x),<br>
+(((x'+0)=(x+0)')∧∀y(((x'+y)=(x+y)')→((x'+y')=(x+y')')))→∀y((x'+y)=(x+y)') (*Induction*)&nbsp;</p>
+<p>∴<br>
+∀x∀x(x'+y=(x+y)'))</p>
+<p>Less cluttered</p>
+<p>&nbsp;</p>
+<p>∀x∀y(x'=y'→x=y),<br>
+∀x~(x'=0),<br>
+∀x(x+0=x),<br>
+∀x∀y(x+y'=(x+y)'),<br>
+∀x(x.0=0),<br>
+∀x∀y(x.y'=x.y+x),<br>
+(((x'+0)=(x+0)')∧∀y(((x'+y)=(x+y)')→((x'+y')=(x+y')')))→∀y((x'+y)=(x+y)') (*Induction*)&nbsp;</p>
+<p>∴<br>
+∀x∀x(x'+y=(x+y)'))</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!--<p><p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Trees.class" height="600" hspace="10" name="Trees" width="600"><br />
+<param name="parser" value="howson" />
+<param name="tree0" value="∀x∀y(x'=y'→x=y),<br />
+∀x~(x'=0),<br />
+∀x(x+0=x),<br />
+∀x∀y(x+y'=(x+y)'),<br />
+∴<br />
+∀x(x+0'=x')" /><br />
+<param name="tree1" value="∀x∀y(x'=y'→x=y),<br />
+∀x~(x'=0),<br />
+∀x(x+0=x),<br />
+∀x∀y(x+y'=(x+y)'),<br />
+((0=(0+0))∧∀x((x=(0+x))→(x'=(0+x'))))→∀x(x=(0+x))<br />
+∴<br />
+∀x(x=0+x')" /><br />
+<param name="tree2" value="<br />
+∀x∀y(x'=y'→x=y),<br />
+∀x~(x'=0),<br />
+∀x(x+0=x),<br />
+∀x∀y(x+y'=(x+y)'),<br />
+∀x(x.0=0),<br />
+∀x∀y(x.y'=x.y+x),<br />
+(((x'+0)=(x+0)')∧∀y(((x'+y)=(x+y)')→((x'+y')=(x+y')')))→∀y((x'+y)=(x+y)')<br />
+∴<br />
+∀x∀x(x'+y=(x+y)'))" />Your browser is not displaying the Deriver applet.</applet></p>
+<p> -->
+<p><iframe height="600" scrolling="no" src="/sites/all/js/treesWar/howson/PeanoHowson.html" width="650">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<hr>
+<hr>
+<p>If you decide to use the web application you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20howson" target="_blank">Deriver [Howson]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/treesStandAlone/howson/CombinedTutorialsHowson.html . Then select the desired formula(s) and Start Tree off the Actions Menu.</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this. Set&nbsp;<em>identity</em>&nbsp;to true (and that will give you the identity rules) set&nbsp;<em>firstOrder</em>&nbsp;to true (to get first order theories); and&nbsp; you can check that the parser is set to Howson.</p>
+</div>
+      
+  <nav id="book-navigation-56" class="book-navigation" role="navigation" aria-labelledby="book-label-56">
+    
+          <h2 class="visually-hidden" id="book-label-56">Book traversal links for Number Theory and Peano Arithmetic</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/308" rel="prev" title="Go to previous page"><b>‹</b> Groups</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/306" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/311" rel="next" title="Go to next page">Set Theory (and Russell&#039;s Paradox) <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/219" hreflang="en">Preliminary [Pre-test]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/315" hreflang="en">Notation</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/57" hreflang="en">Tree Tutorial 1: Propositional Trees: Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/58" hreflang="en">Tree Tutorial 2: More Propositional Tree Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/92" hreflang="en">Review of Tree Propositional Rules</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/60" hreflang="en">Tree Tutorial 3: Using Trees to Test for Satisfiability and Invalidity</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/61" hreflang="en">Trees: Propositional Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/64" hreflang="en">Tree Tutorial 4: Predicate Logic Trees</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/293" hreflang="en">Review of Tree Predicate Rules</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/305" hreflang="en">Tree Predicate Exercises: Roll your own</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/67" hreflang="en">Tree Tutorial 5: Identity Rules</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/306" hreflang="en">Tree Tutorial 6: Functional Terms and First Order Theories</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/308" hreflang="en">Groups</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/310" hreflang="en">Number Theory and Peano Arithmetic</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/311" hreflang="en">Set Theory (and Russell&#039;s Paradox)</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/313" hreflang="en">Tree Tutorial 7: Type Labels, Sorts, Order Sorted Logic [&#039;Mixed Domains&#039;]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/649" hreflang="en">Tree Tutorial 8 Modal Trees</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/310","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"310"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

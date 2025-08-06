@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="7/27/21 Finding the Type of an Expression" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/676" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/676" />
+<link rel="shortlink" href="https://softoption.us:8888/node/676" />
+<link rel="prev" href="/node/671" />
+<link rel="up" href="/node/718" />
+<link rel="next" href="/node/677" />
+
+    <title>Junior Hindley-Milner I | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/718">Lambda Calculus with Elementary Type Theory</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Junior Hindley-Milner I</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="676" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">7/27/21</h6>
+<h3>Finding the Type of an Expression</h3>
+<p>Ideally, if an expression has a type, we would like to find that type and prove that the expression had it; and if the expression does not have a type, we would like to prove that it does not. There are different approaches here as to how to do this. In more advanced work, with more advanced type systems, there would be type inference and even type inference by algorithm. The standard approach, more or less, is Hindley-Milner type inference. But, in turn, Hindley-Milner can be carried out by different algorithms. Usually in them there is an interleaving of allocating values to variables and extracting constraints that need to be satisfied. But there is something to be said for an approach that extracts the constraints first, then solves the constraints (apparently Hindley was in favor of this). This is clearer at a pedagogical level and it generalizes better to other areas. So that is what we will try. [The Hindley-Milner type systems and algorithms are often alternatively known as Hindley-Milner-Damas systems, because Luis Damas made important contributions.]</p>
+<h3>Junior Hindley-Milner</h3>
+<p>Hindley-Milner would never be used on STLC. That would be like killing a fly by shooting it with a shotgun. However, maybe there are some insights to be had here. Also, the H-M approach is typically used where there is no&nbsp;annotation. However, STLC is characterized by a type annotation on the lambda variables. Being able to see a type annotation does help in understanding the algorithms. So STLC, with H-M algorithms, should provide a gentle introduction to type inference.</p>
+<h3>Variables and 'Algebraic' variables</h3>
+<p>In our STLC, we have variables, such as x, y, z etc. and they occur in formulas like λx:I.λy:B.λz:I.(x (y z)) . These variables can be called 'term variables'. But in the <i>types for STLC,</i> we do not have any variables. The types are Int, Bool, Int→Bool, Bool→Bool→Bool, etc. and nowhere in there are there any variables. However, in this context we regularly used expressions like "If t<sub>1</sub> is a type and t<sub>2</sub> is a type then t<sub>1</sub>→t<sub>2</sub> is a type." but 't<sub>1</sub>' and&nbsp; 't<sub>2</sub>' are not types (they are not Ints, Bools, etc.). What is going on here? Well,&nbsp; t<sub>1</sub> is and t<sub>2</sub> are like variables, they stand for types, or have values that are types, although they are not types in STLC themselves. They are the sort of variables we might use, if we were trying to figure everything out on a sheet of paper or the back of an envelope.&nbsp;&nbsp;A&nbsp;label we might use here is 'algebraic variables'.</p>
+<p>Our STLC has no type variables, but we will be using&nbsp;t<sub>1</sub>, t<sub>2</sub>, t<sub>3</sub> and t<sub>4</sub> etc. as algebraic variables.</p>
+<h3>Move to unique variables in the STLC Expression</h3>
+<p>STLC can have expressions like this</p>
+<p style="margin-left: 40px;">(λx:I.(x x) &nbsp; λx:B.(x x))</p>
+<p>It is an application where there are two separate bindings of the lambda variable x within a larger overall expression. Now, there is absolutely nothing wrong with this.&nbsp;But it will be clearer going forward if the binding variables were different from one another in an expression e.g.</p>
+<p style="margin-left: 40px;">(λx:I.(x x) &nbsp; λy:B.(y y))</p>
+<p>We know that the Rule of Alpha Rewrite allows us to rewrite a binding variable to a new variable. We also know that the number of variables in an expression is finite, and the number of variables available in lambda calculus is infinite. So we can always Alpha Rewrite an expression so there are no duplicate binding variables in it. We will imagine that this has been done, if it needs doing, and so all binding variables are unique.</p>
+<h3>Fresh algebraic type variables.</h3>
+<p>There are infinitely many t<sub>1</sub>, t<sub>2</sub>, t<sub>3</sub> and t<sub>4</sub> ... . Typically, when starting to use one we will use a new one. We can refer to these algebraic variables as type variables as long as we keep in mind that they are not part of the STLC and STLC's type system, rather they are something outside that we are using analyze the types and produce algorithms about them.</p>
+<h3>Assumptions and the Assumption Set</h3>
+<p>During our analysis of an <i>expression in the STLC language</i>, it is likely that we will meet variables (term variables). On first encounter with a specific variable, we often will not know a type for that variable, so what we do is to assume that the variable, say x, has type t<sub>3</sub> where the type t<sub>3</sub> that we use is new (i.e. fresh). That pairing of a variable in the STLC&nbsp; language to fresh type variable outside the STLC language is an <i>assumption</i>, and the collection of several assumption amounts to the <i>assumptions</i> or the <i>assumption set</i>. Typically, a successful type analysis will start and end with no assumptions, but assumptions will come and go during the course of the analysis.</p>
+<h3>Constraints</h3>
+<p>Constraints are relations among the types (or, more strictly, type variables). In more advanced work, there can be different types of relations, but at our level for STLC the only constraint relation is that of a kind of equality. So, for example,</p>
+<p style="margin-left: 40px;">t<sub>1</sub>=t<sub>2</sub> and t<sub>3</sub> = t<sub>4</sub></p>
+<p>are constraints. The first example means that whatever type t<sub>1</sub> stands for, that type needs to be the same as whatever type t<sub>2</sub> stands for (so they could both be Ints, or both Bools, or, indeed both (Int→Bool)s etc.). Similarly, the second example constraint mean that t<sub>3</sub> must have a type that matches t<sub>4 </sub>. To be a little more explicit, if there is a substitution in which the&nbsp; t<sub>1</sub>, t<sub>2</sub>, t<sub>3</sub> and t<sub>4</sub> are given actual type values, the resulting equations must be true e.g. the substitution [t<sub>1</sub>:Int, t<sub>2</sub>: Int, t<sub>3</sub>:Bool, t<sub>4</sub>=Bool] would do it (for that would give Int=Int and Bool=Bool).</p>
+<h3>Generating the constraints</h3>
+<p>The aim is to type a given expression. We will start by assuming our given expression has type t<sub>0</sub> .&nbsp; That is the unknown that we are going to solve for shortly. Then we can generate constraints by typing its subexpressions, then their subexpressions, and so on, until there is nothing left.</p>
+<h4>i) An example</h4>
+<p>For example, consider</p>
+<p style="margin-left: 40px;">(λx:Int.x 7)</p>
+<p style="margin-left: 40px;">initially, we don't know what its type is, we will assume that it is t<sub>0</sub>.</p>
+<p style="margin-left: 40px;"><b>Application expression</b></p>
+<p style="margin-left: 40px;">But the expression is an application of form (&lt;function expression&gt; &lt;argument expression&gt;).&nbsp; We don't know what the type of the function expression is, just yet, so let it be the new t<sub>2</sub>. We also don't know what the type of the argument expression is, so let it be the new t<sub>3</sub> .&nbsp; So we are thinking that our application (assumed to have type t<sub>0</sub> ) is</p>
+<p style="margin-left: 80px;">(t<sub>2</sub> t<sub>3</sub>)</p>
+<p style="margin-left: 40px;">We do know some things. For the overall expression to be well-typed, the function expression must have the type (t<sub>3</sub> →t<sub>0</sub>) . Schematically</p>
+<p style="margin-left: 80px;">((t<sub>3</sub>→t<sub>0</sub>) t<sub>3</sub>)</p>
+<p style="margin-left: 40px;">Now we have some constraints, namely</p>
+<p style="margin-left: 80px;">Constraints from overall application [t<sub>2</sub>=t<sub>3</sub>→t<sub>0</sub>].</p>
+<p style="margin-left: 40px;"><b>The Function sub-expression</b></p>
+<p style="margin-left: 40px;">This function expression, with type t<sub>2</sub>, is actually</p>
+<p style="margin-left: 80px;">λx:Int.x</p>
+<p style="margin-left: 40px;">This is a lambda expression with the form λx:Int.&lt;scope&gt; . In the general case, we do not know what the type of the lambda variable is. And this is where we resort to assumptions. We assume that it has fresh type t<sub>4</sub></p>
+<p style="margin-left: 80px;">Assumptions = [ x: t<sub>4</sub> ]</p>
+<p style="margin-left: 40px;">As we scan further, we see that the type of x, is an Int</p>
+<p style="margin-left: 80px;">λx:<b>Int</b>.x</p>
+<p style="margin-left: 40px;">that means that t<sub>4 </sub>is an Int</p>
+<p style="margin-left: 80px;">Assumptions = [ x: t<sub>4</sub> ] Constraints [ t<sub>4</sub> = Int ]</p>
+<p style="margin-left: 80px;"><b>Function expression scope</b></p>
+<p style="margin-left: 80px;">The scope in this case is the single variable</p>
+<p style="margin-left: 120px;">x</p>
+<p style="margin-left: 80px;">What we do with a variable, is to look up its type in the assumptions, x's type is t<sub>4</sub></p>
+<p style="margin-left: 80px;">Any lambda expression is a function, and it is a function from the type of its variable to the type of its scope i.e</p>
+<p style="margin-left: 120px;">&lt;type of variable&gt; → &lt;type of scope&gt;</p>
+<p style="margin-left: 80px;">In the example, both of these are t<sub>4</sub>, so</p>
+<p style="margin-left: 120px;">t<sub>2</sub> = t<sub>4</sub>→ t<sub>4</sub></p>
+<p style="margin-left: 80px;">When we finish analyzing any lambda expression, we discharge (i.e. drop)&nbsp; assumptions regarding its variable. So the assumptions are now empty. However, the constraints remain and they are</p>
+<p style="margin-left: 80px;">Constraints from function subexpression [t<sub>2</sub> = t<sub>4</sub>→ t<sub>4</sub> , t<sub>4</sub> = Int]</p>
+<p style="margin-left: 40px;"><b>Argument expression</b></p>
+<p style="margin-left: 40px;">Earlier we had taken a fresh type variable t<sub>3</sub> as being the type of the argument expression i.e. of</p>
+<p style="margin-left: 80px;">7</p>
+<p style="margin-left: 40px;">The number 7 has type Int, and this introduces a constraint</p>
+<p style="margin-left: 80px;">Constraints from argument subexpression [ t<sub>3</sub> = Int]</p>
+<p style="margin-left: 40px;"><b>Collecting up</b></p>
+<p style="margin-left: 40px;">The constraint analysis is now finished (we have broken the initial expression down to its subexpressions and their subexpressions etc.) We collect up the constraints. They are</p>
+<p style="margin-left: 80px;">[t<sub>2</sub>=t<sub>3</sub>→t<sub>0</sub>, t<sub>2</sub> = t<sub>4</sub>→ t<sub>4</sub> , t<sub>4</sub> = Int, t<sub>3</sub> = Int]</p>
+<p style="margin-left: 40px;"><b>Solving the constraints, in particular solving for t<sub>0</sub></b></p>
+<p style="margin-left: 40px;">We want to solve for the constraints. What does this mean? The ts are algebraic variables. We want to satisfy the constraints i.e. we want to find type values (Ints, Ints→Bools, etc.) under which all the constraints come out true. We want to find values, or a substitution, that satisfies the constraints.</p>
+<p style="margin-left: 40px;">This type of constraint set has the mathematical property that it does not matter which order the constraints are addressed in when attempting to solve them— they are '<strong>confluent</strong>'). Right now we are going to use our insight to spot constraints to work with. But later, when we come to producing an algorithm to do this, we will likely put the constraints into a list and work through the list following the order that the list gives us.</p>
+<p style="margin-left: 40px;">Giving our intuitions free rein. You can see one way to start</p>
+<p style="margin-left: 80px;">[t<sub>2</sub>=t<sub>3</sub>→t<sub>0</sub>, t<sub>2</sub> = t<sub>4</sub>→ t<sub>4</sub> , t<sub>4</sub> = Int, t<sub>3</sub> = Int]</p>
+<p style="margin-left: 80px;">apply the substitution [ t<sub>4</sub>: Int], that gives us</p>
+<p style="margin-left: 80px;">[t<sub>2</sub>=t<sub>3</sub>→t<sub>0</sub>, t<sub>2</sub> = Int→ Int , Int = Int, t<sub>3</sub> = Int]</p>
+<p style="margin-left: 80px;">The Int=Int constraint does not tell us anything and can be dropped. But we can extend our substitution now to t<sub>3</sub> :Int</p>
+<p style="margin-left: 80px;">[t<sub>2</sub>=t<sub>3</sub>→t<sub>0</sub>, t<sub>2</sub> = Int→Int, t<sub>3</sub> = Int]&nbsp; apply [ t<sub>3</sub> :Int, t<sub>4</sub> :Int] gives</p>
+<p style="margin-left: 80px;">[t<sub>2</sub>=Int→t<sub>0</sub>, t<sub>2</sub> = Int→Int, Int = Int]</p>
+<p style="margin-left: 80px;">extend the substitution to t<sub>2</sub> : Int→Int</p>
+<p style="margin-left: 80px;">What we are left with is this</p>
+<p style="margin-left: 120px;">[Int→Int=Int→t<sub>0</sub>]</p>
+<p style="margin-left: 80px;">This can be satisfied. The only way to do it is if t<sub>0</sub> is an Int. Here is the final substitution</p>
+<p style="margin-left: 80px;">[t<sub>0</sub>:Int, t<sub>2</sub>: (Int→Int), t<sub>3</sub>:Int, t<sub>4</sub>:Int]</p>
+<p style="margin-left: 80px;">The original expression (λx:Int.x 7) i.e. t<sub>0</sub> is well-typed and its type is Int.</p>
+<p>&nbsp;</p>
+<p style="margin-left: 40px;"><span style>To be continued ...</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4>&nbsp;</h4>
+<p>&nbsp;</p>
+</div>
+      
+  <nav id="book-navigation-718" class="book-navigation" role="navigation" aria-labelledby="book-label-718">
+    
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/677" hreflang="en">Hindley-Milner II — Generating the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/678" hreflang="en">Hindley-Milner III — Solving the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/715" hreflang="en">Hindley-Milner III Solving the Constraints II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/679" hreflang="en">Brief Bibliography on Algorithms and Code</a>
+              </li>
+        </ul>
+  
+
+
+          <h2 class="visually-hidden" id="book-label-718">Book traversal links for Junior Hindley-Milner I</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/671" rel="prev" title="Go to previous page"><b>‹</b> Simply Typed Lambda Calculus</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/718" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/677" rel="next" title="Go to next page">Hindley-Milner II — Generating the Constraints <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/671" hreflang="en">Simply Typed Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/676" hreflang="en">Junior Hindley-Milner I</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/677" hreflang="en">Hindley-Milner II — Generating the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/678" hreflang="en">Hindley-Milner III — Solving the Constraints</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/715" hreflang="en">Hindley-Milner III Solving the Constraints II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/679" hreflang="en">Brief Bibliography on Algorithms and Code</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/680" hreflang="en">Polymorphism, Annotation, and Decidable Type Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/712" hreflang="en">Let Polymorphism and a Mini-ML Type System</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/723" hreflang="en">Polymorphic Lambda Calculus: System F</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/672" hreflang="en">Intuitionistic Propositional Logic</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/676","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"676"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

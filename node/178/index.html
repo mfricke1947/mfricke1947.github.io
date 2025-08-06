@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="12/24/20 Possible background reading: Halmos, Paul R. [1960] Naive Set Theory (this is the standard text for this kind of material) Sowa, John F. [2000] Knowledge Representation pp.98-103 Keene G.B. [1974] Formal Set Theory Wikipedia Naive Set Theory" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/178" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/178" />
+<link rel="shortlink" href="https://softoption.us:8888/node/178" />
+<link rel="prev" href="/node/177" />
+<link rel="up" href="/node/175" />
+<link rel="next" href="/node/181" />
+
+    <title>Tutorial 6: Set Theory I: Set Building, Abstraction and Extension | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/170">Deriver [Functional Terms, Identity, First Order Theories, Set Theory—Gentzen Syntax]</a>
+              </li>
+          <li>
+                  <a href="/node/175">First Order Theories</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Tutorial 6: Set Theory I: Set Building, Abstraction and Extension</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="178" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+  <div class="field field--name-taxonomy-vocabulary-4 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Logical System</div>
+          <div class="field__items">
+              <div class="field__item"><a href="/taxonomy/term/19" hreflang="en">gentzen</a></div>
+              </div>
+      </div>
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align: right">12/24/20</h6>
+<p>Possible background reading:</p>
+<blockquote><p>Halmos, Paul R. [1960] <em>Naive Set Theory</em> (this is the standard text for this kind of material)<br>
+Sowa, John F. [2000] <em>Knowledge Representation</em> pp.98-103<br>
+Keene G.B. [1974]<em> Formal Set Theory</em><br>
+Wikipedia<em> <a href="http://en.wikipedia.org/wiki/Naive_set_theory" target="_blank">Naive Set Theory</a></em></p>
+</blockquote>
+<p>Set theory is a basic mathematical theory or even a foundation of mathematics. Most everyone doing mathematics, or logic, needs to know at least some set theory. What they need to know is <em>Naive Set Theory. </em>Naive Set Theory is simple and adequate for most circumstances, but, unfortunately, it is also inconsistent (as we will see). This inconsistency has led to the proposal of any number of axiomatic set theories, which are very much the province of experts (we will avoid the axiomatic set theories).</p>
+<p>Introductory set theory, say for mathematicians or, more especially for philosophers or philosophers of mathematics, really needs to cover three areas: some set theory in general, ordered pairs, and Russell's paradox via the axiom of specification or comprehension.</p>
+<h3>1. Introduction</h3>
+<p>Set theory deals primarily with sets, which are collections of items, and set membership, which is a relation between items and sets. Sets can be identified in many ways. In the First Order Logic using here, any of the constants or variables that we have eg x, y, z, a, b, c etc. can be thought of, in this setting, as being names of sets. It is also often quite useful to identify what is in a particular set. One way of doing this is by listing the items using the following notation</p>
+<blockquote><p>{a,b,c}</p>
+</blockquote>
+<p>the curly brackets tell you it is a set and the comma separated list just picks out its members. An item can be said to be a member of set using the mathematical symbol for 'is an element of' (or the Greek letter epsilon); so</p>
+<blockquote><p>a ε {a,b,c}</p>
+</blockquote>
+<p>says that the item 'a' is a member of the set {a,b,c} and <em>this is a true statement</em>.</p>
+<blockquote><p>1ε {a,b,c}</p>
+</blockquote>
+<p>says that the item '1' is a member of the set {a,b,c} and <em>this is a false statement</em>.</p>
+<p>We can use identity to let or define, say,</p>
+<blockquote><p>x= {a,b,c}</p>
+</blockquote>
+<p>and then the statement</p>
+<blockquote><p>a ε x</p>
+</blockquote>
+<p>would be true.</p>
+<h3>2. Building sets: the Axiom of Abstraction (or Specification, Comprehension, or Intension)</h3>
+<p>Thus far, when we have tried to say what is in a set, we have used notation like</p>
+<blockquote><p>{a,b,c}</p>
+</blockquote>
+<p>and this picks out the set whose members are a, b, and c. It does so by <strong>extension</strong>.</p>
+<p>But there are more general ways of doing this. In English, we could say, for example 'the set of all men'. What is happening here is that we are taking a property (or predicate) 'x is a man' and then forming a set of all the xs that satisfy this. There is a notation for this</p>
+<blockquote><p>{x:Mx} (or, alternatively, {x|Mx}) /*where Mx is the formal predicate for 'x is a Man'*/</p>
+</blockquote>
+<p>This notation is sometimes called an <strong>abstraction</strong>, and what we are doing here is defining a set by <strong><em>intension</em></strong>.</p>
+<p>So, for instance,</p>
+<blockquote><p>{a,b,c} is the definition of a particular set by extension<br>
+{x: x is one of the first three letters of the alphabet, lower case} is a definition of the same set by intension<br>
+{x:( x=a∨x=b∨ x=c) } is better definition of the same set by intension</p>
+</blockquote>
+<p>[Abstractions are read like this. {x:Mx} is 'the set of xs such that Mx' . ]</p>
+<p>Abstractions are sometimes called <strong>specifications</strong>, or <strong>comprehensions</strong> or <strong>intensions</strong>, or even<strong> set builders</strong>.</p>
+<p>To explain how the formal apparatus is going to work, let us look at an analogy to this notation from ordinary predicate logic, that of Universally Quantified formulas and the logic rule of Universal Instantiation. For that we have a formula like</p>
+<blockquote><p>(∀x)(Fx⊃Gx) and Universal Instantiation will give us<br>
+(Fa⊃Ga)</p>
+</blockquote>
+<p>With this, we have the 'binding variable of quantification', x in (∀x), and the 'scope' of the quantifier (Fx⊃Gx) and the instantiation consists of taking the scope and substituting the instantiating constant, a, for free occurrences of the variable x, throughout.</p>
+<p>Going back to set abstractions, in</p>
+<blockquote><p>{x:Mx}</p>
+</blockquote>
+<p>you can think of x as being the 'binding variable of quantification' and 'Mx' as being the 'scope'. Now, the scope can actually be much more general than just a predicate; in fact, in can be any formula of predicate logic (usually with a free x in it). So, for example</p>
+<blockquote><p>{x:(Fx⊃Gx)}</p>
+</blockquote>
+<p>is a perfectly good abstraction.</p>
+<p>When it comes to deciding whether something is a member of a set described by an abstraction: they are, if and only if, they satisfy (or are a substitution instance of) the scope. So, Fred is a member of {x:Mx}, iff, Fred is a Man. This principle can be written out as an Axiom Schema</p>
+<blockquote><p>(∀y)(yε{x:Φ[x]}≡Φ[y])</p>
+<p><strong>Axiom Schema of Abstraction (or Specification or Comprehension). The Set Builder Axiom Schema.</strong></p>
+</blockquote>
+<p>This is a 'schema' because the Φ is a variable or placeholder that stands for (nearly) any formula of predicate logic. So here are a few example instances of the Axiom Schema.</p>
+<blockquote><p>(∀y)(yε{x:Mx}≡My)<br>
+(∀y)(yε{x:x=a}≡(x=y))<br>
+(∀y)(yε{x:( x=a∨x=b∨ x=c)}≡(y=a∨y=b∨ y=c))</p>
+</blockquote>
+<p>Then, to use these, we just instantiate the (∀y) to whatever we want. So, for example, were we to allow 'fred' as being a constant in our logic, the first instance of the schema could be instantiated to</p>
+<blockquote><p>fredε{x:Mx}≡Mfred &nbsp;&nbsp;&nbsp;&nbsp;/*ie Fred is a member of the set of xs such that x is a man iff fred is a man*/</p>
+</blockquote>
+<p>[Let us go back to our analogy with Universal Instantiation, for one moment. The substitution instantiation there has to be 'legitimate', there cannot be any 'capturing' of variables. So, an instantiation like this is not permitted</p>
+<blockquote><p>(∀x)(∀y)(Fx⊃Gy) and Universal Instantiation will NOT give us<br>
+(∀y)(Fy⊃Gy) because the intending instantiation 'y' gets captured by the (∀y) quantifier.</p>
+</blockquote>
+<p>It is similar with using instances of the Schema of Abstraction. We don't want any capturing on the instantiations, we need to go careful if the scope or body of the abstraction has quantifiers in it. That is a formal detail that is rarely met in practice.]</p>
+<p>To continue, since the <strong>Axiom Schema of Abstraction </strong>is a schema. when you use it in the software you will be asked what formula you want as the body or 'scope' of it (and you will want any well formed formula with a free x in it).</p>
+<p>And now we (ie you) can prove some theorems</p>
+<p>1. Fa ∴ a ε{x:Fx}<br>
+2. (a∪b)={x: (xεa∨xεb)}, yε(a∪b)∴ (yεa∨yεb)&nbsp;&nbsp; /*Don't worry at the moment what the symbol ∪ means, you just need to know that (a∪b) is a set. */<br>
+3. (a∪b)={x: (xεa∨xεb)}, (yεa∨yεb) ∴ yε(a∪b)</p>
+<p><iframe height="560" scrolling="no" src="/sites/all/js/proofsWar/gentzen/ProofGentzenD6a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p>You will find the Axioms for Set Theory under the Advanced Menu, and these two proofs involve Abstraction, Instantiation (and sometimes Identity).</p>
+<p>Here is a version of the first one</p>
+<blockquote><p><img alt height="108" src="/files/images/Abstraction1.jpg" width="471" loading="lazy"></p>
+</blockquote>
+<p>and a version of the second one</p>
+<blockquote><p><img alt height="123" src="/files/images/Abstraction2.jpg" width="464" loading="lazy"></p>
+</blockquote>
+<p>It is worthwhile spending some time looking at the pattern of the second and third ones, considered together. We have an abstraction that has a bunch of logic in it, in this case</p>
+<blockquote><p>{x: (xεa∨xεb)}.</p>
+</blockquote>
+<p>Abstractions are terms (ie names), so we can make identities or definitions linking the abstraction with some other piece of notation that appeals to us. In the example (a∪b) appeals to us and we go</p>
+<blockquote><p>(a∪b)={x: (xεa∨xεb)}&nbsp;&nbsp;&nbsp;&nbsp;/*This is an identity statement between names*./</p>
+</blockquote>
+<p>Then we use the Axiom of Abstraction to show that</p>
+<blockquote><p>yε(a∪b)≡yε{x: (xεa∨xεb)}&nbsp;&nbsp;&nbsp;&nbsp;/*This is an equivalence statement between formulas.*/</p>
+</blockquote>
+<p>At this point, you may guess that we could do a similar thing but with different logical statements as the body of the abstraction eg {x: (xεa∧xεb)}, {x: (xεa∧~xεb)} etc. and indeed we will be doing exactly this.</p>
+<p>There is another consideration that comes in here. We have built ourselves a set, using abstraction, which has members satisfying a certain condition; but, for all we know, there could be another set with the same members (even satisfying the same condition). Set theory rules this out by deeming that sets with the same members are equal or identical.</p>
+<p>Two sets are equal to each other iff (if, and only if,) they have the same members. So</p>
+<blockquote><p>{b,a,c}= {a,b,c}</p>
+</blockquote>
+<p>This principle, generalized, is known as the Axiom of Extensionality (even Naive Set Theory has some axioms!), formally</p>
+<blockquote><p>(∀x)(∀y)((x=y) ≡(∀z)(zεx≡zεy)) &nbsp;&nbsp;&nbsp;&nbsp; <strong>Axiom of Extensionality [Long form]</strong>.</p>
+</blockquote>
+<p>In English this says, 'Allx, Ally' and we are thinking sets here throughout so 'All sets x, All sets y, x=y if, and only if, All (sets) z, z is a member of x if and only if z is a member of y' .</p>
+<h4>Learning from mathematicians and a convention that they use</h4>
+<p>If we started to do proofs in Set Theory using this statement of the Axiom of Extensionality what we would find is that the first two steps of the proofs would be Universal Instantiations to take off the outside Universal Quantifiers, say to</p>
+<blockquote><p>(x=y) ≡(∀z)(zεx≡zεy)</p>
+</blockquote>
+<p>and then, at the end of the proof, we would often Universally generalize a couple of times to put quantifiers back on. So, each of our proofs would have extra 'bracketing' quantifier moves which made everything a little longer and more complex without improving the Set Theory 'guts' of the proof.</p>
+<p>What mathematician do to avoid this is to state their axioms, and resulting proofs, with free variables and understand those free variables as being universally quantified (which, from a logical point of view, they are). So working mathematicians would state the Axiom of Extensionality as</p>
+<blockquote><p>(x=y) ≡(∀z)(zεx≡zεy))&nbsp;&nbsp;&nbsp;&nbsp; <strong>Axiom of Extensionality [Short, working mathematicians, form]</strong>.</p>
+</blockquote>
+<p>And they would do their proofs in terms of xs and ys and end up with a theorem perhaps with free xs and ys in it.</p>
+<p>We are going to do this!</p>
+<p>A question that arises is whether anything is lost here (another question is what happens if you want to work in terms of as and bs not xs and ys). And the answer to these questions is the same. The long form of the Axiom of Extensionality can be proved from the short form (all you do is to Universally Generalize twice on the short form, using y then x as the variables of quantification). If you remember the rule of Universal Generalization, you can generalize providing the variable of generalization is not free in the assumptions of the attempted step. Now, x and y are free in the short form of the Axiom, but that it not an assumption of the step (it is a theorem freely available at any point, which, itself, does not have assumptions). If you want to work in terms of as and bs, first prove the long form of the Axiom of Extensionality (or any other axioms that shortly will be presented) then instantiate what you have to as and bs.</p>
+<p>From now on we will work, like mathematicians, with the simpler free variable approach</p>
+<h4>Onward</h4>
+<blockquote><p>(x=y) ≡(∀z)(zεx≡zεy))&nbsp;&nbsp;&nbsp;&nbsp; <strong>Axiom of Extensionality </strong></p>
+</blockquote>
+<p>We could certainly now prove that {b,a,c}= {a,b,c} (to do it, we would probably also need another principle to the effect that</p>
+<blockquote><p>(x ε {a,b,c})⊃((x=a)v(x=b)v(x=c))</p>
+</blockquote>
+<p>and it would take many lines. We will pass on that.</p>
+<p>The order of elements within a set is a matter of indifference {b,a,c} is the same set as{a,b,c}.</p>
+<p>[Sometimes presentations discuss the possibility of repeat elements in a set (there cannot be any) So</p>
+<blockquote><p>{b,a,c} is the same as {a,b,b,c} /*note the repeat b*/ .</p>
+</blockquote>
+<p>Discussions of this are somewhat obscure. In the field of Artificial Intelligence there is the notion of a 'bag' and conceptually this comes from 'bag of shopping'; in a bag of shopping you might have 3 (identical) bars of soap, and 2 (identical) cans of beans, making a bag of five items. In Set Theory you cannot really do this, or, at least, not in the same way, the set {soap,soap,soap,beans,beans} contains just 2 elements because there cannot be repeat elements. We can all get confused at this point. Those identical bars of soap are not really identical. Suffice it to say, do not write anything like {a,b,b,c} in Set Theory because no one will understand it-- it seems to be a four element set with just three member. Just avoid.]</p>
+<hr>
+<hr>
+<p>If you decide to use the web application for the exercises you can launch it from here&nbsp;<a href="http://3.16.69.66:8080/deriver20gentzen" target="_blank">Deriver [Gentzen]</a>&nbsp;— username 'logic' password 'logic'. Then either copy and paste the above formulas into the Journal or use the Deriver File Menu to Open Web Page with this address https://softoption.us/test/Deriver/CombinedTutorialsGentzen.html .&nbsp;</p>
+<p><strong>Preferences</strong></p>
+<p>You will need to set some Preferences for this.</p>
+<ul>
+<li>set <em>identity</em> to true (and that will give you the identity rules)</li>
+<li>set <em>firstOrder</em> to true (to get first order theories)</li>
+<li>set <em>setTheory</em> to true (to get set theory)</li>
+<li>and&nbsp; you can check that the parser is set to gentzen.</li>
+</ul>
+</div>
+      
+  <nav id="book-navigation-170" class="book-navigation" role="navigation" aria-labelledby="book-label-170">
+    
+          <h2 class="visually-hidden" id="book-label-170">Book traversal links for Tutorial 6: Set Theory I: Set Building, Abstraction and Extension</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/177" rel="prev" title="Go to previous page"><b>‹</b> Tutorial 5: Number Theory II</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/175" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/181" rel="next" title="Go to next page">Tutorial 7: Set Theory II: Subsets, Empty Set, Universe Set <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/171" hreflang="en">Tutorial 1: Identity, Semantics and Symbolization</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/172" hreflang="en">Tutorial 2 Identity: Functional Terms and Rules of Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/174" hreflang="en">Tutorial 3 Identity: Uniqueness, Definite Descriptions, Iota</a>
+              </li>
+                <li class="menu-item menu-item--expanded menu-item--active-trail">
+        <a href="/node/175" hreflang="en">First Order Theories</a>
+                                <ul class="menu">
+                    <li class="menu-item menu-item--collapsed">
+        <a href="/node/176" hreflang="en">Tutorial 4: Number Theory 1</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/177" hreflang="en">Tutorial 5: Number Theory II</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/178" hreflang="en">Tutorial 6: Set Theory I: Set Building, Abstraction and Extension</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/181" hreflang="en">Tutorial 7: Set Theory II: Subsets, Empty Set, Universe Set</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/179" hreflang="en">Tutorial 8: Set Theory III: Union, Intersection, Complement, Unordered Pairs, Power Set</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/180" hreflang="en">Tutorial 9: Set Theory IV: Ordered Pairs, Cross Products</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/184" hreflang="en">Tutorial 10: Set Theory V: Russell&#039;s Paradox, Axiomatic Set Theory, and Criticisms</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/191" hreflang="en">Tutorial 11: Abelian Groups, Boolean Algebra, Linearly Ordered Sets</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/node/192" hreflang="en">Try your own derivations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/710" hreflang="en">Doing Exercises in Deriver using the Deriver Web Application</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/178","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"178"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

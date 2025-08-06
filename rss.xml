@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base="https://softoption.us:8888/">
+  <channel>
+    <title>SoftOption ® - Instructional publishing for logicians</title>
+    <link>https://softoption.us:8888/</link>
+    <description/>
+    <language>en</language>
+    
+    <item>
+  <title>Your web pages: using the translation applet</title>
+  <link>https://softoption.us:8888/node/8</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Your web pages: using the translation applet&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span&gt;martin&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2007-06-23T16:33:10+00:00" title="Saturday, June 23, 2007 - 16:33" class="datetime"&gt;Sat, 06/23/2007 - 16:33&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sat, 23 Jun 2007 16:33:10 +0000</pubDate>
+    <dc:creator>martin</dc:creator>
+    <guid isPermaLink="false">8 at https://softoption.us:8888</guid>
+    </item>
+<item>
+  <title>Instructors</title>
+  <link>https://softoption.us:8888/node/7</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Instructors&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span&gt;martin&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2007-06-23T16:31:55+00:00" title="Saturday, June 23, 2007 - 16:31" class="datetime"&gt;Sat, 06/23/2007 - 16:31&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sat, 23 Jun 2007 16:31:55 +0000</pubDate>
+    <dc:creator>martin</dc:creator>
+    <guid isPermaLink="false">7 at https://softoption.us:8888</guid>
+    </item>
+<item>
+  <title>Software and Tutorials for Instruction in Symbolic Logic</title>
+  <link>https://softoption.us:8888/node/3</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Software and Tutorials for Instruction in Symbolic Logic&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span&gt;martin&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2006-08-08T14:55:08+00:00" title="Tuesday, August 8, 2006 - 14:55" class="datetime"&gt;Tue, 08/08/2006 - 14:55&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Tue, 08 Aug 2006 14:55:08 +0000</pubDate>
+    <dc:creator>martin</dc:creator>
+    <guid isPermaLink="false">3 at https://softoption.us:8888</guid>
+    </item>
+
+  </channel>
+</rss>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="7/8/21 [In this section, we will sometimes use annotated abstractions, and sometimes use unannotated abstractions. This is just to be flexible in discussing their respective merits.] There certainly is an unusual feature possessed by the annotated STLC that we have thus far. Consider two abstractions with annotations λx:I.x and λx:B.x" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/680" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/680" />
+<link rel="shortlink" href="https://softoption.us:8888/node/680" />
+<link rel="prev" href="/node/679" />
+<link rel="up" href="/node/718" />
+<link rel="next" href="/node/712" />
+
+    <title>Polymorphism, Annotation, and Decidable Type Inference | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/718">Lambda Calculus with Elementary Type Theory</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Polymorphism, Annotation, and Decidable Type Inference</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="680" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align:right">7/8/21</h6>
+<p>[In this section, we will sometimes use annotated abstractions, and sometimes use unannotated abstractions. This is just to be flexible in discussing their respective merits.]</p>
+<p>There certainly is an unusual feature possessed by the annotated STLC that we have thus far. Consider two abstractions with annotations</p>
+<p style="margin-left: 40px;"><span>λx:</span><span><span><span>I</span></span>.</span><span style>x</span></p>
+<p><span>and</span></p>
+<p style="margin-left: 40px;"><span>λx:B</span><span>.</span><span style>x</span></p>
+<p><span>and also, this abstraction, without an annotation, </span></p>
+<p style="margin-left: 40px;"><span>λx</span><span>.</span><span style>x</span></p>
+<p><span>λx</span><span>.</span><span style>x is the Identity function. When applied, it takes x as an argument, or input, and returns x as the value, or output.&nbsp; It will work perfectly with any x whatsoever, no matter what the type of x.</span></p>
+<p><span style>Going back to </span><span>λx:</span><span><span><span>I</span></span>.</span><span style>x and </span><span>λx:B</span><span>.</span><span style>x. They too are identity functions, but the first is only well-typed in contexts where it is a function Int-&gt;Int (i.e. for example (</span><span style>λx:<span><span>I</span></span>.x 5)), and similarly for the second function with Booleans (e.g <span style>(λx:B</span><span>.</span><span style>x True)</span>). Each of these function expressions has&nbsp;a single type. They are <strong>monotyped</strong> or <strong>monomorphic</strong>. In general, being more specific with types is a good thing (that is how we catch type errors), but in a case like this, with identity the excessive type annotation is 'fussy'.</span></p>
+<h4><span style>Polymorphism</span></h4>
+<p><span style>What we feel we might want for some abstractions is something like</span></p>
+<p style="margin-left: 40px;"><span>λx:T</span><span>.</span><span style>x where T is a type variable that can be instantiated to Int, or Bool, or Int-&gt;Int etc. <i>Remember we do not have type variables in the STLC itself so we have no way of doing this as an annotation, at present</i>.</span></p>
+<p>In cases where expression may have a type that involves type variables its type is said to be <b>polymorphic</b> (i.e. may have difference instances of the same general form).</p>
+<p>It is clear, with algorithms and code in general, that polymorphism is entirely appropriate in certain circumstances. Consider a data-structure like lists; for example, lists of integers, lists of characters, lists of employee records... etc.; and consider a function which produces the first element of a non-empty list. That function does not 'need to know' what is in the list. It just has to be able to produce the contents of the first slot or cubby. The function should be polymorphic. (Some programming languages call polymorphic functions '<strong>generics</strong>'.)</p>
+<h4><strong>Polymorphism and type inference</strong></h4>
+<p>As we have seen, there are algorithms, such as the Hindley-Milner one, that can infer the types of expressions in STLC (basically without too much trouble). No annotations are needed. Generally, annotations are good in that they provide a check that what the programmer thinks she or he is doing actually is correct as to what the types are. But that check can only be carried out for all cases if the system can infer the types. The system checks what the programmer proposes.</p>
+<p>Unfortunately, if STLC is extended to full polymorphism, the type inferencing becomes undecidable. That is: there will be expressions that no type inferencer can figure out what their type is.</p>
+<h4>Two ways out</h4>
+<p>It is possible to extend STLC to partial polymorphism which retains decidable type inferencing. That is the line taken by so-called Hindley-Milner (HM) type systems (or Let-polymorphism type systems). These can be seen, in part or in whole, in functional programming languages like ML and Haskell.</p>
+<p>Alternatively, it is also possible to extend STLC to a fairly extensive&nbsp;polymorphism coupled with User supplied annotations ('hints').&nbsp;&nbsp;These systems can approach&nbsp;reasonable type inferencing (it may depend&nbsp;on the hints). Examples here include polymorphic lambda calculus and the System F family of calculi (also seen, in part,&nbsp;in the functional programming language Haskell).</p>
+<p><strong><span style>Some more detail</span></strong></p>
+<p><span style>Let us build something up for discussion. Consider</span></p>
+<div style="margin-left: 40px;">λfirst.λsecond.second (that is a longer and clearer version of λf.λs.s). This expression is an abstraction, which has a body that is an abstraction (in fact, identity).&nbsp; If this 'function' is applied to two arguments, it will drop the first and return the second Say we apply this to two identity applications as arguments</div>
+<div style="margin-left: 40px;">&nbsp;</div>
+<div style="margin-left: 40px;">((λfirst.λsecond.second <span>(λx</span><span>.</span><span style>x 2)) </span><span>(λx</span><span>.</span><span style>x True)) </span></div>
+<div style="margin-left: 40px;">&nbsp;</div>
+<div style="margin-left: 40px;"><span style>Here is the Normal Order Reduction for that expression</span><br>
+&nbsp;</div>
+<div style="margin-left: 60px;">
+<p>((λsecond.second<span style>) </span><span>(λx</span><span>.</span><span style>x True ))</span></p>
+<p><span>(λx</span><span>.</span><span style>x True)</span></p>
+<p>True</p>
+</div>
+<p><span style>Now, let us annotate the variables going in the reverse order</span></p>
+<div style="margin-left: 60px;">
+<p><span style>True, a constant,&nbsp;is a&nbsp;Bool</span></p>
+<p><span>(λx:B</span><span>.</span><span style>x True)</span></p>
+<p style>((λsecond:B.second<span style>) </span><span>(λx</span><span>:B.</span><span style>x True ))</span></p>
+<p style>((λfirst:I.λsecond:B.second <span>(λx:I</span><span>.</span><span style>x 2)) </span><span>(λx:B</span><span>.</span><span style>x True)) </span> and that whole expression has type Bool.</p>
+</div>
+<h4><strong><span style>How were these variables annotated?</span></strong></h4>
+<p>Well, we just looked at the applications and saw what made sense. For example, in the application <span>(λx.</span><span style>x True) the abstraction has to be Bool-&gt;Bool so we annotate the abstraction, within the application, as (</span><span>λx:B</span><span>.</span><span style>x True). Similarly, </span>in the application <span>(λx.</span><span style>x 2) the abstraction has to be Int-&gt;Int so we annotate the abstraction, within the application, as (</span><span>λx:I</span><span>.</span><span style>x 2).</span></p>
+<h4><span style>Annotating these variables by algorithm— might full Polymorphism and&nbsp;Type Variables be a good idea?</span></h4>
+<p>As we have seen, there are algorithms, such as the Hindley-Milner one, that usually can produce the annotations for many systems. Then earlier we mentioned that having, for example, infinitely many identity functions <span>λx:</span><span><span><span>I</span></span>.</span><span style>x, </span><span>λx:</span><span><span><span>B</span></span>.</span><span style>x, </span><span>λx:</span><span><span><span>I</span></span>-&gt;I.</span><span>x, etc. seems a bit excessive. Why couldn't we have </span></p>
+<p style="margin-left: 40px;"><span>λx:T</span><span>.</span><span style>x where T is a type variable that can be instantiated to Int, or Bool, or Int-&gt;Int etc. ?</span></p>
+<p><span style>then we could probably drop the annotation and let an algorithm produce the type for us. The actual type in use would an instantiation of the type variable.</span></p>
+<h4><span style>An issue: passing functions as arguments</span></h4>
+<p>Let's make this&nbsp;example slightly more complex by passing the identity function in.</p>
+<p>[<i>A preliminary: passing functions/abstractions in is not particularly mystifying. Consider</i></p>
+<p style="margin-left: 40px;"><i><span>(λfunction.(function True) </span><span>λx</span><span>.</span><span style>x)</span></i></p>
+<p><i><span style>this is an application, and it reduces</span></i></p>
+<p style="margin-left: 40px;">
+<i><span>(λfunction.(function True) </span><span>λx</span><span>.</span><span style>x)</span></i></p>
+<p style="margin-left: 40px;"><i><span>(</span><span><span>λx</span><span>.</span><span style>x</span> True)</span></i></p>
+<p style="margin-left: 40px;"><i><span>True</span></i></p>
+<p><i>Similarly</i></p>
+<p style="margin-left: 40px;"><i><span>(λfunction.(function 2) </span><span>λx</span><span>.</span><span style>x)</span></i></p>
+<p style="margin-left: 40px;"><i><span>(</span><span><span>λx</span><span>.</span><span style>x</span> 2)</span></i></p>
+<p style="margin-left: 40px;"><i><span>2</span></i></p>
+<p><span>]</span></p>
+<p><span>Now we can build this into our more complex expression</span></p>
+<p style="margin-left: 40px;">
+(λfunction ((λfirst.λsecond.second <span>(function</span><span style> 2)) </span><span>(function</span><span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span>λx</span><span>.</span><span style>x)</span></p>
+<p>and this reduces to</p>
+<p style="margin-left: 40px;">((λfirst.λsecond.second <span>(λx</span><span>.</span><span style>x 2)) </span><span>(λx</span><span>.</span><span style>x True))</span></p>
+<p><span style>and then the same as before down to True.</span></p>
+<p><span style>But there is an issue here, and it arises with the first reduction step involving identity</span></p>
+<p style="margin-left: 40px;">
+(λ<span style="color: #ff2600;">function</span>.((λfirst.λsecond.second <span>(<span style="color: #ff2600;">function</span></span><span style> 2)) (</span><span style="color: #ff2600;">function</span><span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #ff2600;"><span>λx</span><span>.</span></span><span style><span style="color: #ff2600;">x</span>)</span></p>
+<p>The identity function&nbsp;<span style="color: #ff2600;"><span>λx</span><span>.</span></span><span style><span style="color: #ff2600;">x</span></span> on the outer right presumably needs to be polymorphic with a type variable. The 'same' function when it is substituted into <span>(<span style="color: #ff2600;">function</span></span><span style> 2)</span> needs to have type Int-&gt;Int. Yet the 'same' function when it is substituted into <span style>(</span><span style="color: #ff2600;">function</span><span style> True) needs to have type Bool-&gt;Bool.</span></p>
+<p><span style>So, what we have here is a question, or a consideration. Can a polymorphic expression have two separate and distinct type instances, or instance occurrences, when substituted into the same expression?</span></p>
+<p><span style>Part of the problem arises from this. In STLC, when we annotated a binding variable,</span> say like this <span>λx:I</span><span>.</span><span style>x, that annotation applies throughout the scope or the body of the abstraction (in this case, x). So, one would think that were we to use a variable as an annotation, say, </span><span>λx:TypeVar</span><span>.</span><span style>x all reasoning, and instantiation, involving that variable would depend solely on the scope of the abstraction. However, when we wish, for example, to use the argument 2 to help us decide the type of the function in&nbsp;</span><span>(<span style="color: #ff2600;">function</span></span><span style> 2) then we are going outside the scope of the function and into the local environment. We start with, say,&nbsp;</span></p>
+<p style="margin-left: 40px;">(λfunction.((λfirst.λsecond.second <span>(function</span><span style> 2)) (</span>function<span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #ff2600;"><span>λx:TypeVar1</span><span>.</span></span><span style><span style="color: #ff2600;">x</span>)</span></p>
+<p>and that reduces to&nbsp;</p>
+<p style="margin-left: 40px;">((λfirst.λsecond.second <span>(</span><span style="color: #ff2600;"><span>λx:TypeVar1</span><span>.</span></span><span style><span style="color: #ff2600;">x</span> 2)) (</span><span style="color: #ff2600;"><span>λx:TypeVar1</span><span>.</span></span><span style><span style="color: #ff2600;">x</span> True))&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p>and that isn't quite what we want. The reason is that&nbsp;<span style="color: #ff2600;"><span>TypeVar1&nbsp;</span></span><span style>cannot have two contradictory values (i.e.&nbsp;</span>Int-&gt;Int and&nbsp;<span style>Bool-&gt;Bool). Instead, we would like whatever is used characterize the type of the identity function to be polymorphic i.e. to permit multiple instances of the same type. We can do that by having what is often called a 'Type Schema'. We permit 'forall' or ∀ (the logical symbol for 'all') in front of a type variable and type expression.</span></p>
+<p><span style>Now there is, so-to-speak, no right or wrong answers here. A type system is being devised and it can be better or worse for certain purposes. What Haskell, a modern functional programming language, does is to allow you to have both schemes in these settings (multiple instances of the same type, and no multiple instances of the same type). If you write the Haskell equivalent of</span></p>
+<p style="margin-left: 40px;">(λfunction.((λfirst.λsecond.second <span>(function</span><span style> 2)) </span><span>(function</span><span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span>λx</span><span>.</span><span style>x)</span></p>
+<p><span style>the compiler will produce an error message that the expression is ill-typed because you cannot have a function which is both Int-&gt;Int and Bool-&gt;Bool. But then Haskell has the keyword 'let' which can be used to introduce local definitions. If you write the Haskell equivalent of</span></p>
+<p style="margin-left: 40px;"><span style>let f = </span><span>λx</span><span>.</span><span style>x</span></p>
+<p style="margin-left: 40px;"><span style>in</span></p>
+<p style="margin-left: 40px;">((λfirst.λsecond.second <span>(f</span><span style> 2)) </span><span>(f</span><span style> True))</span></p>
+<p>then that will type check and will be type correct. The 'let' keyword invites multiple separate instances of the same type variable, if they are required.</p>
+<h4>Type variables, instances, and schemes</h4>
+<p>What we would like for the type of an expression like the identity function&nbsp;<span style>λx.x is <em>not</em>&nbsp;a single type variable, that has a single value, say&nbsp;λx:TypeVar.x, because other factors in the context might on occasions force us to understand that TypeVar as having contradictory values (e.g. Int-&gt;Int and Bool-&gt;Bool).&nbsp; Instead, what we would like is that the type be a universal or a 'scheme', perhaps, notationally,&nbsp;λx:AllTypes or&nbsp;λx:∀Type. And this universal or type-scheme would be capable of have several instantiations or instances. These instances might have different values one from another, but there would be nothing contradictory or awkward in that. Each single instance would have, or would have to have, its own single type.</span></p>
+<h4>How does STLC fare with this?</h4>
+<p>STLC has no type variables and every abstraction has to have a type annotation on its binding variable. The effect of this is that, roughly speaking, most of the problematic cases that we have been looking at will fail to have a type (although many of them will reduce to normal forms that do have a type). This failure to have a type initially comes about largely because a type cannot be both an Int and a Bool at the same time. They can reduce to a normal form with a type because one of the problematic components is redundant and disappears in the reduction. Also, many normal forms have a type (for example, a normal form might be an Int, say 39, or a Bool, True)</p>
+<p>Neither of these expressions are going to have a type, no matter what other annotations are added.</p>
+<p style="margin-left: 40px;">(λfunction.((λfirst.λsecond.second <span>(function</span><span style> 2)) (</span>function<span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #ff2600;"><span>λx:B</span><span>.</span></span><span style><span style="color: #ff2600;">x</span>)</span></p>
+<p style="margin-left: 40px;">
+(λfunction.((λfirst.λsecond.second <span>(function</span><span style> 2)) (</span>function<span style> True))&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #ff2600;"><span>λx:I</span><span>.</span></span><span style><span style="color: #ff2600;">x</span>)</span></p>
+<p><span style>But this can be annotated successfully</span></p>
+<p style="margin-left: 40px;">((λfirst:I.λsecond:B.second <span>(</span><span style> </span><span style="color: #ff2600;"><span>λx:I</span><span>.</span></span><span style><span style="color: #ff2600;">x</span></span><span style> 2)) (</span><span style> </span><span style="color: #ff2600;"><span>λx:B</span><span>.</span></span><span style><span style="color: #ff2600;">x</span></span><span style> True))</span></p>
+<p>﻿﻿</p>
+<h4>&nbsp;﻿﻿Extending STLC to H-M type systems and to System F... to be continued...</h4>
+<p>&nbsp;</p>
+<style type="text/css">h4   {font-weight: bold;}
+</style></div>
+      
+  <nav id="book-navigation-718" class="book-navigation" role="navigation" aria-labelledby="book-label-718">
+    
+          <h2 class="visually-hidden" id="book-label-718">Book traversal links for Polymorphism, Annotation, and Decidable Type Inference</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/679" rel="prev" title="Go to previous page"><b>‹</b> Brief Bibliography on Algorithms and Code</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/718" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/712" rel="next" title="Go to next page">Let Polymorphism and a Mini-ML Type System <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/671" hreflang="en">Simply Typed Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/676" hreflang="en">Junior Hindley-Milner I</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/680" hreflang="en">Polymorphism, Annotation, and Decidable Type Inference</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/712" hreflang="en">Let Polymorphism and a Mini-ML Type System</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/723" hreflang="en">Polymorphic Lambda Calculus: System F</a>
+              </li>
+                <li class="menu-item menu-item--collapsed">
+        <a href="/node/672" hreflang="en">Intuitionistic Propositional Logic</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/680","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"680"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>

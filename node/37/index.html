@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW0S29TLQS"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-CW0S29TLQS", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<meta name="description" content="9/16/19 Our main weapon is going to be beta-reduction (i.e. simple function application). The sub-expression which gets reduced is known as a redex. When you keep beta-reducing an expression you may reach the stage where there are no further reductions to be done. Definition. A lambda expression is in normal form if no subexpression of it has the form (λx.P Q). [An expression is considered to be a subexpression of itself.]" />
+<meta name="author" content="Frické, Martin" />
+<meta name="dcterms.creator" content="Frické, Martin" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://softoption.us:8888/node/37" />
+<link rel="icon" href="/files/softOption.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://softoption.us:8888/node/37" />
+<link rel="shortlink" href="https://softoption.us:8888/node/37" />
+<link rel="prev" href="/node/36" />
+<link rel="up" href="/node/654" />
+<link rel="next" href="/node/42" />
+
+    <title>Normal Forms and Termination | SoftOption ®</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_khtctZLP2jpcMApxNI6U-xr0v74EZxxWBYqs0fkxKLw.css?delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QgIKm-2l_vW99o8hYWJe1FpLS9-NLija21X9jfKiHr0.css?delta=1&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_W5Rfue91kk7MvZw9gOwKjBTXLOG9VGkqiJXGc6DDCAQ.css?delta=2&amp;language=en&amp;theme=bartik&amp;include=eJxdjVEKwCAMxS6k80zVFSnWFnwycKcf-xnM3wSSTGNKS0UJWEcmcMh_5N6i0SWVprhttjNAlbFh8_PrVPVMGjGXitVQfHAyH51Ubg5YmNzTO34AqBU1ug" />
+
+    
+  </head>
+  <body class="layout-one-sidebar layout-sidebar-second path-node page-node-type-book">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+        
+          <div class="clearfix region region-header">
+    <div id="block-navigationiconsintheheader" class="block block-block-content block-block-content84cc7405-2724-49c9-8057-fe7d1e094f86">
+  
+      <h2>Navigation Icons in the header</h2>
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- mf --><div id="icons"><a href="/" title="Home page"><img alt="Home" height="26" src="/themes/custom/bartikSoftOptionImages/homeMF.svg" width="32" loading="lazy"></a> <a href="/contact" title="Contact us"><img alt="Contact" height="18" src="/themes/custom/bartikSoftOptionImages/envelopeMF.svg" width="24" loading="lazy"></a> <a href="/sitemap" title="Sitemap"><img alt="Sitemap" height="26" src="/themes/custom/bartikSoftOptionImages/sitemapMF.svg" width="30" loading="lazy"></a> <a href="/search/content" title="Search"><img alt="Search" height="26" src="/themes/custom/bartikSoftOptionImages/searchMF.svg" width="26" loading="lazy"></a></div>
+<!-- mf --></div>
+      
+    </div>
+  </div>
+<div id="block-bartik-branding" class="clearfix site-branding block block-system block-system-branding-block">
+  
+    
+          <div class="site-branding__text">
+              <div class="site-branding__name">
+          <a href="/" rel="home">SoftOption ®</a>
+        </div>
+                </div>
+  </div>
+
+  </div>
+
+        
+      </div>
+    </header>
+          <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+            <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+          <div class="region region-breadcrumb">
+    <div id="block-bartik-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/node/654">Lambda Calculus and Combinatory Logic</a>
+              </li>
+        </ol>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+              <div class="region region-content">
+    <div id="block-bartik-page-title" class="block block-core block-page-title-block">
+  
+    
+      <div class="content">
+      
+
+  <h1 class="title page-title"><span class="field field--name-title field--type-string field--label-hidden">Normal Forms and Termination</span>
+</h1>
+
+
+    </div>
+  </div>
+<div id="block-bartiksoftoption-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+<article data-history-node-id="37" class="node node--type-book node--view-mode-full clearfix">
+  <header>
+    
+          
+      </header>
+  <div class="node__content clearfix">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h6 style="text-align: right;">9/16/19</h6>
+<p>Our main weapon is going to be beta-reduction (i.e. simple function application). The sub-expression which gets reduced is known as a <strong>redex</strong>. When you keep beta-reducing an expression you may reach the stage where there are no further reductions to be done.</p>
+<h4><strong>Definition.</strong></h4>
+<p>A lambda expression is in<strong> normal form</strong> if no subexpression of it has the form (λx.P Q). [An expression is considered to be a subexpression of itself.]</p>
+<p>That is, it is in normal form if no further beta reductions can be done.</p>
+<p>There are other concepts too, which will be important later.</p>
+<p>When you set out doing beta-reductions on an expression, usually you will have a choice of which sub-expression to reduce first. Hence, there arises the notion of a <strong>reduction path</strong>. Various theorems have been proved here (and we may look at some of them later). Important to know is that all reduction paths which produce a normal form for an expression, produce the same normal form. Any reduction sequence for an expression that terminates, produces the same normal form. And it is never necessary to backtrack; that is to say, if there is a normal form it is always reachable by further reductions no matter what reductions you have performed to that point.</p>
+<h4>The <strong>Church-Rosser First Theorem</strong>: value of normal form does not depend on order, if reduction terminates it provides a unique normal form.</h4>
+<p>(We would expect this from our experience of arithmetic and algebra.) In arithmetic, for example, with an expression like (2+3).(4+5) we know we get the same value if we go (5).(4+5) to (5)(9) to 45, or (2+3).(9) to (5).9 to 45 ie the result does not depend on the order of evaluation. The same is true for lambda calculus (with the proviso of termination, which we will talk about shortly).</p>
+<p>There are non-terminating reduction sequences; and there are expressions which have both terminating and non-terminating reduction sequences.</p>
+<p>Some examples... Consider λx.(x x) (* a self-application function *) and apply it to itself</p>
+<p style="margin-left: 40px;">(λx.(x x) λx.(x x))</p>
+<p>this beta reduces to (λx.(x x) λx.(x x)) which is just itself, so clearly there can be a non-terminating beta-reduction sequence here. This expression does not have a normal form.</p>
+<p>We can now make this non-terminating expression an inessential part of something else. Consider λx.λy.y, when this is applied successive to two arguments it will consume both of them and return the second (ignoring the first). So, for example, ((λx.λy.y a) b) will reduce to b. So let us construct an expression like this which has our non terminating expression as the first argument and something innocent as the second</p>
+<p style="margin-left: 40px;">((λx.λy.y ((λx.(x x)) λx.(x x)) b)</p>
+<p>if we beta reduce this from the entire of the first application, the reduction goes</p>
+<p style="margin-left: 40px;">(<strong>(λx.λy.y ((λx.(x x)) λx.(x x))</strong> b)</p>
+<p style="margin-left: 40px;">((λy.y) b)</p>
+<p style="margin-left: 40px;">b</p>
+<p>so this expression has a normal form, namely b, and a terminating reduction sequence. If, on the other hand, we choose to reduce the first argument first, reduction goes on forever.</p>
+<p style="margin-left: 40px;">((λx.λy.y (<strong>(λx.(x x)) λx.(x x))</strong> b) (* here the underlined piece reduces to itself. *)</p>
+<p style="margin-left: 40px;">((λx.λy.y (<strong>(λx.(x x)) λx.(x x))</strong> b)</p>
+<p>Convince yourself of the following:-</p>
+<blockquote><p>a) (λx.(x x) λx.(x x)) can be rewritten forever<br>
+b) ((λx.λy.y a) b) ⇒ b<br>
+c) ((λx.λy.y (λx.(x x) λx.(x x))) b) ⇒ b (*this is like (b) except that we have put self-application in for the argument 'a'.*)<br>
+d) ((λx.λy.y (λx.(x x) λx.(x x))) b) ⇒ b (*same as (c) but show it can be rewritten forever*)</p>
+</blockquote>
+<p><iframe height="700" id="#editor" scrolling="yes" src="/sites/all/js/lambdaWidgets/src/applicationReduce02.jsexe/index.html" width="750">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<hr>
+<!--
+<p><iframe height="560" scrolling="no" src="/sites/all/js/lambdaWar/Lambda7a.html" width="600">If you can see this, your browser does not understand IFRAME.</iframe></p>
+<p><applet archive="/test/applets/deriver10Applets.jar" code="us.softoption.hostApplets.Lambda.class" height="450" hspace="10" name="Proofs" width="600"><br />
+<param name="proof0" value="(λx.(x x) λx.(x x))" />
+<param name="proof1" value="((λx.λy.y a) b) ⇒ b" />
+<param name="proof2" value="((λx.λy.y (λx.(x x) λx.(x x))) b) ⇒ b" />
+<param name="proof3" value="((λx.λy.y (λx.(x x) λx.(x x))) b) ⇒ b" />Your browser is not displaying the Deriver applet. Try downloading Deriver itself by clicking on the link elsewhere on the page.</applet></p>
+<h4>Definition</h4>
+<p>Two lambda expressions are<strong> equal or equivalent </strong>iff they reduce to each other or to some common form.</p>
+<h4>Definition</h4>
+<p>A lambda expression E is in<strong> head normal form</strong> iff E is λx1.λx2...λxn.E' where E' itself is not a redex and (n&gt;=0) ( note here that in the case where n=0 this covers both variables and applications where the function is not an abstraction).</p>
+<p>Anything in normal form is in head normal form, but not vv. (For example, λx.(x (λy.y z)) is in head normal form but not in normal form.)</p>
+<h4>Definition</h4>
+<p>A lambda expression E is in <strong>weak head normal</strong> form iff either</p>
+<blockquote><p>either i) E itself is not a redex.<br />
+or ii) E is λx.E' for any E'.</p>
+</blockquote>
+<p>Anything in head normal form is in weak head normal form, but not vv. (For example, λx.(λy.y z) is in weak head normal form but not in head normal form.)</p>
+<p>Weak head normal form is the important notion-- this is to do with avoiding the capture of free variables, we will see the details later.</p>
+<p>Rough characterization.... i) if no more reductions can be done the expression is in normal form. Suppose some reductions can be done, this can either be at the 'top' level if the expression is an application or 'internal' if the expression is an application or an abstraction. For all these definitions the top level reductions simply have to be made. It is the internal reductions that are of interest ii) if the expression is an application, say (P Q), or an abstraction whose inner scope is (P Q), and where P or Q or both are individually reducible, the expression is in head normal form. Finally, iii) even abstractions λx.(P Q) with P Q reducible are in weak head normal form.</p>
+<p>-->
+</div>
+      
+  <nav id="book-navigation-654" class="book-navigation" role="navigation" aria-labelledby="book-label-654">
+    
+          <h2 class="visually-hidden" id="book-label-654">Book traversal links for Normal Forms and Termination</h2>
+      <ul class="book-pager">
+              <li class="book-pager__item book-pager__item--previous">
+          <a href="/node/36" rel="prev" title="Go to previous page"><b>‹</b> The Rules of the Lambda Calculus</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--center">
+          <a href="/node/654" title="Go to parent page">Up</a>
+        </li>
+                    <li class="book-pager__item book-pager__item--next">
+          <a href="/node/42" rel="next" title="Go to next page">Normal Order and Applicative Order Reduction <b>›</b></a>
+        </li>
+          </ul>
+      </nav>
+
+  </div>
+</article>
+
+    </div>
+  </div>
+
+  </div>
+
+          </section>
+        </main>
+                          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+                <div class="region region-sidebar-second">
+    <div id="block-siteimage" class="block block-block-content block-block-content0ded7434-e98a-4e3c-92cc-5dc0bb6bd1b4">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><script type="text/javascript">
+<!--
+ var imlocation = "/files/RandomImages/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(16)
+ image[0] = '1.png'
+ image[1] = '2.png'
+ image[2] = '3.png'
+ image[3] = '4.png'
+ image[4] = '5.png'
+ image[5] = '6.png'
+ image[6] = '7.png'
+ image[7] = '8.png'
+ image[8] = '9.png'
+ image[9] = '10.png'
+ image[10] = '11.png'
+ image[11] = '12.png'
+ image[12] = '13.png'
+ image[13] = '14.png'
+ image[14] = '15.png'
+ image[15] = '16.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ 
+
+document.write("<img src='" + imlocation + randomimage()+ "'>");
+
+
+
+
+
+
+//-->
+</script></div>
+      
+    </div>
+  </div>
+
+<nav role="navigation" aria-labelledby="block-bartik-tools-menu" id="block-bartik-tools" class="block block-menu navigation menu--tools">
+      
+  <h2 id="block-bartik-tools-menu">Navigation</h2>
+  
+
+        <div class="content">
+            <div class="menu-toggle-target menu-toggle-target-show" id="show-block-bartik-tools"></div>
+      <div class="menu-toggle-target" id="hide-block-bartik-tools"></div>
+      <a class="menu-toggle" href="#show-block-bartik-tools">Show &mdash; Navigation</a>
+      <a class="menu-toggle menu-toggle--hide" href="#hide-block-bartik-tools">Hide &mdash; Navigation</a>
+      
+              <ul class="clearfix menu">
+                    <li class="menu-item">
+        <a href="/browse" title="Items to browse." data-drupal-link-system-path="node/208">Browse</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/content" data-drupal-link-system-path="search/content">Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/sitemap" title="Display a site map with RSS feeds." data-drupal-link-system-path="sitemap">Site map</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </nav>
+<div id="block-booknavigation" class="block block-book block-book-navigation">
+  
+    
+      <div class="content">
+      
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/node/639" hreflang="en">Bibliography</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/32" hreflang="en">Introduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/33" hreflang="en">The Basic Grammar of Lambda Expressions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/34" hreflang="en">Notation (skip this if you wish)</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/35" hreflang="en">Substitutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/36" hreflang="en">The Rules of the Lambda Calculus</a>
+              </li>
+                <li class="menu-item menu-item--active-trail">
+        <a href="/node/37" hreflang="en">Normal Forms and Termination</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/42" hreflang="en">Normal Order and Applicative Order Reduction</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/38" hreflang="en">Lambda Combinators I: True, False, Conditional</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/39" hreflang="en">Lambda Combinators II: Lists and Numbers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/40" hreflang="en">Lambda Combinators III: Recursion and the Fixpoint Combinator</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/41" hreflang="en">Review of Lambda Combinators</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/43" hreflang="en">Operational and Denotational Semantics</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/44" hreflang="en">Translating Functional Programming Constructs into Lambda Calculus</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/45" hreflang="en">Combinatory Logic I</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/666" hreflang="en">Combinatory Logic II</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/46" hreflang="en">Reduction Strategies</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/638" hreflang="en">Roll your own [Combinatory Logic]</a>
+              </li>
+                <li class="menu-item">
+        <a href="/node/516" hreflang="en">Roll your own [Lambda Calculus]</a>
+              </li>
+        </ul>
+  
+
+
+    </div>
+  </div>
+
+  </div>
+
+            </aside>
+          </div>
+              </div>
+    </div>
+        <footer class="site-footer">
+      <div class="layout-container">
+                          <div class="site-footer__bottom">
+              <div class="region region-footer-fifth">
+    <div id="block-bartiksoftoption-block-6" class="block block-block-content block-block-content52898772-4b33-4c3e-98d1-b8ffdd41102e">
+  
+    
+      <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">Copyright SoftOption ® Ltd. (New Zealand). Email: <a href="mailto:support@SoftOption.Us">support@SoftOption.Us</a></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+          </div>
+              </div>
+    </footer>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/37","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-CW0S29TLQS","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"37"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"cd3d927c0e91f5444b560052ed2f3907b0b1a7d67939ee3e1d9d0bb7ebab88dd"}}</script>
+<script src="/sites/default/files/js/js_8QBjledv09z8pzIS-vyTO6xcgINbsE-jAQBxU-jZLnc.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=bartik&amp;include=eJxLz89Pz0mNT8xLzKksyUwu1k9HE9ApLkksySwGy6UUlRYk5ughRAAWtRkf"></script>
+
+  </body>
+</html>
