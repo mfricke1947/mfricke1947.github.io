@@ -1,0 +1,146 @@
+<!--  8/13/20 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>One-step Reduce in Haskell Notation</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+
+  <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+
+</head>
+<body>
+  <h3>One-step Redex Reduce in Haskell Notation</h3>
+
+  <textarea id="editor" name="editor"></textarea>
+
+  <p><button id="message_button2"  onclick="reduce1(editor)" 
+      style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+      >Reduce selected redex</button></p>
+  
+  <script>
+  const editor = new Jodit("#editor", {
+          extraButtons: ["symbol"]
+      });
+ 
+  </script>
+
+
+<!--
+  <button onclick="getSelectedRows()">Get Selected Rows</button>
+-->
+
+  <div id="myGrid" style="height: 600px;width:500px;" class="ag-theme-balham"></div>
+
+  <script type="text/javascript" charset="utf-8">
+    // specify the columns
+  
+
+    var columnDefs = [
+  {
+    headerName: '',
+    field: 'fLineno',
+  //  cellStyle: { 'font-size': 'large'},
+    pinned: 'left',
+    type: "numericColumn",
+    width:20,
+  },
+  {
+    headerName: 'Formula',
+    field: 'fFormula',
+    resizable: true,
+  },
+  {
+    headerName: 'Justification',
+    field: 'fJustification',
+  },
+];
+
+    var autoGroupColumnDef = {
+        headerName: "Model", 
+        field: "model", 
+        cellRenderer:'agGroupCellRenderer',
+        cellRendererParams: {
+            checkbox: true
+        }
+    }
+
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+      columnDefs: columnDefs,               //new def
+      //autoGroupColumnDef: autoGroupColumnDef,
+      groupSelectsChildren: true,
+      rowSelection: 'multiple'
+    };
+
+  // lookup the container we want the Grid to use
+  var eGridDiv = document.querySelector('#myGrid');
+
+  // create the grid passing in the div to use together with the columns & data we want to use
+  new agGrid.Grid(eGridDiv, gridOptions);
+  
+  function getSelectedRows() {
+    const selectedNodes = gridOptions.api.getSelectedNodes()  
+    const selectedData = selectedNodes.map( function(node) { return node.data })
+    const selectedDataStringPresentation = selectedData.map( function(node) { return node.make + ' ' + node.model }).join(', ')
+    alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+  </script>
+
+
+
+<script>
+//const results = document.getElementById('results');
+
+const editorText1 = 
+
+"<span style=\"float:right;font-size: 8px;\" >8/13/20</span> </p>" +
+
+"<p>Select a <em>redex</em> i.e. an application '&ltfunction&gt &ltargument&gt' with a lambda expression in the &ltfunction&gt position. Ask for it to be reduced. " +
+"Notice that the software will do an alpha rewrite (i.e. change of bound variable) automatically should that be needed." +
+"Type in your own redexes and try them. </p>" +
+"<p>(\\a->a) b</p>" +
+"<p>λw->(λx->(λy->w a) w) <em>An inner expression is a redex.</em></p>" +
+"<p>λw x y->w a w <em>No redex here.</em></p>" +
+"<p>\\w->w ((\\x->x \\z->z) (\\y->y b))</p>" +
+"<p>(λx->(x x)) λy->y</p>" +
+"<p>\\a->a b <em>The scope of a lambda expression goes as far right as it can. Also, application is of higher precedence than the lambda. So the a grabs the b first, and this whole expression is not an application. </em></p>" +
+"<p>&lambda;a->ab <em> No redex here. The whole expression is a lambda not an application. Also, subsidiarily, ab is an entirely different variable to a.</em></p>" +
+
+"<p>(λx->λy->y) a b <em>Reduce using the first argument i.e. a </em></p>" +
+"<p>(&lambda;x->(&lambda;y->x a)) y <em>Automatic change of variable</em>" +
+"<p>(&lambda;a->a b) c </p>" +
+"<p>((&lambda;x->x) (&lambda;y->y)) a  <em></em></p>" +
+"<p>&lambda;x->(&lambda;y->x) a b</p>"+
+
+"<p><em>[A very minor tangential note about the present software. It it possible to select a well-formed apparent lambda sub-expression which is not actually a sub-expression of the starting expression. Consider</em></p>" +
+"<p>&nbsp; &nbsp; &nbsp; a b c <em> really that is </em> (a@b)@c ,<em> </p>" +
+
+"but if you selected </em> b c <em>in the original, that is</em> b@c <em>which is not a subexpression of the original. This possibility arises by omitting brackets and using the (left) association rule.]  </em></p>";
+
+initializeEditorAndGrid(editor, gridOptions, editorText1);
+var rowDataInit = [{fLineno: '1', fFormula: '', fJustification: ''},]; //the line format varies from widget to widget
+    gridOptions.api.setRowData(rowDataInit);
+    gridOptions.columnApi.autoSizeColumns();
+
+
+</script>
+
+
+
+</body>
+</html>

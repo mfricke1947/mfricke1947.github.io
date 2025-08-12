@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--- mf 8/11/21 1:13pm --->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Constraints MiniML</title>
+  
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+
+    <style>
+      body {
+          background-color: lightgray;
+          color: black;
+      }
+  </style>
+  
+  </head>
+  <body>
+    <h3>MiniML Constraints</h3>
+    <textarea id="editorJHM" name="editorJHM"></textarea>
+        <p><button id="message_button2" onclick="reduceConstraintsMiniML(editor)" 
+            style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">Constraint
+        proof from selection</button>
+        <button id="message_button3" onclick="identifyTypeMiniML(editor)"  
+          style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">Type of selection</button></p>
+    
+
+    <script>
+const editor = new Jodit("#editorJHM", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+</script>
+
+<div id="myGrid" style="height: 600px;width:100%;" class="ag-theme-balham"></div>
+ <!--- the width was set to 600px --->
+
+  <script type="text/javascript" charset="utf-8">
+// specify colums
+
+/*
+
+data ConstraintReduction = Constraintline {fLineno :: Int
+                           , fConstraints :: String --[Constraint]
+                           , fSubst :: String
+                           , fError :: String
+                           } deriving (Show,Generic)
+*/
+
+    var columnDefs = [
+
+    {   
+      headerName: '',
+      field: 'fLineno',
+    //  cellStyle: { 'font-size': 'large'},
+    //  pinned: 'left',
+      type: "numericColumn",
+      width:40,
+    },
+
+    {
+    headerName: 'Constraints',
+    field: 'fConstraints',
+    resizable: true,
+    width:300,
+  },
+
+  {
+    headerName: 'Substitutions',
+    field: 'fSubst',
+    resizable: true,
+    width:300,
+  },
+
+  {
+    headerName: 'Error',
+    field: 'fError',
+    resizable: true,
+    width:200,  //was 60
+  }
+];
+
+
+    var autoGroupColumnDef = {
+        headerName: "Model", 
+        field: "model", 
+        cellRenderer:'agGroupCellRenderer',
+        cellRendererParams: {
+            checkbox: true
+        }
+    }
+
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+      columnDefs: columnDefs,               //new def
+    //  autoGroupColumnDef: autoGroupColumnDef,
+      groupSelectsChildren: true,
+      rowSelection: 'multiple'
+    };
+
+  // lookup the container we want the Grid to use
+  var eGridDiv = document.querySelector('#myGrid');
+
+  // create the grid passing in the div to use together with the columns & data we want to use
+  new agGrid.Grid(eGridDiv, gridOptions);
+  
+/*agGrid.simpleHttpRequest({url: 'https://api.myjson.com/bins/15psn9'}).then(function(data) {
+      gridOptions.api.setRowData(data);
+  });
+  */
+
+ // gridOptions.api.setRowData(rowData1);  //our own JSON data
+  
+  function getSelectedRows() {
+    const selectedNodes = gridOptions.api.getSelectedNodes()  
+    const selectedData = selectedNodes.map( function(node) { return node.data })
+    const selectedDataStringPresentation = selectedData.map( function(node) { return node.make + ' ' + node.model }).join(', ')
+    alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+  </script>
+
+<script>
+const editorText3 = 
+
+"<p><b>Variables and constants: </b>"+
+"x  aVariable m 3 9 True K M False "+
+
+"<b>Abstractions ('Lambdas'): </b>"+
+"λy.y &nbsp; &nbsp;λy.x &nbsp;&nbsp;λy.False "+
+
+"<b>Applications: </b>"+
+"(λy.y 7) &nbsp; &nbsp;(λy.x True) &nbsp;&nbsp;(λy.False True)</p>"+
+
+"<h3>Lets not annotated i.e. polymorphic</h3>"+
+"<p>let identity=λx.x in (identity 7)</p>"+
+"<p>let identity = λx. x in (identity (λy.y 7))</p>"+
+"<p>let test=(λy.y 7) in test</p>"+
+
+"<h3>Lets annotated with types which are not quantified schemes i.e. monomorphic</h3>"+
+"<p>let identity:(d->d)=λx.x in let argument=7 in (identity argument)</p>"+
+"<p>let identity:(I->I)=λx.x in (identity 7)</p>"+
+
+"<h3>Lets annotated with quantified schemes i.e. polymorphic</h3>"+
+
+"<p>let identity:&forall;a(a->a)=λx.x in let argument=7 in (identity argument)</p>"+
+
+
+"<p>let identity:&forall;a(I->I)=λx.x in (identity 7)</p>"+
+
+"<h3>The acid test: lets used polymorphically</h3>"+
+
+"<p>let identity:∀a(a->a) = λx.x in let ignore = (identity True) in (identity 2) </p>"+
+"<p>let identity = λx. x in let ignore = (identity True) in (identity 2)</p>"+
+
+
+"<h3>Sample Expressions </h3>"+
+"<p>(λx.(λy.x 1) True)&nbsp; &nbsp; "+
+"let identity=λx.x in (identity 7)"+
+"<p>(λx:B.(λy:a.x 1) True)&nbsp; &nbsp;"+
+"(λx:m.(λy:n.x 1) True)&nbsp; &nbsp;"+
+"let identity:a->b=λx.x in (identity True)&nbsp; &nbsp;"+
+"let identity:a=λx.x in let argument:I=7 in (identity argument)</p>"+
+
+"<p>λx:B->B.λy:B->B.λz:B.(y (x z))&nbsp; &nbsp;"+
+"λx:I.(x x)&nbsp; &nbsp;"+
+
+"λa:(I->I).(a 3)&nbsp; &nbsp;"+
+"(λx:B.(λy:I.x 1) True)&nbsp; &nbsp;"+
+"(True True)&nbsp; &nbsp;"+
+"(λx:B.(λy:I.x 1) True)&nbsp; &nbsp;"+
+"λx:B->B.λy:B->B.λz:B.(y (x z))&nbsp; &nbsp;"+
+"λx:I.(x x)</p>";
+
+/*
++
+"<p>λa.ab</p>"+
+"<p>λa.(ab</p>"+
+"<p>\\a.(a b) See above and notice the space between a and b.</p>"+
+"<p>(λa.a)bc</p>"+
+"<p>((λa.a b) c)</p>"+
+"<p>λx.(λy.x)ab</p>"+
+"<p>(λx.(λy.x)a)b An application has to have brackets around it.</p>"+
+"<p></p>";
+
+*/
+
+// const dummy = null;
+
+initializeEditorAndGrid(editor, gridOptions, editorText3);
+  var rowDataInit = [{fLineno: '1', fFormula: '', fSubst: '', fError: ''},]; //the line format varies from widget to widget
+      gridOptions.api.setRowData(rowDataInit);
+      gridOptions.columnApi.autoSizeColumns();
+
+
+// initializeEditorOnly (editor,verboseText);
+
+</script>
+  </body>
+</html>

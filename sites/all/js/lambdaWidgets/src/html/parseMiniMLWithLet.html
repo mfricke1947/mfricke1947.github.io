@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<!- mf 8/2/21 2:55pm ->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MiniMLWithLet Parse</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+</head>
+<body>
+
+<h3>MiniMLWithLet Verbose Parse</h3>
+
+<textarea id="editor" name="editor"></textarea>
+
+<p><button id="message_button2"  onclick="parseMiniML(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+<script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+
+const verboseText = "<p>MiniML Make a selection. Ask for it to be parsed and identified. We are not here identifying the type of the expression. We are merely seeing whether the expression is well-formed, and identifying what kind of expression it is.</p>"+
+"<p>a &nbsp; 7 &nbsp;  True &nbsp; ((True False) 7)</p>"+
+"<p>λa.(a b)&nbsp;&nbsp;\\a.(a b) &nbsp; &nbsp;λa.ab &nbsp;&nbsp;λa.(ab &nbsp; &nbsp;\\a.(a b)&nbsp;&nbsp;(λa.a)bc</p>"+
+"<p>((λa.a b) c) &nbsp; &nbsp; λx.(λy.x)ab &nbsp; &nbsp;(λx.(λy.x)a)b &nbsp; &nbsp;(λx.(λy.x a) b)</p>" +
+"<h3>In our MiniML, Let has to have a variable to the left of the '=' and that variable cannot occur in the RHS of the '='</h3>" + 
+"<p>let x=y in z &nbsp;&nbsp;let x:B=y in z  &nbsp; &nbsp;let identity:∀a(a->a) = λx.x in identity &nbsp; &nbsp;let identity= λx.x in identity&nbsp; &nbsp; &nbsp; &nbsp;let λx.x = identity in identity&nbsp; &nbsp;let identity:∀a = (λx.x identity) in (identity 2) &nbsp; &nbsp;let identity:∀a,b,c(I) = λx.x in (identity 2)</p>" +
+"<p>λx:(B->a).y&nbsp;&nbsp;\\a:I.(a b) &nbsp; &nbsp;λx:∀a (B->a).y &nbsp;&nbsp;λa.(ab &nbsp; &nbsp;\\a.(a b)&nbsp;&nbsp;(λa.a)bc</p>" + 
+"<p>let x=y in z &nbsp;&nbsp;let x:B=y in z  &nbsp; &nbsp;λx:∀a (B->a).y &nbsp;&nbsp; let identity:∀a(a->a) = λx.x in identity &nbsp; &nbsp; let identity:∀a = λx.x in (identity 2) &nbsp; &nbsp;let identity:∀a,b,c(I) = λx.x in (identity 2)</p>" +
+"<p>let x=y in let identity:∀a,b,c(I) = λx.x in (identity 2) &nbsp;&nbsp;</p>" +
+
+
+"<p> let identity = λx. x in let ignore = (identity True) in (identity 2) </p>"+
+"<p> let identity:∀a(a->a) = λx. x in let ignore = (identity True) in (identity 2) </p>";
+
+const dummy = null;
+
+initializeEditorAndGrid (editor, dummy,verboseText);
+</script>
+</body>
+</html>

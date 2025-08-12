@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--- mf 8/3/21 1:13pm --->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MiniML Constraint List</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+  </head>
+  <body>
+    <h3>MiniML Constraints</h3>
+
+    <textarea id="editor" name="editor"></textarea>
+    <p><button id="message_button2" onclick="constraintsMiniML(editor)" style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">List
+      type constraints of selection</button></p>
+
+    <script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+
+const verboseText = "<p>Select a well-formed lambda expression. "+
+"Ask for a list of the constraints governing its type. (By all means, write in your own expressions to test.) </p>"+
+"<p>Although every expression has a constraint list. Not every expression has a type. If the constraints are solvable " +
+" the solution will be the type. If the constraint list is not solvable, the expression does not have a type. t0 is the overall " +
+"type, so you are trying to solve for t0.</p>" +
+"<h3>Expressions not annotated</h3>"+
+"<p>(λx.(λy.x 1) True)</p>"+
+"<p>let identity=λx.x in (identity 7)</p>"+
+"<p>let identity=λx.x in let argument=7 in (identity argument)</p>"+
+
+"<h3>Expressions annotated with some plain type variables</h3>"+
+"<p>(λx:B.(λy:a.x 1) True)</p>"+
+"<p>(λx:m.(λy:n.x 1) True)</p>"+
+"<p>let identity:a->b=λx.x in (identity True)</p>"+
+"<p>let identity:a=λx.x in let argument:I=7 in (identity argument)</p>"+
+
+"<p>λx:B->B.λy:B->B.λz:B.(y (x z))</p>"+
+"<p>λx:I.(x x)</p>";
+
+/*
++
+"<p>λa.ab</p>"+
+"<p>λa.(ab</p>"+
+"<p>\\a.(a b) See above and notice the space between a and b.</p>"+
+"<p>(λa.a)bc</p>"+
+"<p>((λa.a b) c)</p>"+
+"<p>λx.(λy.x)ab</p>"+
+"<p>(λx.(λy.x)a)b An application has to have brackets around it.</p>"+
+"<p></p>";
+
+*/
+
+/* const dummy = null;
+
+initializeEditorAndGrid (editor, dummy,verboseText);
+*/
+
+initializeEditorOnly (editor,verboseText);
+
+</script>
+  </body>
+</html>

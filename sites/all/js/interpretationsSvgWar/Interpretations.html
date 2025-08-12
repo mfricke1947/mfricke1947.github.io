@@ -1,0 +1,173 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="Interpretations.css">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Interpretations</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+  
+  
+  <!-----------          SVG using embedapi   ----------  -->
+  <!----------- run SVG first to get a target for svgCanvas   ----------  -->
+  
+<script type="text/javascript" src="svg-edit-2.6-hackCopy/embedapi.js"></script>
+  
+   <script type="text/javascript">
+        var svgCanvas = null;
+        
+        var svgStr="";      //mf
+
+        function init_embed() {
+            var frame = document.getElementById('svgedit');
+			svgCanvas = new embedded_svg_edit(frame);
+			
+			alert('embed ');
+			           
+        }
+        
+        function updateSvgStr(){
+        	svgCanvas.getSvgString()(handleUpdate);    	
+        }
+        
+        function handleUpdate(data, error) {
+			if (error)
+			{
+				alert('error ' + error);
+			}
+            else
+			{
+				svgStr= data;
+			}			
+        }
+        
+        function getSvgStr(){
+        	updateSvgStr();
+        	return svgStr;
+        }
+        
+        
+        function handleSvgData(data, error) {
+			if (error)
+			{
+				alert('error ' + error);
+			}
+            else
+			{
+				alert('Congratulations. Your SVG string is back in the host page, do with it what you will\n\n' + data);
+			}			
+        }
+        
+        function loadSvg(svgString) {
+             alert('load ' + svgString);
+            alert('canvas ' + svgCanvas);
+ 
+            svgCanvas.setSvgString(svgStr);
+        }
+		
+		function saveSvg() {			
+			svgCanvas.getSvgString()(handleSvgData);	
+		}
+		
+    </script>  
+<!--       ---------          end of SVG          ----------  -->
+  
+<script type="text/javascript" language="javascript" src="interpretations/interpretations.nocache.js"></script>
+ 
+
+
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <script type="text/javascript" language="javascript">
+   var Parameters = {
+ 
+ /* fParser: "howson", */
+  fPropLevel: "true",
+  fAdvancedMenu: "false",
+  fInputText: "<p>Consider a) whether the terms ('names') in the following formulas refer properly to entities in the Universe, and b) whether each formula is true or whether it is false. Select the formula and click <em>True?</em> to see what the program thinks. </p> <p></p> <blockquote> a) F(a) <br> b) G(a) <br> c) F(b) <br> d) G(b) <br> e) F(a)≡G(b) <br> f) G(a)∧F(b) <br> h) F(b)⊃G(b) <br> f) G(c) <br> g) H(a) </blockquote> <blockquote> h) F(a) ∨ F(c) (*see Note*) </blockquote> <p> </p> <blockquote> (*Note. There are different ways of handling a case like this. On the one hand you can say that F(a) is true, therefore the disjunct is true; or you can say that F(c) is not entirely proper, therefore it is inappropriate to ask about the truth value of the disjunct. We follow the latter here; but there are occasions when it would be better to follow the former.*) </blockquote></html> ",
+  
+ /* tree0: value="F,F&G",
+  tree1: value="F&G,G&H&I",
+  tree2: value="F&~F", 
+
+
+  tree0: value="F∨H,M∨N, O&P, Q&R",
+  tree1: value="F&G,G&H&I ,F&G∴G",
+  tree2: value="F&~F",
+  tree3: value="F∨H",  */
+  
+  
+  
+  
+};
+  </script>
+
+<div id="container">
+
+<h3>Interpretations</h3>
+
+    <button onclick="loadSvg();">Load example</button>
+    <button onclick="saveSvg();">Save data</button>
+     <button onclick="alert('error ' + getSvgStr());">Get svg data</button>
+    <br/>
+
+
+
+<iframe src="svg-edit-2.6-hackCopy/svgEditorMF.html" width="900px" height="600px" id="svgedit"  onload="init_embed()"></iframe>    
+
+<div id="menu"> </div>
+
+<div id="menubuttons"> </div>
+
+<div id="editbuttons"> </div>
+
+<div id="input"> </div>
+
+<div id="proof"> </div>
+
+<div id="startButton" ></div> 
+
+<div id="journal" ></div>
+
+<div id="buttons"></div>  
+  
+ </div>
+ 
+ 
+  </body>
+</html>

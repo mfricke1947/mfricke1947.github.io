@@ -1,0 +1,151 @@
+<!--  9/17/19 9:35 am 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>NOR and AOR</title>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+
+  <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+
+
+ <!--  <script type="text/javascript" src="js/spreadsheetScripts.js"></script> -->
+
+  <style>
+    body {
+        background-color: lightgray;
+        color: black;
+    }
+</style>
+
+</head>
+<body>
+  <h3>Normal and Applicative Order Reductions</h3>
+
+  <textarea id="editor" name="editor"></textarea>
+
+  <p><button id="message_button2"  onclick="reduceSideBySide(editor)" 
+      style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+      >Normal and Applicative Order Reduction</button>
+    
+    
+    
+    
+    </p>
+  
+  <script>
+  const editor = new Jodit("#editor", {
+          extraButtons: ["symbol"]
+      });
+ 
+  </script>
+
+  <div id="myGrid" style="height: 600px;width:600px;" class="ag-theme-balham"></div>
+
+  <script type="text/javascript" charset="utf-8">
+// specify colums
+    var columnDefs = [
+
+    {   
+      headerName: '',
+      field: 'fLinenum',
+    //  cellStyle: { 'font-size': 'large'},
+    //  pinned: 'left',
+      type: "numericColumn",
+      width:40,
+    },
+
+    {
+    headerName: 'NOR',
+    field: 'fLFormula',
+    resizable: true,
+  },
+  {
+      
+    headerName: '',
+    field: 'fLinenum',
+  //  cellStyle: { 'font-size': 'large'},
+  //  pinned: 'left',
+    type: "numericColumn",
+    width:40,
+  },
+  {
+    headerName: 'AOR',
+    field: 'fRFormula',
+    resizable: true,
+  }
+];
+
+
+    var autoGroupColumnDef = {
+        headerName: "Model", 
+        field: "model", 
+        cellRenderer:'agGroupCellRenderer',
+        cellRendererParams: {
+            checkbox: true
+        }
+    }
+
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+      columnDefs: columnDefs,               //new def
+    //  autoGroupColumnDef: autoGroupColumnDef,
+      groupSelectsChildren: true,
+      rowSelection: 'multiple'
+    };
+
+  // lookup the container we want the Grid to use
+  var eGridDiv = document.querySelector('#myGrid');
+
+  // create the grid passing in the div to use together with the columns & data we want to use
+  new agGrid.Grid(eGridDiv, gridOptions);
+  
+/*agGrid.simpleHttpRequest({url: 'https://api.myjson.com/bins/15psn9'}).then(function(data) {
+      gridOptions.api.setRowData(data);
+  });
+  */
+
+ // gridOptions.api.setRowData(rowData1);  //our own JSON data
+  
+  function getSelectedRows() {
+    const selectedNodes = gridOptions.api.getSelectedNodes()  
+    const selectedData = selectedNodes.map( function(node) { return node.data })
+    const selectedDataStringPresentation = selectedData.map( function(node) { return node.make + ' ' + node.model }).join(', ')
+    alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+  </script>
+
+
+
+
+<script>
+
+const editorText2 = "<p>[The maximum number of lines of reductions is set at 50. So, 'rewriting forever' means 'rewriting 50 times and perhaps more'.]</p>" +
+"<p>Convince yourself of the following:- </p>" +
+"<p> a) (λx.(x x) λx.(x x)) can be rewritten forever. (* If an expression has a subexpression that can be reduced to itself, that subexpression can be reduced to itself again ... and again ... *)</p>" +
+"<p> b) ((λx.λy.y a) b) &nbsp;<br /> &nbsp;=> (λy.y b) &nbsp;<br />&nbsp;=> b </p>" +
+"<p> c) ((λx.λy.y (λx.(x x) λx.(x x))) b) &nbsp;<br /> &nbsp;=> (λy.y b) &nbsp;<br /> &nbsp;=> b (* this is like (b)"+
+" except that we have put self-application in for the argument 'a'. *) Compare NOR and AOR.</p>"
+;
+  
+  initializeEditorAndGrid(editor, gridOptions, editorText2);
+  var rowDataInit = [{fLineno: '1', fFormula: '', fJustification: ''},]; //the line format varies from widget to widget
+      gridOptions.api.setRowData(rowDataInit);
+      gridOptions.columnApi.autoSizeColumns();
+
+
+</script>
+
+
+
+</body>
+</html>

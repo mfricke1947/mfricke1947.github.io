@@ -1,0 +1,156 @@
+<!--  7/27/21 11:52 am 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>NOR and Type</title>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+
+  <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+
+
+ <!--  <script type="text/javascript" src="js/spreadsheetScripts.js"></script> -->
+
+  <style>
+    body {
+        background-color: lightgray;
+        color: black;
+    }
+</style>
+
+</head>
+<body>
+  <h3>Normal Order Reductions with Expression Type</h3>
+
+  <textarea id="editorNOR" name="editorNOR"></textarea>
+
+  <p><button id="message_button2"  onclick="norAndType(editor)" 
+      style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+      >NOR and Type</button>
+    </p>
+  
+  <script>
+  const editor = new Jodit("#editorNOR", {
+          extraButtons: ["symbol"]
+      });
+ 
+  </script>
+
+  <div id="myGrid" style="height: 600px;width:100%;" class="ag-theme-balham"></div>
+
+  <script type="text/javascript" charset="utf-8">
+// specify colums
+    var columnDefs = [
+
+    {   
+      headerName: '',
+      field: 'fLineno',
+    //  cellStyle: { 'font-size': 'large'},
+    //  pinned: 'left',
+      type: "numericColumn",
+      width:40,
+    },
+
+    {
+    headerName: 'NOR',
+    field: 'fFormula',
+    resizable: true,
+  },
+ /* {
+      
+    headerName: '',
+    field: 'fLinenum',
+  //  cellStyle: { 'font-size': 'large'},
+  //  pinned: 'left',
+    type: "numericColumn",
+    width:40,
+  },
+  */
+  {
+    headerName: 'Type',
+    field: 'fJustification',
+    resizable: true,
+  }
+];
+
+
+    var autoGroupColumnDef = {
+        headerName: "Model", 
+        field: "model", 
+        cellRenderer:'agGroupCellRenderer',
+        cellRendererParams: {
+            checkbox: true
+        }
+    }
+
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+      columnDefs: columnDefs,               //new def
+    //  autoGroupColumnDef: autoGroupColumnDef,
+      groupSelectsChildren: true,
+      rowSelection: 'multiple'
+    };
+
+  // lookup the container we want the Grid to use
+  var eGridDiv = document.querySelector('#myGrid');
+
+  // create the grid passing in the div to use together with the columns & data we want to use
+  new agGrid.Grid(eGridDiv, gridOptions);
+  
+/*agGrid.simpleHttpRequest({url: 'https://api.myjson.com/bins/15psn9'}).then(function(data) {
+      gridOptions.api.setRowData(data);
+  });
+  */
+
+ // gridOptions.api.setRowData(rowData1);  //our own JSON data
+  
+  function getSelectedRows() {
+    const selectedNodes = gridOptions.api.getSelectedNodes()  
+    const selectedData = selectedNodes.map( function(node) { return node.data })
+    const selectedDataStringPresentation = selectedData.map( function(node) { return node.make + ' ' + node.model }).join(', ')
+    alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+  </script>
+
+
+
+
+<script>
+
+const editorText3 = "<p>a) (λz:I.z 3)</p>" +
+
+"<p>b) (λz:I.z True)</p>" +
+"<p>c) ((λx:B.λy:I.y False) 7) </p>" +
+"<p>d) ((λx:I.λy:B.y False) 7) </p>" +
+"<p>e) (λx:I.(x x) λx:I.(x x)) (*self application*) </p>" +
+"<p>f)  ((λx:I.λy:I.y (λx:I.(x x) λx:I.(x x))) 7)  (*reduction with an unevaluated self-application argument within it*) </p>" +
+
+""
+
+;
+
+
+
+
+  
+  initializeEditorAndGrid(editor, gridOptions, editorText3);
+  var rowDataInit = [{fLineno: '1', fFormula: '', fJustification: ''},]; //the line format varies from widget to widget
+      gridOptions.api.setRowData(rowDataInit);
+      gridOptions.columnApi.autoSizeColumns();
+
+
+</script>
+
+
+
+</body>
+</html>

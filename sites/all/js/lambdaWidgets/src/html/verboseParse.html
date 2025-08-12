@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<!- mf 9/12/19 7:09am ->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Verbose Parse</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+</head>
+<body>
+
+<h3>Lambda Verbose Parse</h3>
+
+<textarea id="editor" name="editor"></textarea>
+
+<p><button id="message_button2"  onclick="sendFunction2(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+<script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+const dummy = null;
+initializeEditorAndGrid (editor, dummy,verboseText);
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<!- mf 7/31/21 2:55pm ->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MiniML Parse</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+</head>
+<body>
+
+<h3>MiniML Verbose Parse</h3>
+
+<textarea id="editor" name="editor"></textarea>
+
+<p><button id="message_button2"  onclick="parseMiniML(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+<script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+
+const verboseText = "<p>MiniML Make a selection. Ask for it to be parsed and identified. We are not here identifying the type of the expression. We are merely seeing whether the expression is well-formed, and identifying what kind of expression it is.</p>"+
+"<p>a &nbsp; 7 &nbsp;  True &nbsp; ((True False) 7)</p>"+
+"<p>λa.(a b)&nbsp;&nbsp;\\a.(a b) &nbsp; &nbsp;λa.ab &nbsp;&nbsp;λa.(ab &nbsp; &nbsp;\\a.(a b)&nbsp;&nbsp;(λa.a)bc</p>"+
+"<h3>Lambdas (or applications) without type annotation (some not well-formed)</h3>" +
+"<p>((λa.a b) c) &nbsp; &nbsp; λx.(λy.x)ab &nbsp; &nbsp;(λx.(λy.x)a)b &nbsp; &nbsp;(λx.(λy.x a) b)</p>" +
+"<h3>Lambdas (or applications) with type annotation (some not well-formed)</h3>" +
+"<p>((λa:I.a b) c) &nbsp; &nbsp;(λx.(λy.x)a)b &nbsp; &nbsp;(λx.(λy.x a) b)</p>"+
+"<p>λx:I->a.(λy.x a) take care with this because the first 'a' is a type variable and the second 'a' is a term variable i.e. they are different a's. It is probably better and clearer to rewrite this kind of formula using notationally different variables.";
+
+const dummy = null;
+
+initializeEditorAndGrid (editor, dummy,verboseText);
+</script>
+</body>
+</html>

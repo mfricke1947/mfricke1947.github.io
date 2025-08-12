@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<!-- mf 7/30/20 12:33  Duplicated the button above and below the text
+-->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Verbose Parse</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+</head>
+<body>
+
+<!-- <h3>Lambda Verbose Parse Haskell</h3> -->
+
+<p align="right"><button id="message_button2"  onclick="sendFunction2(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+<textarea id="editor" name="editor"></textarea>
+
+<p align="right"><button id="message_button2"  onclick="sendFunction2(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+
+
+
+
+<script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+
+const verboseText = "<p>Make a selection. Try to decide what it is (ill-formed, a variable, an application, an abstraction). Try to decide how it parses (eg what is applied to what). Ask the software. Devise your own. [And if you are ever puzzled later you can come back here and get your expression parsed.] The software will add an @ symbol to show application.</p>"+
+"<p>a</p>"+
+"<p>((hello cruel) world)</p>"+
+"<p>λa->(a b)</p>"+"<p>\\a->(a b) <em>i.e. alternative lambda symbol</em></p>"+
+"<p>λa->ab</p>"+
+"<p>λa->a b <em>roughly, the scope of a lambda goes as far right as it can</em></p>"+ 
+"<p>(\\a->a) b <em>if you want to make a lambda apply to an argument, do yourself a favor and put the lambda, with its scope, inside brackets. Otherwise the scope will grab the intended argument and include it as part of the scope.</em></p>"+
+"<p>\\a->\\b->(a b) <em>nested lambdas.</em></p>"+
+"<p>\\a->(\\b->(a b)) <em>nested lambdas.</em></p>"+
+"<p>\\a b->(a b) <em>easier, and shorter, way of writing nested lambdas.</em></p>"+
+"<p>\\first second->(first second) <em>sensible variable names.</em></p>"+
+"<p>(λa->a)bc</p>"+
+"<p>((λa.a b) c) <em>you can use a period instead of an arrow on input</em></p>"+
+"<p>λx->(λy->x)ab <em>needs a space</em></p>"+
+"<p>(λx->(λy->x)a)b <em>needs spaces</em> </p>"+
+"<p>(λx -> (λy -> x a) b) <em>use extra spaces if it looks better to you</em></p>";
+
+const dummy = null;
+
+initializeEditorAndGrid (editor, dummy,verboseText);
+</script>
+</body>
+</html>

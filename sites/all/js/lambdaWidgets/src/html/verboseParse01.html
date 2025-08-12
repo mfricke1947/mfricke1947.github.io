@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<!- mf 9/14/19 2:55pm ->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Verbose Parse</title>
+    <style>
+        body {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="../build/jodit.min.css">
+    <script type="text/javascript" src="../build/jodit.min.js"></script>
+    <script type="text/javascript" src="../build/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/unifiedScripts.js"></script>
+</head>
+<body>
+
+<h3>Lambda Verbose Parse</h3>
+
+<textarea id="editor" name="editor"></textarea>
+
+<p><button id="message_button2"  onclick="sendFunction2(editor)" 
+    style="height:40px;font-size: 16px;border-radius: 8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+    >Verbose parse selected text</button></p>
+
+<script>
+const editor = new Jodit("#editor", {
+        extraButtons: ["symbol"]
+    });
+//initializeEditor(editor);
+
+const verboseText = "<p>Make a selection. Try to decide what it is (ill-formed, a variable, an application, an abstraction). Try to decide how it parses (eg what is applied to what). Ask the software. Devise your own. [And if you are ever puzzled later you can come back here and get your expression parsed.]</p>"+
+"<p>a</p>"+
+"<p>((hello cruel) world)</p>"+
+"<p>λa.(a b)</p>"+"<p>\\a.(a b)</p>"+
+"<p>λa.ab</p>"+
+"<p>λa.(ab</p>"+
+"<p>\\a.(a b) See above and notice the space between a and b.</p>"+
+"<p>(λa.a)bc</p>"+
+"<p>((λa.a b) c)</p>"+
+"<p>λx.(λy.x)ab</p>"+
+"<p>(λx.(λy.x)a)b An application has to have brackets around it.</p>"+
+"<p>(λx.(λy.x a) b) See above.</p>";
+
+const dummy = null;
+
+initializeEditorAndGrid (editor, dummy,verboseText);
+</script>
+</body>
+</html>
